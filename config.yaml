@@ -1,0 +1,59 @@
+﻿# Chat Merger Configuration
+
+# Commands that signal "continue the previous answer"
+continuation_commands:
+  # English
+  - "continue"
+  - "Continue"
+  - "CONTINUE"
+  - "go on"
+  - "Go on"
+  - "keep going"
+  - "yes"
+  - "Yes"
+  - "YES"
+  - "please continue"
+  - "go ahead"
+  - "next"
+  - "more"
+  - "and?"
+  - "proceed"
+  # Persian / Farsi
+  - "\u0627\u062F\u0627\u0645\u0647 \u0628\u062F\u0647"
+  - "\u0627\u062F\u0627\u0645\u0647"
+  - "\u0628\u0644\u0647"
+  - "\u0622\u0631\u0647"
+  - "\u0628\u0639\u062F\u06CC"
+  - "\u0627\u062F\u0627\u0645\u0647 \u0628\u062F\u06CC\u062F"
+  - "\u0644\u0637\u0641\u0627 \u0627\u062F\u0627\u0645\u0647 \u0628\u062F\u0647"
+  - "\u0644\u0637\u0641\u0627\u064B \u0627\u062F\u0627\u0645\u0647 \u0628\u062F\u0647"
+  - "\u0644\u0637\u0641\u0627 \u0627\u062F\u0627\u0645\u0647 \u0628\u062F\u06CC\u062F"
+  # Short contextual
+  - "do it"
+  - "ok"
+  - "OK"
+  - "Ok"
+  - "sure"
+  - "Sure"
+  - "alright"
+
+# Short follow-up threshold
+short_followup_max_words: 40
+
+# Overlap detection settings
+overlap_detection:
+  min_overlap_chars: 50
+  similarity_threshold: 0.82
+  scan_window_chars: 500
+
+# Output settings
+output:
+  format: "md"
+  include_metadata: true
+  include_timestamps: true
+  flag_overlaps_only: false
+  overlap_marker: "<!-- \u26A0\uFE0F POSSIBLE OVERLAP - REVIEW MANUALLY -->"
+  manual_marker: "<!-- \U0001F527 MANUAL INTERVENTION NEEDED -->"
+
+# Logging
+log_level: "INFO"

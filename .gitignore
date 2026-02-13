@@ -1,0 +1,35 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Output files (generated)
+output/*.md
+output/*.mdx
+
+# Temp files
+*.tmp
+*.bak
+_create_sample.py
