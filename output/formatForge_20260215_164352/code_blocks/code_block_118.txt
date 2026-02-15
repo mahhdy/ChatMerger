@@ -1,0 +1,27 @@
+[Prompt]
+ادامه html_to_mdx.py — متدهای کمکی:
+
+- convert_table_element(tag) → str
+  - تشخیص: ساده/ادغامی
+  - ساده → MD pipe table
+  - ادغامی → HTML <table> JSX-compatible
+
+- convert_form_element(tag) → str
+  - <form> → comment + placeholder
+
+- convert_media_element(tag) → str
+  - <video> → <Video> component
+  - <audio> → <Audio> component
+  - <iframe> → <Embed> component
+
+- convert_svg_element(tag) → str
+  - inline SVG → extract to file + <Image>
+
+- convert_math_from_html(tag) → str
+  - KaTeX rendered spans → $LaTeX$
+  - MathJax rendered → $LaTeX$
+  - MathML → LaTeX (با pylatexenc)
+
+- extract_css_to_classnames(html) → (cleaned_html, classname_map)
+
++ tests/test_html_elements.py

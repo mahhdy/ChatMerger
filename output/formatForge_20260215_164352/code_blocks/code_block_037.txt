@@ -1,0 +1,17 @@
+- algorithm2e → شبه‌کد یا کد
+   - tikzpicture → SVG/PNG
+   - tcolorbox → <Admonition> یا <Box>
+
+۶. تبدیل ارجاعات:
+   - \label{} → id
+   - \ref{} / \cref{} → لینک
+   - \cite{} → ارجاع
+   - \footnote{} → پانوشت
+   - \bibliography{} → کتاب‌نامه
+
+۷. حذف دستورات غیرضروری:
+   - \usepackage{} → حذف
+   - \pagestyle{} → حذف
+   - \geometry{} → حذف
+   - \fancyhf{} → حذف
+   - تنظیمات صفحه‌بندی → حذف

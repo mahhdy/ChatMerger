@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مبانی منطق ریاضی — نمونه تست تبدیل HTML به MDX</title>
+
+  <!-- ===== فونت ===== -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+  >
+
+  <!-- ===== KaTeX (ریاضی) ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  >
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });"
+  ></script>
+
+  <!-- ===== Mermaid ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: '"Vazirmatn", "Tahoma", sans-serif',
+        fontSize: '14px',
+        primaryColor: '#E3F2FD',
+        primaryTextColor: '#0D47A1',
+        primaryBorderColor: '#1565C0',
+        lineColor: '#1A73E8',
+      },
+      flowchart: { htmlLabels: true, curve: 'basis' },
+      securityLevel: 'loose',
+    });
+  </script>
+
+  <!-- ===== Highlight.js (کد) ===== -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css"
+  >
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <style>
+    /* ========== متغیرهای رنگ ========== */
+    :root {
+      --primary: #1A73E8;
+      --primary-light: #E3F2FD;
+      --accent-teal: #00897B;
+      --accent-teal-light: #E0F2F1;
+      --accent-orange: #FB8C00;
+      --accent-orange-light: #FFF3E0;
+      --text-dark: #212121;
+      --text-gray: #616161;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --border-light: #E0E0E0;
+      --theorem-bg: #E3F2FD;
+      --definition-bg: #E8F5E9;
+      --proof-bg: #FFFDE7;
+      --warning-bg: #FFF3E0;
+      --note-bg: #ECEFF1;
+      --sidebar-gray: #ECEFF1;
+    }
+
+    /* ========== پایه ========== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      direction: rtl;
+    }
+
+    /* ========== لِی‌اوت ========== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg-white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    /* ========== تیتر‌ها ========== */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--primary);
+      margin: 1.5em 0 0.5em;
+      line-height: 1.4;
+    }
+    h1 {
+      font-size: 2rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.3rem;
+    }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem; color: var(--accent-teal); }
+
+    /* ========== پاراگراف ========== */
+    p { margin: 0.8em 0; }
+
+    /* ========== لینک ========== */
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ========== Bold / Italic ========== */
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+
+    /* ========== کد ========== */
+    code {
+      font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+      background: var(--bg-light);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+
+    pre {
+      direction: ltr;
+      text-align: left;
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.88em;
+    }
+
+    /* ========== نقل‌قول ========== */
+    blockquote {
+      border-right: 4px solid var(--primary);
+      background: var(--primary-light);
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    blockquote blockquote {
+      border-right-color: var(--accent-teal);
+      background: var(--accent-teal-light);
+      margin-top: 0.5rem;
+    }
+
+    /* ========== جدول ========== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      direction: rtl;
+    }
+    th, td {
+      border: 1px solid var(--border-light);
+      padding: 0.6rem 0.8rem;
+      text-align: right;
+    }
+    th {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background: var(--bg-light); }
+    tr:hover { background: #E8EAF6; }
+
+    /* ========== لیست ========== */
+    ul, ol {
+      padding-right: 2em;
+      margin: 0.5em 0;
+    }
+    li { margin: 0.3em 0; }
+
+    /* ========== خط افقی ========== */
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to left, var(--primary), var(--accent-teal));
+      margin: 2rem 0;
+      border-radius: 1px;
+    }
+
+    /* ========== تصویر ========== */
+    figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    figcaption {
+      color: var(--text-gray);
+      font-size: 0.9em;
+      margin-top: 0.5rem;
+    }
+
+    /* ========== تصویر کنار متن ========== */
+    .float-start {
+      float: right;
+      margin: 0 0 1rem 1.5rem;
+      max-width: 40%;
+    }
+    .float-end {
+      float: left;
+      margin: 0 1.5rem 1rem 0;
+      max-width: 40%;
+    }
+
+    /* ========== جعبه‌ها ========== */
+    .box {
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-right: 5px solid;
+    }
+    .box-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.05em;
+    }
+    .theorem { background: var(--theorem-bg); border-color: var(--primary); }
+    .definition { background: var(--definition-bg); border-color: var(--accent-teal); }
+    .proof { background: var(--proof-bg); border-color: var(--accent-orange); }
+    .warning { background: var(--warning-bg); border-color: var(--accent-orange); }
+    .note { background: var(--note-bg); border-color: #546E7A; }
+    .example { background: #F3E5F5; border-color: #7B1FA2; }
+
+    /* ========== پانوشت ========== */
+    .footnotes {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.9em;
+      color: var(--text-gray);
+    }
+    .footnote-ref { vertical-align: super; font-size: 0.8em; }
+
+    /* ========== فهرست مطالب ========== */
+    .toc {
+      background: var(--sidebar-gray);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .toc h2 { margin-top: 0; border: none; font-size: 1.2rem; }
+    .toc ul { list-style: none; padding-right: 0; }
+    .toc > ul > li { margin: 0.5em 0; }
+    .toc ul ul { padding-right: 1.5em; }
+    .toc a { color: var(--text-dark); }
+    .toc a:hover { color: var(--primary); }
+
+    /* ========== بلوک LTR ========== */
+    .ltr-block {
+      direction: ltr;
+      text-align: left;
+      unicode-bidi: isolate;
+    }
+
+    /* ========== Mermaid ========== */
+    .mermaid {
+      direction: ltr;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    /* ========== Badge / Tag ========== */
+    .badge {
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 700;
+      color: white;
+    }
+    .badge-blue { background: var(--primary); }
+    .badge-teal { background: var(--accent-teal); }
+    .badge-orange { background: var(--accent-orange); }
+
+    /* ========== Details / Summary ========== */
+    details {
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    details[open] summary { margin-bottom: 0.5rem; }
+
+    /* ========== Keyboard ========== */
+    kbd {
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 0.1em 0.4em;
+      font-size: 0.85em;
+      font-family: inherit;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    }
+
+    /* ========== Mark (هایلایت) ========== */
+    mark {
+      background: #FFF176;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+
+    /* ========== Abbreviation ========== */
+    abbr {
+      text-decoration: underline dotted;
+      cursor: help;
+    }
+
+    /* ========== پاصفحه ========== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-gray);
+      font-size: 0.85em;
+      border-top: 1px solid var(--border-light);
+      margin-top: 3rem;
+    }
+
+    /* ========== واکنش‌گرا ========== */
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .float-start, .float-end {
+        float: none;
+        max-width: 100%;
+        margin: 1rem 0;
+      }
+      table { font-size: 0.85em; }
+    }
+
+    /* ========== پرینت ========== */
+    @media print {
+      body { background: white; }
+      .container { box-shadow: none; max-width: 100%; }
+      a { color: var(--text-dark); }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+      .mermaid { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ==========================================
+         هدر و عنوان
+    ========================================== -->
+    <header style="text-align:center; margin-bottom:2rem;">
+      <h1 style="border:none; font-size:2.2rem;">
+        مبانی منطق ریاضی و اثبات‌های صوری
+      </h1>
+      <p style="color:var(--text-gray); font-size:1.1em;">
+        Foundations of Mathematical Logic and Formal Proofs
+      </p>
+      <p>
+        <span class="badge badge-blue">منطق</span>
+        <span class="badge badge-teal">ریاضی</span>
+        <span class="badge badge-orange">اثبات</span>
+      </p>
+      <p style="color:var(--text-gray);">
+        نویسنده: <strong>مهدی سالم</strong> — تابستان ۱۴۰۴
+      </p>
+    </header>
+
+    <hr>
+
+    <!-- ==========================================
+         فهرست مطالب
+    ========================================== -->
+    <nav class="toc" aria-label="فهرست مطالب">
+      <h2>📑 فهرست مطالب</h2>
+      <ul>
+        <li><a href="#chap1">۱. مقدمه و مفاهیم پایه</a>
+          <ul>
+            <li><a href="#sec-def">۱.۱ تعاریف</a></li>
+            <li><a href="#sec-theorem">۱.۲ قضایا و اثبات</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap2">۲. جدول ارزش و عملگرها</a></li>
+        <li><a href="#chap3">۳. نمودارها</a></li>
+        <li><a href="#chap4">۴. تصاویر و چندرسانه‌ای</a></li>
+        <li><a href="#chap5">۵. کد و الگوریتم</a></li>
+        <li><a href="#chap6">۶. عناصر HTML خاص</a></li>
+        <li><a href="#chap7">۷. محتوای دوزبانه</a></li>
+        <li><a href="#chap8">۸. فرمول‌های پیشرفته</a></li>
+        <li><a href="#chap-footnotes">پانوشت‌ها</a></li>
+        <li><a href="#chap-bib">کتاب‌نامه</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <!-- ==========================================
+         فصل ۱: مقدمه
+    ========================================== -->
+    <section id="chap1">
+      <h2>۱. مقدمه و مفاهیم پایه</h2>
+
+      <p>
+        این سند به‌عنوان یک <strong>نمونه جامع تست</strong> طراحی شده
+        و شامل تمامی اجزای یک صفحه وب حرفه‌ای فارسی است.
+        هدف آن تست تبدیل <abbr title="HyperText Markup Language">HTML</abbr>
+        به <abbr title="Markdown + JSX">MDX</abbr> می‌باشد.
+      </p>
+
+      <div class="note box">
+        <div class="box-title">📌 نکته</div>
+        تمامی ارجاعات، پانوشت‌ها و کتاب‌نامه این سند
+        صرفاً جهت تست هستند.
+      </div>
+
+      <!-- === تعاریف === -->
+      <h3 id="sec-def">۱.۱ تعاریف</h3>
+
+      <div class="definition box">
+        <div class="box-title">تعریف ۱.۱ — گزاره (Proposition)</div>
+        <p>
+          <strong>گزاره</strong> جمله‌ای خبری است که دقیقاً یکی از
+          دو ارزش «درست» (<span dir="ltr">True, $\top$</span>)
+          یا «نادرست» (<span dir="ltr">False, $\bot$</span>) را دارد.
+        </p>
+      </div>
+
+      <div class="definition box">
+        <div class="box-title">تعریف ۱.۲ — تاتولوژی (Tautology)</div>
+        <p>
+          گزاره مرکب $\varphi$ یک <strong>تاتولوژی</strong> است
+          اگر و تنها اگر تحت هر تخصیص ارزش، مقدار آن درست باشد:
+        </p>
+        $$\models \varphi \iff \forall\, v : v(\varphi) = \top$$
+      </div>
+
+      <!-- === قضیه و اثبات === -->
+      <h3 id="sec-theorem">۱.۲ قضایا و اثبات</h3>
+
+      <div class="theorem box" id="thm-demorgan">
+        <div class="box-title">قضیه ۱.۱ — قانون دمورگان (De Morgan's Laws)</div>
+        <p>برای هر دو گزاره $p$ و $q$:</p>
+        $$\neg(p \land q) \equiv (\neg p) \lor (\neg q)$$
+        $$\neg(p \lor q) \equiv (\neg p) \land (\neg q)$$
+      </div>
+
+      <div class="proof box">
+        <div class="box-title">اثبات قضیه ۱.۱</div>
+        <p>
+          اثبات را با جدول ارزش انجام می‌دهیم. جدول کامل در
+          <a href="#tab-demorgan">جدول ۱</a> آمده است.
+          با بررسی تمامی حالات، ستون‌های مربوطه برابرند. ∎
+        </p>
+      </div>
+
+      <div class="example box">
+        <div class="box-title">مثال ۱.۱ — کاربرد دمورگان</div>
+        <p>
+          فرض کنید $p$: «هوا بارانی است» و $q$: «هوا سرد است».
+          آنگاه:
+        </p>
+        $$\neg(p \land q) \equiv \text{«هوا بارانی نیست \textbf{یا} سرد نیست»}$$
+      </div>
+
+      <div class="theorem box" id="thm-lem">
+        <div class="box-title">قضیه ۱.۲ — اصل طرد شق ثالث</div>
+        <p>
+          برای هر گزاره $p$:
+          $\models p \lor \neg p$
+          <sup><a href="#fn1" class="footnote-ref" id="fnref1">[۱]</a></sup>
+        </p>
+      </div>
+
+      <div class="proof box">
+        <div class="box-title">اثبات قضیه ۱.۲</div>
+        <ul>
+          <li>اگر $p = \top$: $p \lor \neg p = \top \lor \bot = \top$ ✅</li>
+          <li>اگر $p = \bot$: $p \lor \neg p = \bot \lor \top = \top$ ✅</li>
+        </ul>
+        <p>پس در هر دو حالت مقدار درست است. ∎</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ==========================================
+         فصل ۲: جدول ارزش
+    ========================================== -->
+    <section id="chap2">
+      <h2>۲. جدول ارزش و عملگرها</h2>
+
+      <h3>جدول ارزش دمورگان</h3>
+      <table id="tab-demorgan">
+        <caption>جدول ۱ — جدول ارزش قوانین دمورگان</caption>
+        <thead>
+          <tr>
+            <th>$p$</th>
+            <th>$q$</th>
+            <th>$p \land q$</th>
+            <th>$\neg(p \land q)$</th>
+            <th>$\neg p$</th>
+            <th>$\neg q$</th>
+            <th>$(\neg p)\lor(\neg q)$</th>
+            <th>برابر؟</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>T</td><td>T</td><td>T</td><td><strong>F</strong></td><td>F</td><td>F</td><td><strong>F</strong></td><td>✅</td></tr>
+          <tr><td>T</td><td>F</td><td>F</td><td><strong>T</strong></td><td>F</td><td>T</td><td><strong>T</strong></td><td>✅</td></tr>
+          <tr><td>F</td><td>T</td><td>F</td><td><strong>T</strong></td><td>T</td><td>F</td><td><strong>T</strong></td><td>✅</td></tr>
+          <tr><td>F</td><td>F</td><td>F</td><td><strong>T</strong></td><td>T</td><td>T</td><td><strong>T</strong></td><td>✅</td></tr>
+        </tbody>
+      </table>
+
+      <h3>جدول عملگرهای منطقی</h3>
+      <table>
+        <caption>جدول ۲ — عملگرهای منطقی پایه</caption>
+        <thead>
+          <tr>
+            <th>عملگر</th><th>نماد</th><th>نام انگلیسی</th><th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>نقیض</td><td>$\neg$</td><td>Negation</td><td>$\neg p$</td></tr>
+          <tr><td>عطف</td><td>$\land$</td><td>Conjunction</td><td>$p \land q$</td></tr>
+          <tr><td>فصل</td><td>$\lor$</td><td>Disjunction</td><td>$p \lor q$</td></tr>
+          <tr><td>شرطی</td><td>$\to$</td><td>Implication</td><td>$p \to q$</td></tr>
+          <tr><td>دوشرطی</td><td>$\leftrightarrow$</td><td>Biconditional</td><td>$p \leftrightarrow q$</td></tr>
+        </tbody>
+      </table>
+
+      <!-- جدول colSpan و rowSpan -->
+      <h3>جدول با ادغام سلول (colspan / rowspan)</h3>
+      <table>
+        <caption>جدول ۳ — مقایسه سیستم‌های اثبات</caption>
+        <thead>
+          <tr>
+            <th rowspan="2">سیستم</th>
+            <th colspan="2">ویژگی‌ها</th>
+            <th rowspan="2">کاربرد</th>
+          </tr>
+          <tr>
+            <th>تمامیت</th>
+            <th>سازگاری</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>هیلبرت</td><td>✅</td><td>✅</td><td>مبانی نظری</td>
+          </tr>
+          <tr>
+            <td>استنتاج طبیعی</td><td>✅</td><td>✅</td><td>آموزش</td>
+          </tr>
+          <tr>
+            <td>تابلو</td><td>✅</td><td>✅</td><td>اثبات خودکار</td>
+          </tr>
+          <tr>
+            <td>رزولوشن</td><td>✅*</td><td>✅</td><td>SAT Solvers</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align:center; font-size:0.85em;">
+              *فقط برای فرم نرمال عطفی (CNF)
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!-- Definition List -->
+      <h3>واژه‌نامه (Definition List)</h3>
+      <dl>
+        <dt><strong>تاتولوژی</strong> (Tautology)</dt>
+        <dd>گزاره‌ای مرکب که تحت هر تخصیص ارزش، درست است.</dd>
+
+        <dt><strong>تناقض</strong> (Contradiction)</dt>
+        <dd>گزاره‌ای مرکب که تحت هر تخصیص ارزش، نادرست است.</dd>
+
+        <dt><strong>اقناع‌پذیر</strong> (Satisfiable)</dt>
+        <dd>گزاره‌ای مرکب که حداقل یک تخصیص ارزش وجود دارد که آن را درست کند.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+    <!-- ==========================================
+         فصل ۳: نمودارها (Mermaid)
+    ========================================== -->
+    <section id="chap3">
+      <h2>۳. نمودارها</h2>
+
+      <h3>۳.۱ فلوچارت فارسی</h3>
+      <div class="mermaid">
+        %%{init: {"theme": "base", "themeVariables": {"fontSize": "14px"}, "flowchart": {"htmlLabels": true}}}%%
+        flowchart TD
+          A["🟢 شروع"] --> B["ورودی: فرمول φ"]
+          B --> C{"آیا تاتولوژی است؟"}
+          C -->|"بله ✅"| D["چاپ: تاتولوژی"]
+          C -->|"خیر ❌"| E["چاپ: غیر تاتولوژی"]
+          D --> F["🔴 پایان"]
+          E --> F
+
+          style A fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+          style F fill:#FFEBEE,stroke:#C62828,color:#B71C1C
+          style C fill:#FFF3E0,stroke:#EF6C00,color:#E65100
+      </div>
+
+      <h3>۳.۲ نمودار ترتیبی</h3>
+      <div class="mermaid">
+        sequenceDiagram
+          participant U as 👤 کاربر
+          participant P as ⚙️ تجزیه‌گر
+          participant E as 🧮 ارزیاب
+
+          U->>P: ارسال فرمول
+          activate P
+          P->>E: درخت نحوی
+          deactivate P
+          activate E
+          alt تاتولوژی
+            E->>U: ✅ بله
+          else غیر تاتولوژی
+            E->>U: ❌ خیر
+          end
+          deactivate E
+      </div>
+
+      <h3>۳.۳ نمودار کلاسی</h3>
+      <div class="mermaid">
+        classDiagram
+          class Formula {
+            &lt;&lt;abstract&gt;&gt;
+            +evaluate(env) bool
+            +toString() string
+          }
+          class Atom {
+            -name: string
+            +evaluate(env) bool
+          }
+          class Negation {
+            -operand: Formula
+            +evaluate(env) bool
+          }
+          class Conjunction {
+            +evaluate(env) bool
+          }
+          Formula &lt;|-- Atom
+          Formula &lt;|-- Negation
+          Formula &lt;|-- Conjunction
+      </div>
+
+      <h3>۳.۴ نمودار وضعیت</h3>
+      <div class="mermaid">
+        stateDiagram-v2
+          [*] --> Parsing
+          Parsing --> Error: Invalid
+          Error --> Parsing: Retry
+          Parsing --> Evaluating: Valid
+          Evaluating --> Tautology: All TRUE
+          Evaluating --> Contradiction: All FALSE
+          Evaluating --> Satisfiable: Mixed
+          Tautology --> [*]
+          Contradiction --> [*]
+          Satisfiable --> [*]
+      </div>
+
+      <h3>۳.۵ نمودار گانت</h3>
+      <div class="mermaid">
+        gantt
+          title برنامه زمانی پروژه
+          dateFormat YYYY-MM-DD
+          axisFormat %m/%d
+
+          section تحلیل
+          تحلیل نیازمندی‌ها :done, a1, 2025-01-01, 15d
+          طراحی            :done, a2, 2025-01-10, 15d
+
+          section توسعه
+          تجزیه‌گر          :active, b1, 2025-01-20, 25d
+          ارزیاب            :b2, 2025-02-10, 20d
+
+          section تست
+          تست نهایی         :crit, c1, 2025-03-01, 15d
+      </div>
+
+      <h3>۳.۶ نمودار دایره‌ای</h3>
+      <div class="mermaid">
+        pie title Distribution of Logic Articles
+          "Classical" : 35
+          "Intuitionistic" : 25
+          "Modal" : 20
+          "Fuzzy" : 12
+          "Other" : 8
+      </div>
+
+      <h3>۳.۷ نمودار Git</h3>
+      <div class="mermaid">
+        gitGraph
+          commit id: "init"
+          commit id: "parser"
+          branch feature/eval
+          checkout feature/eval
+          commit id: "eval-v1"
+          commit id: "eval-v2"
+          checkout main
+          merge feature/eval tag: "v1.0"
+          commit id: "docs"
+      </div>
+
+      <h3>۳.۸ نمودار ER</h3>
+      <div class="mermaid">
+        erDiagram
+          FORMULA ||--o{ VARIABLE : contains
+          FORMULA ||--|| TRUTH_TABLE : generates
+          FORMULA {
+            int id PK
+            string expression
+            boolean is_tautology
+          }
+          VARIABLE {
+            int id PK
+            string name
+          }
+          TRUTH_TABLE {
+            int id PK
+            int row_count
+          }
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ==========================================
+         فصل ۴: تصاویر و چندرسانه‌ای
+    ========================================== -->
+    <section id="chap4">
+      <h2>۴. تصاویر و چندرسانه‌ای</h2>
+
+      <h3>۴.۱ تصویر ساده</h3>
+      <figure>
+        <img
+          src="https://via.placeholder.com/700x300/1A73E8/FFFFFF?text=Mathematical+Logic+Diagram"
+          alt="نمودار منطق ریاضی"
+          loading="lazy"
+          width="700"
+          height="300"
+        >
+        <figcaption>شکل ۱ — نمودار مفهومی منطق ریاضی</figcaption>
+      </figure>
+
+      <h3>۴.۲ تصویر کنار متن (Float)</h3>
+      <figure class="float-start">
+        <img
+          src="https://via.placeholder.com/250x250/00897B/FFFFFF?text=Mind+Map"
+          alt="نقشه ذهنی"
+          loading="lazy"
+          width="250"
+          height="250"
+        >
+        <figcaption>شکل ۲ — نقشه ذهنی</figcaption>
+      </figure>
+      <p>
+        این متن در کنار تصویر قرار گرفته تا نحوه عملکرد
+        تصاویر شناور (<code>float</code>) را نشان دهد.
+        در تبدیل به MDX این نوع چیدمان باید حفظ یا
+        به شکل مناسبی بازنمایی شود.
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+        از صنعت چاپ و با استفاده از طراحان گرافیک است.
+        چاپگرها
+
+ادامه فایل HTML (از بخش تصاویر شناور):

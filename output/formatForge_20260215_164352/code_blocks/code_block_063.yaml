@@ -1,0 +1,146 @@
+# config/user_config.yaml
+
+# === عمومی ===
+general:
+  language: "fa"                    # زبان رابط: fa | en
+  verbose: true                     # نمایش جزئیات بیشتر
+  color: true                       # خروجی رنگی
+  confirm_before_convert: true      # تأیید قبل از تبدیل
+  confirm_before_deploy: true       # تأیید قبل از استقرار
+  auto_fix_warnings: false          # اصلاح خودکار هشدارها
+  temp_dir: "~/.formatforge/temp/"
+  log_dir: "~/.formatforge/logs/"
+  report_file: "~/.formatforge/central_log.yaml"
+
+# === اسکن ===
+scanner:
+  max_file_size_mb: 100             # حداکثر اندازه فایل
+  supported_formats:
+    - latex   # .tex
+    - html    # .html, .htm, .xhtml
+    - markdown # .md, .mdx, .markdown
+    - docx    # .docx
+    - pdf     # .pdf
+    - rst     # .rst
+    - asciidoc # .adoc, .asciidoc
+    - epub    # .epub
+    - notebook # .ipynb
+  ignore_patterns:
+    - "*.aux"
+    - "*.log"
+    - "*.synctex*"
+    - "*.fls"
+    - "*.fdb_latexmk"
+    - ".git/"
+    - "node_modules/"
+    - "__pycache__/"
+    - ".DS_Store"
+    - "Thumbs.db"
+
+# === متادیتا ===
+metadata:
+  default_author:
+    name: "مهدی سالم"
+    nameEn: "Mahdi Salem"
+    email: "ali@example.com"
+  default_lang: "fa"
+  default_dir: "rtl"
+  slug_max_length: 60
+  slug_transliterate: true          # transliterate فارسی → لاتین
+  ai_provider: "openai"            # openai | anthropic | google | ollama | none
+  ai_model: "gpt-4o"
+  ai_auto_complete:
+    description: true
+    tags: true
+    title_en: true
+    slug: true
+  require_fields:
+    - title
+    - slug
+    - date
+    - lang
+    - dir
+    - author
+
+# === تبدیل ===
+conversion:
+  # --- ریاضی ---
+  math:
+    engine: "katex"                 # katex | mathjax
+    display_mode_delimiters: ["$$", "$$"]
+    inline_mode_delimiters: ["$", "$"]
+    throw_on_error: false
+    macros: {}                      # ماکروهای سفارشی KaTeX
+
+  # --- نمودار ---
+  diagrams:
+    tikz_to: "svg"                  # svg | png
+    tikz_dpi: 300                   # DPI برای PNG
+    mermaid_to: "component"         # component | svg | png
+    mermaid_theme: "base"
+
+  # --- تصویر ---
+  images:
+    optimize: true
+    convert_to_webp: true
+    max_width: 1200
+    quality: 85
+    svg_optimize: true
+
+  # --- کد ---
+  code:
+    add_line_numbers: false
+    default_language: "text"
+    highlight_theme: "github-dark"
+
+  # --- جدول ---
+  tables:
+    complex_to_html: true           # جداول ادغامی → HTML
+    simple_to_markdown: true        # جداول ساده → MD pipe
+
+  # --- فارسی ---
+  persian:
+    preserve_zwnj: true             # حفظ نیم‌فاصله (غیرقابل تغییر!)
+    fix_arabic_yeh: true            # تبدیل ي → ی
+    fix_arabic_keh: true            # تبدیل ك → ک
+    fix_spacing: true               # اصلاح فاصله‌گذاری فارسی
+    numerals: "persian"             # persian | latin | keep
+    quotation_marks: "guillemet"    # guillemet «» | standard ""
+
+  # --- MDX ---
+  mdx:
+    component_style: "import"       # import | inline | global
+    jsx_runtime: "react"            # react | preact
+    mdx_version: 3                  # 2 | 3
+
+# === تست ===
+testing:
+  run_structural: true
+  run_content: true
+  run_math: true
+  run_persian: true
+  run_links: true
+  run_visual: false                 # نیاز به Playwright
+  min_quality_score: 80             # حداقل امتیاز قبول
+  visual_compare_with_source: false # مقایسه بصری با اصل
+
+# === استقرار ===
+deployment:
+  target_dir: "C:/Projects/my-blog/"
+  create_backup: true
+  backup_dir: "~/.formatforge/backups/"
+  overwrite_existing: "ask"         # ask | yes | no | rename
+  post_deploy:
+    open_in_editor: false
+    editor_command: "code"          # VS Code
+    run_dev_server: false
+    dev_command: "npm run dev"
+    git_commit: false
+    git_push: false
+
+# === گزارش ===
+reporting:
+  format: "yaml"                    # yaml | json | csv | html
+  keep_history: true
+  max_history: 1000
+  export_on_milestone: true         # خروجی گزارش هر ۱۰ تبدیل

@@ -1,0 +1,24 @@
+[Prompt]
+بخش metadata در latex_to_mdx.py:
+
+def extract_metadata(path) → DocumentMetadata:
+  1. parse preamble
+  2. استخراج:
+     - \title{} → title
+     - \author{} → author
+     - \date{} → date
+     - \begin{abstract} → description
+     - \hypersetup{pdftitle=..., pdfauthor=...}
+     - کامنت‌های ساختاریافته: % Title: ...
+  3. تشخیص زبان:
+     - وجود xepersian → fa
+     - وجود متن فارسی → fa
+     - وجود babel[english] → en
+  4. تشخیص ویژگی‌ها:
+     - math: وجود $, equation, align
+     - code: وجود lstlisting, minted
+     - tikz: وجود tikzpicture
+     - bibliography: وجود \bibliography یا \printbibliography
+  5. تولید slug از عنوان
+
++ tests/test_latex_metadata.py

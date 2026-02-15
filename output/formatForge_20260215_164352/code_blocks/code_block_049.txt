@@ -1,0 +1,10 @@
+پردازش ترتیبی:
+━━━━━━━━━━━━━━
+
+۱. تحلیل .ipynb (JSON):
+   - metadata → frontmatter
+   - cells → بخش‌های محتوا
+
+۲. تبدیل سلول‌ها:
+   - markdown cell → محتوای MDX مستقیم
+   - code cell →

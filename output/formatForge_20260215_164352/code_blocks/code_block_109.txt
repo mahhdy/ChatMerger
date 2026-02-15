@@ -1,0 +1,27 @@
+[Context] قواعد تبدیل تصویر از پرامپت (بخش ۴.۳.۱ — د)
+
+[Prompt]
+formatforge/core/processors/image_processor.py:
+- ImageProcessor(BaseProcessor)
+
+وظایف:
+1. شناسایی ارجاعات تصویر:
+   - LaTeX: \includegraphics{path}
+   - MD: ![alt](path)
+   - HTML: <img src="path">
+2. استخراج caption و alt text
+3. تبدیل به <Figure> component (یا ![])
+4. مدیریت wrapfigure → float style
+5. مدیریت subfigure → <FigureGrid>
+6. بهینه‌سازی (اگر فعال):
+   - PNG/JPG → WebP (Pillow)
+   - SVG → SVGO optimize (subprocess)
+   - محدود کردن max width
+7. کپی فایل‌ها به assets/
+8. بروزرسانی مسیرها در MDX
+
+- find_image_references(text, format) → list[ImageRef]
+- optimize_image(path, config) → OptimizedImage
+- copy_assets(refs, source_dir, target_dir) → AssetMap
+
++ tests/test_image_processor.py

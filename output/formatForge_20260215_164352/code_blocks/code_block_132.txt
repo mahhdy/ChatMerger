@@ -1,0 +1,23 @@
+[Context] فرآیند استقرار از پرامپت (بخش ۴.۵)
+
+[Prompt]
+1. formatforge/core/deployer/file_organizer.py:
+   - organize_output(result, config) → OrganizedOutput
+   - ساخت ساختار پوشه (article vs book)
+   - نام‌گذاری فایل‌ها طبق الگو
+
+2. formatforge/core/deployer/asset_manager.py:
+   - copy_assets(source, target, optimize) → AssetReport
+   - optimize_images(assets, config)
+   - update_paths_in_mdx(mdx, path_map) → str
+
+3. formatforge/core/deployer/deployer.py:
+   - Deployer
+     - deploy(organized, target_dir, config) → DeployReport
+     - backup_existing(target_dir)
+     - validate_deployment(target_dir)
+     - generate_ancillary_files(_series
+
+<!-- POSSIBLE OVERLAP DETECTED (similarity: 99%) - REVIEW BELOW -->
+
+ادامه و نهایی‌سازی مدل اجرایی:

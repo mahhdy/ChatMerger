@@ -1,0 +1,15 @@
+پردازش ترتیبی:
+━━━━━━━━━━━━━━
+
+۱. تحلیل ساختار:
+   - عنوان‌ها (overline/underline) → #-######
+   - .. contents:: → TOC
+   - .. meta:: → frontmatter
+
+۲. تبدیل Directives:
+   - .. note:: → <Admonition type="note">
+   - .. warning:: → <Admonition type="warning">
+   - .. tip:: → <Admonition type="tip">
+   - .. danger:: → <Admonition type="danger">
+   - .. admonition:: Title → <Admonition title="Title">
+   - .. code-block:: lang →

@@ -1,0 +1,27 @@
+[Context] قواعد کتاب‌نامه از پرامپت (بخش ۴.۳.۱ — ح)
+
+[Prompt]
+formatforge/core/processors/bibliography_processor.py:
+- BibliographyProcessor
+
+وظایف:
+1. خواندن فایل .bib (pybtex یا bibtexparser)
+2. تبدیل به JSON: list[BibEntry]
+   - BibEntry(id, type, author, title, year, publisher, url, lang, ...)
+3. تشخیص زبان مرجع (فارسی/انگلیسی)
+4. تبدیل \cite{key} → <Citation id="key" />
+5. تولید bibliography.json
+6. تولید بخش کتاب‌نامه MDX (اختیاری)
+
+formatforge/core/processors/footnote_processor.py:
+- FootnoteProcessor
+
+وظایف:
+1. استخراج \footnote{} از LaTeX
+2. استخراج \LTRfootnote{} (با حفظ dir)
+3. استخراج \endnote{} → جمع‌آوری در انتها
+4. تبدیل به فرمت MD: [^fn-N]
+5. شماره‌گذاری خودکار
+6. حفظ محتوای فارسی/انگلیسی
+
++ tests/ برای هر دو

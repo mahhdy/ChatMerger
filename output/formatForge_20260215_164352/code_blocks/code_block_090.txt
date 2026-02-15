@@ -1,0 +1,15 @@
+[Context] شِمای متادیتا از پرامپت اصلی (بخش ۴.۲.۱) + ScanReport (بخش ۴.۱.۳)
+
+[Prompt]
+فایل‌های زیر را بساز:
+1. formatforge/models/metadata.py
+   - DocumentMetadata (Pydantic v2 model)
+   - AuthorInfo, SeriesInfo, AssetInfo
+2. formatforge/models/scan_report.py
+   - ScanReport, DocumentInfo, AssetInfo, Warning
+3. formatforge/models/conversion_result.py
+   - ConversionResult, ConversionStats, QualityReport
+4. formatforge/models/__init__.py (re-exports)
+
+تمام فیلدها با type hints و validator و مقادیر پیش‌فرض.
+فیلدهای فارسی: title, description, tags ← str با اعتبارسنجی ZWNJ

@@ -1,0 +1,9 @@
+[Context] مشخصات ساختار پروژه از پرامپت اصلی (بخش ۳.۲)
+
+[Prompt]
+فایل‌های زیر را بساز:
+1. pyproject.toml (با تمام وابستگی‌ها)
+2. formatforge/__init__.py
+3. formatforge/cli/__main__.py (Click CLI پایه با دستورات خالی)
+4. formatforge/exceptions.py (custom exceptions)
+5. Makefile یا justfile برای دستورات توسعه

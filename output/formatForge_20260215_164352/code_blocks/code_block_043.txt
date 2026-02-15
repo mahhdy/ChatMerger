@@ -1,0 +1,33 @@
+- Table → pipe table یا <table>
+
+۳. تبدیل قالب‌بندی:
+   - Bold → **...**
+   - Italic → *...*
+   - Underline → <u>...</u>
+   - Strikethrough → ~~...~~
+   - Superscript → <sup>...</sup>
+   - Subscript → <sub>...</sub>
+   - Highlight → <mark>...</mark>
+
+۴. استخراج تصاویر:
+   - تصاویر embed شده → استخراج به پوشه assets
+   - تبدیل WMF/EMF → PNG/SVG
+   - حفظ alt text
+
+۵. تبدیل فرمول‌ها:
+   - OMML (Office Math) → LaTeX → $...$
+   - MathType OLE → LaTeX (در صورت امکان)
+
+۶. تبدیل جداول:
+   - Simple table → pipe table
+   - Merged cells → <table> HTML
+   - Table style → CSS classes
+
+۷. حفظ RTL:
+   - بررسی paragraph direction
+   - بررسی run-level bidi
+   - تنظیم dir attributes
+
+۸. پانوشت‌ها:
+   - Footnotes → [^fn-N]
+   - Endnotes → بخش پی‌نوشت

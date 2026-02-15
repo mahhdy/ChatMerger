@@ -1,0 +1,15 @@
+[Prompt]
+formatforge/core/processors/rtl_processor.py:
+- RTLProcessor(BaseProcessor)
+  - process(mdx_content, context) → str
+  وظایف:
+    1. اطمینان از dir="rtl" در frontmatter
+    2. اطمینان از lang="fa" در frontmatter
+    3. اضافه کردن dir="ltr" به بلوک‌های کد
+    4. اضافه کردن dir="ltr" به بلوک‌های ریاضی display
+    5. شناسایی و wrap بلوک‌های تمام‌انگلیسی
+    6. حفظ ZWNJ (شمارش قبل/بعد)
+    7. اصلاح تایپوگرافی فارسی (اگر فعال باشد)
+    8. اصلاح کاراکترهای عربی (اگر فعال باشد)
+
++ tests/test_rtl_processor.py

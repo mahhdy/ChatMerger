@@ -1,0 +1,82 @@
+# reports/central_log.yaml
+# این فایل تاریخچه کامل تمام تبدیل‌ها را نگه می‌دارد
+
+version: "1.0"
+last_updated: "2025-07-13T16:45:00+03:30"
+total_conversions: 42
+total_documents: 128
+total_failures: 3
+
+conversions:
+  - id: "conv_20250713_153042"
+    timestamp: "2025-07-13T15:30:42+03:30"
+    status: "success"           # success | partial | failed
+    
+    input:
+      path: "C:/Users/ali/Documents/logic-book/"
+      type: "directory"
+      structure: "multi_chapter_book"
+      format: "latex"
+      files_count: 7
+      total_size_bytes: 245000
+    
+    output:
+      path: "C:/Projects/my-blog/content/books/logic-foundations/"
+      mdx_files: 3
+      asset_files: 6
+      total_size_bytes: 152000
+      quality_score: 95
+    
+    metadata:
+      title: "مبانی منطق ریاضی و اثبات‌های صوری"
+      slug: "logic-foundations"
+      lang: "fa"
+      type: "book"
+      chapters: 3
+    
+    stats:
+      duration_seconds: 38
+      formulas_converted: 42
+      images_converted: 5
+      tables_converted: 7
+      code_blocks: 4
+      footnotes: 8
+      cross_refs: 18
+      zwnj_preserved: "234/234"
+    
+    warnings:
+      - "۲ ارجاع به فصل تبدیل‌نشده"
+      - "فرمول خط ۱۵۷ اصلاح خودکار شد"
+    
+    errors: []
+
+  - id: "conv_20250712_091500"
+    timestamp: "2025-07-12T09:15:00+03:30"
+    status: "partial"
+    # ...
+
+# آمار تجمعی
+statistics:
+  by_format:
+    latex: { count: 25, success: 24, avg_quality: 92 }
+    markdown: { count: 10, success: 10, avg_quality: 97 }
+    html: { count: 4, success: 4, avg_quality: 88 }
+    docx: { count: 2, success: 1, avg_quality: 75 }
+    pdf: { count: 1, success: 0, avg_quality: 0 }
+  
+  by_language:
+    fa: 18
+    en: 12
+    fa_en: 12
+  
+  by_type:
+    article: 30
+    book: 3
+    chapter: 9
+    proof: 0
+  
+  slugs_used:       # برای جلوگیری از تکرار
+    - "de-morgans-laws"
+    - "logic-foundations"
+    - "logic-foundations/ch01-introduction"
+    # ...

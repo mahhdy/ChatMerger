@@ -1,0 +1,19 @@
+[Prompt]
+tests/test_e2e_html.py:
+
+تست کامل تبدیل فایل sample-page.html:
+1. تمام بخش‌ها: header, TOC, chapters 1-8, footnotes, bibliography
+2. بررسی:
+   - metadata از <head>
+   - ۸+ جدول (شامل ادغامی)
+   - ۸+ نمودار Mermaid
+   - ۱۰+ فرمول ریاضی
+   - ۵+ بلوک کد
+   - تصاویر (img, svg, placeholder)
+   - ویدئو و صوت
+   - عناصر خاص: mark, kbd, abbr, details, progress
+   - فرم
+   - RTL/LTR blocks
+   - پانوشت‌ها
+   - کتاب‌نامه
+   - ZWNJ حفظ شده

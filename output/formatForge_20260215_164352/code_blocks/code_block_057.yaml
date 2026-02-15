@@ -1,0 +1,47 @@
+# config/website_config.yaml
+
+website:
+  name: "بلاگ ریاضی من"
+  framework: "next"          # next | astro | gatsby | docusaurus | custom
+  content_dir: "content/"    # مسیر نسبی محتوا
+  assets_dir: "public/assets/"  # مسیر نسبی asset ها
+  base_url: "https://mysite.com"
+
+  paths:
+    articles: "content/articles/"
+    books: "content/books/"
+    proofs: "content/proofs/"
+    images: "public/assets/images/"
+    files: "public/assets/files/"
+
+  naming:
+    # الگوی نام‌گذاری پوشه‌ها
+    article_dir: "{slug}/"
+    book_dir: "{series_slug}/{chapter_slug}/"
+    # الگوی نام فایل اصلی
+    main_file: "index.mdx"
+    # الگوی نام تصاویر
+    image_file: "{slug}-{type}-{number}.{ext}"
+
+  components:
+    # مسیر کامپوننت‌های MDX
+    theorem: "@/components/mdx/Theorem"
+    definition: "@/components/mdx/Definition"
+    proof: "@/components/mdx/Proof"
+    example: "@/components/mdx/Example"
+    admonition: "@/components/mdx/Admonition"
+    figure: "@/components/mdx/Figure"
+    mermaid: "@/components/mdx/MermaidDiagram"
+    citation: "@/components/mdx/Citation"
+    cross_ref: "@/components/mdx/CrossRef"
+
+  optimization:
+    convert_images_to_webp: true
+    max_image_width: 1200
+    svgo_optimize: true
+    minify_html_in_mdx: false
+
+  git:
+    auto_commit: false       # commit خودکار بعد از استقرار
+    commit_message: "feat(content): add {title}"
+    branch: "content/{slug}"

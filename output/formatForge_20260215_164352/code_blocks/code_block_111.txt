@@ -1,0 +1,10 @@
+- HTML: <div class="mermaid">
+4. تبدیل Mermaid → <MermaidDiagram> component
+5. (اختیاری) رندر Mermaid → SVG با mermaid-cli
+
+- extract_tikz_blocks(text) → list[TikZBlock]
+- compile_tikz_to_svg(tikz_code, config) → str (path to SVG)
+- extract_mermaid_blocks(text, format) → list[MermaidBlock]
+- convert_mermaid_to_component(block) → str
+
++ tests/test_diagram_processor.py

@@ -1,0 +1,19 @@
+[Prompt]
+tests/test_e2e_markdown.py:
+
+تست کامل تبدیل فایل sample-mermaid.md:
+1. خواندن فایل نمونه
+2. اجرای MarkdownToMDXConverter
+3. بررسی:
+   - frontmatter صحیح
+   - imports صحیح
+   - ریاضی: ۱۵+ فرمول parseable
+   - Mermaid: ۱۸ نمودار → <MermaidDiagram>
+   - جداول: ۵+ جدول صحیح
+   - callouts: ۵ نوع → <Admonition>
+   - کد: ۶+ بلوک با زبان صحیح
+   - پانوشت: ۳ پانوشت
+   - لینک‌ها: ۵+ لینک صحیح
+   - ZWNJ: شمارش حفظ شده
+   - JSX: class→className, etc.
+   - dir="rtl" در frontmatter

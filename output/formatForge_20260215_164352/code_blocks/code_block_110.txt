@@ -1,0 +1,17 @@
+[Context] قواعد تبدیل نمودار از پرامپت (بخش ۴.۳.۱ — ب)
+
+[Prompt]
+formatforge/core/processors/diagram_processor.py:
+- DiagramProcessor(BaseProcessor)
+
+وظایف:
+1. شناسایی بلوک‌های TikZ:
+   - \begin{tikzpicture}...\end{tikzpicture}
+   - \begin{pgfplot}...\end{pgfplot}
+2. تبدیل TikZ → SVG:
+   - ساخت فایل .tex موقت (standalone class)
+   - کامپایل با xelatex
+   - تبدیل با dvisvgm
+   - ذخیره SVG
+3. شناسایی بلوک‌های Mermaid:
+   - MD:

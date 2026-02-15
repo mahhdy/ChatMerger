@@ -1,0 +1,26 @@
+پردازش ترتیبی:
+━━━━━━━━━━━━━━
+
+۱. تحلیل <head>:
+   - استخراج <title>, <meta> → frontmatter
+   - شناسایی CSS → تبدیل به className
+   - شناسایی <script> → حذف یا تبدیل
+
+۲. تمیزکاری HTML:
+   - حذف تگ‌های غیرضروری (<div> تودرتو بدون معنا)
+   - تبدیل <br> → newline
+   - تبدیل &nbsp; → فاصله
+   - تبدیل HTML entities → Unicode
+   - حذف inline styles → className
+
+۳. تبدیل ساختاری:
+   - <h1>-<h6> → #-######
+   - <p> → پاراگراف
+   - <strong>/<b> → **...**
+   - <em>/<i> → *...*
+   - <a href> → [text](url)
+   - <img> → <Image>
+   - <ul>/<ol> → لیست MD
+   - <table> → pipe table یا <table> MDX
+   - <blockquote> → > نقل‌قول
+   - <pre><code> →

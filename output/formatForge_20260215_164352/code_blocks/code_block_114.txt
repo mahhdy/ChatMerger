@@ -1,0 +1,30 @@
+[Prompt]
+formatforge/core/converters/jsx_utils.py:
+- convert_html_to_jsx(html) → str
+  - class → className
+  - for → htmlFor
+  - style="color:red" → style={{color:'red'}}
+  - <!-- --> → {/* */}
+  - <br> → <br />
+  - <img> → <img />
+  - <hr> → <hr />
+  - tabindex → tabIndex
+  - onclick → onClick (etc.)
+
+- generate_imports(content) → str
+  - اسکن محتوا برای کامپوننت‌های استفاده‌شده
+  - تولید import statements بر اساس config
+
+COMPONENT_PATTERNS = {
+    '<Theorem': 'Theorem',
+    '<Definition': 'Definition',
+    '<Proof': 'Proof',
+    '<Admonition': 'Admonition',
+    '<Figure': 'Figure',
+    '<MermaidDiagram': 'MermaidDiagram',
+    '<Citation': 'Citation',
+    '<CrossRef': 'CrossRef',
+    '<BilingualBlock': 'BilingualBlock',
+}
+
++ tests/test_jsx_utils.py

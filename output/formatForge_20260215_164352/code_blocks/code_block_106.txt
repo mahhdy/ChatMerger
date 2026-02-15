@@ -1,0 +1,24 @@
+[Context] قواعد تبدیل لینک از پرامپت (بخش ۴.۳.۱ — ز)
+
+[Prompt]
+formatforge/core/processors/link_processor.py:
+- LinkProcessor(BaseProcessor)
+
+وظایف:
+1. \href{url}{text} → [text](url)
+2. \url{url} → [url](url)
+3. \ref{label} → [شماره](#label) (با تعیین شماره)
+4. \cref{label} → [نوع شماره](#label)
+5. \cite{key} → [نویسنده, سال](#ref-key)
+6. \footnote{text} → [^fn-N] ... [^fn-N]: text
+7. \LTRfootnote{text} → [^fn-N] (با dir="ltr")
+8. HTML <a href> → [text](url)
+9. تبدیل لینک‌های بین فصل‌ها (relative paths)
+10. جمع‌آوری ارجاعات (labels → targets map)
+
+- collect_labels(text, format) → dict[str, LabelInfo]
+- collect_citations(text, format) → list[str]
+- collect_footnotes(text, format) → list[FootnoteInfo]
+- resolve_cross_references(content, labels_map) → str
+
++ tests/test_link_processor.py

@@ -1,0 +1,41 @@
+[Prompt]
+formatforge/core/converters/latex_to_mdx.py (بخش ۱):
+- LaTeXToMDXConverter(BaseConverter)
+
+  def convert(path, config) → ConversionResult:
+
+مرحله ۱-۳:
+1. خواندن فایل(ها)
+2. parse با LatexParser
+3. بازگشایی \input/\include
+4. بازگشایی \newcommand ها
+
+مرحله ۴ — تبدیل ساختاری:
+- \chapter{title} → # title
+- \section{title} → ## title
+- \subsection{title} → ### title
+- \subsubsection{title} → #### title
+- \paragraph{title} → ##### title
+- \textbf{text} → **text**
+- \emph{text} / \textit{text} → *text*
+- \underline{text} → <u>text</u>
+- \sout{text} → ~~text~~
+- \texttt{text} → `text`
+- \textsc{text} → <span style="fontVariant:'small-caps'">
+- \begin{itemize} → - لیست
+- \begin{enumerate} → 1. لیست
+- \begin{description} → definition list
+- \begin{quote} / \begin{quotation} → > نقل‌قول
+- خط خالی → پاراگراف جدید
+- ~ → non-breaking space
+- \\ → خط جدید
+- \clearpage, \newpage → ---
+- \maketitle → حذف (اطلاعات در frontmatter)
+- \tableofcontents → حذف (TOC خودکار)
+
+- convert_node(node) → str (recursive)
+- convert_command(cmd) → str
+- convert_environment(env) → str
+- convert_text(text) → str (escape JSX chars)
+
++ tests/test_latex_structure.py

@@ -1,0 +1,15 @@
+[Context] دستورات CLI از پرامپت اصلی (بخش ۷)
+
+[Prompt]
+formatforge/cli/ را کامل کن:
+1. cli/__main__.py — گروه اصلی Click
+2. cli/commands/scan.py — دستور scan (skeleton)
+3. cli/commands/convert.py — دستور convert (skeleton)
+4. cli/commands/test_cmd.py — دستور test (skeleton)
+5. cli/commands/deploy.py — دستور deploy (skeleton)
+6. cli/commands/report.py — دستور report (skeleton)
+7. cli/commands/doctor.py — دستور doctor (بررسی وابستگی‌ها)
+8. cli/commands/run.py — دستور run (all-in-one)
+
+هر دستور: Click command با options صحیح + Rich console output
+doctor: بررسی نصب pandoc, xelatex, node, mermaid-cli, etc.

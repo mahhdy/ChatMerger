@@ -1,0 +1,14 @@
+[Context] خروجی ScanReport و رابط تعاملی از پرامپت (بخش ۴.۱.۳ و ۴.۱.۴)
+
+[Prompt]
+1. formatforge/core/scanner/scanner.py:
+   - Scanner class
+     - scan(input_path) → ScanReport
+     - یکپارچه‌سازی file_detector + structure_analyzer + archive_handler
+
+2. formatforge/cli/commands/scan.py (تکمیل):
+   - نمایش زیبای ScanReport با Rich
+   - تأیید تعاملی (T/E/F/A/Q)
+   - اصلاح خودکار encoding
+
++ tests/test_scanner.py

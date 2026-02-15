@@ -1,0 +1,8 @@
+[Prompt]
+formatforge/core/scanner/archive_handler.py:
+- extract_archive(path, temp_dir) → ExtractedArchive
+  - پشتیبانی: ZIP, RAR (اختیاری), 7Z (اختیاری), TAR.GZ
+  - تشخیص encoding نام فایل‌ها (فارسی)
+  - بازگشت: مسیر استخراج + لیست فایل‌ها
+- cleanup_temp(path)
+- is_archive(path) → bool

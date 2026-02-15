@@ -1,0 +1,22 @@
+[Prompt]
+formatforge/core/converters/latex_cleaner.py:
+- LaTeXCleaner
+
+لیست کامل دستورات قابل حذف:
+- صفحه‌بندی: \geometry, \pagestyle, \fancyhf, \headrulewidth, ...
+- فونت (برای وب): \settextfont, \setlatintextfont, \setdigitfont, ...
+- پکیج‌ها: تمام \usepackage{} (اطلاعاتشان استخراج شده)
+- تنظیمات: \pgfplotsset, \usetikzlibrary (مگر برای TikZ→SVG)
+- شمارنده‌ها: \setcounter, \newcounter
+- فضای عمودی: \vspace, \vfill, \bigskip, \medskip, \smallskip
+- فضای افقی: \hspace, \hfill, \quad, \qquad (بعضی حفظ)
+- صفحه‌شکن: \clearpage, \newpage → ---
+- خالی: \phantom, \hphantom, \vphantom
+- رنگ تعریفی: \definecolor (اطلاعات استخراج شده)
+- Layout: \begin{center} → style, \centering → style
+
+- clean(content) → str
+- REMOVABLE_COMMANDS: set[str]
+- CONVERTIBLE_COMMANDS: dict[str, Callable]
+
++ tests/test_latex_cleaner.py

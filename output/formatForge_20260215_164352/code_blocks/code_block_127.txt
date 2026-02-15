@@ -1,0 +1,29 @@
+[Prompt]
+formatforge/core/processors/tikz_compiler.py:
+- TikZCompiler
+
+وظایف:
+1. ساخت فایل standalone .tex:
+   \documentclass[tikz,border=5pt]{standalone}
+   \usepackage{pgfplots}\pgfplotsset{compat=1.18}
+   \usepackage{fontspec}
+   \usepackage{xepersian}
+   \settextfont{Vazirmatn}
+   \begin{document}
+   [TikZ code here]
+   \end{document}
+
+2. کامپایل: xelatex → PDF
+3. تبدیل: dvisvgm یا pdf2svg → SVG
+4. بهینه‌سازی SVG (SVGO)
+5. کَش بر اساس hash محتوا
+
+- compile_tikz(code, config) → SVGResult
+- create_standalone_tex(code, packages) → str
+- compile_tex_to_pdf(tex_path) → pdf_path
+- convert_pdf_to_svg(pdf_path) → svg_path
+- optimize_svg(svg_path) → svg_path
+- get_cache_key(code) → str
+- check_cache(key) → Optional[str]
+
++ tests/test_tikz_compiler.py

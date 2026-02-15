@@ -1,0 +1,38 @@
+[Context] قواعد تبدیل ریاضی از پرامپت (بخش ۴.۳.۱ — الف)
+
+[Prompt]
+formatforge/core/processors/math_processor.py:
+- MathProcessor(BaseProcessor)
+  - process(content, context) → str
+
+وظایف:
+1. شناسایی فرمول‌های inline: $...$ و \(...\)
+2. شناسایی فرمول‌های display:
+   - $$...$$ و \[...\]
+   - \begin{equation}...\end{equation}
+   - \begin{align}...\end{align}
+   - \begin{gather}...\end{gather}
+   - \begin{multline}...\end{multline}
+3. تبدیل LaTeX environments:
+   - equation → $$...$$ (با حفظ label)
+   - align → $$\begin{aligned}...$$
+   - cases, pmatrix, bmatrix → حفظ درون $$
+4. تبدیل \label{eq:x} → {/* label: eq-x */} یا id
+5. تبدیل \ref{eq:x} → لینک
+6. بازگشایی ماکروهای ریاضی سفارشی (\newcommand)
+7. اعتبارسنجی با KaTeX parse (اختیاری)
+8. حفظ \text{فارسی} درون فرمول
+
+- extract_math_blocks(text) → list[MathBlock]
+  - MathBlock(content, type, label, line_number)
+- validate_math_syntax(latex) → (bool, error_message)
+- count_math_blocks(text) → MathStats
+
++ tests/test_math_processor.py با نمونه‌های:
+  - فرمول ساده inline
+  - فرمول display
+  - align با چند خط
+  - cases
+  - ماتریس
+  - فرمول با \text{فارسی}
+  - ماکروی سفارشی

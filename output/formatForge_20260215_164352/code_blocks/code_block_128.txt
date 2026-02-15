@@ -1,0 +1,30 @@
+[Prompt]
+tests/test_e2e_latex.py:
+
+تست کامل تبدیل فایل sample-book.tex:
+
+1. تشخیص: کتاب LaTeX فارسی-انگلیسی
+2. استخراج metadata:
+   - عنوان فارسی + انگلیسی
+   - نویسنده
+   - xepersian detected → lang=fa
+3. تبدیل ۵ فصل:
+   - فصل ۱: مقدمه (تعریف + قضیه + اثبات + مثال)
+   - فصل ۲: جدول ارزش (جداول + عملگرها)
+   - فصل ۳: منطق محمولات (اثبات + درخت + الگوریتم)
+   - فصل ۴: نمودارها (TikZ→SVG + pgfplots + wrapfigure + subfigure)
+   - فصل ۵: راهنما (longtable + lstlisting)
+4. بررسی:
+   - ۸۷+ فرمول (equation, align, cases, pmatrix)
+   - ۱۲+ جدول (tabular, longtable, sidewaystable)
+   - ۶+ نمودار TikZ → SVG
+   - ۴+ بلوک کد
+   - ۸+ قضیه/تعریف/اثبات → کامپوننت
+   - ۱۵+ ارجاع متقاطع
+   - ۸+ پانوشت
+   - ۱۵ مرجع → bibliography.json
+   - ZWNJ: شمارش حفظ شده
+   - \lr{}, \begin{latin}: تبدیل صحیح
+   - کتاب‌نامه: .bib → JSON
+   - frontmatter کامل
+   - imports صحیح

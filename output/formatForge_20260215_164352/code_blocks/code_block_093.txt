@@ -1,0 +1,21 @@
+[Context] خلاصه معماری تبدیل از پرامپت (بخش ۴.۳)
+
+[Prompt]
+فایل‌های زیر را بساز:
+1. formatforge/core/converters/base.py
+   - BaseConverter (abstract class)
+     - detect(file_path) → bool
+     - extract_metadata(file_path) → DocumentMetadata
+     - convert(file_path, config) → ConversionResult
+     - validate_output(result) → QualityReport
+   - ConverterRegistry (registry pattern)
+     - register(format, converter_class)
+     - get_converter(format) → BaseConverter
+     - detect_format(file_path) → str
+
+2. formatforge/core/processors/base.py
+   - BaseProcessor (abstract)
+     - process(content, context) → str
+   - ProcessorPipeline
+     - add(processor)
+     - run(content, context) → str

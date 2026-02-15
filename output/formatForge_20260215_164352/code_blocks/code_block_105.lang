@@ -1,0 +1,11 @@
+3. تشخیص زبان (از class/language attribute)
+4. حفظ شماره خطوط (اختیاری)
+5. حفظ عنوان (caption → title)
+6. حفظ label → id
+7. اطمینان از direction: ltr
+8. تبدیل inline: \texttt{} و \verb|| → `...`
+
+- extract_code_blocks(text, format) → list[CodeBlock]
+- detect_language(code) → str (heuristic)
+
++ tests/test_code_processor.py

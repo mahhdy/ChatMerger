@@ -1,0 +1,1 @@
+خروجی: <MermaidDiagram chart={`flowchart TD\n  A-->B`} />

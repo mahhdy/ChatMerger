@@ -1,0 +1,17 @@
+[Prompt]
+formatforge/core/persian/bidi_handler.py:
+- wrap_rtl_block(content) → str
+  - اضافه کردن dir="rtl" به بلوک فارسی
+- wrap_ltr_block(content) → str
+  - اضافه کردن dir="ltr" به بلوک انگلیسی/کد
+- detect_block_direction(text) → "rtl" | "ltr" | "mixed"
+- split_bidi_segments(text) → list[BidiSegment]
+  - BidiSegment(text, direction, lang)
+- convert_latex_lr(text) → str
+  - \lr{text} → <span dir="ltr">text</span>
+  - \rl{text} → <span dir="rtl">text</span>
+  - \begin{latin}...\end{latin} → <div dir="ltr" lang="en">...</div>
+  - \begin{persian}...\end{persian} → <div dir="rtl" lang="fa">...</div>
+  - \LTRfootnote{} → پانوشت با dir="ltr"
+
++ tests/test_bidi_handler.py

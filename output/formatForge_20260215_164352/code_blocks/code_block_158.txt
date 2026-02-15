@@ -1,0 +1,9 @@
+---
+
+**S01-C1 کامل شد.** ✅
+
+**چت بعدی (S01-C2):** مدل‌های Pydantic — `models/metadata.py`, `models/scan_report.py`, `models/conversion_result.py`
+
+آماده‌اید ادامه دهم؟
+
+# اسپرینت S01 — چت ۲: مدل‌های Pydantic

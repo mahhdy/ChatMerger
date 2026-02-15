@@ -1,0 +1,21 @@
+- [stem]++++ → $$...$$
+   - [NOTE]==== → <Admonition type="note">
+   - [WARNING]==== → <Admonition type="warning">
+   - [TIP]==== → <Admonition type="tip">
+   - [IMPORTANT]==== → <Admonition type="important">
+   - [CAUTION]==== → <Admonition type="caution">
+   - [quote,author]____ → <Blockquote>
+   - [%collapsible]==== → <Details>
+   - |=== table → pipe table یا <table>
+   - image::path[] → <Image>
+
+۴. تبدیل Inline:
+   - *bold* → **bold**
+   - _italic_ → *italic*
+   - `mono` → `mono`
+   - stem:[...] → $...$
+   - <<anchor>> → [text](#anchor)
+   - footnote:[text] → [^fn]
+   - btn:[text] → <Button>
+   - kbd:[key] → <kbd>key</kbd>
+   - menu:path[] → breadcrumb

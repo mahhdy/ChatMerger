@@ -1,0 +1,14 @@
+[Context] الگوریتم شناسایی ساختار از پرامپت (بخش ۴.۱.۲)
+
+[Prompt]
+formatforge/core/scanner/structure_analyzer.py:
+- analyze_directory(path) → StructureAnalysis
+  - تشخیص: single_doc | independent_articles | multi_chapter_book | related_collection
+- analyze_latex_project(path) → LatexProjectInfo
+  - پیدا کردن main file
+  - تحلیل \input/\include
+  - تحلیل \bibliography
+  - ساخت dependency graph
+- analyze_markdown_collection(path) → list[DocInfo]
+- find_assets(path) → list[AssetInfo]
+  - تصاویر، فونت‌ها، CSS، bib

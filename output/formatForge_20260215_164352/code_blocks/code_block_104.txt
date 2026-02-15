@@ -1,0 +1,9 @@
+[Context] قواعد تبدیل کد از پرامپت (بخش ۴.۳.۱ — و)
+
+[Prompt]
+formatforge/core/processors/code_processor.py:
+- CodeProcessor(BaseProcessor)
+  - process(content, context) → str
+
+وظایف:
+1. تبدیل LaTeX listings/minted/verbatim →

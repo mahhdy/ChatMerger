@@ -1,0 +1,13 @@
+[Context] فایل تنظیمات از پرامپت اصلی (بخش ۶.۱)
+
+[Prompt]
+فایل‌های زیر را بساز:
+1. formatforge/config/schema.py
+   - AppConfig (Pydantic Settings)
+   - ScannerConfig, MetadataConfig, ConversionConfig
+   - PersianConfig, TestingConfig, DeploymentConfig
+2. formatforge/config/loader.py
+   - load_config(path) → AppConfig
+   - merge_configs(default, user) → AppConfig
+   - get_config() → singleton
+3. config/default_config.yaml (مقادیر پیش‌فرض)

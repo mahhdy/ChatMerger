@@ -1,0 +1,20 @@
+- <figure> → <Figure>
+   - <details> → <Details> کامپوننت
+   - <sup>/<sub> → <sup>/<sub>
+   - <mark> → <mark>
+   - <kbd> → <kbd>
+   - <abbr> → <abbr>
+   - <time> → <time>
+   - <address> → <address>
+
+۴. تبدیل فرم‌ها:
+   - <form>, <input>, <select> → <Form> کامپوننت (یا حذف)
+
+۵. تبدیل رسانه:
+   - <video>/<iframe> → <Video>/<Embed>
+   - <audio> → <Audio>
+   - <svg> → فایل مجزا + <Image>
+
+۶. حفظ dir/lang:
+   - <div dir="ltr"> → حفظ
+   - <span lang="en"> → حفظ

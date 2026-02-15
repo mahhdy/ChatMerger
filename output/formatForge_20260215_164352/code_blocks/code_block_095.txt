@@ -1,0 +1,11 @@
+[Context] جدول فرمت‌ها و الگوریتم شناسایی از پرامپت (بخش ۴.۱.۲)
+
+[Prompt]
+formatforge/core/scanner/file_detector.py:
+- detect_format(path) → str
+  بر اساس: پسوند + magic bytes + تحلیل محتوا
+  فرمت‌ها: latex, html, markdown, docx, pdf, rst, asciidoc, epub, notebook
+- detect_encoding(path) → EncodingInfo(name, has_bom, confidence)
+- detect_language(content) → LanguageInfo(primary, has_persian, has_english)
+
++ tests/test_file_detector.py با فایل‌های واقعی

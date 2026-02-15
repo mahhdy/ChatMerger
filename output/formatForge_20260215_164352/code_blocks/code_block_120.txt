@@ -1,0 +1,30 @@
+[Context] قواعد LaTeX→MDX از پرامپت (بخش ۴.۳.۲ — LaTeX → MDX)
+
+[Prompt]
+formatforge/core/converters/latex_parser.py:
+- LatexParser
+  - parse(content) → LatexDocument
+  - LatexDocument:
+      preamble: PreambleInfo
+      body: list[LatexNode]
+
+  - PreambleInfo:
+      document_class: str
+      packages: list[PackageInfo]
+      custom_commands: dict[str, str]
+      custom_environments: dict[str, EnvInfo]
+      fonts: FontConfig
+      title, author, date
+
+  - LatexNode (union type):
+      TextNode, CommandNode, EnvironmentNode, MathNode,
+      CommentNode, GroupNode
+
+- parse_preamble(text) → PreambleInfo
+- parse_body(text) → list[LatexNode]
+- expand_macros(nodes, commands) → list[LatexNode]
+- resolve_inputs(nodes, base_dir) → list[LatexNode]
+  - \input{file} → محتوای فایل
+  - \include{file} → محتوای فایل
+
++ tests/test_latex_parser.py

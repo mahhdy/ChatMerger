@@ -1,0 +1,27 @@
+[Prompt]
+formatforge/core/converters/latex_book_converter.py:
+- LaTeXBookConverter
+
+وظایف:
+1. تشخیص ساختار کتاب:
+   - main.tex با \input{chapter01}
+   - یا فایل‌های ch01.tex, ch02.tex مستقل
+2. تبدیل هر فصل به یک فایل MDX مجزا
+3. تولید _series.json:
+   {
+     "title": "مبانی منطق ریاضی",
+     "slug": "logic-foundations",
+     "chapters": [
+       {"order": 0, "slug": "00-introduction", "title": "مقدمه"},
+       {"order": 1, "slug": "01-propositional-logic", "title": "منطق گزاره‌ای"},
+       ...
+     ],
+     "bibliography": "bibliography.json"
+   }
+4. اصلاح ارجاعات بین فصل‌ها:
+   - \ref{ch2:thm:demorgan}
+   → [قضیه ۱.۱](/logic-foundations/01-propositional-logic#thm-demorgan)
+5. مدیریت assets مشترک vs اختصاصی هر فصل
+6. تولید bibliography.json مشترک
+
++ tests/test_latex_book.py

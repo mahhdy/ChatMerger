@@ -1,0 +1,33 @@
+[Context] قواعد تبدیل جدول از پرامپت (بخش ۴.۳.۱ — ج)
+
+[Prompt]
+formatforge/core/processors/table_processor.py:
+- TableProcessor(BaseProcessor)
+
+وظایف:
+1. تحلیل LaTeX tabular/tabularx/longtable → TableModel
+   - TableModel(headers, rows, caption, label, merged_cells, styles)
+2. تحلیل HTML <table> → TableModel
+3. تصمیم‌گیری خروجی:
+   - ساده (بدون ادغام) → Markdown pipe table
+   - پیچیده (colspan/rowspan/رنگ) → <table> HTML درون MDX
+4. تبدیل LaTeX:
+   - \multirow{n}{width}{text}
+   - \multicolumn{n}{align}{text}
+   - \rowcolors{}{}{} → CSS classes
+   - \toprule/\midrule/\bottomrule → border styles
+   - \caption{} → <caption>
+5. حفظ dir="rtl" برای جداول فارسی
+6. حفظ فرمول‌های $...$ درون سلول
+
+- parse_latex_table(text) → TableModel
+- parse_html_table(html) → TableModel
+- render_markdown_table(model) → str
+- render_html_table(model) → str
+
++ tests/test_table_processor.py با:
+  - جدول ساده
+  - جدول با multirow/multicolumn
+  - جدول رنگی
+  - جدول با فرمول
+  - جدول فارسی

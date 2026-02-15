@@ -1,0 +1,27 @@
+[Prompt]
+formatforge/core/processors/admonition_processor.py:
+- AdmonitionProcessor(BaseProcessor)
+
+وظایف:
+1. LaTeX tcolorbox / custom environments → <Admonition>
+2. LaTeX theorem/definition/proof/example → <Theorem>/<Definition>/<Proof>
+3. MD callouts: > [!NOTE], > [!WARNING], ... → <Admonition>
+4. HTML custom boxes (.note, .warning, ...) → <Admonition>
+5. RST admonitions: .. note::, .. warning:: → <Admonition>
+6. details/summary → <Details>
+7. نگاشت محیط‌های LaTeX به کامپوننت‌ها:
+
+ENVIRONMENT_MAP = {
+    'theorem': ('Theorem', {}),
+    'lemma': ('Theorem', {'type': 'lemma'}),
+    'corollary': ('Theorem', {'type': 'corollary'}),
+    'definition': ('Definition', {}),
+    'example': ('Example', {}),
+    'proof': ('Proof', {}),
+    'remark': ('Admonition', {'type': 'note'}),
+    'warningbox': ('Admonition', {'type': 'warning'}),
+    'notebox': ('Admonition', {'type': 'note'}),
+    # tcolorbox سفارشی → بر اساس عنوان/رنگ تشخیص
+}
+
++ tests/test_admonition_processor.py

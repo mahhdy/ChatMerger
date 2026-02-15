@@ -1,0 +1,29 @@
+[Context] بررسی‌های پیش از تبدیل از پرامپت (بخش ۴.۲.۵)
+
+[Prompt]
+formatforge/core/quality/preflight.py:
+- PreflightChecker
+
+  def check(scan_report, config) → PreflightReport:
+
+بررسی‌ها:
+1. encoding_check(files) → list[Issue]
+2. structure_check(files, format) → list[Issue]
+3. dependency_check(files, assets) → list[Issue]
+4. content_check(files) → list[Issue]
+   - math syntax validation
+   - table structure validation
+5. trial_conversion(file, converter) → TrialResult
+   - تبدیل ۱۰٪ اول
+   - بررسی خروجی
+6. estimate_conversion(scan_report) → Estimate
+   - زمان تقریبی
+   - حجم تقریبی خروجی
+
+- PreflightReport:
+    issues: list[Issue]
+    estimate: Estimate
+    readiness_score: int (0-100)
+    can_proceed: bool
+
++ CLI integration: نمایش زیبا با Rich

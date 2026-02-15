@@ -1,0 +1,26 @@
+[Context] قواعد HTML→MDX از پرامپت (بخش ۴.۳.۲ — HTML → MDX)
+
+[Prompt]
+formatforge/core/converters/html_to_mdx.py:
+- HTMLToMDXConverter(BaseConverter)
+
+  def convert(path, config) → ConversionResult:
+
+پردازش ترتیبی:
+1. خواندن + تشخیص encoding
+2. parse با BeautifulSoup
+3. استخراج metadata از <head>:
+   - <title>, <meta name/property>, OG tags
+4. تمیزکاری HTML:
+   - حذف <script> (بجز math/mermaid)
+   - حذف <style> → استخراج CSS classes
+   - حذف div تودرتوی بی‌معنا
+5. تبدیل ساختاری:
+   - <h1>-<h6> → #-######
+   - <p> → پاراگراف
+   - <strong>/<b> → **...**
+   - <em>/<i> → *...*
+   - <a href> → [text](url)
+   - <ul>/<ol> → لیست
+   - <blockquote> → > نقل‌قول
+   - <pre><code> →

@@ -1,0 +1,21 @@
+[Prompt]
+ادامه latex_to_mdx.py (بخش ۲):
+
+تبدیل محیط‌ها:
+- \begin{theorem}[title]{label} → <Theorem id="label" title="title">
+- \begin{definition}... → <Definition>
+- \begin{proof}... → <Proof>
+- \begin{example}... → <Example>
+- newtcbtheorem environments → تشخیص نوع + تبدیل
+- \begin{figure}...\caption{text}\label{fig:x}
+  → <Figure src="..." caption="text" id="fig-x">
+- \begin{wrapfigure}{l}{0.4\textwidth}
+  → <Figure float="left" width="40%">
+- \begin{subfigure}... → <FigureGrid>
+- \begin{table}...\caption{}
+  → <table> با caption
+- \begin{sidewaystable}
+  → <div className="landscape-table"><table>
+- \begin{algorithm}[H]... → شبه‌کد یا کد
+- \begin{lstlisting}[language=python]
+  →

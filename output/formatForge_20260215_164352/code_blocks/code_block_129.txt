@@ -1,0 +1,37 @@
+[Context] سطوح تست از پرامپت (بخش ۴.۴.۱)
+
+[Prompt]
+formatforge/core/quality/ — کامل:
+
+1. structural_test.py:
+   - test_frontmatter_valid(mdx) → bool
+   - test_jsx_syntax(mdx) → bool
+   - test_imports_valid(mdx) → bool
+   - test_encoding(path) → bool
+   - test_mdx_compiles(mdx) → bool
+
+2. content_test.py:
+   - compare_element_counts(source, output) → ContentReport
+   - count_headings, count_formulas, count_images,
+     count_tables, count_code_blocks, count_footnotes,
+     count_words
+
+3. math_test.py:
+   - test_katex_parse(mdx) → MathTestReport
+   - extract_and_validate_all_formulas(mdx)
+
+4. rtl_test.py:
+   - test_dir_rtl_set(mdx) → bool
+   - test_lang_fa_set(mdx) → bool
+   - test_zwnj_preserved(source, output) → ZWNJReport
+   - test_quotes_correct(mdx) → bool
+   - test_ltr_blocks_correct(mdx) → bool
+
+5. link_test.py:
+   - test_internal_links(mdx) → LinkReport
+   - test_asset_links(mdx, assets_dir) → LinkReport
+   - test_cross_chapter_links(mdx_files) → LinkReport
+
+6. quality_score.py:
+   - calculate_quality_score(source, output, reports) → int (0-100)
+   - (الگوریتم از بخش ۴.۴.۲ پرامپت)

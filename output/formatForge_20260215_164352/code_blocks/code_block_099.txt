@@ -1,0 +1,23 @@
+[Context] قواعد ZWNJ از پرامپت (بخش ۴.۳.۱ — ط)
+
+[Prompt]
+formatforge/core/persian/zwnj_handler.py:
+- ZWNJ = '\u200c'
+- count_zwnj(text) → int
+- validate_zwnj_preserved(before, after) → ZWNJReport
+  - count_before, count_after, positions_lost
+- find_zwnj_positions(text) → list[int]
+- fix_common_zwnj_issues(text) → str
+  - "می روم" → "می‌روم"
+  - "کتاب ها" → "کتاب‌ها"
+  - (با دیکشنری پیشوند/پسوند فارسی)
+- protect_zwnj(text) → (protected_text, restoration_map)
+  - جایگزینی ZWNJ با placeholder قبل از پردازش
+- restore_zwnj(text, map) → str
+  - بازگرداندن ZWNJ ها
+
+PERSIAN_PREFIXES = ["می", "نمی", "بر", "در", "بی", ...]
+PERSIAN_SUFFIXES = ["ها", "های", "ای", "ام", "ات", "اش",
+                     "تر", "ترین", "گر", "ور", ...]
+
++ tests/test_zwnj_handler.py با ۲۰+ مورد تست

@@ -1,0 +1,36 @@
+[Context] قواعد MD→MDX از پرامپت (بخش ۴.۳.۲ — Markdown → MDX)
+
+[Prompt]
+formatforge/core/converters/md_to_mdx.py:
+- MarkdownToMDXConverter(BaseConverter)
+
+  def detect(path) → bool
+  def extract_metadata(path) → DocumentMetadata
+  def convert(path, config) → ConversionResult
+
+پردازش ترتیبی:
+1. خواندن فایل + بررسی encoding
+2. تحلیل frontmatter (YAML/TOML)
+3. تکمیل metadata
+4. اجرای ProcessorPipeline:
+   - MathProcessor
+   - CodeProcessor
+   - TableProcessor
+   - ImageProcessor
+   - DiagramProcessor (Mermaid)
+   - AdmonitionProcessor (callouts)
+   - LinkProcessor
+   - FootnoteProcessor
+   - RTLProcessor
+5. تبدیل‌های JSX:
+   - class → className
+   - for → htmlFor
+   - style="..." → style={{...}}
+   - <!-- --> → {/* */}
+   - self-closing tags: <br> → <br />
+6. تولید import ها
+7. ساخت frontmatter نهایی
+8. ترکیب: frontmatter + imports + content
+9. شمارش ZWNJ (before/after)
+
++ tests/test_md_to_mdx.py با فایل sample-mermaid.md

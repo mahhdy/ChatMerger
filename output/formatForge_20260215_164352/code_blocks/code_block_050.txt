@@ -1,0 +1,10 @@
+- code output (text) → بلوک خروجی
+   - code output (image) → <Image>
+   - code output (HTML) → تبدیل HTML
+
+۳. مدیریت خروجی‌ها:
+   - stdout → <Output type="stdout">
+   - stderr → <Output type="stderr">
+   - display_data (image/png) → استخراج + <Image>
+   - display_data (text/html) → تبدیل HTML
+   - execute_result → <Output>

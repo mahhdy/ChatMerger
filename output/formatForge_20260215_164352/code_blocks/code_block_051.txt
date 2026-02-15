@@ -1,0 +1,30 @@
+خروجی نمونه برای یک مقاله:
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+de-morgans-laws/
+├── index.mdx                  ← فایل اصلی MDX
+└── assets/
+    ├── diagram1.svg           ← نمودار تبدیل‌شده از TikZ
+    ├── proof-tree.svg         ← درخت اثبات
+    └── cover.webp             ← تصویر شاخص (بهینه‌شده)
+
+
+خروجی نمونه برای یک کتاب:
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+logic-foundations/
+├── _series.json               ← متادیتای مجموعه
+├── 00-introduction/
+│   ├── index.mdx
+│   └── assets/
+├── 01-propositional-logic/
+│   ├── index.mdx
+│   └── assets/
+│       ├── truth-table.svg
+│       └── demorgan-proof.svg
+├── 02-predicate-logic/
+│   ├── index.mdx
+│   └── assets/
+├── bibliography.json          ← کتاب‌نامه مشترک
+└── shared-assets/
+    └── cover.webp

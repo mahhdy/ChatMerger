@@ -1,0 +1,21 @@
+[Prompt]
+formatforge/core/persian/typography.py:
+- fix_arabic_characters(text) → str
+  - ي → ی (U+064A → U+06CC)
+  - ك → ک (U+0643 → U+06A9)
+  - ٪ → ٪ (اصلاح درصد عربی)
+- fix_persian_quotes(text) → str
+  - "text" → «text»
+  - 'text' → «text» (قابل تنظیم)
+- fix_persian_spacing(text) → str
+  - حذف فاصله قبل از : ؛ ؟ !
+  - اضافه فاصله بعد از . , : ؛
+- convert_numerals(text, target="persian") → str
+  - 0-9 ↔ ۰-۹
+  - فقط در متن فارسی (نه در کد/ریاضی/URL)
+- normalize_persian(text) → str
+  - ترکیب تمام اصلاحات بالا
+- PersianTextProcessor class
+  - process(text, config: PersianConfig) → str
+
++ tests/test_typography.py با ۳۰+ مورد تست

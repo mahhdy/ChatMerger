@@ -1,0 +1,45 @@
+# requirements.txt
+
+# === هسته ===
+click>=8.1                    # CLI framework
+rich>=13.7                    # ترمینال زیبا
+textual>=0.70                 # TUI framework (اختیاری)
+pyyaml>=6.0                   # YAML parsing
+toml>=0.10                    # TOML parsing
+pydantic>=2.5                 # اعتبارسنجی داده
+
+# === تشخیص فایل ===
+python-magic>=0.4             # تشخیص نوع فایل
+chardet>=5.2                  # تشخیص encoding
+
+# === تبدیل‌گرها ===
+pypandoc>=1.13                # رابط Python برای Pandoc
+beautifulsoup4>=4.12          # تحلیل HTML
+lxml>=5.1                     # تحلیل XML/HTML
+python-docx>=1.1              # خواندن DOCX
+pymupdf>=1.23                 # خواندن PDF (fitz)
+pdfplumber>=0.11              # استخراج جدول از PDF
+ebooklib>=0.18                # خواندن EPUB
+nbformat>=5.10                # خواندن Jupyter Notebooks
+
+# === ریاضی ===
+flatlatex>=0.15               # ساده‌سازی LaTeX
+# یا
+pylatexenc>=2.10              # تبدیل LaTeX ← Unicode
+
+# === تصویر ===
+pillow>=10.2                  # پردازش تصویر
+cairosvg>=2.7                 # SVG → PNG
+svgutils>=0.3                 # ویرایش SVG
+
+# === AI (اختیاری) ===
+openai>=1.35                  # OpenAI API
+anthropic>=0.30               # Anthropic API
+google-generativeai>=0.5      # Google Gemini
+
+# === تست ===
+playwright>=1.44              # تست بصری با headless browser
+
+# === گزارش ===
+jinja2>=3.1                   # قالب‌سازی گزارش
+tabulate>=0.9                 # جداول متنی

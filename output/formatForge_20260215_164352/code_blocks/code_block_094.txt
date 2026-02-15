@@ -1,0 +1,19 @@
+[Prompt]
+1. formatforge/utils/logger.py
+   - setup_logger(verbose, log_file)
+   - فرمت فارسی‌پسند (RTL-safe)
+
+2. formatforge/utils/file_utils.py
+   - read_file_safe(path) → (content, encoding, has_bom)
+   - write_file_utf8_bom(path, content)
+   - detect_encoding(path) → str
+   - count_zwnj(text) → int
+   - ensure_directory(path)
+
+3. formatforge/utils/text_utils.py
+   - slugify(text, lang) → str
+   - truncate(text, max_len) → str
+   - is_persian(text) → bool
+   - is_mixed_language(text) → bool
+
+4. تست‌های واحد برای هر سه فایل

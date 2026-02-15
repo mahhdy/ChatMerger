@@ -1,0 +1,13 @@
+ابزار              │ استفاده                   │ نصب
+━━━━━━━━━━━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━
+Pandoc             │ تبدیل‌گر عمومی            │ winget install Pandoc
+XeLaTeX            │ کامپایل LaTeX + TikZ→SVG  │ TeX Live / MiKTeX
+Biber              │ کتاب‌نامه LaTeX            │ همراه TeX Live
+dvisvgm            │ تبدیل TikZ → SVG          │ همراه TeX Live
+ImageMagick        │ تبدیل/بهینه‌سازی تصویر    │ winget install ImageMagick
+SVGO               │ بهینه‌سازی SVG             │ npm install -g svgo
+cwebp              │ تبدیل به WebP             │ همراه libwebp
+Tesseract OCR      │ OCR برای PDF اسکن‌شده     │ winget install Tesseract
+Node.js            │ اجرای Mermaid CLI         │ winget install Node.js
+mermaid-cli        │ رندر Mermaid → SVG/PNG    │ npm install -g @mermaid-js/mermaid-cli
+Playwright         │ تست بصری                  │ pip install playwright

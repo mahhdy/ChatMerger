@@ -1,0 +1,27 @@
+[Context] مشخصات متادیتا از پرامپت (بخش ۴.۲)
+
+[Prompt]
+1. formatforge/core/metadata/extractor.py:
+   - extract_metadata(path, format) → DocumentMetadata
+   - (dispatch به extractor مناسب بر اساس فرمت)
+
+2. formatforge/core/metadata/slug_generator.py:
+   - generate_slug(title, lang, existing_slugs) → str
+   - transliterate_persian(text) → str (Finglish)
+   - ensure_unique(slug, existing) → str
+
+3. formatforge/core/metadata/validator.py:
+   - validate_metadata(meta) → ValidationResult
+   - check_required_fields(meta) → list[str]
+   - check_slug_format(slug) → bool
+
+4. formatforge/ai/metadata_ai.py:
+   - AIMetadataCompleter
+     - complete_description(content) → str
+     - complete_tags(content) → list[str]
+     - complete_title_en(title_fa) → str
+     - suggest_slug(title) → str
+     - complete_all(content, partial_meta) → DocumentMetadata
+   - پشتیبانی: openai, anthropic, ollama, none
+
++ tests/ برای هر ماژول

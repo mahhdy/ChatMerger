@@ -1,0 +1,15 @@
+- <table> → pipe table / HTML table
+   - <figure> → <Figure>
+   - <details> → <Details>
+   - <dl>/<dt>/<dd> → definition list
+6. تبدیل عناصر خاص:
+   - <mark>, <kbd>, <abbr>, <time>, <address>
+   - <sup>, <sub>, <ins>, <del>
+   - <progress>, <meter>
+   - <video>, <audio>, <iframe>
+   - <svg> → فایل مجزا
+7. اجرای ProcessorPipeline
+8. JSX conversion + imports
+9. ZWNJ check
+
++ tests/test_html_to_mdx.py
