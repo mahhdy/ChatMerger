@@ -1,0 +1,147 @@
+%══════════════════════════════════════════════════════════════
+% ادامهٔ پیوست د — نمودار شبکهٔ نهادها
+%══════════════════════════════════════════════════════════════
+
+\begin{tikzpicture}[
+  node distance=2cm,
+  core/.style={
+    draw=MainPurple, fill=MainPurple!15, rounded corners=5pt,
+    minimum width=2.5cm, minimum height=1cm, font=\small\bfseries,
+    align=center, thick
+  },
+  un/.style={
+    draw=MainBlue, fill=MainBlue!10, rounded corners=3pt,
+    minimum width=2cm, minimum height=0.7cm, font=\tiny,
+    align=center
+  },
+  regional/.style={
+    draw=MainGreen, fill=MainGreen!10, rounded corners=3pt,
+    minimum width=2cm, minimum height=0.7cm, font=\tiny,
+    align=center
+  },
+  ngo/.style={
+    draw=MainOrange, fill=MainOrange!10, rounded corners=3pt,
+    minimum width=2cm, minimum height=0.7cm, font=\tiny,
+    align=center
+  },
+  iranian/.style={
+    draw=MainRed, fill=MainRed!10, rounded corners=3pt,
+    minimum width=2cm, minimum height=0.7cm, font=\tiny,
+    align=center
+  },
+  finance/.style={
+    draw=MainYellow!80!black, fill=MainYellow!10, rounded corners=3pt,
+    minimum width=2cm, minimum height=0.7cm, font=\tiny,
+    align=center
+  },
+  link/.style={-, gray!50, thin},
+  stronglink/.style={-, MainPurple!60, thick}
+]
+
+% هستهٔ مرکزی
+\node[core] (iran) at (0,0) {گذار\\ایران};
+
+% سازمان ملل (بالا)
+\node[un] (unsc) at (-3,3.5) {\lr{UNSC}\\شورای امنیت};
+\node[un] (srsg) at (0,3.5) {\lr{SRSG/UNMOIT}\\مأموریت ایران};
+\node[un] (iaea) at (3,3.5) {\lr{IAEA}\\هسته‌ای};
+\node[un] (ohchr) at (-1.5,2.3) {\lr{OHCHR}\\حقوق بشر};
+\node[un] (undp) at (1.5,2.3) {\lr{UNDP}\\توسعه};
+
+% منطقه‌ای (چپ)
+\node[regional] (eu) at (-5,1) {\lr{EU}\\اتحادیهٔ اروپا};
+\node[regional] (osce) at (-5,-0.5) {\lr{OSCE/ODIHR}\\ناظران};
+\node[regional] (oic) at (-5,-2) {\lr{OIC}\\همکاری اسلامی};
+
+% دولت‌ها (راست)
+\node[ngo] (us) at (5,1.5) {آمریکا\\تحریم/مشوق};
+\node[ngo] (china) at (5,0) {چین + روسیه\\وتو/حمایت؟};
+\node[ngo] (turkey) at (5,-1.5) {ترکیه + عربستان\\همسایگان};
+
+% مالی (پایین-راست)
+\node[finance] (wb) at (3,-3) {\lr{WB/IMF}\\بازسازی};
+\node[finance] (fund) at (0,-3.5) {صندوق امانی\\بازسازی ایران};
+
+% ایرانی (پایین-چپ)
+\node[iranian] (const) at (-3,-3) {مجلس مؤسسان\\ایران};
+\node[iranian] (trc) at (-1.5,-2.3) {کمیسیون حقیقت\\ایران};
+\node[iranian] (civil) at (1.5,-2.3) {جامعهٔ مدنی\\ایران};
+
+% NGOها (بالا-راست)
+\node[ngo] (hrw) at (4.5,3) {\lr{HRW/AI}\\حقوق بشر};
+\node[ngo] (ictj) at (3,2.3) {\lr{ICTJ}\\عدالت انتقالی};
+
+% اتصالات قوی
+\draw[stronglink] (iran) -- (srsg);
+\draw[stronglink] (iran) -- (const);
+\draw[stronglink] (iran) -- (trc);
+\draw[stronglink] (iran) -- (civil);
+\draw[stronglink] (iran) -- (fund);
+\draw[stronglink] (srsg) -- (unsc);
+
+% اتصالات عادی
+\draw[link] (iran) -- (eu);
+\draw[link] (iran) -- (osce);
+\draw[link] (iran) -- (oic);
+\draw[link] (iran) -- (us);
+\draw[link] (iran) -- (china);
+\draw[link] (iran) -- (turkey);
+\draw[link] (iran) -- (wb);
+\draw[link] (srsg) -- (ohchr);
+\draw[link] (srsg) -- (undp);
+\draw[link] (srsg) -- (iaea);
+\draw[link] (srsg) -- (hrw);
+\draw[link] (srsg) -- (ictj);
+\draw[link] (fund) -- (wb);
+\draw[link] (fund) -- (eu);
+\draw[link] (trc) -- (ictj);
+\draw[link] (const) -- (eu);
+
+% راهنما
+\node[font=\tiny, MainBlue] at (-5.5,3.5) {$\blacksquare$ سازمان ملل};
+\node[font=\tiny, MainGreen] at (-5.5,3) {$\blacksquare$ منطقه‌ای};
+\node[font=\tiny, MainOrange] at (-5.5,2.5) {$\blacksquare$ دولت‌ها/\lr{NGO}};
+\node[font=\tiny, MainRed] at (-5.5,2) {$\blacksquare$ ایرانی};
+\node[font=\tiny, MainYellow!80!black] at (-5.5,1.5) {$\blacksquare$ مالی};
+
+\end{tikzpicture}
+\caption{شبکهٔ نهادهای کلیدی مرتبط با نظارت بر گذار ایران}
+\label{fig:app-org-network}
+\end{figure}
+
+\sectiondivider
+
+%═══════════════════════════════════════════════════════════
+\section{جمع‌بندی پیوست}
+\label{app:org:conclusion}
+%═══════════════════════════════════════════════════════════
+
+\begin{chaptersummary}
+جمع‌بندی پیوست د — فهرست نهادها و سازمان‌ها:
+
+\begin{enumerate}[nosep]
+\item بیش از \textbf{۸۰ نهاد} در ۹ دسته معرفی شدند: سازمان ملل (۱۴)، منطقه‌ای (۸)، دولت‌ها (۱۴)، \lr{NGO}ها (۱۴)، مالی (۶)، ایرانی (۱۴)، آکادمیک (۱۰)، رسانه‌ای (۷).
+\item \textbf{شورای امنیت سازمان ملل} مرجع تصمیم‌گیری اصلی است — ریسک وتوی چین و روسیه باید مدیریت شود.
+\item \textbf{\lr{SRSG} و مأموریت \lr{UNMOIT}} هستهٔ مرکزی نظارت بین‌المللی خواهد بود.
+\item \textbf{نهادهای ایرانی پیشنهادی} (مجلس مؤسسان، کمیسیون حقیقت، ارتش ملی واحد) \textbf{اصلی‌ترین بازیگران} هستند — مالکیت ملی.
+\item \textbf{چهارگانهٔ ایرانی} (الگوی تونس) و \textbf{تشکل‌های صنفی} نقش میانجی‌گری خواهند داشت.
+\item \textbf{رسانه‌های مستقل ایرانی} باید تقویت شوند — رسانه‌های دولتی خارجی بی‌اعتمادی ایجاد می‌کنند.
+\item \lr{IAEA} نقش ویژه‌ای در بُعد هسته‌ای دارد — مکمل فرآیند سیاسی.
+\item صندوق امانی بازسازی ایران (\$۲.۵-۵B) با مشارکت بانک جهانی، \lr{EU}، و کشورهای کمک‌دهنده تأمین خواهد شد.
+\end{enumerate}
+
+\vspace{0.3cm}
+\textit{ارجاعات:}
+\begin{itemize}[nosep]
+\item نهادها و بازیگران (تفصیلی): \seeChapter{ch:actors}
+\item بودجه‌بندی و تأمین مالی: \seeChapter{ch:budget}
+\item زمان‌بندی و تیم‌سازی: \seeChapter{ch:timeline}
+\item واژه‌نامهٔ تخصصی: \seeChapter{app:glossary}
+\end{itemize}
+\end{chaptersummary}
+
+\chapterend
+
+%══════════════════════════════════════════════════════════════
+% پایان پیوست د
+%══════════════════════════════════════════════════════════════

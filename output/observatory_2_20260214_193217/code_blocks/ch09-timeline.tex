@@ -1,0 +1,697 @@
+% ═══════════════════════════════════════════════════════════════════════════════
+% فصل ۹: زمان‌بندی، تیم‌سازی و ساختارسازی
+% فایل: chapters/ch09-timeline.tex
+% رنگ فصل: زرد (MainYellow)
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\chapteropening{۹}{زمان‌بندی، تیم‌سازی و ساختارسازی}{MainYellow}{%
+برنامه‌ریزی بدون اجرا، رؤیاپردازی است. اجرا بدون برنامه‌ریزی، کابوس.%
+}{پیتر دراکر}
+
+\chapter{زمان‌بندی، تیم‌سازی و ساختارسازی}
+\label{ch:timeline}
+
+\minitoc
+
+% ─────────────────────────────────────────────────────────────────────────────
+% خلاصه اجرایی
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{executivesummary}
+نظارت بین‌المللی بر گذار ایران یک عملیات چندفازی است که از مرحله پیش‌گذار (۶-۱۲ ماه قبل از سقوط رژیم) آغاز و تا ۱۰ سال پس از آن ادامه می‌یابد. این فصل زمان‌بندی تفصیلی پنج فاز، ساختار تیم‌ها در هر فاز، مکانیزم هماهنگی، و ابزارهای مدیریت پروژه را ارائه می‌دهد. تأکید اصلی بر \emph{آمادگی پیش‌گذار} (که اغلب نادیده گرفته می‌شود)، \emph{سرعت عمل در ۷۲ ساعت اول}، و \emph{انتقال تدریجی مسئولیت} به نهادهای ایرانی است. ماتریس \lr{RACI} و نمودار گانت عملیاتی، ابزارهای اجرایی این فصل‌اند.
+\end{executivesummary}
+
+\section{درآمد: زمان به‌عنوان متغیر حیاتی}
+\label{sec:timeline-intro}
+
+در فرایند گذار دموکراتیک، زمان‌بندی صرفاً یک ابزار مدیریتی نیست؛ \emph{متغیر استراتژیک} است. اقدام زودهنگام یا دیرهنگام، هر دو می‌توانند فاجعه‌بار باشند.
+
+\begin{keypoint}
+\textbf{پارادوکس زمان در گذار}: 
+\begin{itemize}[nosep]
+    \item خیلی سریع = بی‌ثباتی، اشتباهات جبران‌ناپذیر
+    \item خیلی آهسته = از دست رفتن فرصت، خستگی مردم، بازگشت اقتدارگرایی
+    \item نقطه بهینه = «به‌اندازه کافی سریع برای حفظ momentum، به‌اندازه کافی محتاط برای جلوگیری از خطا»
+\end{itemize}
+\end{keypoint}
+
+\begin{casestudy}{مصر در مقابل تونس: اهمیت زمان‌بندی}
+مصر پس از سقوط مبارک، به فشار خیابان و نظامیان، انتخابات سریع برگزار کرد (کمتر از ۱ سال) — قبل از آنکه نهادها و احزاب آماده شوند. نتیجه: پیروزی اخوان‌المسلمین، واکنش نظامیان، کودتا. تونس ۲.۵ سال صبر کرد، قانون اساسی توافقی نوشت، و سپس انتخابات برگزار کرد. نتیجه: گذار نسبتاً موفق (هرچند شکننده).
+\end{casestudy}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{نمای کلی فازبندی}
+\label{sec:phasing-overview}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\subsection{پنج فاز عملیات}
+\label{subsec:five-phases}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.3cm,
+    every node/.style={font=\small},
+    phase/.style={rectangle, rounded corners=5pt, minimum width=3cm, minimum height=1.8cm, align=center, text=white, font=\small\bfseries},
+    arrow/.style={-{Stealth[length=3mm]}, very thick, DarkGray},
+    label/.style={font=\footnotesize, align=center, text=DarkGray}
+]
+    % Phases
+    \node[phase, fill=MediumGray] (p0) {فاز ۰\\پیش‌گذار\\{\footnotesize ۶-۱۲ ماه قبل}};
+    \node[phase, fill=MainRed, right=0.5cm of p0] (p1) {فاز ۱\\تثبیت\\{\footnotesize ماه ۱-۶}};
+    \node[phase, fill=MainOrange, right=0.5cm of p1] (p2) {فاز ۲\\نهادسازی\\{\footnotesize ماه ۶-۲۴}};
+    \node[phase, fill=MainGreen, right=0.5cm of p2] (p3) {فاز ۳\\تحکیم\\{\footnotesize ماه ۲۴-۶۰}};
+    \node[phase, fill=MainBlue, right=0.5cm of p3] (p4) {فاز ۴\\پی‌گیری\\{\footnotesize ماه ۶۰-۱۲۰}};
+    
+    % Arrows
+    \draw[arrow] (p0) -- (p1);
+    \draw[arrow] (p1) -- (p2);
+    \draw[arrow] (p2) -- (p3);
+    \draw[arrow] (p3) -- (p4);
+    
+    % Labels below
+    \node[label, below=0.4cm of p0] {آمادگی\\برنامه‌ریزی};
+    \node[label, below=0.4cm of p1] {امنیت\\نظم اولیه};
+    \node[label, below=0.4cm of p2] {قانون اساسی\\انتخابات};
+    \node[label, below=0.4cm of p3] {دموکراسی\\نهادها};
+    \node[label, below=0.4cm of p4] {نظارت\\مشاوره};
+    
+    % Personnel indicator
+    \node[label, above=0.4cm of p0] {۵۰-۲۰۰};
+    \node[label, above=0.4cm of p1] {۳-۵K};
+    \node[label, above=0.4cm of p2] {۶-۱۲K};
+    \node[label, above=0.4cm of p3] {۱.۵-۳K};
+    \node[label, above=0.4cm of p4] {۲۰۰-۵۰۰};
+    \node[font=\footnotesize, anchor=south] at ($(p2)+(0,1.5)$) {\textbf{کارکنان بین‌المللی}};
+    
+\end{tikzpicture}
+\caption{نمای کلی پنج فاز عملیات نظارت بین‌المللی}
+\label{fig:five-phases}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{خلاصه ویژگی‌های هر فاز}
+\label{tab:phase-summary}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{1.5cm}
+                             >{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2cm}
+                             >{\raggedleft\arraybackslash}p{2.5cm}}
+\toprule
+\headerrow فاز & بازه زمانی & هدف اصلی & مدل غالب & شاخص پایان \\
+\midrule
+۰ & ۶-۱۲ ماه قبل & آمادگی، برنامه‌ریزی، شبکه‌سازی & --- & شروع گذار \\
+\altrow ۱ & ماه ۱-۶ & تثبیت، امنیت، نظم اولیه & مدل ۴ & امنیت نسبی \\
+۲ & ماه ۶-۲۴ & قانون اساسی، انتخابات، نهادها & مدل ۳+۴ & انتخابات آزاد \\
+\altrow ۳ & ماه ۲۴-۶۰ & تحکیم دموکراسی، انتقال کامل & مدل ۲+۳ & دولت منتخب پایدار \\
+۴ & ماه ۶۰-۱۲۰ & پی‌گیری، مشاوره، ارزیابی & مدل ۲ & خروج کامل \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{فاز ۰: پیش‌گذار (۶-۱۲ ماه قبل)}
+\label{sec:phase-zero}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+این فاز، مهم‌ترین و اغلب نادیده‌گرفته‌ترین مرحله است. آمادگی قبل از بحران، تفاوت میان موفقیت و فاجعه است.
+
+\begin{warningbox}
+در اکثر گذارهای تاریخی، جامعه بین‌المللی \emph{غافلگیر} شده است. فروپاشی شوروی (۱۹۹۱)، سقوط بن‌علی (۲۰۱۱)، سقوط بشار اسد — هیچ‌کدام با آمادگی کافی بین‌المللی همراه نبود. این سند دقیقاً برای پر کردن این خلأ نوشته شده است.
+\end{warningbox}
+
+\subsection{اقدامات فاز ۰}
+\label{subsec:phase0-actions}
+
+\begin{table}[htbp]
+\centering
+\caption{اقدامات تفصیلی فاز ۰ (پیش‌گذار)}
+\label{tab:phase0-actions}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{0.5cm}
+                             >{\raggedleft\arraybackslash}p{3cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}p{2cm}}
+\toprule
+\headerrow \# & اقدام & شرح & مسئول & زمان \\
+\midrule
+۱ & تشکیل گروه برنامه‌ریزی & تیم ۵۰-۱۰۰ نفره در نیویورک/ژنو & \lr{DPPA/UN} & ماه ۱-۳ \\
+\altrow ۲ & تحلیل سناریو & بروزرسانی سناریوهای فصل ۴ بر اساس اطلاعات جدید & گروه برنامه‌ریزی & ماه ۱-۶ \\
+۳ & شناسایی \lr{SRSG} بالقوه & فهرست ۵-۱۰ نامزد، مذاکرات محرمانه & دبیرکل & ماه ۳-۶ \\
+\altrow ۴ & پیش‌نویس قطعنامه & نسخه‌های مختلف برای سناریوهای مختلف & \lr{P3+} & ماه ۳-۹ \\
+۵ & شبکه‌سازی با اپوزیسیون & ارتباط غیررسمی با همه گروه‌ها & \lr{DPPA} + دولت‌ها & مستمر \\
+\altrow ۶ & نقشه‌برداری ظرفیت & شناسایی ایرانیان متخصص (داخل و دیاسپورا) & \lr{UNDP} & ماه ۱-۶ \\
+۷ & پیش‌موقعیت‌یابی & ذخیره تجهیزات در کشورهای همسایه & \lr{DPKO/DOS} & ماه ۶-۱۲ \\
+\altrow ۸ & آموزش پیشینی & آماده‌سازی ناظران از فهرست آماده‌باش & \lr{UN/EU} & ماه ۶-۱۲ \\
+۹ & طرح ارتباطات عمومی & پیام‌ها، مخاطبان، رسانه‌ها & تیم ارتباطات & ماه ۹-۱۲ \\
+\altrow ۱۰ & طرح بودجه اولیه & برآورد فاز ۱ و ۲، شناسایی حامیان & \lr{OCHA/WB} & ماه ۶-۱۲ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{lessonlearned}{تیمور شرقی: ارزش آمادگی}
+در تیمور شرقی، سازمان ملل ماه‌ها قبل از رفراندوم ۱۹۹۹ برنامه‌ریزی کرده بود. وقتی خشونت پس از رفراندوم آغاز شد، \lr{INTERFET} (نیروی چندملیتی به رهبری استرالیا) ظرف ۱۰ روز مستقر شد. بدون این آمادگی، فاجعه بسیار بزرگ‌تر بود.
+\end{lessonlearned}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{فاز ۱: تثبیت (ماه ۱-۶)}
+\label{sec:phase-one}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\subsection{۷۲ ساعت اول: لحظه سرنوشت‌ساز}
+\label{subsec:first-72}
+
+\begin{warningbox}
+۷۲ ساعت اول پس از سقوط رژیم، پنجره فرصتی است که آینده گذار را رقم می‌زند. تصمیمات این ساعات، بازگشت‌ناپذیرند.
+\end{warningbox}
+
+\begin{table}[htbp]
+\centering
+\caption{اقدامات حیاتی ۷۲ ساعت اول}
+\label{tab:first-72}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{1.5cm}
+                             >{\raggedleft\arraybackslash}p{3cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}}
+\toprule
+\headerrow ساعت & اقدام & شرح & مسئول \\
+\midrule
+۰-۶ & ارزیابی وضعیت & تماس با همه طرف‌ها، ارزیابی امنیتی & \lr{DPPA} \\
+\altrow ۶-۱۲ & بیانیه دبیرکل & حمایت از گذار مسالمت‌آمیز، دعوت به خویشتنداری & دبیرکل \\
+۱۲-۲۴ & نشست شورای امنیت & بحث اولیه، بیانیه ریاست & شورای امنیت \\
+\altrow ۲۴-۴۸ & اعزام تیم ارزیابی & تیم ۲۰-۳۰ نفره به تهران & \lr{DPPA/OCHA} \\
+۴۸-۷۲ & تماس با دولت موقت & شناسایی طرف‌های مذاکره، ارزیابی نیازها & تیم ارزیابی \\
+\altrow ۷۲+ & پیش‌نویس قطعنامه & ارائه متن به شورای امنیت & \lr{P3+} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{اقدامات ماه اول}
+\label{subsec:month-one}
+
+\begin{enumerate}[nosep]
+    \item \textbf{انتخاب و اعزام \lr{SRSG}} (از فهرست آماده فاز ۰)
+    \item \textbf{تصویب قطعنامه شورای امنیت} (ایجاد \lr{UNMOIT})
+    \item \textbf{مذاکره \lr{SOMA}} با دولت انتقالی/موقت
+    \item \textbf{استقرار تیم پیشتاز} (۵۰۰-۱,۰۰۰ نفر)
+    \item \textbf{ایجاد دفتر مرکزی} در تهران
+    \item \textbf{شروع پایش حقوق بشر} (فوری)
+    \item \textbf{برقراری ارتباط با نیروهای امنیتی} (ارتش، پلیس)
+    \item \textbf{ارزیابی وضعیت اقتصادی} و نیازهای فوری
+\end{enumerate}
+
+\subsection{اقدامات ماه ۲-۶}
+\label{subsec:months-2-6}
+
+\begin{table}[htbp]
+\centering
+\caption{اقدامات کلیدی فاز ۱ (ماه ۲-۶)}
+\label{tab:phase1-actions}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}p{2cm}}
+\toprule
+\headerrow حوزه & اقدام‌های کلیدی & مسئول & زمان \\
+\midrule
+امنیت & نظارت بر نیروهای مسلح، شروع \lr{DDR}، کنترل مرزها & معاون امنیتی & ماه ۱-۶ \\
+\altrow سیاسی & تشکیل شورای مشورتی، گفتگوی ملی، زمان‌بندی انتخابات & معاون سیاسی & ماه ۲-۶ \\
+حقوقی & تصویب قوانین موقت، منشور حقوق بنیادین & \lr{SRSG}+شورا & ماه ۲-۴ \\
+\altrow حقوق بشر & مستندسازی نقض‌ها، حفظ اسناد، محافظت از شهود & \lr{OHCHR} & ماه ۱-۶ \\
+اقتصاد & رفع تحریم‌ها، تثبیت ارز، کمک بشردوستانه & \lr{IMF/WB} & ماه ۱-۶ \\
+\altrow نهادسازی & ایجاد کمیسیون انتخابات، شروع ثبت رأی‌دهندگان & \lr{UNDP/IFES} & ماه ۳-۶ \\
+رسانه & رفع فیلترینگ، صدور مجوز رسانه، نظارت بر تعادل & کمیسیون رسانه & ماه ۱-۶ \\
+\altrow استقرار & ایجاد ۳۱ دفتر استانی، استخدام ۳-۵K بین‌المللی & \lr{UNMOIT} اداری & ماه ۲-۶ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{فاز ۲: نهادسازی (ماه ۶-۲۴)}
+\label{sec:phase-two}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+فاز ۲ قلب عملیات است. در این فاز، نهادهای دموکراتیک ساخته می‌شوند و اولین انتخابات آزاد برگزار می‌شود.
+
+\subsection{قانون اساسی}
+\label{subsec:constitution}
+
+\begin{table}[htbp]
+\centering
+\caption{فرایند تدوین قانون اساسی}
+\label{tab:constitution-process}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}p{2cm}}
+\toprule
+\headerrow مرحله & شرح & مشارکت‌کنندگان & بازه زمانی \\
+\midrule
+مشاوره عمومی & جمع‌آوری نظرات مردم (آنلاین و حضوری) & مردم، \lr{NGO}ها & ماه ۶-۱۰ \\
+\altrow انتخاب مجلس مؤسسان & انتخابات برای ۲۰۰-۳۰۰ نماینده & کمیسیون انتخابات & ماه ۱۰-۱۲ \\
+تدوین پیش‌نویس & نگارش با کمک مشاوران بین‌المللی & مجلس مؤسسان & ماه ۱۲-۱۸ \\
+\altrow بازخورد عمومی & انتشار پیش‌نویس، جمع‌آوری نظرات & مردم، احزاب & ماه ۱۸-۲۰ \\
+بازنگری و اصلاح & اصلاح بر اساس بازخورد & مجلس مؤسسان & ماه ۲۰-۲۲ \\
+\altrow رفراندوم & تصویب عمومی قانون اساسی & مردم & ماه ۲۲-۲۴ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{keypoint}
+\textbf{دو رویکرد به قانون اساسی:}
+\begin{itemize}[nosep]
+    \item \textbf{اول انتخابات، بعد قانون اساسی} (مدل عراق): سریع‌تر اما ریسک مصادره
+    \item \textbf{اول قانون اساسی، بعد انتخابات} (مدل تونس): کندتر اما پایدارتر
+\end{itemize}
+\textbf{توصیه}: مدل تونس، با تعدیل — یعنی مجلس مؤسسان منتخب ابتدا قانون اساسی بنویسد، سپس انتخابات پارلمانی و ریاست‌جمهوری برگزار شود.
+\end{keypoint}
+
+\subsection{انتخابات}
+\label{subsec:elections}
+
+\begin{table}[htbp]
+\centering
+\caption{تقویم انتخاباتی پیشنهادی}
+\label{tab:election-calendar}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3cm}
+                             >{\centering\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}}
+\toprule
+\headerrow انتخابات & ماه (تقریبی) & هدف & نظام انتخاباتی \\
+\midrule
+مجلس مؤسسان & ماه ۱۰-۱۲ & تدوین قانون اساسی & تناسبی \\
+\altrow رفراندوم قانون اساسی & ماه ۲۲-۲۴ & تصویب مردمی & اکثریت ساده \\
+پارلمان & ماه ۲۶-۳۰ & قوه مقننه & تناسبی مختلط \\
+\altrow ریاست‌جمهوری & ماه ۲۸-۳۲ & قوه مجریه & دومرحله‌ای \\
+شوراهای محلی & ماه ۳۰-۳۶ & حکمرانی محلی & تناسبی \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{lessonlearned}{آفریقای جنوبی: صبر استراتژیک}
+آفریقای جنوبی ۴ سال (۱۹۹۰-۱۹۹۴) صبر کرد تا اولین انتخابات دموکراتیک برگزار شود. این زمان صرف مذاکره، ساخت اعتماد، و آماده‌سازی نهادها شد. اولین انتخابات ۱۹۹۴ یکی از موفق‌ترین انتخابات گذار در تاریخ بود: مشارکت ۸۶٪، پذیرش نتایج توسط همه طرف‌ها.
+\end{lessonlearned}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{فاز ۳: تحکیم (ماه ۲۴-۶۰)}
+\label{sec:phase-three}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+پس از انتخابات و تشکیل دولت منتخب، فاز تحکیم آغاز می‌شود. نظارت بین‌المللی تدریجاً کاهش و مالکیت ملی افزایش می‌یابد.
+
+\subsection{اقدامات کلیدی فاز ۳}
+\label{subsec:phase3-actions}
+
+\begin{table}[htbp]
+\centering
+\caption{اقدامات فاز ۳ (تحکیم)}
+\label{tab:phase3-actions}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2.5cm}}
+\toprule
+\headerrow حوزه & اقدامات & تغییر نسبت به فاز ۲ \\
+\midrule
+نظارت انتخاباتی & نظارت بر انتخابات دوم، آموزش ناظران داخلی & کاهش ۵۰٪ \\
+\altrow حقوق بشر & ادامه پایش، کمیسیون حقیقت فعال & ثابت \\
+اصلاح امنیتی & ادامه \lr{DDR}، آموزش پلیس، نظارت بر ارتش & کاهش ۳۰٪ \\
+\altrow قضایی & دادگاه ویژه فعال، اصلاح قوه قضاییه & ثابت \\
+اقتصادی & خصوصی‌سازی نظارت‌شده، جذب سرمایه‌گذاری & مشاوره‌ای \\
+\altrow ظرفیت‌سازی & آموزش کارکنان دولت، انتقال مهارت & افزایش \\
+رسانه & حمایت از رسانه مستقل، آموزش روزنامه‌نگاران & کاهش ۴۰٪ \\
+\altrow کاهش حضور & بسته شدن دفاتر استانی، کاهش کارکنان بین‌المللی & ۶-۱۲K → ۱.۵-۳K \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{معیارهای تحکیم}
+\label{subsec:consolidation-criteria}
+
+\begin{recommendation}
+دموکراسی ایران «تحکیم‌یافته» تلقی می‌شود اگر:
+\begin{enumerate}[nosep]
+    \item حداقل ۲ انتخابات آزاد و عادلانه برگزار شده باشد
+    \item حداقل ۱ انتقال مسالمت‌آمیز قدرت رخ داده باشد
+    \item نظامیان مداخله‌ای در سیاست نداشته باشند
+    \item آزادی مطبوعات در سطح «نسبتاً آزاد» باشد
+    \item استقلال قوه قضاییه تضمین شده باشد
+    \item نرخ اعتماد عمومی به دموکراسی بالای ۵۰٪ باشد
+    \item حقوق اقلیت‌ها رعایت شود
+\end{enumerate}
+\end{recommendation}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{فاز ۴: پی‌گیری و خروج (ماه ۶۰-۱۲۰)}
+\label{sec:phase-four}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\subsection{استراتژی خروج}
+\label{subsec:exit-strategy}
+
+\begin{keypoint}
+\textbf{سه سناریوی خروج:}
+\begin{enumerate}[nosep]
+    \item \textbf{خروج موفق}: معیارهای تحکیم محقق شده → خروج تدریجی با ۱-۲ سال هم‌پوشانی
+    \item \textbf{خروج تعدیل‌شده}: برخی معیارها محقق → کاهش اما نه خروج کامل → تمدید ۲-۳ ساله
+    \item \textbf{بازنگری اساسی}: عقب‌گرد جدی → بازنگری کل استراتژی → ممکن است نیاز به افزایش
+\end{enumerate}
+\end{keypoint}
+
+\begin{table}[htbp]
+\centering
+\caption{مراحل خروج تدریجی}
+\label{tab:exit-steps}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X
+                             >{\raggedleft\arraybackslash}p{2cm}
+                             >{\raggedleft\arraybackslash}p{2.5cm}}
+\toprule
+\headerrow مرحله & اقدام & ماه & باقیمانده \\
+\midrule
+تبدیل مأموریت & تغییر \lr{UNMOIT} به دفتر سیاسی \lr{UN} & ۶۰ & ۵۰۰ نفر \\
+\altrow بسته شدن دفاتر & ادغام ۳۱ استان در ۵-۷ منطقه & ۶۰-۷۲ & ۳۰۰ نفر \\
+کاهش تخصصی & پایان مأموریت انتخاباتی و امنیتی & ۷۲-۸۴ & ۲۰۰ نفر \\
+\altrow مشاوره محض & فقط مشاوران ارشد و ارزیابان & ۸۴-۱۰۸ & ۵۰-۱۰۰ نفر \\
+خروج نهایی & بسته شدن مأموریت، گزارش نهایی & ۱۰۸-۱۲۰ & ۰ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{warningbox}
+خروج زودهنگام به‌اندازه ماندن بیش‌ازحد خطرناک است. خروج آمریکا از عراق (۲۰۱۱) و افغانستان (۲۰۲۱) نشان داد که خروج بدون تحکیم واقعی، می‌تواند همه دستاوردها را نابود کند. خروج باید بر اساس شاخص‌ها باشد، نه تقویم سیاسی.
+\end{warningbox}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{ساختار هماهنگی}
+\label{sec:coordination-structure}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\subsection{سلسله‌مراتب هماهنگی}
+\label{subsec:coordination-hierarchy}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=1cm,
+    every node/.style={font=\small, align=center},
+    global/.style={rectangle, rounded corners, draw=MainPurple, fill=LightPurple, minimum width=4.5cm, minimum height=0.9cm},
+    strategic/.style={rectangle, rounded corners, draw=MainBlue, fill=LightBlue, minimum width=4cm, minimum height=0.9cm},
+    operational/.style={rectangle, rounded corners, draw=MainGreen, fill=LightGreen, minimum width=3.5cm, minimum height=0.9cm},
+    tactical/.style={rectangle, rounded corners, draw=MainOrange, fill=LightOrange, minimum width=3cm, minimum height=0.9cm},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick}
+]
+    % Global level
+    \node[global] (sc) {شورای امنیت \lr{UN}};
+    \node[global, right=2.5cm of sc] (cg) {گروه تماس بین‌المللی\\{\footnotesize \lr{P5} + \lr{EU} + ژاپن + ترکیه + ...}};
+    
+    % Strategic level
+    \node[strategic, below=1.2cm of sc] (srsg) {\lr{SRSG}\\ستاد مرکزی تهران};
+    \node[strategic, right=2.5cm of srsg] (advisory) {شورای مشورتی ایرانی\\{\footnotesize ۲۰-۳۰ نماینده}};
+    
+    % Operational level
+    \node[operational, below left=1.2cm and 1.5cm of srsg] (pol) {بخش سیاسی};
+    \node[operational, below=1.2cm of srsg] (ops) {بخش عملیاتی};
+    \node[operational, below right=1.2cm and 1.5cm of srsg] (hr) {بخش حقوق بشر};
+    
+    % Tactical level
+    \node[tactical, below=1.2cm of pol] (prov1) {دفاتر استانی\\منطقه ۱-۳};
+    \node[tactical, below=1.2cm of ops] (prov2) {دفاتر استانی\\منطقه ۴-۵};
+    \node[tactical, below=1.2cm of hr] (prov3) {دفاتر استانی\\منطقه ۶-۷};
+    
+    % Arrows
+    \draw[arrow] (sc) -- (srsg);
+    \draw[arrow, dashed] (cg) -- (srsg);
+    \draw[arrow, dashed] (advisory) -- (srsg);
+    \draw[arrow] (srsg) -- (pol);
+    \draw[arrow] (srsg) -- (ops);
+    \draw[arrow] (srsg) -- (hr);
+    \draw[arrow] (pol) -- (prov1);
+    \draw[arrow] (ops) -- (prov2);
+    \draw[arrow] (hr) -- (prov3);
+    
+    % Labels
+    \node[font=\footnotesize\bfseries, MainPurple, anchor=east] at (-3.5,0) {سطح جهانی};
+    \node[font=\footnotesize\bfseries, MainBlue, anchor=east] at (-3.5,-2.2) {سطح استراتژیک};
+    \node[font=\footnotesize\bfseries, MainGreen, anchor=east] at (-3.5,-4.4) {سطح عملیاتی};
+    \node[font=\footnotesize\bfseries, MainOrange, anchor=east] at (-3.5,-6.6) {سطح تاکتیکی};
+    
+\end{tikzpicture}
+\caption{سلسله‌مراتب هماهنگی نظارت بین‌المللی}
+\label{fig:coordination-hierarchy}
+\end{figure}
+
+\subsection{گروه تماس بین‌المللی}
+\label{subsec:contact-group}
+
+\begin{table}[htbp]
+\centering
+\caption{ترکیب و وظایف گروه تماس بین‌المللی}
+\label{tab:contact-group}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3cm}
+                             >{\raggedleft\arraybackslash}X}
+\toprule
+\headerrow ویژگی & شرح \\
+\midrule
+اعضا & \lr{P5} + آلمان + ژاپن + ترکیه + عربستان + هند + \lr{EU} + اتحادیه آفریقا \\
+\altrow سطح نمایندگی & وزیر خارجه یا معاون \\
+دبیرخانه & دفتر \lr{SRSG} \\
+\altrow فرکانس نشست & ماهانه (عادی)، فوری (بحران) \\
+وظایف & هماهنگی سیاسی، تضمین منابع، جلوگیری از مداخله یکجانبه \\
+\altrow تصمیم‌گیری & اجماعی (نه رأی‌گیری) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{شورای مشورتی ایرانی}
+\label{subsec:advisory-council}
+
+\begin{table}[htbp]
+\centering
+\caption{ترکیب شورای مشورتی ایرانی}
+\label{tab:advisory-council}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3.5cm}
+                             >{\centering\arraybackslash}p{2cm}
+                             >{\raggedleft\arraybackslash}X}
+\toprule
+\headerrow دسته & تعداد & معیار انتخاب \\
+\midrule
+احزاب/جنبش‌ها سیاسی & ۶-۸ & نمایندگان همه طیف‌ها \\
+\altrow جامعه مدنی & ۴-۶ & \lr{NGO}های معتبر، حقوق بشری \\
+زنان & ۳-۴ & فعالان حقوق زنان \\
+\altrow اقوام & ۴-۶ & نمایندگان اقوام اصلی \\
+اقلیت‌های مذهبی & ۲-۳ & سنّی، بهایی، مسیحی، یهودی، زرتشتی \\
+\altrow جوانان & ۲-۳ & زیر ۳۵ سال \\
+دیاسپورا & ۲-۳ & نمایندگان جوامع مهاجر \\
+\altrow حقوقدانان & ۲-۳ & متخصصان حقوق اساسی \\
+\midrule
+\textbf{مجموع} & \textbf{۲۵-۳۶} & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{casestudy}{عراق: شورای حکومتی ناکارآمد}
+شورای حکومتی عراق (۲۰۰۳-۲۰۰۴) که توسط \lr{CPA} منصوب شد، فاقد مشروعیت مردمی بود و ترکیب آن بر اساس سهمیه‌بندی قومی-مذهبی بود. این الگو به «محاصصه» (تقسیم طایفه‌ای قدرت) دامن زد و تا امروز عراق از آن رنج می‌برد. شورای مشورتی ایران باید \emph{مشاوره‌ای} باشد، نه \emph{حکومتی}، و ترکیب آن بر اساس تخصص و اعتبار باشد نه صرفاً نمایندگی قومی.
+\end{casestudy}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{تیم‌سازی و ساختار منابع انسانی}
+\label{sec:team-building}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\subsection{ساختار رهبری}
+\label{subsec:leadership-structure}
+
+\begin{table}[htbp]
+\centering
+\caption{ساختار رهبری \lr{UNMOIT}}
+\label{tab:leadership}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3.5cm}
+                             >{\raggedleft\arraybackslash}p{2.5cm}
+                             >{\raggedleft\arraybackslash}X}
+\toprule
+\headerrow مقام & سطح \lr{UN} & مسئولیت اصلی \\
+\midrule
+\lr{SRSG} & \lr{USG} & رهبری کل مأموریت \\
+\altrow معاون سیاسی & \lr{ASG} & مذاکرات، احزاب، گفتگوی ملی \\
+معاون عملیاتی & \lr{ASG} & لجستیک، امور اداری، مالی \\
+\altrow معاون حقوق بشر & \lr{D-2} & پایش، مستندسازی، عدالت انتقالی \\
+معاون امنیتی & \lr{D-2} & اصلاح بخش امنیتی، \lr{DDR} \\
+\altrow مشاور ارشد انتخابات & \lr{D-2} & کمیسیون انتخابات، فنی \\
+سخنگو & \lr{D-1} & ارتباطات عمومی، رسانه \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{دفاتر استانی}
+\label{subsec:provincial-offices}
+
+\begin{table}[htbp]
+\centering
+\caption{ساختار دفاتر استانی}
+\label{tab:provincial-offices}
+\begin{tabularx}{\textwidth}{>{\raggedleft\arraybackslash}p{3cm}
+                             >{\raggedleft\arraybackslash}X}
+\toprule
+\headerrow عنصر & شرح \\
+\midrule
+تعداد & ۳۱ دفتر (یکی در هر استان) + ۵-۷ دفتر منطقه‌ای \\
+\altrow رئیس & کارمند بین‌المللی \lr{P-5/D-1} با معاون ایرانی \\
+کارکنان (فاز ۲) & ۵۰-۲۰۰ نفر بسته به اندازه استان \\
+\altrow وظایف & پایش محلی، ارتباط با جوامع، گزارش‌دهی، نظارت انتخاباتی \\
+اولویت استقرار & ابتدا استان‌های حساس (مرزی، قومی، پرجمعیت) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{recommendation}
+\textbf{اولویت‌بندی استقرار دفاتر استانی:}
+\begin{enumerate}[nosep]
+    \item \textbf{فوری (هفته ۱-۴)}: تهران، اصفهان، مشهد (خراسان رضوی)، تبریز (آذربایجان شرقی)، اهواز (خوزستان)
+    \item \textbf{اولویت بالا (ماه ۱-۲)}: کردستان، سیستان‌وبلوچستان، کرمانشاه، فارس (شیراز)، هرمزگان
+    \item \textbf{اولویت متوسط (ماه ۲-۴)}: سایر استان‌های مرزی و پرجمعیت
+    \item \textbf{تکمیلی (ماه ۴-۶)}: استان‌های کوچک‌تر مرکزی
+\end{enumerate}
+\end{recommendation}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{ماتریس \lr{RACI}}
+\label{sec:raci-matrix}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\bilingual{ماتریس مسئولیت}{RACI Matrix} ابزاری برای تعیین نقش هر بازیگر در هر فعالیت است:
+\begin{itemize}[nosep]
+    \item \textbf{\lr{R} = مسئول اجرا} (\lr{Responsible})
+    \item \textbf{\lr{A} = پاسخگو} (\lr{Accountable})
+    \item \textbf{\lr{C} = مشاور} (\lr{Consulted})
+    \item \textbf{\lr{I} = اطلاع‌یافته} (\lr{Informed})
+\end{itemize}
+
+\begin{landscape}
+\begin{table}[htbp]
+\centering
+\bigtablefontsize
+\caption{ماتریس \lr{RACI} فعالیت‌های کلیدی}
+\label{tab:raci-matrix}
+\begin{tabularx}{\linewidth}{>{\raggedleft\arraybackslash}p{3cm}
+                             >{\centering\arraybackslash}p{1.2cm}
+                             >{\centering\arraybackslash}p{1.5cm}
+                             >{\centering\arraybackslash}p{1.5cm}
+                             >{\centering\arraybackslash}p{1.5cm}
+                             >{\centering\arraybackslash}p{1.2cm}
+                             >{\centering\arraybackslash}p{1.2cm}
+                             >{\centering\arraybackslash}p{1.2cm}
+                             >{\centering\arraybackslash}p{1.5cm}
+                             >{\centering\arraybackslash}p{1.5cm}}
+\toprule
+\headerrow فعالیت & \rot{\lr{SC}} & \rot{\lr{SRSG}} & \rot{دولت انتقالی} & \rot{شورای مشورتی} & \rot{کمیسیون انتخابات} & \rot{\lr{OHCHR}} & \rot{\lr{IMF/WB}} & \rot{جامعه مدنی} & \rot{گروه تماس} \\
+\midrule
+قطعنامه & \lr{A,R} & \lr{C} & \lr{C} & \lr{I} & \lr{I} & \lr{C} & \lr{I} & \lr{I} & \lr{C} \\
+\altrow انتخاب \lr{SRSG} & \lr{A} & --- & \lr{C} & \lr{I} & \lr{I} & \lr{I} & \lr{I} & \lr{I} & \lr{C} \\
+امنیت عمومی & \lr{I} & \lr{A} & \lr{R} & \lr{C} & \lr{I} & \lr{C} & \lr{I} & \lr{I} & \lr{I} \\
+\altrow اصلاح سپاه & \lr{A} & \lr{R} & \lr{R} & \lr{C} & \lr{I} & \lr{C} & \lr{I} & \lr{I} & \lr{C} \\
+برگزاری انتخابات & \lr{I} & \lr{A} & \lr{C} & \lr{C} & \lr{R} & \lr{I} & \lr{I} & \lr{C} & \lr{I} \\
+\altrow قانون اساسی & \lr{I} & \lr{C} & \lr{A,R} & \lr{C} & \lr{I} & \lr{C} & \lr{I} & \lr{C} & \lr{I} \\
+حقوق بشر & \lr{I} & \lr{A} & \lr{C} & \lr{C} & \lr{I} & \lr{R} & \lr{I} & \lr{C} & \lr{I} \\
+\altrow اقتصاد & \lr{I} & \lr{C} & \lr{A,R} & \lr{C} & \lr{I} & \lr{I} & \lr{R} & \lr{I} & \lr{C} \\
+رفع تحریم & \lr{A,R} & \lr{C} & \lr{C} & \lr{I} & \lr{I} & \lr{I} & \lr{C} & \lr{I} & \lr{R} \\
+\altrow عدالت انتقالی & \lr{I} & \lr{C} & \lr{A,R} & \lr{C} & \lr{I} & \lr{R} & \lr{I} & \lr{C} & \lr{I} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\end{landscape}
+
+\sectiondivider
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\section{نمودار گانت عملیاتی}
+\label{sec:gantt-chart}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\begin{figure}[htbp]
+\centering
+\begin{ganttchart}[
+    x unit=0.4cm,
+    y unit chart=0.6cm,
+    y unit title=0.8cm,
+    title height=1,
+    bar height=0.5,
+    group peaks height=0.3,
+    title label font=\footnotesize\bfseries,
+    bar label font=\footnotesize,
+    group label font=\footnotesize\bfseries,
+    milestone label font=\footnotesize,
+    bar/.append style={fill=MainYellow!60},
+    group/.append style={fill=MainBlue!60},
+    milestone/.append style={fill=MainRed},
+    vgrid={*{11}{draw=LightGray, thin}},
+    hgrid={draw=VeryLightGray},
+    today=0,
+    today rule/.style={draw=MainRed, ultra thick, dashed},
+    today label=گذار
+]{-6}{54}
+    % Titles
+    \gantttitlelist{-6,...,0,...,54}{1} \\
+    
+    % Phase 0
+    \ganttgroup{فاز ۰: پیش‌گذار}{-6}{0} \\
+    \ganttbar{تشکیل تیم برنامه‌ریزی}{-6}{-3} \\
+    \ganttbar{شناسایی \lr{SRSG}}{-6}{-1} \\
+    \ganttbar{پیش‌نویس قطعنامه}{-4}{0} \\
+    \ganttbar{پیش‌موقعیت‌یابی}{-3}{0} \\
+    
+    % Phase 1
+    \ganttgroup{فاز ۱: تثبیت}{1}{6} \\
+    \ganttbar{استقرار اولیه}{1}{3} \\
+    \ganttbar{امنیت و نظم}{1}{6} \\
+    \ganttbar{قوانین موقت}{2}{5} \\
+    \ganttmilestone{تصویب قطعنامه}{1} \\
+    
+    % Phase 2
+    \ganttgroup{فاز ۲: نهادسازی}{7}{24} \\
+    \ganttbar{مشاوره عمومی قانون اساسی}{7}{12} \\
+    \ganttbar{مجلس مؤسسان}{10}{12} \\
+    \ganttbar{تدوین قانون اساسی}{12}{20} \\
+    \ganttbar{رفراندوم}{22}{24} \\
+    \ganttbar{انتخابات پارلمان}{26}{30} \\
+    \ganttmilestone{رفراندوم قانون اساسی}{24} \\
+    
+    % Phase 3
+    \ganttgroup{فاز ۳: تحکیم}{25}{48} \\
+    \ganttbar{تشکیل دولت منتخب}{30}{33} \\
+    \ganttbar{انتقال تدریجی مسئولیت}{30}{48} \\
+    \ganttbar{انتخابات دوم}{42}{48} \\
+    \ganttmilestone{انتقال قدرت}{33} \\
+    
+    % Phase 4
+    \ganttgroup{فاز ۴: خروج}{49}{54} \\
+    \ganttbar{کاهش حضور}{49}{54} \\
+    \ganttmilestone{خروج کامل}{54}
+    
+\end{ganttchart}
+\caption{نمودار گانت کلان عملیات نظارت (ماه -۶ تا ۵۴)}
+\label{fig:gantt-chart}
+\end{figure}
+
+\begin{lessonlearned}{بوسنی: طولانی‌ترین مأموریت}
+مأموریت بین‌المللی بوسنی (\lr{OHR}) از ۱۹۹۵ آغاز شد و تا ۲۰۲۴ (۲۹ سال!) ادامه داشت. دلیل: شروع بدون معیارهای خروج مشخص + ساختار س
+

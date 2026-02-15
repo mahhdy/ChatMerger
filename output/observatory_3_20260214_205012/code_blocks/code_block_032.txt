@@ -1,0 +1,40 @@
+iran-transition-monitoring/
+├── main.tex ✅
+├── references.bib ✅ (90+ منبع)
+├── preamble/
+│   ├── packages.tex ✅
+│   ├── boxes.tex ✅
+│   ├── commands.tex ✅
+│   ├── layout.tex ✅
+│   └── fonts.tex ✅
+├── chapters/
+│   ├── titlepage.tex ✅
+│   ├── dedication.tex ✅
+│   ├── ch00-preface.tex ✅
+│   ├── ch01-theory.tex ✅
+│   ├── ch02-why-iran.tex ✅
+│   ├── ch03-approaches.tex ✅
+│   ├── ch04-scenarios.tex ✅
+│   ├── ch05-actors.tex ✅
+│   ├── ch06-guarantees.tex ✅
+│   ├── ch07-risks.tex ✅
+│   ├── ch08-requirements.tex ✅
+│   ├── ch09-timeline.tex ✅
+│   ├── ch10-budget.tex ✅
+│   ├── ch11-roadmap.tex ✅
+│   └── ch12-conclusion.tex ✅
+├── appendices/
+│   ├── app-a-comparison.tex ✅
+│   ├── app-b-south-africa.tex ✅
+│   ├── app-c-chile.tex ✅
+│   ├── app-d-tunisia.tex ✅
+│   ├── app-e-poland.tex ✅
+│   ├── app-f-iraq.tex ✅
+│   ├── app-g-myanmar.tex ✅
+│   ├── app-h-timor.tex ✅
+│   ├── app-i-glossary.tex ✅
+│   └── app-j-organizations.tex ✅
+├── figures/ 
+├── tables/
+├── fonts/
+└── output/
