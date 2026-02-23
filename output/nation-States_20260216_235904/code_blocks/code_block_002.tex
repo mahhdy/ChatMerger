@@ -1,0 +1,411 @@
+% preamble.tex
+% ============================================================
+%  بسته‌ها و تنظیمات عمومی کتاب
+% ============================================================
+
+\documentclass[
+  12pt,
+  a4paper,
+  openany,
+  twoside
+]{book}
+
+% ---------- Encoding & Fonts ----------
+\usepackage{fontspec}
+\usepackage[bidi=basic]{babel}
+\babelprovide[import, main]{persian}
+\babelprovide[import]{english}
+\babelfont{rm}{XB Niloofar}
+\babelfont[english]{rm}{Libertinus Serif}
+\babelfont{sf}{IRanSans}
+\babelfont[english]{sf}{Libertinus Sans}
+\babelfont{tt}{FreeMono}
+
+% ---------- Page Geometry ----------
+\usepackage[
+  top=2.8cm,
+  bottom=2.8cm,
+  inner=2.5cm,
+  outer=2cm,
+  headheight=15pt
+]{geometry}
+
+% ---------- Colors – Luxurious Light Modern Palette ----------
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+
+\definecolor{PrimaryDark}{HTML}{1B2A4A}     % سرمه‌ای عمیق
+\definecolor{PrimaryMid}{HTML}{2C5F8A}      % آبی میانه
+\definecolor{PrimaryLight}{HTML}{5B9BD5}    % آبی روشن
+\definecolor{AccentGold}{HTML}{D4A84B}      % طلایی
+\definecolor{AccentCopper}{HTML}{C1724C}    % مسی
+\definecolor{BgCream}{HTML}{FAF8F4}         % کرمی بسیار ملایم
+\definecolor{BgLightBlue}{HTML}{EDF4FB}     % آبی خیلی روشن
+\definecolor{BgLightGold}{HTML}{FDF8EE}     % طلایی خیلی روشن
+\definecolor{TextDark}{HTML}{2D2D2D}        % مشکی ملایم
+\definecolor{TextMid}{HTML}{555555}         % خاکستری متن
+\definecolor{BorderLight}{HTML}{D6D6D6}     % خاکستری حاشیه
+\definecolor{SuccessGreen}{HTML}{3A7D44}    % سبز
+\definecolor{WarningOrange}{HTML}{E8913A}   % نارنجی
+\definecolor{DangerRed}{HTML}{C0392B}       % قرمز
+
+\pagecolor{BgCream}
+\color{TextDark}
+
+% ---------- Graphics ----------
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{
+  calc, positioning, arrows.meta, shapes.geometric,
+  shapes.multipart, decorations.pathreplacing,
+  decorations.markings, backgrounds, fit,
+  patterns, shadows, matrix, chains,
+  mindmap, trees, intersections,
+  fadings, shadings, calendar
+}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+% ---------- Tables ----------
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{rotating}   % sidewaystable
+\usepackage{adjustbox}
+
+% ---------- Boxes ----------
+\usepackage[most,breakable]{tcolorbox}
+\tcbuselibrary{skins,hooks,theorems}
+
+% ---------- Headers & Footers ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[LE]{%
+  \textcolor{PrimaryMid}{\small\thepage}%
+  \quad
+  \textcolor{PrimaryDark}{\small\leftmark}%
+}
+\fancyhead[RO]{%
+  \textcolor{PrimaryDark}{\small\rightmark}%
+  \quad
+  \textcolor{PrimaryMid}{\small\thepage}%
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{%
+  \hbox to\headwidth{%
+    \color{AccentGold}\leaders\hrule height \headrulewidth\hfill
+  }%
+}
+\fancyfoot[C]{%
+  \begin{tikzpicture}
+    \node[fill=PrimaryDark, text=white, rounded corners=3pt,
+          inner xsep=8pt, inner ysep=2pt, font=\footnotesize]
+      {\thepage};
+  \end{tikzpicture}%
+}
+
+% ---------- Chapter Style ----------
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {}
+  {}
+  {0pt}
+  {%
+    \begin{tikzpicture}[remember picture, overlay]
+      % Background strip
+      \fill[PrimaryDark]
+        ([yshift=-1cm]current page.north west)
+        rectangle
+        ([yshift=-5.5cm]current page.north east);
+      % Gold accent line
+      \fill[AccentGold]
+        ([yshift=-5.5cm]current page.north west)
+        rectangle
+        ([yshift=-5.8cm]current page.north east);
+      % Chapter number circle
+      \node[
+        circle, fill=AccentGold, text=PrimaryDark,
+        minimum size=2cm, font=\Huge\bfseries,
+        inner sep=0pt
+      ] at ([yshift=-3.25cm, xshift=-3cm]current page.north east)
+        {\thechapter};
+      % Chapter title
+      \node[
+        anchor=east, text=white, font=\Huge\bfseries
+      ] at ([yshift=-3.25cm, xshift=-5cm]current page.north east)
+        {#1};
+    \end{tikzpicture}%
+    \vspace{3.5cm}%
+  }
+
+\titleformat{name=\chapter,numberless}[display]
+  {}
+  {}
+  {0pt}
+  {%
+    \begin{tikzpicture}[remember picture, overlay]
+      \fill[PrimaryDark]
+        ([yshift=-1cm]current page.north west)
+        rectangle
+        ([yshift=-4.5cm]current page.north east);
+      \fill[AccentGold]
+        ([yshift=-4.5cm]current page.north west)
+        rectangle
+        ([yshift=-4.8cm]current page.north east);
+      \node[
+        anchor=east, text=white, font=\Huge\bfseries
+      ] at ([yshift=-2.8cm, xshift=-2cm]current page.north east)
+        {#1};
+    \end{tikzpicture}%
+    \vspace{2.5cm}%
+  }
+
+\titleformat{\section}
+  {\Large\bfseries\color{PrimaryDark}}
+  {\colorbox{PrimaryDark}{\textcolor{white}{\;\thesection\;}}}{0.5em}{}
+  [\vspace{2pt}{\color{AccentGold}\titlerule[1pt]}]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{PrimaryMid}}
+  {\thesubsection}{0.5em}{}
+  [\vspace{1pt}{\color{BorderLight}\titlerule[0.4pt]}]
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{AccentCopper}}
+  {\thesubsubsection}{0.5em}{}
+
+% ---------- TOC ----------
+\usepackage{titletoc}
+
+\titlecontents{chapter}[0pt]
+  {\addvspace{12pt}\bfseries\color{PrimaryDark}}
+  {\contentslabel{2em}}
+  {\hspace*{-2em}}
+  {\;\titlerule*[6pt]{.}\;\contentspage}
+
+\titlecontents{section}[2em]
+  {\addvspace{3pt}\color{TextDark}}
+  {\contentslabel{2.5em}}
+  {\hspace*{-2.5em}}
+  {\;\titlerule*[4pt]{.}\;\contentspage}
+
+\titlecontents{subsection}[4.5em]
+  {\addvspace{1pt}\small\color{TextMid}}
+  {\contentslabel{3em}}
+  {\hspace*{-3em}}
+  {\;\titlerule*[3pt]{.}\;\contentspage}
+
+% ---------- Custom tcolorbox Styles ----------
+
+% --- Key Concept Box ---
+\newtcolorbox{keybox}[1][]{%
+  enhanced, breakable,
+  colback=BgLightBlue,
+  colframe=PrimaryMid,
+  coltitle=white,
+  fonttitle=\bfseries,
+  title={#1},
+  attach boxed title to top right={yshift=-\tcboxedtitleheight/2, xshift=-4mm},
+  boxed title style={
+    colback=PrimaryMid, colframe=PrimaryDark,
+    rounded corners, shadow={1mm}{-1mm}{0mm}{black!30}
+  },
+  arc=4pt,
+  boxrule=0.8pt,
+  shadow={2mm}{-2mm}{0mm}{black!10},
+  left=8pt, right=8pt, top=12pt, bottom=8pt,
+  before upper=\setlength{\parindent}{1.5em},
+}
+
+% --- Warning / Challenge Box ---
+\newtcolorbox{challengebox}[1][]{%
+  enhanced, breakable,
+  colback=red!3,
+  colframe=DangerRed,
+  coltitle=white,
+  fonttitle=\bfseries,
+  title={#1},
+  attach boxed title to top right={yshift=-\tcboxedtitleheight/2, xshift=-4mm},
+  boxed title style={
+    colback=DangerRed, rounded corners
+  },
+  arc=4pt, boxrule=0.6pt,
+  borderline west={3pt}{0pt}{DangerRed},
+  left=10pt, right=8pt, top=12pt, bottom=8pt,
+}
+
+% --- Success / Lesson Box ---
+\newtcolorbox{lessonbox}[1][]{%
+  enhanced, breakable,
+  colback=green!3,
+  colframe=SuccessGreen,
+  coltitle=white,
+  fonttitle=\bfseries,
+  title={#1},
+  attach boxed title to top right={yshift=-\tcboxedtitleheight/2, xshift=-4mm},
+  boxed title style={
+    colback=SuccessGreen, rounded corners
+  },
+  arc=4pt, boxrule=0.6pt,
+  borderline west={3pt}{0pt}{SuccessGreen},
+  left=10pt, right=8pt, top=12pt, bottom=8pt,
+}
+
+% --- Gold Highlight Box ---
+\newtcolorbox{goldbox}[1][]{%
+  enhanced, breakable,
+  colback=BgLightGold,
+  colframe=AccentGold,
+  coltitle=PrimaryDark,
+  fonttitle=\bfseries,
+  title={#1},
+  attach boxed title to top right={yshift=-\tcboxedtitleheight/2, xshift=-4mm},
+  boxed title style={
+    colback=AccentGold, rounded corners
+  },
+  arc=4pt, boxrule=0.8pt,
+  shadow={1.5mm}{-1.5mm}{0mm}{AccentGold!20},
+  left=8pt, right=8pt, top=12pt, bottom=8pt,
+}
+
+% --- Case Study Box ---
+\newtcolorbox{casebox}[1][]{%
+  enhanced, breakable,
+  colback=white,
+  colframe=PrimaryLight,
+  coltitle=white,
+  fonttitle=\bfseries,
+  title={#1},
+  attach boxed title to top right={yshift=-\tcboxedtitleheight/2, xshift=-4mm},
+  boxed title style={
+    colback=PrimaryLight, rounded corners
+  },
+  arc=6pt, boxrule=0.5pt,
+  shadow={2mm}{-2mm}{0mm}{PrimaryLight!15},
+  left=8pt, right=8pt, top=14pt, bottom=8pt,
+}
+
+% --- Quote Box ---
+\newtcolorbox{quotebox}{%
+  enhanced, breakable,
+  colback=BgCream,
+  colframe=BgCream,
+  borderline west={4pt}{0pt}{AccentGold},
+  arc=0pt, boxrule=0pt,
+  left=12pt, right=8pt, top=6pt, bottom=6pt,
+  fontupper=\itshape\color{TextMid},
+}
+
+% ---------- Hyperref ----------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PrimaryMid,
+  citecolor=AccentCopper,
+  urlcolor=PrimaryLight,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  pdfauthor={},
+  pdftitle={دولت، ملت و تنوع قومی},
+  pdfsubject={سیاست تطبیقی و مدیریت تنوع},
+}
+
+% ---------- Misc ----------
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*}
+\setlist[itemize,1]{label=\textcolor{AccentGold}{\rule[0.3ex]{0.6ex}{0.6ex}}}
+\setlist[itemize,2]{label=\textcolor{PrimaryMid}{\textbullet}}
+\setlist[enumerate,1]{label=\textcolor{PrimaryDark}{\bfseries\arabic*.}}
+
+\usepackage{float}
+\usepackage{caption}
+\captionsetup{
+  font={small},
+  labelfont={bf, color=PrimaryDark},
+  textfont={color=TextMid},
+  justification=centering,
+}
+
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+
+% line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Drop cap
+\usepackage{lettrine}
+
+% ---------- Bibliography ----------
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  maxbibnames=99
+]{biblatex}
+\addbibresource{references.bib}
+
+% ---------- Glossary / Index ----------
+\usepackage{makeidx}
+\makeindex
+
+% ---------- Custom Commands ----------
+\newcommand{\en}[1]{\foreignlanguage{english}{#1}}
+\newcommand{\keyword}[1]{\textbf{\textcolor{PrimaryDark}{#1}}}
+\newcommand{\concept}[1]{\textbf{\textcolor{AccentCopper}{#1}}}
+\newcommand{\important}[1]{%
+  \tikz[baseline=(X.base)]
+  \node[fill=AccentGold!15, rounded corners=2pt,
+        inner xsep=4pt, inner ysep=1pt] (X) {#1};%
+}
+
+% Ornamental separator
+\newcommand{\ornsep}{%
+  \par\vspace{6pt}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[AccentGold, thick]
+        (-2,0) -- (-0.5,0);
+      \node[AccentGold] at (0,0) {\pgfornament[width=1cm]{88}};
+      \draw[AccentGold, thick]
+        (0.5,0) -- (2,0);
+    \end{tikzpicture}
+  \end{center}
+  \par\vspace{6pt}
+}
+
+% Simple ornamental separator (without pgfornament dependency)
+\newcommand{\simplesep}{%
+  \par\vspace{8pt}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[AccentGold, thick] (-2.5,0) -- (-0.3,0);
+      \node[diamond, fill=AccentGold, minimum size=5pt, inner sep=0pt] at (0,0) {};
+      \draw[AccentGold, thick] (0.3,0) -- (2.5,0);
+    \end{tikzpicture}
+  \end{center}
+  \par\vspace{8pt}
+}
+
+% Part page style
+\newcommand{\partpage}[2]{%
+  \clearpage
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[PrimaryDark] (current page.south west) rectangle (current page.north east);
+    \node[text=AccentGold, font=\fontsize{72}{80}\selectfont\bfseries]
+      at ([yshift=2cm]current page.center) {#1};
+    \node[text=white, font=\LARGE]
+      at ([yshift=-1cm]current page.center) {#2};
+    \draw[AccentGold, line width=2pt]
+      ([yshift=0.3cm, xshift=-4cm]current page.center)
+      -- ([yshift=0.3cm, xshift=4cm]current page.center);
+  \end{tikzpicture}
+  \clearpage
+}

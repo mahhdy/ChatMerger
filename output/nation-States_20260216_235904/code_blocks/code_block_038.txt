@@ -1,0 +1,17 @@
+---
+
+## Conversation 3
+*Model: claude-opus-4-6*
+
+### Request
+
+this file mixed in the chat environment. can you give it as a powershell command (like several command to append based on chat capacity or token limitation) so I can get the file in my folder properly? 
+path: D:\Code\Articles
+
+### Response
+
+Sure! I'll break it into multiple PowerShell commands. Copy and run them **in order** in your PowerShell terminal.
+
+---
+
+## Command 1 of 12 — Create file + Front matter + Section 1-2 start

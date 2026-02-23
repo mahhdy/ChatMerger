@@ -1,0 +1,39 @@
+graph TD
+    subgraph "سطح فدرال"
+        PRES["👤 رئیس‌جمهور<br/>منتخب مستقیم"]
+        M1["🏛️ مجلس ملّی<br/>بر اساس جمعیت"]
+        M2["🏛️ مجلس مناطق<br/>نمایندگی مساوی واحدها"]
+        CC["⚖️ دادگاه<br/>قانون اساسی"]
+        CAB["📋 هیئت دولت<br/>فدرال"]
+    end
+    
+    subgraph "سطح منطقه‌ای"
+        RGOV["👤 فرماندار<br/>منتخب"]
+        RPARL["🏛️ مجلس قانون‌گذاری<br/>منطقه‌ای"]
+        RCOURT["⚖️ دادگستری<br/>منطقه‌ای"]
+    end
+    
+    subgraph "سطح محلی"
+        CITY["🏘️ شهرداری‌ها<br/>و شوراهای شهر"]
+        VILLAGE["🌾 دهیاری‌ها<br/>و شوراهای روستا"]
+    end
+    
+    PRES --> CAB
+    M1 --> CC
+    M2 --> CC
+    CAB -.-> RGOV
+    M1 -.-> RPARL
+    CC -.-> RCOURT
+    RGOV -.-> CITY
+    RPARL -.-> VILLAGE
+    
+    style PRES fill:#1B2A4A,color:#fff,stroke:#D4A84B,stroke-width:2px
+    style M1 fill:#1B2A4A,color:#fff,stroke:#D4A84B,stroke-width:2px
+    style M2 fill:#1B2A4A,color:#fff,stroke:#D4A84B,stroke-width:2px
+    style CC fill:#1B2A4A,color:#fff,stroke:#D4A84B,stroke-width:2px
+    style CAB fill:#1B2A4A,color:#fff,stroke:#D4A84B,stroke-width:2px
+    style RGOV fill:#2C5F8A,color:#fff
+    style RPARL fill:#2C5F8A,color:#fff
+    style RCOURT fill:#2C5F8A,color:#fff
+    style CITY fill:#3A7D44,color:#fff
+    style VILLAGE fill:#3A7D44,color:#fff

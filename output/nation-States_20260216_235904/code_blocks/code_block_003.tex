@@ -1,0 +1,113 @@
+% titlepage.tex
+% ============================================================
+%  صفحه‌ی عنوان و شناسنامه‌ی کتاب
+% ============================================================
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+
+  % --- Full-page background ---
+  \fill[BgCream] (current page.south west) rectangle (current page.north east);
+
+  % --- Top dark strip ---
+  \fill[PrimaryDark]
+    (current page.north west) rectangle
+    ([yshift=-9cm]current page.north east);
+
+  % --- Gold accent band ---
+  \fill[AccentGold]
+    ([yshift=-9cm]current page.north west) rectangle
+    ([yshift=-9.4cm]current page.north east);
+
+  % --- Decorative pattern on dark strip ---
+  \foreach \i in {0,1,...,25}{
+    \node[opacity=0.04, text=white, font=\fontsize{40}{40}\selectfont,
+          rotate=30]
+      at ([xshift=\i*1.2cm-3cm, yshift=-4cm]current page.north west)
+      {◆};
+  }
+  \foreach \i in {0,1,...,25}{
+    \node[opacity=0.03, text=white, font=\fontsize{30}{30}\selectfont,
+          rotate=-15]
+      at ([xshift=\i*1.5cm-2cm, yshift=-7cm]current page.north west)
+      {◇};
+  }
+
+  % --- Main Title ---
+  \node[anchor=east, text=white, font=\fontsize{30}{36}\selectfont\bfseries,
+        text width=16cm, align=flush right]
+    at ([yshift=-3.5cm, xshift=-2cm]current page.north east)
+    {دولت، ملت و تنوع قومی};
+
+  % --- Subtitle ---
+  \node[anchor=east, text=AccentGold, font=\fontsize{16}{22}\selectfont,
+        text width=16cm, align=flush right]
+    at ([yshift=-5.8cm, xshift=-2cm]current page.north east)
+    {مبانی نظری، الگوهای تطبیقی\\[4pt]
+     و راهنمای اجرایی برای ایران};
+
+  % --- English subtitle ---
+  \node[anchor=east, text=white!80, font=\fontsize{11}{14}\selectfont\itshape]
+    at ([yshift=-7.8cm, xshift=-2cm]current page.north east)
+    {\en{State, Nation \& Ethnic Diversity: Theory, Comparative Models \& A Roadmap for Iran}};
+
+  % --- Central decorative element ---
+  \begin{scope}[shift={([yshift=-13cm]current page.north)}]
+    \foreach \a in {0,45,...,315}{
+      \draw[AccentGold, opacity=0.3, line width=0.5pt]
+        (0,0) -- (\a:2.5);
+    }
+    \draw[AccentGold, line width=1.5pt] (0,0) circle (2.2);
+    \draw[AccentGold, line width=0.6pt] (0,0) circle (2.5);
+    \draw[AccentGold, line width=0.6pt] (0,0) circle (1.8);
+    \node[text=PrimaryDark, font=\fontsize{9}{11}\selectfont, text width=3cm,
+          align=center]
+      at (0,0) {پژوهش تطبیقی\\سیاست تأسیسی\\مدیریت تنوع};
+  \end{scope}
+
+  % --- Bottom info area ---
+  \node[anchor=south east, text=TextMid, font=\small,
+        text width=8cm, align=flush right]
+    at ([yshift=3cm, xshift=-2cm]current page.south east)
+    {%
+      \textcolor{PrimaryDark}{\bfseries تألیف:}\quad پژوهشگر سیاست تطبیقی\\[6pt]
+      \textcolor{PrimaryDark}{\bfseries ناشر:}\quad مؤسسه‌ی مطالعات راهبردی\\[6pt]
+      \textcolor{PrimaryDark}{\bfseries نوبت چاپ:}\quad ویرایش اول — ۱۴۰۴
+    };
+
+  % --- Bottom left decorative ---
+  \fill[PrimaryDark, rounded corners=4pt]
+    ([yshift=1.5cm, xshift=2cm]current page.south west)
+    rectangle
+    ([yshift=2cm, xshift=8cm]current page.south west);
+  \node[text=AccentGold, font=\footnotesize\bfseries,
+        anchor=west]
+    at ([yshift=1.75cm, xshift=2.3cm]current page.south west)
+    {\en{Comparative Politics \& Constitutional Design}};
+
+  % --- Bottom strip ---
+  \fill[PrimaryDark]
+    (current page.south west) rectangle
+    ([yshift=0.8cm]current page.south east);
+  \fill[AccentGold]
+    ([yshift=0.8cm]current page.south west) rectangle
+    ([yshift=1.1cm]current page.south east);
+
+\end{tikzpicture}
+\end{titlepage}
+
+% --- Blank back of title page ---
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{\fill}
+{\small\color{TextMid}
+تمامی حقوق این اثر محفوظ است.\\[4pt]
+بازنشر با ذکر منبع بلامانع است.\\[12pt]
+\textcolor{PrimaryDark}{\bfseries شابک:}\quad
+\en{978-600-XXX-XXX-X}\\[4pt]
+\textcolor{PrimaryDark}{\bfseries نوبت چاپ:}\quad اول — بهار ۱۴۰۴
+}
+\vspace*{\fill}
+\end{center}
+\clearpage

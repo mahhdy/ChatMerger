@@ -1,0 +1,51 @@
+% colophon.tex
+% ============================================================
+%  صفحه‌ی پایانی (شناسنامه‌ی فنی)
+% ============================================================
+
+\clearpage
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.south west) rectangle (current page.north east);
+  
+  % Content
+  \node[text width=12cm, align=center, text=white]
+    at (current page.center) {
+      {\color{AccentGold}\rule{8cm}{0.5pt}}\\[20pt]
+      {\Large\bfseries\color{AccentGold} شناسنامه‌ی فنّی کتاب}\\[20pt]
+      {\color{AccentGold}\rule{8cm}{0.5pt}}\\[30pt]
+      {\small
+        \begin{tabular}{rl}
+          \textcolor{AccentGold}{\bfseries عنوان:} &
+            دولت، ملت و تنوع قومی \\[6pt]
+          \textcolor{AccentGold}{\bfseries زیرعنوان:} &
+            مبانی نظری، الگوهای تطبیقی و راهنمای اجرایی برای ایران \\[6pt]
+          \textcolor{AccentGold}{\bfseries تألیف:} &
+            پژوهشگر سیاست تطبیقی \\[6pt]
+          \textcolor{AccentGold}{\bfseries حروف‌چینی:} &
+            \en{\XeLaTeX{} + TikZ + tcolorbox} \\[6pt]
+          \textcolor{AccentGold}{\bfseries قلم فارسی:} &
+            \en{XB Niloofar / IRanSans} \\[6pt]
+          \textcolor{AccentGold}{\bfseries قلم لاتین:} &
+            \en{Libertinus Serif / Sans} \\[6pt]
+          \textcolor{AccentGold}{\bfseries ویرایش:} &
+            اول — بهار ۱۴۰۴ \\[6pt]
+          \textcolor{AccentGold}{\bfseries تعداد فصول:} &
+            ۶ فصل + پیوست‌ها \\[6pt]
+          \textcolor{AccentGold}{\bfseries قطع:} &
+            وزیری (\en{A4}) \\[6pt]
+          \textcolor{AccentGold}{\bfseries شابک:} &
+            \en{978-600-XXX-XXX-X}
+        \end{tabular}
+      }\\[30pt]
+      {\color{AccentGold}\rule{8cm}{0.5pt}}\\[15pt]
+      {\footnotesize\color{white!70}
+        این کتاب با نرم‌افزارهای آزاد حروف‌چینی شده\\
+        و تمامی نمودارها و تصاویر با \en{TikZ/PGF} تولید شده‌اند.\\[8pt]
+        بازنشر با ذکر منبع بلامانع است.
+      }
+    };
+\end{tikzpicture}
+
+\clearpage

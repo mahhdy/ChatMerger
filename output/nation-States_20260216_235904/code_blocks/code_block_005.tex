@@ -1,0 +1,280 @@
+% chapter1.tex
+% ============================================================
+%  فصل ۱: مبانی نظری شکل‌گیری دولت
+% ============================================================
+
+\chapter{مبانی نظری شکل‌گیری دولت}
+
+\begin{keybox}[خلاصه‌ی فصل]
+در این فصل با مفاهیم بنیادین \keyword{دولت} (\en{State})، \keyword{ملت} (\en{Nation})
+و \keyword{قومیت} (\en{Ethnicity}) آشنا می‌شویم و نظریه‌های اصلی شکل‌گیری دولت‌ها را
+در حوزه‌های جغرافیایی مختلف مرور می‌کنیم.
+\end{keybox}
+
+% ============================================================
+\section{مفهوم‌شناسی: دولت، ملت و قومیت}
+% ============================================================
+
+\subsection{دولت (\en{State})}
+
+\lettrine[lines=2, findent=3pt, nindent=0pt]{\textcolor{PrimaryDark}{د}}{}%
+ولت در معنای مدرن خود — آن‌چنان‌که \concept{ماکس وبر} تعریف کرده — نهادی است که
+\important{انحصار مشروع خشونت} را در قلمرو جغرافیایی معیّنی در اختیار دارد.
+اما این تعریف تنها نقطه‌ی آغاز است. چهار عنصر کلاسیک دولت عبارت‌اند از:
+
+\begin{enumerate}
+  \item \keyword{قلمرو مشخص} (\en{Territory})
+  \item \keyword{جمعیت دائمی} (\en{Population})
+  \item \keyword{حکومت} (\en{Government})
+  \item \keyword{حاکمیت} (\en{Sovereignty})
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  element/.style={
+    draw=PrimaryMid, fill=BgLightBlue, rounded corners=8pt,
+    minimum width=3.2cm, minimum height=1.4cm, align=center,
+    font=\small\bfseries, text=PrimaryDark,
+    drop shadow={shadow xshift=1.5pt, shadow yshift=-1.5pt, opacity=0.15}
+  },
+  center/.style={
+    circle, draw=AccentGold, fill=BgLightGold, line width=2pt,
+    minimum size=2.8cm, align=center, font=\bfseries\large,
+    text=PrimaryDark,
+    drop shadow={shadow xshift=2pt, shadow yshift=-2pt, opacity=0.2}
+  },
+  arrow/.style={
+    -{Stealth[length=6pt]}, line width=1.2pt, PrimaryMid
+  }
+]
+  \node[center] (state) {دولت\\\en{\footnotesize State}};
+
+  \node[element, above=1.8cm of state] (territory)
+    {قلمرو\\\en{\footnotesize Territory}};
+  \node[element, below=1.8cm of state] (pop)
+    {جمعیت\\\en{\footnotesize Population}};
+  \node[element, left=2.2cm of state] (gov)
+    {حکومت\\\en{\footnotesize Government}};
+  \node[element, right=2.2cm of state] (sov)
+    {حاکمیت\\\en{\footnotesize Sovereignty}};
+
+  \draw[arrow] (state) -- (territory);
+  \draw[arrow] (state) -- (pop);
+  \draw[arrow] (state) -- (gov);
+  \draw[arrow] (state) -- (sov);
+\end{tikzpicture}
+\caption{چهار عنصر سازنده‌ی دولت مدرن}
+\label{fig:state-elements}
+\end{figure}
+
+\subsection{ملت (\en{Nation})}
+
+مفهوم ملت به دو شکل عمده تعریف شده است:
+
+\begin{keybox}[دو رویکرد به ملت]
+\begin{description}[style=nextline, leftmargin=2cm]
+  \item[\textcolor{PrimaryDark}{رویکرد مدنی (\en{Civic Nation})}]
+    ملت بر پایه‌ی شهروندی مشترک، قانون اساسی واحد و اراده‌ی سیاسی مشترک تعریف می‌شود.
+    نمونه: فرانسه، ایالات متحده.
+  \item[\textcolor{AccentCopper}{رویکرد قومی (\en{Ethnic Nation})}]
+    ملت بر پایه‌ی تبار، زبان، فرهنگ و تاریخ مشترک تعریف می‌شود.
+    نمونه: آلمان (پیش از ۱۹۴۵)، ژاپن.
+\end{description}
+\end{keybox}
+
+\subsection{قومیت (\en{Ethnicity})}
+
+قومیت به گروهی اجتماعی اشاره دارد که اعضای آن بر پایه‌ی \concept{هویت فرهنگی مشترک} — شامل زبان، آداب، دین یا تبار مشترک — خود را از دیگران متمایز می‌دانند. قومیت لزوماً با ملت یکسان نیست. یک دولت ممکن است چندین قومیت و حتی چندین ملت را در بر بگیرد.
+
+\simplesep
+
+% ============================================================
+\section{نظریه‌های شکل‌گیری دولت}
+% ============================================================
+
+\subsection{رویکردهای کلاسیک}
+
+\begin{table}[htbp]
+\centering
+\caption{نظریه‌های اصلی شکل‌گیری دولت}
+\label{tab:state-formation-theories}
+\rowcolors{2}{BgLightBlue!40}{white}
+\begin{tabularx}{\textwidth}{>{\bfseries\color{PrimaryDark}}r X >{\small\itshape\color{TextMid}}r}
+\toprule
+\rowcolor{PrimaryDark}
+\textcolor{white}{\bfseries نظریه} &
+\textcolor{white}{\bfseries شرح اجمالی} &
+\textcolor{white}{\bfseries اندیشمند} \\
+\midrule
+قرارداد اجتماعی &
+دولت حاصل توافق ارادی افراد برای خروج از وضع طبیعی است.
+& هابز، لاک، روسو \\
+فتح و غلبه &
+دولت در نتیجه‌ی تسلط گروهی بر گروه دیگر شکل گرفته.
+& ابن‌خلدون، اوپنهایمر \\
+نظریه‌ی مارکسیستی &
+دولت ابزار سلطه‌ی طبقاتی است که همراه مالکیت خصوصی پدید آمد.
+& مارکس، انگلس، لنین \\
+نظریه‌ی جنگ &
+فشار نظامی و رقابت بین واحدها دولت‌های مدرن را ساخت.
+& چارلز تیلی \\
+نظریه‌ی هیدرولیکی &
+مدیریت آبیاری در مقیاس بزرگ به دولت متمرکز انجامید.
+& ویتفوگل \\
+نهادگرایی تاریخی &
+مسیرهای تاریخی ویژه (وابستگی به مسیر) ساختار دولت را شکل داد.
+& برینگتن مور، اسکاچپل \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نظریه‌ی چارلز تیلی: «جنگ دولت می‌سازد»}
+
+\begin{quotebox}
+\en{``War made the state, and the state made war.''}
+\hfill — \en{Charles Tilly}
+\end{quotebox}
+
+\concept{تیلی} استدلال می‌کند که رقابت نظامی قرون ۱۶ تا ۱۹ میلادی در اروپا، دولت‌ها را وادار به ایجاد بوروکراسی مالیاتی، ارتش دائمی و دستگاه اداری کارآمد کرد. دولت‌هایی که نتوانستند این سه کارکرد را توسعه دهند، از صحنه حذف شدند.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.5cm and 2.5cm,
+  block/.style={
+    rectangle, rounded corners=6pt, draw=PrimaryMid, fill=BgLightBlue,
+    minimum height=1cm, minimum width=2.8cm, align=center,
+    font=\small\bfseries, text=PrimaryDark
+  },
+  arrow/.style={-{Stealth[length=5pt]}, thick, PrimaryDark}
+]
+  \node[block] (war) {جنگ و رقابت\\نظامی};
+  \node[block, right=of war] (tax) {نظام مالیاتی\\گسترده‌تر};
+  \node[block, right=of tax] (bur) {بوروکراسی\\حرفه‌ای};
+  \node[block, below=of bur] (army) {ارتش دائمی\\و بزرگ‌تر};
+  \node[block, below=of war] (state) {دولت مدرن\\متمرکز};
+
+  \draw[arrow] (war) -- (tax);
+  \draw[arrow] (tax) -- (bur);
+  \draw[arrow] (bur) -- (army);
+  \draw[arrow] (army) -- (state);
+  \draw[arrow, dashed, AccentCopper] (state) -- (war)
+    node[midway, left, font=\footnotesize\color{AccentCopper}] {بازخورد};
+\end{tikzpicture}
+\caption{چرخه‌ی تیلی: جنگ و دولت‌سازی}
+\label{fig:tilly-cycle}
+\end{figure}
+
+\subsection{مسیرهای مختلف دولت‌سازی در جهان}
+
+\begin{goldbox}[سه مسیر عمده]
+\begin{enumerate}
+  \item \keyword{مسیر اروپایی:} جنگ → مالیات → بوروکراسی → دموکراسی تدریجی
+  \item \keyword{مسیر پسااستعماری:} مرزهای مصنوعی → دولتِ وارداتی → بحران مشروعیت
+  \item \keyword{مسیر انقلابی:} انقلاب → دولت ایدئولوژیک → اصلاحات یا فروپاشی
+\end{enumerate}
+\end{goldbox}
+
+% ============================================================
+\section{شکل‌گیری دولت‌ها در حوزه‌های جغرافیایی مختلف}
+% ============================================================
+
+\subsection{اروپا: از فئودالیسم تا دولت وستفالیایی}
+
+صلح وستفالی (۱۶۴۸) نقطه‌ی عطفی در تاریخ شکل‌گیری نظام دولت‌های مدرن بود. با پایان جنگ‌های سی‌ساله، اصل \keyword{حاکمیت سرزمینی} (\en{Territorial Sovereignty}) به رسمیت شناخته شد. از آن پس، هر واحد سیاسی در درون مرزهای خود مرجع نهایی اقتدار بود.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  timenode/.style={
+    draw=PrimaryMid, fill=BgLightBlue, rounded corners=4pt,
+    minimum width=2.5cm, minimum height=0.8cm,
+    font=\footnotesize\bfseries, text=PrimaryDark, align=center
+  },
+  yearnode/.style={
+    fill=AccentGold, text=PrimaryDark, rounded corners=2pt,
+    font=\footnotesize\bfseries, inner sep=3pt
+  }
+]
+  % Timeline line
+  \draw[PrimaryMid, line width=2pt] (0,0) -- (14,0);
+
+  % Events
+  \foreach \x/\year/\event in {
+    1/1648/صلح وستفالی,
+    4/1789/انقلاب فرانسه,
+    7/1815/کنگره‌ی وین,
+    10/1919/معاهده ورسای,
+    13/1945/سازمان ملل
+  }{
+    \node[yearnode] at (\x, 0.5) {\year};
+    \node[timenode, above=0.8cm] at (\x, 0.5) {\event};
+    \draw[PrimaryMid, thick] (\x, 0) -- (\x, 0.35);
+  }
+\end{tikzpicture}
+\caption{خط زمانی تحول نظام دولت‌ها در اروپا}
+\label{fig:europe-timeline}
+\end{figure}
+
+\subsection{خاورمیانه: دولت‌سازی مصنوعی}
+
+\begin{challengebox}[چالش مرزهای سایکس–پیکو]
+مرزهای کنونی بسیاری از کشورهای خاورمیانه نه بر اساس واقعیت‌های قومی و فرهنگی، بلکه بر پایه‌ی توافق‌های استعماری (به‌ویژه سایکس–پیکو ۱۹۱۶) ترسیم شدند. نتیجه: دولت‌هایی چندقومی با هویت ملی شکننده.
+
+نمونه‌ها: عراق (عرب‌شیعه، عرب‌سنی، کرد)، سوریه، لبنان.
+\end{challengebox}
+
+\subsection{آفریقا: میراث استعمار و دولت‌های ضعیف}
+
+در آفریقا نیز مرزهای دوران استعمار بی‌اعتنا به واقعیت‌های قبیله‌ای و زبانی ترسیم شدند. پس از استقلال، بسیاری از دولت‌ها با بحران \concept{ملت‌سازی} مواجه شدند: چگونه از ده‌ها یا صدها قومیت، یک هویت ملّی واحد بسازیم؟
+
+\subsection{آسیا: تنوع در مسیرهای دولت‌سازی}
+
+\begin{itemize}
+  \item \keyword{چین:} امپراتوری کهن → دولت‌ملت کمونیستی متمرکز
+  \item \keyword{هندوستان:} تنوع عظیم + دموکراسی فدرال
+  \item \keyword{ژاپن:} همگنی نسبی قومی + مدرن‌سازی سریع (اصلاحات میجی)
+  \item \keyword{ایران:} امپراتوری کهن + تنوع قومی + تمرکزگرایی مدرن (پهلوی)
+\end{itemize}
+
+% ============================================================
+\section{سرفصل‌های مرتبط در نظریه‌ی سیاسی}
+% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{سرفصل‌های اصلی در حوزه‌ی دولت‌سازی و مدیریت تنوع}
+\label{tab:subfields}
+\rowcolors{2}{BgLightGold!50}{white}
+\begin{tabularx}{\textwidth}{>{\bfseries\color{PrimaryDark}}r X}
+\toprule
+\rowcolor{PrimaryDark}
+\textcolor{white}{\bfseries حوزه‌ی مطالعاتی} &
+\textcolor{white}{\bfseries موضوعات کلیدی} \\
+\midrule
+سیاست تأسیسی \en{(Constitutional Design)} &
+طراحی قانون اساسی، توزیع قدرت، نهادسازی \\
+سیاست تطبیقی \en{(Comparative Politics)} &
+مقایسه‌ی نظام‌ها، فدرالیسم تطبیقی، الگوهای دموکراسی \\
+ملی‌گرایی و قومیت‌شناسی &
+ملت‌سازی، ناسیونالیسم، مدیریت تنوع قومی \\
+حقوق اقلیت‌ها &
+حقوق زبانی، خودمختاری فرهنگی، نمایندگی \\
+توسعه‌ی سیاسی &
+دموکراتیزاسیون، پایداری نهادی، حکمرانی خوب \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\simplesep
+
+\begin{lessonbox}[جمع‌بندی فصل اول]
+\begin{itemize}
+  \item دولت‌ها در مسیرهای تاریخی بسیار متفاوتی شکل گرفته‌اند.
+  \item تمایز میان دولت، ملت و قومیت برای فهم تنوع سیاسی ضروری است.
+  \item بسیاری از چالش‌های امروز (عراق، سوریه، ایران) ریشه در عدم تطابق دولت و ملت دارند.
+  \item نظریه‌های شکل‌گیری دولت ابزارهای تحلیلی قدرتمندی برای فهم وضعیت کنونی فراهم می‌کنند.
+\end{itemize}
+\end{lessonbox}

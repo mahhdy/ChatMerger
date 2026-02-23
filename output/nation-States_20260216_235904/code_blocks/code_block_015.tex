@@ -1,0 +1,51 @@
+% dedication.tex
+% ============================================================
+%  صفحه‌ی تقدیم
+% ============================================================
+
+\clearpage
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[BgCream] (current page.south west) rectangle (current page.north east);
+  
+  % Decorative border
+  \draw[AccentGold, line width=1.5pt, rounded corners=15pt]
+    ([xshift=2cm, yshift=2cm]current page.south west)
+    rectangle
+    ([xshift=-2cm, yshift=-2cm]current page.north east);
+  
+  \draw[AccentGold, line width=0.5pt, rounded corners=12pt]
+    ([xshift=2.3cm, yshift=2.3cm]current page.south west)
+    rectangle
+    ([xshift=-2.3cm, yshift=-2.3cm]current page.north east);
+
+  % Diamond decorations
+  \foreach \pos in {
+    {([xshift=2cm, yshift=2cm]current page.south west)},
+    {([xshift=-2cm, yshift=2cm]current page.south east)},
+    {([xshift=2cm, yshift=-2cm]current page.north west)},
+    {([xshift=-2cm, yshift=-2cm]current page.north east)}
+  }{
+    \node[diamond, fill=AccentGold, minimum size=6pt, inner sep=0pt] at \pos {};
+  }
+
+  % Dedication text
+  \node[text width=10cm, align=center, font=\large, text=PrimaryDark]
+    at ([yshift=2cm]current page.center) {
+      \textit{تقدیم به}\\[12pt]
+      {\Large\bfseries همه‌ی مردمان سرزمین ایران}\\[8pt]
+      {\normalsize از هر تبار و زبان و باور}\\[8pt]
+      {\normalsize که رؤیای زیستن در صلح و آزادی و برابری را}\\[4pt]
+      {\normalsize در دل می‌پرورانند.}
+    };
+
+  % Ornamental line
+  \draw[AccentGold, thick]
+    ([yshift=-1cm, xshift=-3cm]current page.center)
+    -- ([yshift=-1cm, xshift=3cm]current page.center);
+  \node[diamond, fill=AccentGold, minimum size=5pt, inner sep=0pt]
+    at ([yshift=-1cm]current page.center) {};
+\end{tikzpicture}
+
+\clearpage
