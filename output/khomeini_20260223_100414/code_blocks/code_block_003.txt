@@ -1,0 +1,97 @@
+---
+
+## 🎨 Design System
+
+| Element | Spec |
+|---------|------|
+| **Document class** | `book`, 12pt, A4 |
+| **Main Persian font** | IRLotus (Scale 1.05) |
+| **Latin font** | TeX Gyre Termes / Times New Roman fallback |
+| **Engine** | XeLaTeX (mandatory), ≥2 passes |
+| **Colour palette** | cPrimary (navy), cAccent (red), cGold, cGreen, cWarn, cConsolid |
+| **Custom boxes** | `principleBox`, `warningBox`, `noteBox`, `infoBox` |
+| **Diagrams** | TikZ (mindmap, timelines, flowcharts), pgf-pie |
+| **Tables** | longtable + booktabs + colortbl |
+| **Bidi** | xepersian (must be **last** package loaded) |
+
+---
+
+## 🔄 How to Continue in a New Chat
+
+Copy-paste the following **prompt template** into a new chat session:
+
+---
+
+> **System context (paste first):**
+>
+> I am writing a Persian-language LaTeX book titled «وعده یا خدعه؟». The project codename is `khomeini-promise-critical-study`. The full architecture, design system, and chapter breakdown are defined in the README below. The LaTeX preamble (packages, fonts, colours, box definitions, header/footer) was established in **Segment 0** and must NOT be repeated — only `\chapter` / `\section` content should be produced.
+>
+> [Paste the Part Map table and Chapter Breakdown list from this README]
+>
+> **Current request:**
+> Please produce **Segment N** covering chapters X–Y. Continue the exact LaTeX style (principleBox, warningBox, noteBox, infoBox, \keyword{}, \en{}, TikZ timelines where appropriate). Maintain critical-analytical tone in Persian. Every factual claim should reference its source in a `\footnote{}`. At the end, provide an updated README diff noting what was completed.
+
+---
+
+### Segment Status Tracker
+
+| Segment | Chapters | Status | Notes |
+|---------|----------|--------|-------|
+| **Seg 0** | Preamble + مقدمه + فصل ۱ | ✅ Done | This file |
+| **Seg 1** | فصل ۲–۵ (Theses) | ⬜ TODO | |
+| **Seg 2** | فصل ۶–۹ (Events I) | ⬜ TODO | |
+| **Seg 3** | فصل ۱۰–۱۲ (Events II) | ⬜ TODO | |
+| **Seg 4** | فصل ۱۳–۱۶ (Analysis) | ⬜ TODO | |
+| **Seg 5** | Appendices + Bibliography | ⬜ TODO | |
+
+---
+
+## 📚 Key Sources to Reference Throughout
+
+### Persian-Language
+- صحیفهٔ امام (۲۲ جلد)، مؤسسهٔ تنظیم و نشر آثار امام خمینی
+- حسین بشیریه، «دیباچه‌ای بر جامعه‌شناسی سیاسی ایران»
+- عبدالکریم سروش، مجموعه مقالات و سخنرانی‌ها دربارهٔ انقلاب
+- محسن کدیور، «حکومت ولایی»
+- سعید حجاریان، «از شاهد قدسی تا شاهد بازاری»
+- عباس میلانی، «نگاهی به شاه»
+- اکبر گنجی، «تلقی فاشیستی از دین و حکومت»
+- هاشمی رفسنجانی، خاطرات (چند جلد)
+- ابراهیم یزدی، «آخرین تلاش‌ها در آخرین روزها»
+
+### English-Language
+- Ervand Abrahamian, *Khomeinism* (1993); *A History of Modern Iran* (2008); *Tortured Confessions* (1999)
+- Shaul Bakhash, *The Reign of the Ayatollahs* (1984)
+- Said Amir Arjomand, *The Turban for the Crown* (1988)
+- Mohsen Milani, *The Making of Iran's Islamic Revolution* (1988; 2nd ed. 1994)
+- Nikki Keddie, *Modern Iran: Roots and Results of Revolution* (2003; 2006 ed.)
+- Baqer Moin, *Khomeini: Life of the Ayatollah* (1999)
+- Vanessa Martin, *Creating an Islamic State: Khomeini and the Making of a New Iran* (2000)
+- Homa Katouzian, various articles on the constitutional draft
+- Abbas Milani, *The Shah* (2011)
+- Mark Bowden, *Guests of the Ayatollah* (2006)
+- David Crist, *The Twilight War* (2012)
+
+### Dissertations & Theses (examples to track)
+- [To be expanded per segment — each chapter will cite relevant theses from ProQuest, EThOS, IRANDOC, SID.ir]
+
+---
+
+## ⚠️ Editorial Guidelines
+
+1. **Critical-analytical tone** — No hagiography, no polemics. Present each thesis with its strongest evidence, then critique.
+2. **Multi-vocal** — Always represent at least two opposing readings of every event.
+3. **Source-grounded** — Prefer primary sources (speeches, decrees, memoirs) over secondary commentary.
+4. **Persian prose style** — Formal academic Persian; avoid colloquialisms; use \en{} for all English terms.
+5. **Structural consistency** — Every chapter opens with an abstract box (`infoBox`), contains at least one timeline or analytical table, and closes with a summary box (`principleBox`).
+
+---
+
+## 📝 License & Disclaimer
+
+This is an **academic research document**. All quoted materials are used under fair-use principles for scholarly analysis. The views presented are analytical frameworks, not the author's personal political positions.
+
+---
+
+*Last updated: Segment 0 completion*
+*Next action: Request Segment 1 (فصل ۲–۵)*

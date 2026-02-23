@@ -1,0 +1,264 @@
+%  ────────────────────────────────────────
+%  کامپایل: XeLaTeX (الزامی)
+%  حداقل دو بار کامپایل لازم است (برای فهرست مطالب و ارجاعات)
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+
+% ════════════════════════════════════════
+%  ۱. بسته‌های پایه (قبل از xepersian)
+%     ⚠ ترتیب بسته‌ها مهم است!
+%     ⚠ xepersian باید آخرین بسته باشد!
+% ════════════════════════════════════════
+
+% --- رنگ و گرافیک ---
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{colortbl}          % ← اصلاح: برای \cellcolor
+
+% --- صفحه‌آرایی ---
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{pdflscape}         % ← اصلاح: برای محیط landscape
+
+% --- جدول ---
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}          % ← اضافه: برای \multirow در جداول
+\usepackage{multicol}
+\usepackage{array}             % ← اضافه: برای ستون‌های سفارشی
+
+% --- TikZ (با تمام کتابخانه‌های لازم) ---
+\usepackage{tikz}
+\usetikzlibrary{
+	positioning,                 % ← اصلاح: برای 'of' syntax
+	arrows.meta,                 % ← اصلاح: برای {Stealth}
+	calc,                        % ← اضافه: برای محاسبات مختصاتی
+	shapes.geometric,            % ← اصلاح: برای ellipse و سایر اشکال
+	shapes.symbols,              % ← اضافه
+	decorations.pathreplacing,   % ← اضافه
+	mindmap,                     % ← اصلاح: برای نمودار mindmap
+	backgrounds,                 % ← اضافه
+	fit                          % ← اضافه
+}
+\usepackage{pgf-pie}
+% --- جعبه‌های رنگی ---
+\usepackage[skins,breakable]{tcolorbox}
+
+% --- لیست‌ها ---
+\usepackage{enumitem}
+\usepackage{amssymb}           % ← برای $\bigstar$, $\blacksquare$, $\blacktriangle$
+\usepackage{bm}                % ← برای $\boldsymbol{}$
+% --- متفرقه ---
+\usepackage{float}
+\usepackage{footnote}
+\makesavenoteenv{longtable}
+\usepackage{etoolbox}
+\usepackage{pdfpages}
+
+% --- عنوان‌بندی ---
+\usepackage{titlesec}
+
+% --- لینک‌ها (قبل از xepersian) ---
+\usepackage{hyperref}
+
+% ════════════════════════════════════════
+%  ۲. fontspec و تنظیمات قلم
+%     ⚠ باید قبل از xepersian باشد
+%     ⚠ از قلم‌هایی استفاده شده که
+%       در اکثر سیستم‌ها موجودند
+% ════════════════════════════════════════
+\usepackage{fontspec}
+
+% --- بررسی وجود قلم لاتین ---
+% اگر TeX Gyre Termes ندارید، از Times New Roman یا Latin Modern استفاده شود
+\IfFontExistsTF{TeX Gyre Termes}{%
+	\setmainfont{TeX Gyre Termes}%  % اگر نصب است
+}{%
+	\IfFontExistsTF{Times New Roman}{%
+		\setmainfont{Times New Roman}% % جایگزین اول
+	}{%
+		\setmainfont{Latin Modern Roman}% % جایگزین نهایی (همیشه در TeX هست)
+	}%
+}
+
+% ════════════════════════════════════════
+%  ۳. xepersian — آخرین بسته (الزامی!)
+% ════════════════════════════════════════
+\usepackage{xepersian}
+
+% --- قلم فارسی ---
+% IRLotus باید روی سیستم نصب باشد
+% جایگزین‌ها: B Nazanin, Vazirmatn, XB Niloofar
+\settextfont[Scale=1.05]{IRLotus}
+\setdigitfont{IRLotus}
+
+% --- قلم لاتین در متن فارسی ---
+% ⚠ setlatintextfont باید بعد از xepersian باشد
+\IfFontExistsTF{TeX Gyre Termes}{%
+	\setlatintextfont[Scale=0.95]{TeX Gyre Termes}%
+}{%
+	\IfFontExistsTF{Times New Roman}{%
+		\setlatintextfont[Scale=0.95]{Times New Roman}%
+	}{%
+		\setlatintextfont[Scale=0.95]{Latin Modern Roman}%
+	}%
+}
+
+% ════════════════════════════════════════
+%  ۴. تنظیمات صفحه
+% ════════════════════════════════════════
+\geometry{
+	top=30mm,
+	bottom=30mm,
+	right=30mm,
+	left=25mm,
+	headheight=30pt             % ← اصلاح: از 15pt به 30pt
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\onehalfspacing
+
+% ════════════════════════════════════════
+%  ۵. رنگ‌های اصلی سند (پالت ملایم)
+% ════════════════════════════════════════
+\definecolor{cPrimary}{HTML}{1B2A4A}    % سرمه‌ای ملایم
+\definecolor{cAccent}{HTML}{C0392B}     % قرمز — هشدارها
+\definecolor{cLight}{HTML}{F5F5F0}      % پس‌زمینه‌ی روشن
+\definecolor{cGray}{HTML}{7F8C8D}       % خاکستری متن فرعی
+\definecolor{cGold}{HTML}{B7950B}       % طلایی — تأکیدهای مثبت
+\definecolor{cWarn}{HTML}{E67E22}       % نارنجی — هشدار متوسط
+\definecolor{cGreen}{HTML}{27AE60}      % سبز — موفقیت
+\definecolor{cConsolid}{HTML}{6C3483}   % بنفش مات — تثبیت و تداوم
+
+% ════════════════════════════════════════
+%  ۶. استایل عنوان‌ها
+% ════════════════════════════════════════
+% اول: فاصله‌ها
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+\titlespacing*{\paragraph}{0pt}{6pt}{1em}
+
+% دوم: فرمت‌ها (باید بعد از spacing باشد)
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries\color{cPrimary}}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{cPrimary}}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{cPrimary!80}}
+{\thesubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries\color{cPrimary!70}}
+{}{}{}
+
+% ════════════════════════════════════════
+%  ۷. جعبه‌های اطلاعاتی
+% ════════════════════════════════════════
+
+\newtcolorbox{principleBox}[1][]{%
+	enhanced, breakable,
+	colback=cLight,
+	colframe=cPrimary,
+	coltitle=white,
+	fonttitle=\bfseries,
+	title=#1,
+	boxrule=0.5pt,
+	arc=2pt,
+	left=8pt, right=8pt, top=6pt, bottom=6pt,
+	shadow={0.5mm}{-0.5mm}{0mm}{black!15}
+}
+
+\newtcolorbox{warningBox}[1][]{%
+	enhanced, breakable,
+	colback=cAccent!5,
+	colframe=cAccent!70,
+	coltitle=white,
+	fonttitle=\bfseries,
+	title=#1,
+	boxrule=0.5pt,
+	arc=2pt,
+	left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+\newtcolorbox{noteBox}[1][]{%
+	enhanced, breakable,
+	colback=cGold!5,
+	colframe=cGold!70,
+	coltitle=white,
+	fonttitle=\bfseries,
+	title=#1,
+	boxrule=0.5pt,
+	arc=2pt,
+	left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+\newtcolorbox{infoBox}[1][]{%
+	enhanced, breakable,
+	colback=blue!3,
+	colframe=cPrimary!50,
+	coltitle=white,
+	fonttitle=\bfseries,
+	title=#1,
+	boxrule=0.5pt,
+	arc=2pt,
+	left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+% ════════════════════════════════════════
+%  ۸. سربرگ و پابرگ
+% ════════════════════════════════════════
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\small\color{cGray} دادگاه در سایه — وجدان منفصل مسئول}
+\fancyhead[LE]{\small\color{cGray} سند پیشنهادی}
+\fancyfoot[C]{\small\color{cGray}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ════════════════════════════════════════
+%  ۹. تنظیم لینک‌ها
+% ════════════════════════════════════════
+\hypersetup{
+	colorlinks=true,
+	linkcolor=cPrimary,
+	urlcolor=cPrimary!70,
+	citecolor=cGold,
+	pdfauthor={گروه تدوین},
+	pdftitle={دادگاه در سایه — وجدان منفصل مسئول},
+	pdfsubject={پیشنهاد تأسیس نظام شبه‌قضایی اپوزیسیون ایران}
+}
+
+% ════════════════════════════════════════
+%  ۱۰. فرمان‌های کمکی
+% ════════════════════════════════════════
+
+% --- تأکید کلیدواژه ---
+\newcommand{\keyword}[1]{\textbf{\textcolor{cPrimary}{#1}}}
+
+% --- متن هشدار ---
+\newcommand{\warn}[1]{\textcolor{cAccent}{#1}}
+
+% --- متن انگلیسی (با پشتیبانی bidi) ---
+% ⚠ \lr از xepersian می‌آید و جهت را به چپ‌به‌راست تغییر می‌دهد
+\newcommand{\en}[1]{\lr{\textit{#1}}}
+% ────────────────────────────────────────
+% اگر می‌خواهید متن انگلیسی italic نباشد:
+% \newcommand{\en}[1]{\lr{#1}}
+% ────────────────────────────────────────
+
+% ════════════════════════════════════════
+%  ۱۱. تنظیمات اضافی bidi و RTL
+% ════════════════════════════════════════
+
+% longtable در محیط RTL گاهی مشکل دارد — این خط کمک می‌کند:
+\AtBeginEnvironment{longtable}{\small}
+
+% اطمینان از عملکرد صحیح شماره‌گذاری فارسی در جداول:
+\SepMark{.}
+
+
+% ============================================================
+%  شروع سند
+% ============================================================

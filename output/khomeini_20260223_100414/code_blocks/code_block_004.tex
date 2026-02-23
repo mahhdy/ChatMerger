@@ -1,0 +1,494 @@
+% ============================================================
+%  وعده یا خدعه؟
+%  بررسی انتقادی وعدهٔ عدم نقش‌آفرینی آیت‌الله خمینی
+%  پس از انقلاب ۱۳۵۷
+% ------------------------------------------------------------
+%  Segment 0: Preamble + مقدمه + فصل ۱
+%  کامپایل: XeLaTeX — حداقل دو بار
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+
+% ════════════════════════════════════════
+%  ۱. بسته‌های پایه (قبل از xepersian)
+% ════════════════════════════════════════
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{colortbl}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{pdflscape}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+
+\usepackage{tikz}
+\usetikzlibrary{
+    positioning,
+    arrows.meta,
+    calc,
+    shapes.geometric,
+    shapes.symbols,
+    decorations.pathreplacing,
+    mindmap,
+    backgrounds,
+    fit
+}
+\usepackage{pgf-pie}
+
+\usepackage[skins,breakable]{tcolorbox}
+
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{bm}
+
+\usepackage{float}
+\usepackage{footnote}
+\makesavenoteenv{longtable}
+\usepackage{etoolbox}
+\usepackage{pdfpages}
+
+\usepackage{titlesec}
+
+\usepackage{hyperref}
+
+% ════════════════════════════════════════
+%  ۲. fontspec
+% ════════════════════════════════════════
+\usepackage{fontspec}
+
+\IfFontExistsTF{TeX Gyre Termes}{%
+    \setmainfont{TeX Gyre Termes}%
+}{%
+    \IfFontExistsTF{Times New Roman}{%
+        \setmainfont{Times New Roman}%
+    }{%
+        \setmainfont{Latin Modern Roman}%
+    }%
+}
+
+% ════════════════════════════════════════
+%  ۳. xepersian — آخرین بسته
+% ════════════════════════════════════════
+\usepackage{xepersian}
+
+\settextfont[Scale=1.05]{IRLotus}
+\setdigitfont{IRLotus}
+
+\IfFontExistsTF{TeX Gyre Termes}{%
+    \setlatintextfont[Scale=0.95]{TeX Gyre Termes}%
+}{%
+    \IfFontExistsTF{Times New Roman}{%
+        \setlatintextfont[Scale=0.95]{Times New Roman}%
+    }{%
+        \setlatintextfont[Scale=0.95]{Latin Modern Roman}%
+    }%
+}
+
+% ════════════════════════════════════════
+%  ۴. تنظیمات صفحه
+% ════════════════════════════════════════
+\geometry{
+    top=30mm,
+    bottom=30mm,
+    right=30mm,
+    left=25mm,
+    headheight=30pt
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\onehalfspacing
+
+% ════════════════════════════════════════
+%  ۵. رنگ‌های اصلی سند
+% ════════════════════════════════════════
+\definecolor{cPrimary}{HTML}{1B2A4A}
+\definecolor{cAccent}{HTML}{C0392B}
+\definecolor{cLight}{HTML}{F5F5F0}
+\definecolor{cGray}{HTML}{7F8C8D}
+\definecolor{cGold}{HTML}{B7950B}
+\definecolor{cWarn}{HTML}{E67E22}
+\definecolor{cGreen}{HTML}{27AE60}
+\definecolor{cConsolid}{HTML}{6C3483}
+
+% ════════════════════════════════════════
+%  ۶. استایل عنوان‌ها
+% ════════════════════════════════════════
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+\titlespacing*{\paragraph}{0pt}{6pt}{1em}
+
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries\color{cPrimary}}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{cPrimary}}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{cPrimary!80}}
+{\thesubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries\color{cPrimary!70}}
+{}{}{}
+
+% ════════════════════════════════════════
+%  ۷. جعبه‌های اطلاعاتی
+% ════════════════════════════════════════
+\newtcolorbox{principleBox}[1][]{%
+    enhanced, breakable,
+    colback=cLight,
+    colframe=cPrimary,
+    coltitle=white,
+    fonttitle=\bfseries,
+    title=#1,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    shadow={0.5mm}{-0.5mm}{0mm}{black!15}
+}
+
+\newtcolorbox{warningBox}[1][]{%
+    enhanced, breakable,
+    colback=cAccent!5,
+    colframe=cAccent!70,
+    coltitle=white,
+    fonttitle=\bfseries,
+    title=#1,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+\newtcolorbox{noteBox}[1][]{%
+    enhanced, breakable,
+    colback=cGold!5,
+    colframe=cGold!70,
+    coltitle=white,
+    fonttitle=\bfseries,
+    title=#1,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+\newtcolorbox{infoBox}[1][]{%
+    enhanced, breakable,
+    colback=blue!3,
+    colframe=cPrimary!50,
+    coltitle=white,
+    fonttitle=\bfseries,
+    title=#1,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+}
+
+% ════════════════════════════════════════
+%  ۸. سربرگ و پابرگ
+% ════════════════════════════════════════
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\small\color{cGray} وعده یا خدعه؟ — بررسی انتقادی}
+\fancyhead[LE]{\small\color{cGray} وعدهٔ عدم نقش‌آفرینی خمینی}
+\fancyfoot[C]{\small\color{cGray}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ════════════════════════════════════════
+%  ۹. تنظیم لینک‌ها
+% ════════════════════════════════════════
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cPrimary,
+    urlcolor=cPrimary!70,
+    citecolor=cGold,
+    pdfauthor={پروژهٔ پژوهشی},
+    pdftitle={وعده یا خدعه؟},
+    pdfsubject={بررسی انتقادی وعدهٔ عدم نقش‌آفرینی خمینی پس از انقلاب ۱۳۵۷}
+}
+
+% ════════════════════════════════════════
+%  ۱۰. فرمان‌های کمکی
+% ════════════════════════════════════════
+\newcommand{\keyword}[1]{\textbf{\textcolor{cPrimary}{#1}}}
+\newcommand{\warn}[1]{\textcolor{cAccent}{#1}}
+\newcommand{\en}[1]{\lr{\textit{#1}}}
+
+% ════════════════════════════════════════
+%  ۱۱. تنظیمات اضافی
+% ════════════════════════════════════════
+\AtBeginEnvironment{longtable}{\small}
+\SepMark{.}
+
+% ============================================================
+%  شروع سند
+% ============================================================
+\begin{document}
+
+% ────────────────────────────────────────
+%  صفحهٔ عنوان
+% ────────────────────────────────────────
+\begin{titlepage}
+\begin{center}
+
+\vspace*{2cm}
+
+{\fontsize{28}{34}\selectfont\bfseries\color{cPrimary}
+وعده یا خدعه؟}
+
+\vspace{0.8cm}
+
+{\fontsize{16}{22}\selectfont\color{cPrimary!80}
+بررسی انتقادی وعدهٔ عدم نقش‌آفرینی\\[4pt]
+آیت‌الله خمینی پس از انقلاب ۱۳۵۷}
+
+\vspace{1.5cm}
+
+\begin{tikzpicture}
+    \draw[cPrimary, line width=1.5pt] (0,0) -- (10,0);
+    \node[circle, fill=cPrimary, inner sep=3pt] at (5,0) {};
+\end{tikzpicture}
+
+\vspace{1.5cm}
+
+{\large\color{cGray}
+تزها، دیدگاه‌ها، مستندات\\[6pt]
+و تحلیل تطبیقی سیر حوادث ۱۳۵۷–۱۳۶۸}
+
+\vspace{2cm}
+
+{\normalsize\color{cGray}
+پروژهٔ پژوهشی}
+
+\vspace{0.5cm}
+
+{\normalsize\color{cGray}
+ویراست نخست — ۱۴۰۴}
+
+\vfill
+
+\begin{tikzpicture}
+    \draw[cGold, line width=0.5pt] (0,0) -- (8,0);
+\end{tikzpicture}
+
+\vspace{0.3cm}
+
+{\footnotesize\color{cGray}
+کامپایل با \lr{XeLaTeX} — نسخهٔ \lr{Segment 0}}
+
+\end{center}
+\end{titlepage}
+
+% ────────────────────────────────────────
+%  صفحهٔ حقوقی
+% ────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\begin{principleBox}[یادداشت حقوقی و اخلاقی]
+این اثر یک \keyword{تحلیل پژوهشی-انتقادی} است و هیچ‌گونه ادعای قطعیت تاریخی ندارد. تمامی نقل‌قول‌ها بر اساس اصل استفادهٔ منصفانه (\en{Fair Use}) برای مقاصد علمی آورده شده‌اند. دیدگاه‌های مطرح‌شده چارچوب‌های تحلیلی هستند، نه مواضع سیاسی نویسنده.
+\end{principleBox}
+\end{minipage}
+\end{center}
+
+\vspace*{\fill}
+\newpage
+
+% ────────────────────────────────────────
+%  فهرست مطالب
+% ────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ============================================================
+%  مقدمه
+% ============================================================
+\chapter*{مقدمه: طرح مسئله}
+\addcontentsline{toc}{chapter}{مقدمه: طرح مسئله}
+
+\begin{infoBox}[چکیدهٔ مقدمه]
+آیا روح‌الله خمینی، رهبر انقلاب اسلامی ایران، در وعدهٔ خود مبنی بر عدم تصدی مستقیم قدرت سیاسی پس از پیروزی انقلاب صادق بود؟ آیا سیر حوادث او را ناگزیر به رهبری کرد، یا این وعده از ابتدا ابزاری تاکتیکی بود؟ این کتاب تلاش می‌کند با ارائهٔ تزهای رقیب، مرور مستندات، و تحلیل تطبیقی رویدادها، پاسخی چندوجهی به این پرسش ارائه دهد.
+\end{infoBox}
+
+\section*{پرسش بنیادین}
+
+در آستانهٔ پیروزی انقلاب ۱۳۵۷، آیت‌الله روح‌الله خمینی در مصاحبه‌هایی متعدد با رسانه‌های بین‌المللی از نوفل‌لوشاتو (حومهٔ پاریس) اعلام کرد که قصد ندارد خود مقام سیاسی یا حکومتی داشته باشد. معروف‌ترین این اظهارات در گفت‌وگو با خبرنگار ایتالیایی \en{Oriana Fallaci} و نیز مصاحبه‌های متعدد با شبکه‌های \en{BBC}، \en{ABC}، و \en{Le Monde} مطرح شد.\footnote{برای مجموعهٔ کامل مصاحبه‌های پاریس، نگاه کنید به: صحیفهٔ امام، جلد‌های ۴ و ۵، مؤسسهٔ تنظیم و نشر آثار امام خمینی.}
+
+خمینی در این مصاحبه‌ها صریحاً گفت:
+
+\begin{warningBox}[نقل‌قول کلیدی — مصاحبهٔ پاریس]
+\textit{«من در حکومت آینده هیچ نقشی نخواهم داشت... من یک طلبه هستم و به قم باز خواهم گشت... روحانیون حکومت نخواهند کرد.»}
+
+\hfill — آیت‌الله خمینی، مصاحبه با رسانه‌های خارجی، نوفل‌لوشاتو، ۱۳۵۷\footnote{صحیفهٔ امام، ج۵، ص ۳۸۸–۳۹۲. همچنین نگاه کنید به: \en{Baqer Moin, Khomeini: Life of the Ayatollah (1999), pp.\,189--196.}}
+\end{warningBox}
+
+اما مسیر واقعی پس از بازگشت خمینی به ایران در ۱۲ بهمن ۱۳۵۷ به‌گونه‌ای متفاوت رقم خورد. ظرف کمتر از یک سال، خمینی نه‌تنها بالاترین مقام سیاسی-مذهبی کشور شد، بلکه با تصویب قانون اساسی جمهوری اسلامی و نهاد \keyword{ولایت فقیه}، قدرتی فراتر از هر نهاد منتخب به دست آورد.
+
+\keyword{پرسش محوری} این کتاب آن است که این فاصله میان وعده و عمل چگونه قابل تبیین است. آیا:
+
+\begin{enumerate}[label=\textcolor{cPrimary}{\arabic*.}, rightmargin=2em]
+    \item خمینی صادقانه قصد بازگشت به قم داشت اما \keyword{سیر حوادث} — از ترورهای فرقان و خطر بازگشت بختیار گرفته تا تهاجم عراق — او را ناگزیر کرد؟
+    \item این وعده‌ها از ابتدا \keyword{خدعه‌ای آگاهانه} بودند، بخشی از استراتژی تصاحب قدرت؟ (آنچه خود خمینی بعدها، ذیل مفهوم فقهی «خدعه»، در برخی سخنرانی‌ها به آن اشاره کرد.)
+    \item نظریهٔ \keyword{ولایت فقیه} طی سال‌های ۱۳۴۸–۱۳۵۷ تکاملی تدریجی یافت و خمینی در پاریس هنوز به نقطهٔ نهایی نرسیده بود؟
+    \item فشار نخبگان انقلابی (روحانیون سیاسی، حزب جمهوری اسلامی) خمینی را به پذیرش نقش رهبری سوق داد؟
+\end{enumerate}
+
+\section*{چرا این پرسش مهم است؟}
+
+این پرسش صرفاً یک بحث تاریخی نیست. فهم ماهیت وعدهٔ خمینی، پیامدهای مستقیمی برای ارزیابی \keyword{مشروعیت بنیادین} جمهوری اسلامی دارد. اگر وعده‌ها صادقانه بودند و اجبار حوادث رهبری را تحمیل کرد، ساختار نظام محصول ضرورت تاریخی تلقی می‌شود. اگر فریب بود، پایهٔ اخلاقی اعتماد عمومی به نظام زیر سؤال می‌رود. اگر تکامل فکری بود، بحث به حوزهٔ فلسفهٔ سیاسی اسلامی کشیده می‌شود. و اگر فشار نخبگان بود، ساختار قدرت جمعی انقلاب باید بازخوانی شود.
+
+\section*{روش‌شناسی}
+
+این کتاب از رویکرد \keyword{تحلیل تطبیقی چندنگاهی} (\en{Multi-perspectival Comparative Analysis}) بهره می‌گیرد:
+
+\begin{itemize}[label=\textcolor{cGold}{$\blacksquare$}, rightmargin=2em]
+    \item \textbf{ارائهٔ تزها:} ابتدا هر تز با قوی‌ترین مستندات و به زبان مدافعانش عرضه می‌شود (فصل‌های ۲ تا ۵).
+    \item \textbf{روایت رویدادها:} سپس سیر زمانی حوادث کلیدی بازسازی می‌شود (فصل‌های ۶ تا ۱۲).
+    \item \textbf{تحلیل تطبیقی:} در هر بزنگاه، رفتار خمینی با پیش‌بینی هر تز مقایسه می‌شود (فصل ۱۳).
+    \item \textbf{نقد متقابل:} تزها در برابر یکدیگر سنجیده می‌شوند (فصل ۱۴ و ۱۵).
+\end{itemize}
+
+\begin{noteBox}[تذکر روش‌شناختی]
+هیچ‌یک از تزهای چهارگانه لزوماً «صحیح مطلق» نیست. ممکن است حقیقت ترکیبی از چند تز باشد. هدف این کتاب \keyword{تعیین وزن نسبی شواهد} برای هر تز است، نه ارائهٔ حکم قطعی.
+\end{noteBox}
+
+\section*{ساختار کتاب}
+
+\begin{principleBox}[نمای کلی ساختار]
+\begin{description}[style=nextline, font=\bfseries\color{cPrimary}]
+    \item[بخش مقدماتی (مقدمه + فصل ۱)] طرح مسئله، مرور ادبیات پژوهشی، معرفی منابع کلیدی
+    \item[بخش اول: تزها (فصل ۲–۵)] ارائهٔ مفصل چهار تز اصلی با مستندات و نقد اولیه
+    \item[بخش دوم: سیر حوادث (فصل ۶–۱۲)] بازسازی زمانی رویدادها با تحلیل همزمان
+    \item[بخش سوم: ارزیابی (فصل ۱۳–۱۶)] تحلیل تطبیقی، نقد متقابل، وزن‌دهی، نتیجه‌گیری
+    \item[پیوست‌ها] جداول، متن‌های کلیدی، کتاب‌شناسی، نمایه
+\end{description}
+\end{principleBox}
+
+
+% ============================================================
+%  فصل ۱: مرور ادبیات پژوهشی
+% ============================================================
+\chapter{مرور ادبیات پژوهشی}
+
+\begin{infoBox}[چکیدهٔ فصل]
+این فصل مروری نظام‌مند بر پژوهش‌ها، کتاب‌ها، مقالات، و پایان‌نامه‌های مرتبط با پرسش محوری کتاب ارائه می‌دهد. منابع بر اساس زبان (فارسی و انگلیسی)، نوع (تحقیق دانشگاهی، خاطره‌نگاری، روزنامه‌نگاری تحقیقی)، و موضع تحلیلی دسته‌بندی شده‌اند.
+\end{infoBox}
+
+% ────────────────────────────────────────
+\section{منابع اولیه: صدای خود خمینی}
+% ────────────────────────────────────────
+
+مهم‌ترین منبع اولیه برای بررسی وعده‌ها و مواضع خمینی، مجموعهٔ \keyword{صحیفهٔ امام} است — ۲۲ جلد شامل سخنرانی‌ها، نامه‌ها، احکام، مصاحبه‌ها، و پیام‌های آیت‌الله خمینی از سال ۱۳۲۲ تا ۱۳۶۸.\footnote{مؤسسهٔ تنظیم و نشر آثار امام خمینی، \textit{صحیفهٔ امام}، ۲۲ جلد، تهران، ۱۳۷۸.}
+
+\begin{warningBox}[نکتهٔ انتقادی دربارهٔ صحیفهٔ امام]
+صحیفهٔ امام توسط مؤسسه‌ای دولتی تدوین شده و منتقدان معتقدند برخی اظهارات حساس — به‌ویژه مصاحبه‌های پاریس دربارهٔ آزادی‌ها و عدم حکومت روحانیون — در نسخه‌های بعدی \keyword{تلطیف} یا \keyword{حذف} شده‌اند. مقایسهٔ تطبیقی با ضبط‌های صوتی اصلی و متن‌های منتشرشده در مطبوعات ۱۳۵۷ ضروری است.
+
+\smallskip
+\en{Abrahamian (1993, p.\,27)} و \en{Moin (1999, pp.\,193--195)} هر دو به مواردی از حذف یا ویرایش اشاره کرده‌اند.
+\end{warningBox}
+
+سایر منابع اولیه عبارتند از:
+
+\begin{itemize}[label=\textcolor{cPrimary}{$\blacktriangleright$}, rightmargin=2em]
+    \item \textbf{مصاحبه‌های ضبط‌شدهٔ پاریس:} آرشیو صوتی-تصویری شبکه‌های \en{BBC Persian Service}، \en{ABC News} (مصاحبهٔ \en{Peter Jennings})، و رادیو فرانسه.
+    \item \textbf{مذاکرات مجلس خبرگان قانون اساسی (۱۳۵۸):} صورت‌جلسات رسمی، منتشرشده توسط ادارهٔ کل قوانین مجلس.\footnote{صورت مشروح مذاکرات مجلس بررسی نهایی قانون اساسی جمهوری اسلامی ایران، ادارهٔ کل امور فرهنگی و روابط عمومی مجلس شورای اسلامی، ۱۳۶۴.}
+    \item \textbf{خاطرات هاشمی رفسنجانی:} سلسله خاطرات با عنوان‌هایی چون «دوران مبارزه»، «انقلاب و پیروزی»، «عبور از بحران» که نگاه درون‌حلقه‌ای به تصمیمات خمینی دارند.\footnote{اکبر هاشمی رفسنجانی، خاطرات (چند جلد)، دفتر نشر معارف انقلاب، تهران.}
+    \item \textbf{خاطرات ابراهیم یزدی:} «آخرین تلاش‌ها در آخرین روزها» — روایت وزیر خارجهٔ دولت موقت از تحولات.\footnote{ابراهیم یزدی، \textit{آخرین تلاش‌ها در آخرین روزها}، تهران: قلم، ۱۳۶۳.}
+    \item \textbf{خاطرات مهدی بازرگان:} نوشته‌ها و سخنرانی‌های نخست‌وزیر دولت موقت.\footnote{مهدی بازرگان، \textit{انقلاب ایران در دو حرکت}، تهران: نشر مؤلف، ۱۳۶۳.}
+\end{itemize}
+
+% ────────────────────────────────────────
+\section{پژوهش‌های انگلیسی‌زبان}
+% ────────────────────────────────────────
+
+\subsection{اروند آبراهامیان \texorpdfstring{\en{(Ervand Abrahamian)}}{(Ervand Abrahamian)}}
+
+آبراهامیان، تاریخ‌دان ایرانی-بریتانیایی و استاد دانشگاه \en{CUNY}، از مهم‌ترین پژوهشگران تاریخ سیاسی معاصر ایران است. آثار کلیدی او:
+
+\begin{itemize}[label=\textcolor{cGold}{$\bullet$}, rightmargin=2em]
+    \item \en{\textbf{Khomeinism: Essays on the Islamic Republic}} (۱۹۹۳): در این کتاب، آبراهامیان استدلال می‌کند که خمینیسم یک \keyword{پوپولیسم سیاسی} با پوششی مذهبی است. از نظر او، خمینی آگاهانه زبان و وعده‌های خود را متناسب با مخاطب تنظیم می‌کرد.\footnote{\en{Ervand Abrahamian, Khomeinism: Essays on the Islamic Republic, Berkeley: University of California Press, 1993.}}
+    
+    \item \en{\textbf{A History of Modern Iran}} (۲۰۰۸): در این اثر عمومی‌تر، آبراهامیان بر ابعاد \keyword{طبقاتی} و \keyword{ساختاری} انقلاب تأکید و نشان می‌دهد که خمینی چگونه با ائتلاف‌سازی میان طبقات مختلف، هژمونی خود را تثبیت کرد.\footnote{\en{Ervand Abrahamian, A History of Modern Iran, Cambridge University Press, 2008.}}
+    
+    \item \en{\textbf{Tortured Confessions}} (۱۹۹۹): مستند‌سازی سرکوب سیاسی در ایران پس از انقلاب، که نشان می‌دهد فاصلهٔ وعده‌های آزادی‌خواهانهٔ ۱۳۵۷ با واقعیت پس از آن چقدر عمیق بود.\footnote{\en{Ervand Abrahamian, Tortured Confessions: Prisons and Public Recantations in Modern Iran, Berkeley: University of California Press, 1999.}}
+\end{itemize}
+
+\begin{noteBox}[موضع آبراهامیان]
+آبراهامیان عمدتاً در محدودهٔ \keyword{تز دوم} (خدعهٔ آگاهانه) و \keyword{تز سوم} (تکامل ایدئولوژیک) قرار می‌گیرد، با تأکید بر اینکه خمینی یک \textit{سیاست‌ورز هوشمند} بود که اهداف بلندمدت خود را پنهان نگاه می‌داشت.
+\end{noteBox}
+
+\subsection{شائول باخاش \texorpdfstring{\en{(Shaul Bakhash)}}{(Shaul Bakhash)}}
+
+باخاش، تاریخ‌دان ایرانی-آمریکایی و استاد دانشگاه \en{George Mason}، در کتاب \en{\textbf{The Reign of the Ayatollahs}} (۱۹۸۴) یکی از نخستین روایت‌های آکادمیک جامع از تثبیت قدرت روحانیون را ارائه داد.\footnote{\en{Shaul Bakhash, The Reign of the Ayatollahs: Iran and the Islamic Revolution, New York: Basic Books, 1984.}}
+
+باخاش نشان می‌دهد که فرایند تمرکز قدرت \keyword{گام‌به‌گام} بود — از دولت موقت بازرگان تا حذف بنی‌صدر — و خمینی در هر مرحله نقش \textit{داور نهایی} را ایفا کرد. از نظر باخاش، خمینی ممکن است در ابتدا واقعاً تصور روشنی از نقش خود نداشته باشد، اما ساختار «مرجعیت» به او اجازهٔ مداخلهٔ فزاینده می‌داد.
+
+\subsection{سعید امیر ارجمند \texorpdfstring{\en{(Said Amir Arjomand)}}{(Said Amir Arjomand)}}
+
+ارجمند، جامعه‌شناس ایرانی-آمریکایی و استاد دانشگاه \en{Stony Brook}، در کتاب \en{\textbf{The Turban for the Crown}} (۱۹۸۸)\footnote{\en{Said Amir Arjomand, The Turban for the Crown: The Islamic Revolution in Iran, Oxford University Press, 1988.}} بر ابعاد \keyword{نهادی} انقلاب تمرکز دارد. او استدلال می‌کند که:
+
+\begin{itemize}[label=\textcolor{cAccent}{$\blacktriangleright$}, rightmargin=2em]
+    \item مفهوم ولایت فقیه در دورهٔ نجف (کتاب «حکومت اسلامی»، ۱۳۴۸) به‌صورت \textit{نظری} مطرح شد، اما خمینی آن‌را در پاریس عمداً کم‌رنگ کرد.
+    \item مجلس خبرگان قانون اساسی، نه خود خمینی، ولایت فقیه را به‌عنوان محور قانون اساسی تثبیت کرد — هرچند با موافقت ضمنی و تشویق خمینی.
+    \item «تعجیل» در برگزاری مجلس خبرگان به‌جای استفاده از پیش‌نویس حبیبی-کاتوزیان، تصمیمی حساب‌شده بود.
+\end{itemize}
+
+\subsection{محسن میلانی \texorpdfstring{\en{(Mohsen Milani)}}{(Mohsen Milani)}}
+
+میلانی در \en{\textbf{The Making of Iran's Islamic Revolution}} (۱۹۸۸؛ ویراست دوم ۱۹۹۴)\footnote{\en{Mohsen M. Milani, The Making of Iran's Islamic Revolution: From Monarchy to Islamic Republic, Boulder: Westview Press, 1988; 2nd ed. 1994.}} رویکردی \keyword{ساختاری-عاملیتی} دارد. او نقش خمینی را نه صرفاً شخصی بلکه در چارچوب دینامیک‌های انقلابی و رقابت نخبگان تحلیل می‌کند و تا حدی به \keyword{تز چهارم} (فشار نخبگان) نزدیک‌تر است.
+
+\subsection{نیکی کدی \texorpdfstring{\en{(Nikki Keddie)}}{(Nikki Keddie)}}
+
+کدی، مورخ آمریکایی و استاد دانشگاه \en{UCLA}، در \en{\textbf{Modern Iran: Roots and Results of Revolution}} (۲۰۰۳)\footnote{\en{Nikki R. Keddie, Modern Iran: Roots and Results of Revolution, New Haven: Yale University Press, 2003; revised 2006.}} انقلاب را در بافت بلندمدت تاریخ مشروطه‌خواهی و اسلام سیاسی قرار می‌دهد. کدی بر \keyword{تناقضات درونی} جنبش انقلابی تأکید دارد: ائتلافی ناهمگون که پس از پیروزی محکوم به فروپاشی بود و خمینی توانست از این فروپاشی به نفع تمرکز قدرت بهره ببرد.
+
+\subsection{باقر معین \texorpdfstring{\en{(Baqer Moin)}}{(Baqer Moin)}}
+
+معین، روزنامه‌نگار و پژوهشگر \en{BBC}، در زیست‌نامهٔ \en{\textbf{Khomeini: Life of the Ayatollah}} (۱۹۹۹)\footnote{\en{Baqer Moin, Khomeini: Life of the Ayatollah, London: I.\,B.\,Tauris, 1999.}} تصویری \keyword{روان‌شناختی‌تر} از خمینی ارائه می‌دهد. معین استدلال می‌کند که خمینی تا حد زیادی \textit{صادق} بود وقتی می‌گفت قصد حکومت ندارد — اما مفهوم «حکومت» در ذهن خمینی با مفهوم «ولایت» و «نظارت» متفاوت بود. خمینی ممکن بود صادقانه باور داشته باشد که «ولایت فقیه» حکومت‌کردن نیست.
+
+\begin{principleBox}[کلید فهم معین]
+تمایز میان «حکومت‌کردن» (\en{governing}) و «ولایت‌داشتن» (\en{guardianship}) در فقه شیعی از نظر معین محور فهم ادعاهای خمینی است. خمینی ممکن بود واقعاً معتقد باشد که «ولی فقیه» حاکم نیست بلکه «ناظر» است — حتی اگر از نظر عملی تفاوتی نداشته باشد.
+\end{principleBox}
+
+\subsection{ونسا مارتین \texorpdfstring{\en{(Vanessa Martin)}}{(Vanessa Martin)}}
+
+مارتین در \en{\textbf{Creating an Islamic State: Khomeini and the Making of a New Iran}} (۲۰۰۰)\footnote{\en{Vanessa Martin, Creating an Islamic State: Khomeini and the Making of a New Iran, London: I.\,B.\,Tauris, 2000.}} با تمرکز بر \keyword{فرایند تدوین قانون اساسی} نشان می‌دهد که چگونه مفهوم ولایت فقیه از یک ایدهٔ نظری در درس‌های نجف به محور قانون اساسی تبدیل شد. مارتین به تحلیل نقش بازیگران مختلف در این فرایند — از آیت‌الله بهشتی تا ابوالحسن بنی‌صدر — می‌پردازد.
+
+% ────────────────────────────────────────
+\section{پژوهش‌های فارسی‌زبان}
+% ────────────────────────────────────────
+
+\subsection{محسن کدیور}
+
+کدیور، روحانی و اندیشمند ایرانی (فعلاً مقیم آمریکا)، در آثاری نظیر \textbf{«حکومت ولایی»}\footnote{محسن کدیور، \textit{حکومت ولایی}، تهران: نشر نی، ۱۳۷۷.} و \textbf{«نظریه‌های دولت در فقه شیعه»}\footnote{محسن کدیور، \textit{نظریه‌های دولت در فقه شیعه}، تهران: نشر نی، ۱۳۷۶.} استدلال می‌کند که ولایت مطلقهٔ فقیه \keyword{تفسیری نوپدید} و غیراجماعی در فقه شیعه است. از نظر کدیور، خمینی از مبنایی فقهی حرکت کرد که مورد پذیرش بسیاری از مراجع نبود، و وعدهٔ «عدم حکومت» با مفهوم سنتی مرجعیت سازگارتر بود تا با ولایت فقیه.
+
+\subsection{حسین بشیریه}
+
+بشیریه، جامعه‌شناس سیاسی و استاد سابق دانشگاه تهران، در \textbf{«دیباچه‌ای بر جامعه‌شناسی سیاسی ایران: دورهٔ جمهوری اسلامی»}\footnote{حسین بشیریه، \textit{دیباچه‌ای بر جامعه‌شناسی سیاسی ایران: دورهٔ جمهوری اسلامی}، تهران: نگاه معاصر، ۱۳۸۱.} چارچوبی \keyword{جامعه‌شناختی} ارائه می‌دهد. او فرایند تثبیت قدرت را نه محصول ارادهٔ یک فرد، بلکه نتیجهٔ \keyword{منطق انقلاب‌ها} می‌داند — انقلاب‌ها ذاتاً به‌سوی رادیکالیسم و تمرکز حرکت می‌کنند.
+
+\subsection{عبدالکریم سروش}
+
+سروش، فیلسوف و متفکر دینی، هرچند اثر مستقلی بر این موضوع خاص ندارد، در مجموعه سخنرانی‌ها و مقالات خود (از جمله مجموعهٔ «فربه‌تر از ایدئولوژی»)\footnote{عبدالکریم سروش، \textit{فربه‌تر از ایدئولوژی}، تهران: صراط، ۱۳۷۲.} استدلال کرده که \keyword{ایدئولوژیک‌شدن} دین، فرایندی بود که خمینی نه لزوماً از ابتدا طراحی کرد بلکه در آن مشارکت داشت و سپس اسیر آن شد.
+
+\subsection{سعید حجاریان}
+
+حجاریان، تحلیلگر سیاسی و از بنیان‌گذاران وزارت اطلاعات، در \textbf{«از شاهد قدسی تا شاهد بازاری»}\footnote{سعید حجاریان، \textit{از شاهد قدسی تا شاهد بازاری}، تهران: طرح نو، ۱۳۸۰.} بحث \keyword{عرفی‌شدن} (\en{secularization}) قدرت در ایران و تنش‌های ساختاری درون نظام را تحلیل می‌کند.
+
+\subsection{اکبر گنجی}
+
+گنجی در آثاری نظیر \textbf{«تلقی فاشیستی از دین و حکومت»}\footnote{اکبر گنجی، \textit{تلقی فاشیستی از دین و حکومت}، تهران: طرح نو، ۱۳۷۹.} و \textbf{«عالی‌جناب سرخ‌پوش و عالی‌جنابان خاکستری»}\footnote{اکبر گنجی، \textit{عالی‌جناب سرخ‌پوش و عالی‌جنابان خاکستری}، تهران: طرح نو، ۱۳۷۸.} صریحاً از \keyword{تز دوم} دفاع می‌کند: خمینی از ابتدا هدف تأسیس حکومت اقتدارگرای دینی را داشت و وعده‌ها ابزار تاکتیکی بودند.
+
+\subsection{عباس میلانی}
+
+میلانی، مورخ و استاد دانشگاه \en{Stanford}، در \textbf{«نگاهی به شاه»}\footnote{عباس میلانی، \textit{نگاهی به شاه}، تهران: نشر اختران (نسخهٔ فارسی)؛ \en{The Shah, New York: Palgrave Macmillan, 2011} (نسخهٔ انگلیسی).} از زاویهٔ مقابل — یعنی شکست شاه — به فهم پیروزی خمینی می‌پردازد و نشان می‌دهد چگونه خلأ قدرت ناشی از فروپاشی نظام شاهنشاهی، فضا را برای هر نوع تمرکز قدرت جدید فراهم کرد.
+
+% ────────────────────────────────────────
+\section{پایان‌نامه‌ها و رساله‌های دانشگاهی}
+% ────────────────────────────────────────
+
+\begin{noteBox}[دربارهٔ مح

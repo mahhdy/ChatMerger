@@ -1,0 +1,8 @@
+### Overlap Report
+
+*2 overlap(s) detected:*
+
+- **Overlap 1:** 62 chars, similarity 85%, Flagged
+- **Overlap 2:** 53 chars, similarity 85%, Flagged
+
+---
