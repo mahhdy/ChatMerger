@@ -1,0 +1,466 @@
+\documentclass[12pt,a4paper]{article}
+
+% ─── بسته‌های پایه ───────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{footnote}
+\usepackage{etoolbox}
+\usepackage{calc}
+\usepackage{varwidth}
+\usepackage{needspace} % FIXED: برای جلوگیری از جدا شدن عنوان از متن
+\usepackage{adjustbox} % FIXED: برای تنظیم اندازه جداول و نمودارها
+
+% ─── تنظیمات TikZ ─────────────────────────────────────────────
+\usetikzlibrary{
+  arrows, arrows.meta, positioning, shapes, shapes.geometric,
+  shapes.multipart, shadows, decorations, decorations.pathreplacing,
+  decorations.markings, patterns, backgrounds, calc, fit,
+  mindmap, trees, matrix, chains, scopes,
+  fadings, through
+}
+\pgfplotsset{compat=1.18}
+\tcbuselibrary{skins, breakable}
+
+% ─── صفحه‌آرایی ───────────────────────────────────────────────
+\geometry{
+  a4paper,
+  top=2.8cm, bottom=2.8cm,
+  right=3.5cm, left=3cm,
+  headheight=1.5cm,
+  headsep=0.5cm,
+  footskip=1.2cm
+}
+
+% ─── پالت رنگی ────────────────────────────────────────────────
+\definecolor{PrimaryDeep}{HTML}{1A237E}
+\definecolor{PrimaryMid}{HTML}{283593}
+\definecolor{PrimaryLight}{HTML}{3949AB}
+\definecolor{AccentGold}{HTML}{F9A825}
+\definecolor{AccentAmber}{HTML}{FF8F00}
+\definecolor{AccentTeal}{HTML}{00695C}
+\definecolor{AccentRed}{HTML}{B71C1C}
+\definecolor{AccentGreen}{HTML}{1B5E20}
+\definecolor{AccentPurple}{HTML}{4A148C}
+\definecolor{NeutralLight}{HTML}{ECEFF1}
+\definecolor{NeutralMid}{HTML}{B0BEC5}
+\definecolor{NeutralDark}{HTML}{455A64}
+\definecolor{TextMain}{HTML}{212121}
+\definecolor{TextSecond}{HTML}{424242}
+\definecolor{BgWarm}{HTML}{FFF8E1}
+\definecolor{BgCool}{HTML}{E8EAF6}
+\definecolor{BgTeal}{HTML}{E0F2F1}
+
+\definecolor{EraAncient}{HTML}{4E342E}
+\definecolor{EraMedieval}{HTML}{37474F}
+\definecolor{EraEarlyMod}{HTML}{1565C0}
+\definecolor{EraModern}{HTML}{2E7D32}
+\definecolor{EraContemp}{HTML}{6A1B9A}
+\definecolor{EraPostmod}{HTML}{AD1457}
+
+% ─── جعبه‌های محتوایی ─────────────────────────────────────────
+\tcbset{
+  mybox/.style={
+    enhanced, breakable,
+    colback=BgCool, colframe=PrimaryMid,
+    fonttitle=\bfseries\large,
+    attach boxed title to top right={yshift=-2mm, xshift=-3mm},
+    boxed title style={colback=PrimaryMid, colframe=PrimaryDeep},
+    top=4mm, bottom=4mm,
+    before skip=12pt, after skip=12pt,
+  },
+  defbox/.style={
+    enhanced, breakable,
+    colback=BgWarm, colframe=AccentGold,
+    fonttitle=\bfseries,
+    left=4mm, right=4mm,
+    borderline west={3pt}{0pt}{AccentAmber},
+    sharp corners,
+    before skip=12pt, after skip=12pt,
+  },
+  wavebox/.style={
+    enhanced, breakable,
+    colback=BgTeal, colframe=AccentTeal,
+    fonttitle=\bfseries,
+    rounded corners,
+    drop shadow,
+    before skip=12pt, after skip=12pt,
+  },
+  quotebox/.style={
+    enhanced, breakable,
+    colback=NeutralLight, colframe=NeutralDark,
+    fontupper=\itshape,
+    left=8mm,
+    borderline west={4pt}{0pt}{NeutralMid},
+    sharp corners=south,
+    before skip=12pt, after skip=12pt,
+  },
+  enemybox/.style={
+    enhanced, breakable,
+    colback=red!5, colframe=AccentRed,
+    fonttitle=\bfseries,
+    borderline west={3pt}{0pt}{AccentRed},
+    before skip=12pt, after skip=12pt,
+  },
+  warnbox/.style={
+    enhanced, breakable,
+    colback=orange!5, colframe=AccentAmber,
+    fonttitle=\bfseries,
+    borderline west={3pt}{0pt}{AccentAmber},
+    before skip=12pt, after skip=12pt,
+  },
+  successbox/.style={
+    enhanced, breakable,
+    colback=green!5, colframe=AccentGreen,
+    fonttitle=\bfseries,
+    borderline west={3pt}{0pt}{AccentGreen},
+    before skip=12pt, after skip=12pt,
+  },
+}
+
+% ─── سربرگ و پابرگ ────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\fancyhead[R]{\small\color{PrimaryMid}\rightmark}
+\fancyhead[L]{\small\color{NeutralDark}اخلاق براندازی}
+\fancyfoot[C]{\small\thepage}
+
+% ─── عنوان‌بندی بخش‌ها ────────────────────────────────────────
+\titleformat{\section}[block]
+  {\Large\bfseries\color{PrimaryDeep}}
+  {\thesection}{1em}{}
+  [{\color{AccentGold}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}[block]
+  {\large\bfseries\color{PrimaryMid}}
+  {\thesubsection}{0.8em}{}
+  [{\color{NeutralMid}\titlerule[0.6pt]}]
+
+\titleformat{\subsubsection}[runin]
+  {\normalsize\bfseries\color{AccentTeal}}
+  {\thesubsubsection}{0.6em}{}[\ —\ ]
+
+% ─── فاصله‌گذاری ──────────────────────────────────────────────
+\titlespacing*{\section}{0pt}{18pt}{10pt}
+\titlespacing*{\subsection}{0pt}{14pt}{6pt}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.4em}
+\onehalfspacing
+
+% ─── hyperref ─────────────────────────────────────────────────
+\hypersetup{
+  colorlinks  = true,
+  linkcolor   = PrimaryMid,
+  citecolor   = AccentTeal,
+  urlcolor    = AccentAmber,
+  pdftitle    = {Ethics of Subversion},
+  pdfauthor   = {},
+  pdfsubject  = {Political Ethics and Philosophy of Resistance},
+  bookmarks   = true,
+  pdfpagemode = UseOutlines,
+  pdfencoding = unicode,
+}
+
+\usepackage{xepersian} % FIXED: آخرین بسته
+
+% ─── فونت‌ها ──────────────────────────────────────────────────
+\settextfont[Scale=1.05]{Vazirmatn}
+\setlatintextfont[Scale=0.95]{Linux Libertine}
+\setdigitfont[Scale=0.95]{Vazirmatn}
+
+% ─── دستورات کمکی ─────────────────────────────────────────────
+\newcommand{\concept}[1]{\textbf{\color{PrimaryMid}#1}}
+\newcommand{\thinker}[1]{\textit{\color{AccentTeal}#1}}
+\newcommand{\era}[1]{\textbf{\color{AccentAmber}#1}}
+\newcommand{\enemy}[1]{\textbf{\color{AccentRed}#1}}
+\newcommand{\lat}[1]{\lr{#1}}
+\newcommand{\src}[1]{\textsuperscript{\scriptsize\color{NeutralDark}[#1]}}
+
+% ──────────────────────────────────────────────────────────────
+\begin{document}
+
+% ========== صفحه عنوان ==========
+\begin{titlepage}
+\begin{center}
+\vspace*{2cm}
+{\color{PrimaryDeep}\rule{\linewidth}{2pt}}
+\vspace{1cm}
+
+{\Huge\bfseries\color{PrimaryDeep} اخلاق براندازی}
+
+\vspace{0.5cm}
+
+{\Large\color{PrimaryMid} مبانی نظری، ابعاد عملی و چالش‌های اخلاقی}
+
+\vspace{0.3cm}
+
+{\Large\color{AccentTeal} مقاومت و مبارزه با استبداد}
+
+\vspace{0.5cm}
+
+{\large\color{NeutralDark} با نگاهی ویژه به تجربهٔ ایران}
+
+\vspace{1cm}
+{\color{AccentGold}\rule{0.5\linewidth}{1pt}}
+\vspace{2cm}
+
+{\large\color{TextSecond}
+حاشیه علیه متن\\[0.3cm]
+حق عصیان، اخلاق دشمنی و راه میانهٔ آزادی‌خواهی
+}
+
+\vspace{2cm}
+
+{\normalsize\color{NeutralDark} \today}
+
+\vspace{1cm}
+{\color{PrimaryDeep}\rule{\linewidth}{2pt}}
+\end{center}
+\end{titlepage}
+
+% ========== چکیده ==========
+\thispagestyle{empty}
+\begin{tcolorbox}[mybox, title=چکیده]
+این مقاله به بررسی جامع \concept{اخلاق براندازی} و مبارزه با نظام‌های استبدادی 
+می‌پردازد. پرسش محوری آن است که گروه‌ها و ملت‌هایی که تحت ستم سیستماتیک یک رژیم 
+سیاسی قرار دارند، از چه حقوقی برای براندازی برخوردارند و در اِعمال این حق، چه 
+اصول و ملاحظات اخلاقی‌ای را باید رعایت کنند — به‌گونه‌ای که نه به بی‌عملی و سستی 
+منجر شود و نه به تبدیل‌شدن مبارز به همان شرّی که علیه آن مبارزه می‌کند.
+
+مقاله ابتدا در یک نمای شماتیک، چارچوب مفهومی بحث را ترسیم می‌کند و سپس به بررسی 
+تفصیلی مبانی نظری، دیدگاه‌های مکاتب فلسفی و ایدئولوژیک مختلف، اخلاق جنگ و دشمنی، 
+مقاومت خشونت‌پرهیز، و مسئلهٔ حیاتیِ تناسب و محدودیت در کاربرد قدرت می‌پردازد. 
+مورد ایران به‌عنوان نمونه‌ای زنده از چالش‌های اخلاقی مبارزه با استبداد بررسی می‌شود. 
+در پایان، پیوست‌هایی شامل مرور تاریخی، موج‌شناسی جنبش‌های مقاومت و کتاب‌شناسی 
+جامع ارائه شده است.
+
+\textbf{واژگان کلیدی:} اخلاق براندازی، حق عصیان، مقاومت مدنی، اخلاق جنگ، 
+اخلاق دشمنی، مبارزهٔ خشونت‌پرهیز، دفاع مشروع، نظریهٔ جنگ عادلانه، ایران.
+\end{tcolorbox}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ╔══════════════════════════════════════════════════════════════╗
+% ║               بخش صفر: نمای کلی شماتیک                    ║
+% ╚══════════════════════════════════════════════════════════════╝
+
+\section*{بخش صفر: نمای کلی شماتیک}
+\addcontentsline{toc}{section}{بخش صفر: نمای کلی شماتیک}
+
+\subsection*{نقشهٔ مفهومی اخلاق براندازی}
+
+این نقشه، ساختار کلی مسائل اخلاقی مرتبط با براندازی را نشان می‌دهد. هر شاخه
+در بخش‌های بعدی مقاله به تفصیل بررسی خواهد شد.
+
+\begin{figure}[htbp]
+\centering
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[
+    mindmap,
+    every node/.style={concept, circular drop shadow, minimum size=0pt,
+      text width=2.2cm, font=\small\bfseries, align=center},
+    root concept/.append style={
+      concept color=PrimaryDeep, fill=PrimaryDeep, text=white,
+      font=\large\bfseries, text width=3cm, minimum size=3cm},
+    level 1 concept/.append style={
+      font=\small\bfseries, text width=2cm, minimum size=1.8cm,
+      sibling angle=60},
+    level 2 concept/.append style={
+      font=\tiny\bfseries, text width=1.5cm, minimum size=1.2cm,
+      sibling angle=45},
+    grow cyclic,
+  ]
+  \node[root concept] {\rl{اخلاق}\\\rl{براندازی}}
+    child[concept color=AccentTeal] { node {\rl{حقوق}\\\rl{بنیادین}}
+      child { node {\rl{حق عصیان}} }
+      child { node {\rl{دفاع مشروع}} }
+      child { node {\rl{حق آزادی}} }
+    }
+    child[concept color=AccentGold!80!black] { node {\rl{چارچوب}\\\rl{اخلاقی}}
+      child { node {\rl{وظیفه‌گرایی}} }
+      child { node {\rl{فایده‌گرایی}} }
+      child { node {\rl{فضیلت‌محوری}} }
+    }
+    child[concept color=AccentRed!80!black] { node {\rl{روش‌های}\\\rl{مبارزه}}
+      child { node {\rl{خشونت‌پرهیز}} }
+      child { node {\rl{مسلحانه}} }
+      child { node {\rl{ترکیبی}} }
+    }
+    child[concept color=AccentPurple] { node {\rl{قیدها و}\\\rl{محدودیت‌ها}}
+      child { node {\rl{تناسب}} }
+      child { node {\rl{تمایز}} }
+      child { node {\rl{ضرورت}} }
+    }
+    child[concept color=AccentGreen] { node {\rl{پیامدها و}\\\rl{خطرها}}
+      child { node {\rl{ابتذال شر}} }
+      child { node {\rl{بی‌عملی}} }
+      child { node {\rl{عدالت نوین}} }
+    }
+    child[concept color=EraEarlyMod] { node {\rl{مورد}\\\rl{ایران}}
+      child { node {\rl{سرکوب}} }
+      child { node {\rl{جنبش‌ها}} }
+      child { node {\rl{چشم‌انداز}} }
+    };
+\end{tikzpicture}
+\end{adjustbox}
+\caption*{نقشهٔ مفهومی اخلاق براندازی}
+\end{figure}
+
+\subsection*{مغز مطلب در یک نگاه}
+
+\begin{tcolorbox}[defbox, title={\textbf{پرسش بنیادین}}]
+وقتی گروهی تحت ستم سیستماتیک یک رژیم سیاسی هستند:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{آیا حق براندازی دارند؟} — بله. تقریباً تمامی سنت‌های فکری بزرگ، 
+از الاهیات مسیحی و اسلامی گرفته تا فلسفهٔ لیبرال و مارکسیسم، در شرایط خاصی 
+حق مقاومت و عصیان را به رسمیت می‌شناسند.
+\item \textbf{این حق مطلق است؟} — خیر. هر مجوز نظری دوطرفه است: اگر خشونت 
+را بی‌قید و شرط مجاز بدانیم، همان مجوز در دست طرف مقابل هم قرار می‌گیرد.
+\item \textbf{چه محدودیت‌های اخلاقی‌ای وجود دارد؟} — محدودیت‌هایی که از 
+\concept{تناسب}، \concept{ضرورت}، \concept{تمایز} (میان مبارز و غیرمبارز)، 
+و \concept{کرامت انسانی} سرچشمه می‌گیرند.
+\item \textbf{آیا این محدودیت‌ها به بی‌عملی نمی‌انجامند؟} — لزوماً نه. کلید، 
+یافتن \concept{راه میانه} میان ساده‌سازی افراطی (هر کاری مجاز است) و 
+پیچیده‌سازی فلج‌کننده (هیچ کاری مجاز نیست) است.
+\end{enumerate}
+\end{tcolorbox}
+
+\subsection*{جدول خلاصهٔ چارچوب تحلیلی}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedleft}p{2.5cm}|X|X|X|}
+\hline
+\rowcolor{BgCool}
+\textbf{بُعد} & \textbf{پرسش محوری} & \textbf{خطر ساده‌سازی} & \textbf{خطر پیچیده‌سازی} \\
+\hline
+حق عصیان & آیا مردم حق سرنگونی حاکم ظالم را دارند؟ & هر نارضایتی = حق انقلاب & هیچ شرایطی کافی نیست \\
+\hline
+روش مبارزه & چه ابزارهایی مجاز است؟ & همه‌چیز مجاز است & فقط اعتراض مؤدبانه \\
+\hline
+تناسب & شدت عمل چقدر باشد؟ & تلافی نامحدود & واکنش صفر \\
+\hline
+کرامت انسانی & حرمت دشمن چه جایگاهی دارد؟ & دشمن انسان نیست & هرگز نباید آسیبی رسید \\
+\hline
+پیامدها & نتیجهٔ مطلوب چیست؟ & فقط پیروزی مهم است & فقط فرایند مهم است \\
+\hline
+\end{tabularx}
+\caption*{چارچوب تحلیلی: میان دو پرتگاه}
+\end{table}
+
+\subsection*{قاعدهٔ طلایی: دوطرفه‌بودن هر مجوز نظری}
+
+\begin{tcolorbox}[enemybox, title={\textbf{هشدار بنیادین}}]
+\textbf{هر مجوز نظری‌ای دوطرفه است.} اگر بگوییم «خشونت علیه ظالم مجاز است» 
+بدون تعریف دقیق «ظالم» و «خشونت مجاز»، همان استدلال را حکومت مستبد هم علیه 
+معترضان به کار خواهد بست. مگر آنکه محدودیت‌ها دقیق، موجه و مقبول باشد. 
+این بزرگ‌ترین چالش اخلاق براندازی است: چگونه می‌توان مرزی ترسیم کرد که 
+مبارزان آزادی‌خواه را توانمند سازد اما از سوءاستفاده و تبدیل‌شدن به همان 
+شرّی که علیه‌اش می‌جنگند، جلوگیری کند؟
+\end{tcolorbox}
+
+\subsection*{مسیر مقاله}
+
+\begin{tcolorbox}[wavebox, title={\textbf{ساختار کلی مقاله}}]
+\begin{enumerate}[label=\textbf{بخش \arabic*:}]
+\item \textbf{مبانی نظری} — تعریف مفاهیم، تمایز 
+\lat{Ethics} و \lat{Morality}، ریشه‌های تاریخی حق عصیان
+\item \textbf{دیدگاه‌های فلسفی و ایدئولوژیک} — از ارسطو تا فانون، از لاک تا 
+شریعتی، از گاندی تا شارپ
+\item \textbf{اخلاق کاربردی براندازی} — اخلاق دشمنی، اخلاق جنگ، تناسب، 
+خویشتنداری، تفاوت خشونت دولتی و مردمی
+\item \textbf{مورد ایران} — تحلیل اخلاقی جنبش‌ها و اعتراضات، دوگانه‌ها و 
+چالش‌ها
+\item \textbf{پیچیدگی‌ها و دام‌ها} — ساده‌سازی و پیچیده‌سازی، اخلاقِ مانع و 
+اخلاقِ یاری‌رسان، راه میانه
+\item \textbf{نتیجه‌گیری}
+\end{enumerate}
+\textbf{پیوست‌ها:} مرور تاریخی و موج‌شناسی — جدول تطبیقی جنبش‌ها — کتاب‌شناسی جامع
+\end{tcolorbox}
+
+
+% ╔══════════════════════════════════════════════════════════════╗
+% ║        بخش اول: مبانی نظری                                ║
+% ╚══════════════════════════════════════════════════════════════╝
+
+\newpage
+\section{مبانی نظری: مفاهیم، تمایزها و ریشه‌ها}
+
+\subsection{تعریف مفاهیم کلیدی}
+
+\subsubsection{براندازی، انقلاب، مقاومت}
+پیش از هر بحثی، تعریف دقیق واژگان ضروری است. «براندازی» 
+(\lat{Subversion/Overthrow}) به معنای تلاش سازمان‌یافته برای سرنگونی نظم 
+سیاسی موجود و جایگزینی آن با نظمی نوین است. این مفهوم با «انقلاب» 
+(\lat{Revolution}) همپوشانی دارد اما لزوماً هم‌معنا نیست: انقلاب غالباً بار 
+دگرگونی بنیادین اجتماعی-اقتصادی هم دارد، در حالی که براندازی می‌تواند صرفاً 
+تغییر نظام حکومتی را هدف بگیرد. «مقاومت» (\lat{Resistance}) مفهومی عام‌تر 
+است که طیفی از نافرمانی مدنی تا مبارزهٔ مسلحانه را دربرمی‌گیرد.
+
+«نافرمانی مدنی» (\lat{Civil Disobedience}) — آن‌گونه که \thinker{جان رالز} 
+تعریف می‌کند — عملی عمومی، خشونت‌پرهیز و وجدانی است که با هدف تغییر قانون یا 
+سیاست حکومت و با پذیرش مجازات قانونی صورت می‌گیرد.\footnote{\lr{Rawls, John. 
+\textit{A Theory of Justice}. 1971, §55.}} اما وقتی حکومت اساساً مشروعیت 
+ندارد و فضایی برای اعتراض قانونی نگذاشته، آیا نافرمانی مدنی کافی است؟
+
+«دفاع مشروع» (\lat{Legitimate Self-Defense}) در حقوق بین‌الملل و اکثر 
+نظام‌های حقوقی به رسمیت شناخته شده و حق استفاده از زور متناسب برای دفع تجاوز 
+را می‌دهد. پرسش آن است که آیا مردمی که حکومتشان خودْ متجاوز به حقوق آنهاست، 
+می‌توانند از این مفهوم بهره ببرند.
+
+\subsubsection{ستم سیستماتیک}
+ستم سیستماتیک (\lat{Systematic Oppression}) با ستم موردی و اتفاقی متفاوت است. 
+در ستم سیستماتیک، نهادها، قوانین و ساختارهای قدرت به‌شکلی هماهنگ و مداوم علیه 
+گروهی عمل می‌کنند. این تمایز اهمیت اخلاقی دارد: ستم سیستماتیک پاسخ‌های 
+سیستماتیک‌تری را اخلاقاً توجیه‌پذیرتر می‌سازد.
+
+\subsection{تمایز اخلاق و اخلاقیات: \texorpdfstring{\lat{Ethics}}{Ethics} و 
+\texorpdfstring{\lat{Morality}}{Morality}}
+
+\begin{tcolorbox}[defbox, title={\textbf{تمایزی کلیدی}}]
+در ادبیات فلسفی، تمایزی ظریف اما مهم میان دو مفهوم وجود دارد:
+\begin{itemize}[rightmargin=1cm]
+\item \concept{اخلاقیات} (\lat{Morality}): مجموعه‌ای از هنجارها، ارزش‌ها و 
+قواعد رفتاری که در یک جامعه یا سنت پذیرفته شده‌اند. اخلاقیات غالباً پیشینی، 
+سنتی و مبتنی بر اجماع هستند.
+\item \concept{اخلاق} (\lat{Ethics}): تأمل فلسفی و نقادانه دربارهٔ درستی و 
+نادرستی، خوبی و بدی. اخلاق می‌تواند خودِ اخلاقیاتِ رایج را به چالش بکشد.
+\end{itemize}
+\end{tcolorbox}
+
+این تمایز در بحث براندازی اهمیتی ویژه دارد. چه بسا \textit{اخلاقیات} رایج 
+(مثلاً «اطاعت از حاکم»، «پرهیز از فتنه») دقیقاً همان ابزاری باشند که حکومت 
+مستبد برای تداوم سلطه‌اش به کار می‌بندد. \textit{اخلاقِ} فلسفی اما می‌تواند 
+از موضع نقادانه بپرسد: آیا این هنجارها واقعاً عادلانه‌اند یا صرفاً در خدمت 
+قدرت؟ آیا «آرامش» و «نظم» ارزشمندند حتی وقتی بر ستم استوارند؟
+
+\thinker{مارتین لوتر کینگ} در \textit{نامه از زندان بیرمنگام} 
+(\lat{Letter from Birmingham Jail}، ۱۹۶۳) نوشت: «صلح واقعی تنها غیاب تنش
+
+ادامهٔ مقاله:

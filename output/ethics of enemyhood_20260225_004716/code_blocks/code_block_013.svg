@@ -1,0 +1,13 @@
+" fill="#FFFFFF" direction="rtl">اخلاق محدودیت نیست</text>
+  <text x="540" y="1120" text-anchor="middle" font-family="Vazirmatn, Tahoma, Arial" font-size="26" fill="#FFFFFF" direction="rtl" font-weight="700">اخلاق قدرت است.</text>
+  <text x="540" y="1160" text-anchor="middle" font-family="Vazirmatn, Tahoma, Arial" font-size="22" fill="#B0BEC5" direction="rtl">جنبشی که اصولش را حفظ کند، مشروعیت و حمایت بیشتری دارد.</text>
+
+  <!-- Footer -->
+  <text x="540" y="1250" text-anchor="middle" font-family="Vazirmatn, Tahoma, Arial" font-size="18" fill="#B0BEC5" direction="rtl" opacity="0.5">اسلاید ۷ از ۸  ◀</text>
+
+  <!-- Bottom corner elements -->
+  <rect x="40" y="1300" width="60" height="4" rx="2" fill="#F9A825" opacity="0.6"/>
+  <rect x="40" y="1246" width="4" height="60" rx="2" fill="#F9A825" opacity="0.6"/>
+  <rect x="980" y="1300" width="60" height="4" rx="2" fill="#F9A825" opacity="0.6"/>
+  <rect x="1036" y="1246" width="4" height="60" rx="2" fill="#F9A825" opacity="0.6"/>
+</svg>
