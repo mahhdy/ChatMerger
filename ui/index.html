@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ChatMerger — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-icon">🔀</span>
+    <span class="logo-text">ChatMerger</span>
+    <span class="logo-version">v2.0</span>
+  </div>
+  <nav class="sidebar-nav">
+    <button class="nav-btn active" data-tab="process" onclick="switchTab('process')">
+      <span class="nav-icon">⚡</span><span>Process</span>
+    </button>
+    <button class="nav-btn" data-tab="browser" onclick="switchTab('browser')">
+      <span class="nav-icon">📂</span><span>File Browser</span>
+    </button>
+    <button class="nav-btn" data-tab="output" onclick="switchTab('output')">
+      <span class="nav-icon">📄</span><span>Outputs</span>
+    </button>
+    <button class="nav-btn" data-tab="history" onclick="switchTab('history')">
+      <span class="nav-icon">🕒</span><span>History</span>
+    </button>
+    <button class="nav-btn" data-tab="config" onclick="switchTab('config')">
+      <span class="nav-icon">⚙️</span><span>Config</span>
+    </button>
+  </nav>
+  <div class="sidebar-stats" id="sidebarStats">
+    <div class="stat-row"><span class="stat-lbl">Sources</span><span class="stat-val" id="statSources">—</span></div>
+    <div class="stat-row"><span class="stat-lbl">Outputs</span><span class="stat-val" id="statOutputs">—</span></div>
+    <div class="stat-row"><span class="stat-lbl">Conversations</span><span class="stat-val" id="statConvs">—</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+  <!-- ═══════════════ PROCESS TAB ═══════════════ -->
+  <section class="tab-panel active" id="tab-process">
+    <div class="tab-header">
+      <h1>⚡ Process Chat Exports</h1>
+      <p class="tab-desc">Select source files, choose a mode, and run the full pipeline.</p>
+    </div>
+
+    <div class="process-layout">
+      <!-- Left column: file selector -->
+      <div class="card file-picker-card">
+        <div class="card-header">
+          <h2>📁 Source Files</h2>
+          <div class="card-actions">
+            <button class="btn btn-ghost btn-sm" onclick="refreshSourceList()">↻ Refresh</button>
+            <label class="btn btn-ghost btn-sm" title="Upload file">
+              ⬆ Upload <input type="file" accept=".json,.zip" multiple hidden onchange="uploadFiles(this)"/>
+            </label>
+          </div>
+        </div>
+        <div class="breadcrumb" id="sourceBreadcrumb">source /</div>
+        <div class="file-list" id="sourceFileList">
+          <div class="loading-pulse">Loading…</div>
+        </div>
+        <div class="selection-bar">
+          <span id="selectionCount">0 files selected</span>
+          <button class="btn btn-ghost btn-xs" onclick="clearSelection()">Clear</button>
+          <button class="btn btn-ghost btn-xs" onclick="selectAll()">All</button>
+        </div>
+      </div>
+
+      <!-- Right column: options + run -->
+      <div class="options-column">
+        <div class="card">
+          <div class="card-header"><h2>🔧 Options</h2></div>
+          <div class="form-group">
+            <label>Output Name</label>
+            <input type="text" id="outputName" placeholder="e.g. khomeini_ch1" class="input"/>
+          </div>
+          <div class="form-group">
+            <label>Processing Mode</label>
+            <div class="mode-cards">
+              <label class="mode-card selected" data-mode="pipeline">
+                <input type="radio" name="mode" value="pipeline" checked hidden/>
+                <div class="mode-icon">📋</div>
+                <div class="mode-title">Batch Pipeline</div>
+                <div class="mode-desc">Process each file independently through the full pipeline</div>
+              </label>
+              <label class="mode-card" data-mode="merged">
+                <input type="radio" name="mode" value="merged" hidden/>
+                <div class="mode-icon">🔗</div>
+                <div class="mode-title">Merge Into One</div>
+                <div class="mode-desc">Combine all files as one continuous conversation</div>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Extra Flags (optional)</label>
+            <input type="text" id="extraArgs" placeholder="e.g. --verbose" class="input"/>
+          </div>
+        </div>
+
+        <!-- ZIP upload -->
+        <div class="card">
+          <div class="card-header"><h2>📦 Process ZIP File</h2></div>
+          <p class="card-desc">Upload a ZIP containing JSON exports — auto-extracted and processed.</p>
+          <div class="zip-drop-zone" id="zipDropZone" onclick="document.getElementById('zipInput').click()"
+               ondragover="event.preventDefault();this.classList.add('drag-over')"
+               ondragleave="this.classList.remove('drag-over')"
+               ondrop="handleZipDrop(event)">
+            <div class="zip-icon">📦</div>
+            <div class="zip-label">Drop ZIP here or click to browse</div>
+            <input type="file" id="zipInput" accept=".zip" hidden onchange="handleZipSelect(this)"/>
+          </div>
+          <div id="zipPreview" class="zip-preview hidden"></div>
+        </div>
+
+        <!-- Run button -->
+        <button class="btn btn-primary btn-xl" id="runBtn" onclick="startProcess()">
+          <span class="btn-icon">▶</span> Run Pipeline
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Jobs -->
+    <div class="card job-monitor-card" id="jobMonitorCard">
+      <div class="card-header"><h2>📊 Active Jobs</h2></div>
+      <div id="jobList"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FILE BROWSER TAB ═══════════════ -->
+  <section class="tab-panel" id="tab-browser">
+    <div class="tab-header">
+      <h1>📂 File Browser</h1>
+      <div class="tab-actions">
+        <div class="base-toggle">
+          <button class="toggle-btn active" id="toggleSource" onclick="setBrowserBase('source')">Source</button>
+          <button class="toggle-btn" id="toggleOutput" onclick="setBrowserBase('output')">Output</button>
+        </div>
+      </div>
+    </div>
+    <div class="browser-layout">
+      <div class="card browser-pane">
+        <div class="breadcrumb" id="browserBreadcrumb">source /</div>
+        <div class="file-list tall" id="browserFileList"></div>
+      </div>
+      <div class="card preview-pane">
+        <div class="card-header">
+          <h2>👁 Preview</h2>
+          <div id="previewFileName" class="preview-filename"></div>
+        </div>
+        <div id="previewContent" class="preview-content">
+          <div class="preview-placeholder">Select a file to preview</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ OUTPUT TAB ═══════════════ -->
+  <section class="tab-panel" id="tab-output">
+    <div class="tab-header">
+      <h1>📄 Output Library</h1>
+      <button class="btn btn-ghost" onclick="loadOutputStats()">↻ Refresh</button>
+    </div>
+    <div id="outputStatsRow" class="stats-row"></div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Processed Collections</h2>
+        <input type="text" id="outputSearch" placeholder="Search…" class="input input-sm" oninput="filterOutputFolders()"/>
+      </div>
+      <div id="outputFolderList" class="output-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ HISTORY TAB ═══════════════ -->
+  <section class="tab-panel" id="tab-history">
+    <div class="tab-header">
+      <h1>🕒 Processing History</h1>
+      <button class="btn btn-danger btn-sm" onclick="clearHistory()">🗑 Clear All</button>
+    </div>
+    <div id="historyList" class="history-list"></div>
+  </section>
+
+  <!-- ═══════════════ CONFIG TAB ═══════════════ -->
+  <section class="tab-panel" id="tab-config">
+    <div class="tab-header">
+      <h1>⚙️ Configuration</h1>
+      <button class="btn btn-primary" onclick="saveConfig()">💾 Save Config</button>
+    </div>
+    <div class="card">
+      <div class="card-header"><h2>config.yaml</h2></div>
+      <textarea class="config-editor" id="configEditor" spellcheck="false"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL for job log / file preview -->
+<div class="modal-overlay hidden" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h2 id="modalTitle">Details</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toastContainer"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
