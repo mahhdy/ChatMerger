@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="40%" stop-color="#283593"/>
+      <stop offset="100%" stop-color="#0D1442"/>
+    </linearGradient>
+    <linearGradient id="goldG10" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F9A825"/>
+      <stop offset="100%" stop-color="#FFD54F"/>
+    </linearGradient>
+    <filter id="gl10">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg10)"/>
+  <circle cx="540" cy="540" r="380" fill="#F9A825" opacity="0.04"/>
+  <circle cx="540" cy="540" r="250" fill="#F9A825" opacity="0.03"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۱۰</text>
+
+  <!-- خطوط طلایی -->
+  <rect x="0" y="200" width="1080" height="3" fill="url(#goldG10)" opacity="0.4"/>
+  <rect x="0" y="850" width="1080" height="3" fill="url(#goldG10)" opacity="0.4"/>
+
+  <!-- شعله مرکزی بزرگ -->
+  <g transform="translate(540,420)" filter="url(#gl10)">
+    <path d="M0,-150 C-40,-80 -55,20 0,50 C55,20 40,-80 0,-150Z"
+      fill="#FF6F00" opacity="0.5"/>
+    <path d="M0,-120 C-25,-60 -35,10 0,35 C35,10 25,-60 0,-120Z"
+      fill="#FFD54F" opacity="0.6"/>
+    <path d="M0,-90 C-15,-40 -20,5 0,20 C20,5 15,-40 0,-90Z"
+      fill="#FFFFFF" opacity="0.3"/>
+  </g>
+
+  <!-- عنوان -->
+  <text x="540" y="140" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="36" font-weight="bold" fill="white">
+    شعله‌ی آزادی خاموش نمی‌شود
+  </text>
+
+  <!-- شعار فرانسوی -->
+  <text x="540" y="560" text-anchor="middle" font-family="Linux Libertine, serif"
+    font-size="30" font-style="italic" fill="white" opacity="0.85">
+    Liberté, Égalité, Fraternité
+  </text>
+
+  <!-- شعار فارسی -->
+  <text x="540" y="620" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="42" font-weight="bold" fill="#FFD54F" filter="url(#gl10)">
+    زن، زندگی، آزادی
+  </text>
+
+  <!-- پیام -->
+  <text x="540" y="710
+
+<!-- POSSIBLE OVERLAP DETECTED (similarity: 83%) - REVIEW BELOW -->
+
+ادامه‌ی اسلاید ۱۰:

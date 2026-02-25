@@ -177,10 +177,13 @@ def run_step(jid: str, label: str, cmd: List[str], cwd: str = None) -> subproces
     update_job(jid, log_line=f"▶ {label}")
     update_job(jid, log_line=f"  cmd: {' '.join(str(c) for c in cmd)}")
     try:
+        env = os.environ.copy()
+        env["PYTHONIOENCODING"] = "utf-8"
         result = subprocess.run(
             cmd,
             capture_output=True, text=True,
             cwd=cwd or ROOT, encoding="utf-8", errors="replace",
+            env=env
         )
         # Forward stdout lines
         for line in result.stdout.splitlines():

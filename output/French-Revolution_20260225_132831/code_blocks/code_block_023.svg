@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+    <linearGradient id="parch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF8E1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFE082" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg5)"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۵</text>
+
+  <text x="540" y="90" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="36" font-weight="bold" fill="white">
+    اعلامیه‌ی حقوق بشر و شهروند
+  </text>
+  <text x="540" y="130" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#F9A825">۲۶ اوت ۱۷۸۹</text>
+  <rect x="200" y="145" width="680" height="2" rx="1" fill="#F9A825" opacity="0.4"/>
+
+  <!-- طومار -->
+  <rect x="140" y="180" width="800" height="650" rx="20" fill="url(#parch)"/>
+  <rect x="140" y="180" width="800" height="650" rx="20" stroke="#F9A825"
+    stroke-width="2" fill="none" opacity="0.3"/>
+
+  <!-- مواد -->
+  <g font-family="Vazirmatn, Tahoma, sans-serif" fill="white">
+    <text x="900" y="240" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۱
+    </text>
+    <text x="900" y="275" text-anchor="end" font-size="20">
+      انسان‌ها آزاد و برابر به دنیا می‌آیند
+    </text>
+
+    <line x1="200" y1="295" x2="880" y2="295" stroke="#F9A825" stroke-width="0.5" opacity="0.3"/>
+
+    <text x="900" y="335" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۲
+    </text>
+    <text x="900" y="370" text-anchor="end" font-size="20">
+      حقوق طبیعی: آزادی، مالکیت، امنیت، مقاومت در برابر ستم
+    </text>
+
+    <line x1="200" y1="390" x2="880" y2="390" stroke="#F9A825" stroke-width="0.5" opacity="0.3"/>
+
+    <text x="900" y="430" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۳
+    </text>
+    <text x="900" y="465" text-anchor="end" font-size="20">
+      حاکمیت متعلق به ملت است
+    </text>
+
+    <line x1="200" y1="485" x2="880" y2="485" stroke="#F9A825" stroke-width="0.5" opacity="0.3"/>
+
+    <text x="900" y="525" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۶
+    </text>
+    <text x="900" y="560" text-anchor="end" font-size="20">
+      قانون بیان اراده‌ی عمومی است
+    </text>
+
+    <line x1="200" y1="580" x2="880" y2="580" stroke="#F9A825" stroke-width="0.5" opacity="0.3"/>
+
+    <text x="900" y="620" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۱۰ و ۱۱
+    </text>
+    <text x="900" y="655" text-anchor="end" font-size="20">
+      آزادی عقیده و آزادی بیان
+    </text>
+
+    <line x1="200" y1="675" x2="880" y2="675" stroke="#F9A825" stroke-width="0.5" opacity="0.3"/>
+
+    <text x="900" y="715" text-anchor="end" font-size="22" font-weight="bold" fill="#FFD54F">
+      ماده‌ی ۱۷
+    </text>
+    <text x="900" y="750" text-anchor="end" font-size="20">
+      مالکیت حق مقدس و خدشه‌ناپذیر است
+    </text>
+  </g>
+
+  <!-- پیام -->
+  <rect x="200" y="870" width="680" height="80" rx="15" fill="#F9A825" opacity="0.1"/>
+  <text x="540" y="910" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FFD54F">
+    این حقوق، حقوق تو هم هست
+  </text>
+  <text x="540" y="940" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#B0BEC5">
+    هیچ حکومتی حق گرفتن آن‌ها را ندارد
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۵ از ۱۰</text>
+</svg>

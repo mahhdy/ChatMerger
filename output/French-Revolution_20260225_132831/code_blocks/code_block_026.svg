@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#283593"/>
+      <stop offset="100%" stop-color="#1A237E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg8)"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۸</text>
+
+  <text x="540" y="90" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="38" font-weight="bold" fill="white">
+    میراث انقلاب فرانسه برای جهان
+  </text>
+  <rect x="200" y="110" width="680" height="3" rx="2" fill="#F9A825" opacity="0.5"/>
+
+  <!-- شبکه‌ی تأثیر -->
+  <!-- مرکز -->
+  <circle cx="540" cy="420" r="80" fill="#F9A825" opacity="0.15" stroke="#F9A825"
+    stroke-width="2" opacity="0.4"/>
+  <text x="540" y="415" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#FFD54F">انقلاب</text>
+  <text x="540" y="445" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#FFD54F">فرانسه</text>
+
+  <!-- گره‌ها -->
+  <!-- اروپا -->
+  <line x1="540" y1="340" x2="540" y2="220" stroke="#90CAF9" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="540" cy="200" r="50" fill="#1565C0" opacity="0.2" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="540" y="198" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" font-weight="bold" fill="#90CAF9">اروپا</text>
+  <text x="540" y="218" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="12" fill="#B0BEC5">انقلاب‌های ۱۸۴۸</text>
+
+  <!-- آمریکای لاتین -->
+  <line x1="470" y1="370" x2="300" y2="260" stroke="#A5D6A7" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="270" cy="240" r="55" fill="#2E7D32" opacity="0.2" stroke="#A5D6A7" stroke-width="1.5"/>
+  <text x="270" y="235" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="15" font-weight="bold" fill="#A5D6A7">آمریکای لاتین</text>
+  <text x="270" y="255" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="12" fill="#B0BEC5">استقلال</text>
+
+  <!-- هائیتی -->
+  <line x1="610" y1="370" x2="780" y2="260" stroke="#CE93D8" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="810" cy="240" r="50" fill="#6A1B9A" opacity="0.2" stroke="#CE93D8" stroke-width="1.5"/>
+  <text x="810" y="238" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" font-weight="bold" fill="#CE93D8">هائیتی</text>
+  <text x="810" y="258" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="12" fill="#B0BEC5">انقلاب برده‌ها</text>
+
+  <!-- روسیه -->
+  <line x1="470" y1="470" x2="250" y2="520" stroke="#FF8A80" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="220" cy="530" r="50" fill="#B71C1C" opacity="0.2" stroke="#FF8A80" stroke-width="1.5"/>
+  <text x="220" y="528" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" font-weight="bold" fill="#FF8A80">روسیه</text>
+  <text x="220" y="548" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="12" fill="#B0BEC5">انقلاب ۱۹۱۷</text>
+
+  <!-- ایران -->
+  <line x1="610" y1="470" x2="820" y2="530" stroke="#FFD54F" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="850" cy="540" r="60" fill="#F9A825" opacity="0.2" stroke="#FFD54F" stroke-width="2.5"/>
+  <text x="850" y="535" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="18" font-weight="bold" fill="#FFD54F">ایران</text>
+  <text x="850" y="558" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="13" fill="#FFD54F">مشروطه، ۱۹۷۹، ...</text>
+
+  <!-- حقوق بشر -->
+  <line x1="540" y1="500" x2="540" y2="640" stroke="#A5D6A7" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="540" cy="660" r="55" fill="#1B5E20" opacity="0.2" stroke="#A5D6A7" stroke-width="1.5"/>
+  <text x="540" y="655" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" font-weight="bold" fill="#A5D6A7">حقوق بشر</text>
+  <text x="540" y="678" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="12" fill="#B0BEC5">اعلامیه‌ی جهانی ۱۹۴۸</text>
+
+  <!-- پیام ویژه ایرانیان -->
+  <rect x="100" y="770" width="880" height="130" rx="20" fill="#F9A825" opacity="0.1"
+    stroke="#F9A825" stroke-width="1" opacity="0.3"/>
+  <text x="540" y="820" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="26" font-weight="bold" fill="#FFD54F">
+    ایران در ادامه‌ی همین مسیر است
+  </text>
+  <text x="540" y="860" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">
+    از مشروطه تا جنبش زن، زندگی، آزادی
+  </text>
+  <text x="540" y="890" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#B0BEC5">
+    مبارزه برای حقوق بشر، مبارزه‌ای جهانی و تاریخی است
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۸ از ۱۰</text>
+</svg>

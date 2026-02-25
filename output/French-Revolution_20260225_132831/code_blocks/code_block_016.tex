@@ -1,0 +1,812 @@
+% --- عنوان اصلی ---
+  \node[text=white, font=\fontsize{32}{38}\selectfont\bfseries,
+    anchor=center, align=center] at (10.5,17.5)
+    {\rl{تحلیل جامع انقلاب فرانسه}};%
+  % --- زیرعنوان ---
+  \node[text=AccentGold, font=\fontsize{18}{24}\selectfont\bfseries,
+    anchor=center, align=center] at (10.5,15.5)
+    {\rl{۱۷۸۹–۱۷۹۹ و تحولات پس از آن}};%
+  % --- شعار ---
+  \node[text=white, font=\fontsize{14}{18}\selectfont\itshape,
+    anchor=center, align=center] at (10.5,12.2)
+    {Libert\'{e}, \'{E}galit\'{e}, Fraternit\'{e}};%
+  \node[text=NeutralMid, font=\fontsize{12}{16}\selectfont,
+    anchor=center, align=center] at (10.5,11.4)
+    {\rl{آزادی، برابری، برادری}};%
+  % --- نماد باستیل ساده‌شده ---
+  \begin{scope}[shift={(10.5,7)}, scale=0.8]
+    % برج چپ
+    \fill[NeutralMid, opacity=0.3] (-2,0) rectangle (-1,3);%
+    \fill[NeutralMid, opacity=0.3] (-2.2,3) rectangle (-0.8,3.5);%
+    % برج راست
+    \fill[NeutralMid, opacity=0.3] (1,0) rectangle (2,3);%
+    \fill[NeutralMid, opacity=0.3] (0.8,3) rectangle (2.2,3.5);%
+    % دیوار وسط
+    \fill[NeutralMid, opacity=0.2] (-1,0) rectangle (1,2);%
+    % دروازه
+    \fill[PrimaryDeep] (-0.4,0) arc (180:0:0.4) -- (0.4,0) -- cycle;%
+    % شکست‌ها
+    \draw[AccentGold, thick] (-1.5,2.5) -- (-1.2,1.5) -- (-1.6,0.5);%
+    \draw[AccentGold, thick] (1.5,2.5) -- (1.3,1.5) -- (1.7,0.5);%
+    \draw[AccentGold, thick, opacity=0.7] (0,2) -- (0.3,1) -- (-0.2,0.3);%
+  \end{scope}
+  % --- نام نویسنده ---
+  \node[text=NeutralMid, font=\large, anchor=center] at (10.5,3.5)
+    {\rl{مهدی سالم}};%
+  % --- تاریخ ---
+  \node[text=NeutralMid, font=\normalsize, anchor=center] at (10.5,2.5)
+    {\rl{۱۴۰۴}};%
+\end{tikzpicture}
+\end{titlepage}
+
+% ─────────────────────────────────────────────────────────────────
+%   فهرست مطالب
+% ─────────────────────────────────────────────────────────────────
+\newpage
+\tableofcontents
+\newpage
+
+% ═══════════════════════════════════════════════════════════════════
+%   خلاصه‌ی اجرایی
+% ═══════════════════════════════════════════════════════════════════
+\needspace{6\baselineskip}%
+\section*{خلاصه‌ی اجرایی}
+\addcontentsline{toc}{section}{خلاصه‌ی اجرایی}
+
+\begin{tcolorbox}[mybox, title={\rl{انقلاب فرانسه: مادر انقلاب‌های مدرن}}]
+انقلاب فرانسه \concept{مادر انقلاب‌های مدرن} است که الگوی تحول سیاسی رادیکال را
+برای دو قرن آینده تعریف کرد. این انقلاب در \concept{چهار فاز} اصلی قابل تحلیل
+است و میراث آن از اعلامیه‌ی حقوق بشر تا ناسیونالیسم مدرن گسترده است.
+\end{tcolorbox}
+
+\begin{tcolorbox}[defbox, title={\rl{چهار فاز انقلاب}}]
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}% FIXED: جلوگیری از سرریز
+\begin{tabular}{>{\bfseries\color{white}}r
+                >{\small}r
+                >{\small}r
+                >{\small}r}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}فاز & \color{white}دوره & \color{white}ماهیت & \color{white}نتیجه \\
+\midrule
+\rowcolor{PhaseLiberal!10}
+\color{PhaseLiberal}لیبرال–مشروطه & ۱۷۸۹–۱۷۹۱ & اصلاحات از بالا & سلطنت مشروطه \\
+\rowcolor{PhaseRadical!10}
+\color{PhaseRadical}رادیکال–جمهوری & ۱۷۹۲–۱۷۹۴ & انقلاب توده‌ای & ترور و جمهوری \\
+\rowcolor{PhaseThermidor!10}
+\color{PhaseThermidor}ترمیدور و واکنش & ۱۷۹۴–۱۷۹۹ & تعدیل و بازگشت & دیرکتوار \\
+\rowcolor{PhaseNapoleon!10}
+\color{PhaseNapoleon}ناپلئونی & ۱۷۹۹–۱۸۱۵ & استبداد روشنگرانه & امپراتوری \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\end{tcolorbox}
+
+\subsection*{میراث اصلی}
+\begin{itemize}[nosep, rightmargin=1em]
+  \item اعلامیه‌ی حقوق بشر و شهروند
+  \item مفهوم \concept{ملت} به جای \concept{رعیت}
+  \item سکولاریسم و جدایی دین از دولت
+  \item ناسیونالیسم مدرن
+  \item الگوی انقلاب رادیکال
+\end{itemize}
+
+% ═══════════════════════════════════════════════════════════════════
+%   نقشه‌ی مفهومی انقلاب
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section*{نقشه‌ی مفهومی انقلاب فرانسه}
+\addcontentsline{toc}{section}{نقشه‌ی مفهومی}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}% FIXED: جلوگیری از سرریز
+\begin{tikzpicture}[
+  every node/.style={align=center, font=\small},
+  root/.style={circle, draw=PrimaryDeep, fill=PrimaryDeep!15,
+    line width=1.5pt, minimum size=2.8cm, font=\bfseries\large},
+  branch/.style={rectangle, rounded corners=6pt, draw=#1, fill=#1!12,
+    line width=1pt, minimum width=2.2cm, minimum height=1cm, font=\bfseries\small},
+  leaf/.style={rectangle, rounded corners=3pt, draw=#1!60, fill=#1!6,
+    minimum width=1.8cm, minimum height=0.7cm, font=\scriptsize},
+  arr/.style={-{Stealth[length=5pt]}, thick, #1},
+]
+  % --- ریشه ---
+  \node[root] (rev) {\rl{انقلاب}\\[2pt]\rl{فرانسه}\\[1pt]\rl{۱۷۸۹}};
+
+  % --- شاخه‌های اصلی ---
+  \node[branch=PhaseRadical, above right=2.5cm and 3cm of rev] (causes)
+    {\rl{علل}};
+  \node[branch=PhaseLiberal, right=4cm of rev] (phases)
+    {\rl{فازها}};
+  \node[branch=AccentTeal, below right=2.5cm and 3cm of rev] (legacy)
+    {\rl{میراث}};
+  \node[branch=AccentPurple, above left=2.5cm and 3cm of rev] (actors)
+    {\rl{بازیگران}};
+  \node[branch=AccentAmber, below left=2.5cm and 3cm of rev] (docs)
+    {\rl{اسناد کلیدی}};
+
+  % --- خطوط اصلی ---
+  \draw[arr=PhaseRadical] (rev) -- (causes);
+  \draw[arr=PhaseLiberal] (rev) -- (phases);
+  \draw[arr=AccentTeal] (rev) -- (legacy);
+  \draw[arr=AccentPurple] (rev) -- (actors);
+  \draw[arr=AccentAmber] (rev) -- (docs);
+
+  % --- برگ‌های علل ---
+  \node[leaf=PhaseRadical, above=0.6cm of causes] (c1) {\rl{بحران مالی}};
+  \node[leaf=PhaseRadical, right=0.4cm of causes] (c2) {\rl{نابرابری طبقاتی}};
+  \node[leaf=PhaseRadical, above right=0.4cm and -0.5cm of causes] (c3) {\rl{روشنگری}};
+  \node[leaf=PhaseRadical, below=0.6cm of causes] (c4) {\rl{قحطی ۱۷۸۸}};
+  \draw[PhaseRadical!60, thin] (causes) -- (c1);
+  \draw[PhaseRadical!60, thin] (causes) -- (c2);
+  \draw[PhaseRadical!60, thin] (causes) -- (c3);
+  \draw[PhaseRadical!60, thin] (causes) -- (c4);
+
+  % --- برگ‌های فازها ---
+  \node[leaf=PhaseLiberal, above=0.6cm of phases] (p1) {\rl{لیبرال ۸۹–۹۱}};
+  \node[leaf=PhaseRadical, right=0.4cm of phases] (p2) {\rl{رادیکال ۹۲–۹۴}};
+  \node[leaf=PhaseThermidor, below=0.6cm of phases] (p3) {\rl{ترمیدور ۹۴–۹۹}};
+  \node[leaf=PhaseNapoleon, below right=0.4cm and -0.5cm of phases] (p4)
+    {\rl{ناپلئونی ۹۹–۱۵}};
+  \draw[PhaseLiberal!60, thin] (phases) -- (p1);
+  \draw[PhaseRadical!60, thin] (phases) -- (p2);
+  \draw[PhaseThermidor!60, thin] (phases) -- (p3);
+  \draw[PhaseNapoleon!60, thin] (phases) -- (p4);
+
+  % --- برگ‌های میراث ---
+  \node[leaf=AccentTeal, below=0.6cm of legacy] (l1) {\rl{حقوق بشر}};
+  \node[leaf=AccentTeal, right=0.4cm of legacy] (l2) {\rl{سکولاریسم}};
+  \node[leaf=AccentTeal, below right=0.4cm and -0.5cm of legacy] (l3)
+    {\rl{ناسیونالیسم}};
+  \draw[AccentTeal!60, thin] (legacy) -- (l1);
+  \draw[AccentTeal!60, thin] (legacy) -- (l2);
+  \draw[AccentTeal!60, thin] (legacy) -- (l3);
+
+  % --- برگ‌های بازیگران ---
+  \node[leaf=AccentPurple, above=0.6cm of actors] (a1) {\rl{روبسپیر}};
+  \node[leaf=AccentPurple, left=0.4cm of actors] (a2) {\rl{دانتون}};
+  \node[leaf=AccentPurple, above left=0.4cm and -0.5cm of actors] (a3)
+    {\rl{ناپلئون}};
+  \node[leaf=AccentPurple, below=0.6cm of actors] (a4) {\rl{لافایت}};
+  \draw[AccentPurple!60, thin] (actors) -- (a1);
+  \draw[AccentPurple!60, thin] (actors) -- (a2);
+  \draw[AccentPurple!60, thin] (actors) -- (a3);
+  \draw[AccentPurple!60, thin] (actors) -- (a4);
+
+  % --- برگ‌های اسناد ---
+  \node[leaf=AccentAmber, below=0.6cm of docs] (d1) {\rl{اعلامیه‌ی حقوق بشر}};
+  \node[leaf=AccentAmber, left=0.4cm of docs] (d2) {\rl{قانون اساسی ۹۱}};
+  \node[leaf=AccentAmber, below left=0.4cm and -0.5cm of docs] (d3)
+    {\rl{کد ناپلئون}};
+  \draw[AccentAmber!60, thin] (docs) -- (d1);
+  \draw[AccentAmber!60, thin] (docs) -- (d2);
+  \draw[AccentAmber!60, thin] (docs) -- (d3);
+
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+
+% ═══════════════════════════════════════════════════════════════════
+%   اینفوگرافی خط زمان
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section*{اینفوگرافی: خط زمان حوادث کلیدی}
+\addcontentsline{toc}{section}{اینفوگرافی خط زمان}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}% FIXED: جلوگیری از سرریز
+\begin{tikzpicture}[
+  every node/.style={font=\scriptsize, align=center},
+  event/.style={rectangle, rounded corners=4pt, draw=#1, fill=#1!10,
+    minimum width=2cm, minimum height=0.7cm, font=\scriptsize\bfseries},
+]
+  % --- خط زمان اصلی ---
+  \draw[PrimaryDeep, line width=2pt, -{Stealth[length=6pt]}]
+    (0,0) -- (16,0);
+
+  % علامت‌های سال
+  \node[event=PhaseLiberal, above=0.8cm] at (1,0) (e1)
+    {\rl{سقوط باستیل}\\[1pt]\rl{۱۴ ژوئیه ۱۷۸۹}};
+  \draw[PhaseLiberal, thick] (1,0.1) -- (e1);
+
+  \node[event=PhaseLiberal, below=0.8cm] at (2.8,0) (e2)
+    {\rl{اعلامیه‌ی حقوق بشر}\\[1pt]\rl{۲۶ اوت ۱۷۸۹}};
+  \draw[PhaseLiberal, thick] (2.8,-0.1) -- (e2);
+
+  \node[event=PhaseLiberal, above=0.8cm] at (4.5,0) (e3)
+    {\rl{قانون اساسی ۱۷۹۱}};
+  \draw[PhaseLiberal, thick] (4.5,0.1) -- (e3);
+
+  \node[event=PhaseRadical, below=0.8cm] at (6.2,0) (e4)
+    {\rl{سقوط سلطنت}\\[1pt]\rl{۱۰ اوت ۱۷۹۲}};
+  \draw[PhaseRadical, thick] (6.2,-0.1) -- (e4);
+
+  \node[event=PhaseRadical, above=0.8cm] at (7.8,0) (e5)
+    {\rl{اعدام لویی شانزدهم}\\[1pt]\rl{ژانویه ۱۷۹۳}};
+  \draw[PhaseRadical, thick] (7.8,0.1) -- (e5);
+
+  \node[event=PhaseRadical, below=0.8cm] at (9.5,0) (e6)
+    {\rl{دوران ترور}\\[1pt]\rl{۱۷۹۳–۹۴}};
+  \draw[PhaseRadical, thick] (9.5,-0.1) -- (e6);
+
+  \node[event=PhaseThermidor, above=0.8cm] at (11,0) (e7)
+    {\rl{سقوط روبسپیر}\\[1pt]\rl{ژوئیه ۱۷۹۴}};
+  \draw[PhaseThermidor, thick] (11,0.1) -- (e7);
+
+  \node[event=PhaseThermidor, below=0.8cm] at (12.5,0) (e8)
+    {\rl{دیرکتوار}\\[1pt]\rl{۱۷۹۵–۹۹}};
+  \draw[PhaseThermidor, thick] (12.5,-0.1) -- (e8);
+
+  \node[event=PhaseNapoleon, above=0.8cm] at (14.5,0) (e9)
+    {\rl{کودتای ناپلئون}\\[1pt]\rl{نوامبر ۱۷۹۹}};
+  \draw[PhaseNapoleon, thick] (14.5,0.1) -- (e9);
+
+  % --- راهنمای رنگ ---
+  \node[event=PhaseLiberal] at (4,-3) (lg1) {\rl{فاز لیبرال}};
+  \node[event=PhaseRadical, right=0.3cm of lg1] (lg2) {\rl{فاز رادیکال}};
+  \node[event=PhaseThermidor, right=0.3cm of lg2] (lg3) {\rl{ترمیدور}};
+  \node[event=PhaseNapoleon, right=0.3cm of lg3] (lg4) {\rl{ناپلئونی}};
+
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+
+% ═══════════════════════════════════════════════════════════════════
+%   طرح کلی تحولات فرانسه
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section*{طرح کلی تحولات فرانسه (۱۷۸۹–۲۰۲۴)}
+\addcontentsline{toc}{section}{طرح کلی تحولات فرانسه}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}% FIXED
+\begin{tikzpicture}[
+  every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=5pt, draw=#1, fill=#1!10,
+    minimum width=4cm, minimum height=0.9cm, line width=1pt},
+  arr/.style={-{Stealth[length=5pt]}, thick, NeutralDark},
+  node distance=0.8cm,
+]
+  \node[block=PhaseRadical] (r1) {\rl{۱۷۸۹: انقلاب}};
+  \node[block=PhaseLiberal, below=of r1] (r2) {\rl{۱۷۸۹–۱۷۹۲: سلطنت مشروطه}};
+  \node[block=PhaseRadical, below=of r2] (r3) {\rl{۱۷۹۲–۱۸۰۴: جمهوری اول}};
+  \node[block=PhaseNapoleon, below=of r3] (r4) {\rl{۱۸۰۴–۱۸۱۵: امپراتوری اول}};
+  \node[block=EraAncient, below=of r4] (r5) {\rl{۱۸۱۴–۱۸۳۰: بازگشت بوربون‌ها}};
+  \node[block=EraEarlyMod, below=of r5] (r6) {\rl{۱۸۳۰–۱۸۴۸: سلطنت ژوئیه}};
+  \node[block=AccentTeal, below=of r6] (r7) {\rl{۱۸۴۸–۱۸۵۲: جمهوری دوم}};
+  \node[block=AccentPurple, below=of r7] (r8) {\rl{۱۸۵۲–۱۸۷۰: امپراتوری دوم}};
+  \node[block=EraModern, below=of r8] (r9) {\rl{۱۸۷۰–۱۹۴۰: جمهوری سوم}};
+  \node[block=AccentRed, below=of r9] (r10) {\rl{۱۹۴۰–۱۹۴۴: ویشی}};
+  \node[block=EraContemp, below=of r10] (r11) {\rl{۱۹۴۶–۱۹۵۸: جمهوری چهارم}};
+  \node[block=PrimaryDeep, below=of r11] (r12) {\rl{۱۹۵۸–اکنون: جمهوری پنجم}};
+
+  \foreach \i/\j in {r1/r2, r2/r3, r3/r4, r4/r5, r5/r6,
+    r6/r7, r7/r8, r8/r9, r9/r10, r10/r11, r11/r12}{%
+    \draw[arr] (\i) -- (\j);%
+  }%
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+
+% ═══════════════════════════════════════════════════════════════════
+%   بخش اول: زمینه‌ها و علل انقلاب
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section{زمینه‌ها و علل انقلاب}
+\label{sec:causes}
+
+\subsection{بحران ساختاری نظام کهن}
+\label{sec:ancien}
+
+\subsubsection{ساختار طبقاتی سه‌گانه}
+
+جامعه‌ی فرانسه پیش از انقلاب بر اساس نظامی سه‌طبقه‌ای
+(\lat{Ancien Régime}) سامان یافته بود که تناقض بنیادینی میان قدرت اقتصادی
+و قدرت سیاسی ایجاد کرده بود.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrrr}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}\bfseries طبقه & \color{white}\bfseries درصد جمعیت
+  & \color{white}\bfseries ویژگی & \color{white}\bfseries امتیازات \\
+\midrule
+\rowcolor{BgWarm}
+\textbf{اول: روحانیت} & ۰٫۵٪ (~۱۳۰٬۰۰۰) & کلیسای کاتولیک
+  & معاف از مالیات، مالک ۱۰٪ زمین \\
+\rowcolor{BgCool}
+\textbf{دوم: اشراف} & ۱٫۵٪ (~۴۰۰٬۰۰۰) & نجبا، درباریان
+  & معاف از مالیات، مالک ۲۵٪ زمین \\
+\rowcolor{BgWarm}
+\textbf{سوم: عوام} & ۹۸٪ (~۲۷ میلیون) & دهقانان، بورژوا، کارگران
+  & تحمل همه‌ی مالیات‌ها \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\begin{tcolorbox}[wavebox, title={\rl{تناقض بنیادین}}]
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=4pt, draw=AccentRed,
+    fill=AccentRed!8, minimum width=3.5cm, minimum height=0.7cm},
+  arr/.style={-{Stealth[length=5pt]}, thick, AccentRed},
+]
+  \node[block] (a) {\rl{قدرت اقتصادی بورژوازی $\uparrow$}};
+  \node[block, below=0.5cm of a] (b) {\rl{قدرت سیاسی اشراف: ثابت}};
+  \node[block, below=0.5cm of b] (c) {\rl{تناقض ساختاری}};
+  \node[block, below=0.5cm of c] (d) {\rl{بحران مشروعیت}};
+  \draw[arr] (a) -- (b);
+  \draw[arr] (b) -- (c);
+  \draw[arr] (c) -- (d);
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+
+% ─── ۱.۲ بحران مالی ──────────────────────────────────────────
+\needspace{6\baselineskip}%
+\subsection{بحران مالی}
+\label{sec:financial}
+
+\subsubsection{ورشکستگی دولت}
+
+دولت فرانسه در آستانه‌ی انقلاب با بحران مالی عمیقی دست‌وپنجه نرم می‌کرد.
+هزینه‌ی جنگ استقلال آمریکا، اسراف دربار ورسای، و ساختار مالیاتی ناکارآمد
+که طبقات ممتاز را معاف می‌کرد، کشور را به ورشکستگی نزدیک کرده بود.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}\bfseries منبع بحران & \color{white}\bfseries میزان \\
+\midrule
+\rowcolor{BgWarm} بدهی دولت (۱۷۸۸) & ۴ میلیارد لیور \\
+\rowcolor{BgCool} هزینه‌ی سالانه‌ی بهره & ۵۰٪ بودجه \\
+\rowcolor{BgWarm} کسری بودجه & ۱۲۶ میلیون لیور \\
+\rowcolor{BgCool} هزینه‌ی جنگ استقلال آمریکا & ۱٫۳ میلیارد لیور \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsubsection{تلاش‌های ناموفق اصلاحی}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrrr}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}\bfseries وزیر دارایی & \color{white}\bfseries سال
+  & \color{white}\bfseries پیشنهاد & \color{white}\bfseries نتیجه \\
+\midrule
+\rowcolor{BgWarm} تورگو & ۱۷۷۴–۷۶ & اصلاحات لیبرال & برکناری \\
+\rowcolor{BgCool} نکر & ۱۷۷۶–۸۱ & وام‌گیری & موقت \\
+\rowcolor{BgWarm} کالون & ۱۷۸۳–۸۷ & مالیات بر اشراف & مخالفت اشراف \\
+\rowcolor{BgCool} بریین & ۱۷۸۷–۸۸ & اصلاحات & شورش اشراف \\
+\rowcolor{BgWarm} نکر (دوم) & ۱۷۸۸–۸۹ & مجلس طبقات & انقلاب \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+% ─── ۱.۳ بحران ایدئولوژیک ────────────────────────────────────
+\needspace{6\baselineskip}%
+\subsection{بحران ایدئولوژیک: روشنگری}
+\label{sec:enlightenment}
+
+\subsubsection{متفکران کلیدی}
+
+جنبش روشنگری (\lat{Les Lumières}) بنیادهای فکری انقلاب را فراهم کرد.
+متفکرانی چون ولتر، مونتسکیو و روسو مشروعیت نظام کهن را به چالش کشیدند.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrr}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}\bfseries متفکر & \color{white}\bfseries ایده‌ی اصلی
+  & \color{white}\bfseries تأثیر بر انقلاب \\
+\midrule
+\rowcolor{BgWarm} \thinker{ولتر} & تساهل، نقد کلیسا & ضد روحانیت \\
+\rowcolor{BgCool} \thinker{مونتسکیو} & تفکیک قوا & الهام‌بخش قانون اساسی \\
+\rowcolor{BgWarm} \thinker{روسو} & قرارداد اجتماعی، اراده‌ی عمومی
+  & دموکراسی رادیکال \\
+\rowcolor{BgCool} \thinker{دیدرو} & دایرةالمعارف & نقد سنت و خرافه \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\begin{tcolorbox}[defbox, title={\rl{ایده‌های انقلابی}}]
+\begin{itemize}[nosep, rightmargin=1em]
+  \item \concept{حاکمیت ملی} به جای حق الهی شاهان
+  \item \concept{برابری} در برابر قانون
+  \item \concept{آزادی} فردی و اقتصادی
+  \item \concept{عقل} به جای سنت و مذهب
+\end{itemize}
+\end{tcolorbox}
+
+% ─── ۱.۴ بحران اجتماعی-اقتصادی ────────────────────────────
+\needspace{6\baselineskip}%
+\subsection{بحران اجتماعی–اقتصادی (۱۷۸۸–۸۹)}
+\label{sec:social-crisis}
+
+\begin{tcolorbox}[enemybox, title={\rl{قحطی و گرانی}}]
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{AccentRed!15}
+\color{AccentRed}\bfseries شاخص & \color{AccentRed}\bfseries ۱۷۸۸–۸۹ \\
+\midrule
+قیمت نان & $+$۸۸٪ \\
+درصد درآمد صرف نان (کارگر) & ۸۰–۹۰٪ \\
+بیکاری در پاریس & ${\sim}$۵۰٪ \\
+سرمای زمستان ۱۷۸۸ & شدیدترین در ۸۰ سال \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\end{tcolorbox}
+
+% ═══════════════════════════════════════════════════════════════════
+%   بخش دوم: فازهای انقلاب
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section{فازهای انقلاب}
+\label{sec:phases}
+
+\subsection{فاز اول: انقلاب لیبرال–مشروطه (۱۷۸۹–۱۷۹۱)}
+\label{sec:phase1}
+
+\subsubsection{رویدادهای کلیدی}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrr}
+\toprule
+\rowcolor{PhaseLiberal}
+\color{white}\bfseries تاریخ & \color{white}\bfseries رویداد
+  & \color{white}\bfseries اهمیت \\
+\midrule
+\rowcolor{BgCool} ۵ مه ۱۷۸۹ & گشایش مجلس طبقات & آغاز رسمی \\
+\rowcolor{BgWarm} ۱۷ ژوئن ۱۷۸۹ & اعلام مجلس ملی & ادعای حاکمیت \\
+\rowcolor{BgCool} ۲۰ ژوئن ۱۷۸۹ & سوگند زمین تنیس & تعهد به قانون اساسی \\
+\rowcolor{AccentGold!20} \bfseries ۱۴ ژوئیه ۱۷۸۹ & \bfseries سقوط باستیل
+  & \bfseries نماد انقلاب \\
+\rowcolor{BgCool} ۴ اوت ۱۷۸۹ & لغو امتیازات فئودالی & پایان نظام کهن \\
+\rowcolor{BgWarm} ۲۶ اوت ۱۷۸۹ & اعلامیه‌ی حقوق بشر & بنیاد ایدئولوژیک \\
+\rowcolor{BgCool} ۵–۶ اکتبر ۱۷۸۹ & راهپیمایی زنان به ورسای
+  & انتقال شاه به پاریس \\
+\rowcolor{BgWarm} ۲۰–۲۱ ژوئن ۱۷۹۱ & فرار شاه (وارن)
+  & بحران مشروعیت سلطنت \\
+\rowcolor{BgCool} ۳ سپتامبر ۱۷۹۱ & قانون اساسی ۱۷۹۱ & سلطنت مشروطه \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsubsection{اعلامیه‌ی حقوق بشر و شهروند (۲۶ اوت ۱۷۸۹)}
+
+\begin{tcolorbox}[mybox, title={\rl{اصول کلیدی اعلامیه‌ی حقوق بشر}}]
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{AccentGold!30}
+\bfseries ماده & \bfseries محتوا \\
+\midrule
+\rowcolor{BgWarm} ۱ & انسان‌ها آزاد و برابر به دنیا می‌آیند \\
+\rowcolor{BgCool} ۲ & حقوق طبیعی: آزادی، مالکیت، امنیت، مقاومت در برابر ستم \\
+\rowcolor{BgWarm} ۳ & حاکمیت متعلق به ملت است \\
+\rowcolor{BgCool} ۶ & قانون بیان اراده‌ی عمومی است \\
+\rowcolor{BgWarm} ۱۰ & آزادی عقیده (حتی مذهبی) \\
+\rowcolor{BgCool} ۱۱ & آزادی بیان \\
+\rowcolor{BgWarm} ۱۷ & مالکیت حق مقدس است \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\end{tcolorbox}
+
+\subsubsection{ساختار قانون اساسی ۱۷۹۱}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=5pt, draw=PhaseLiberal,
+    fill=PhaseLiberal!10, minimum width=4cm, minimum height=0.8cm},
+  arr/.style={-{Stealth[length=5pt]}, thick, PhaseLiberal},
+]
+  \node[block] (king) {\rl{شاه (قوه‌ی مجریه)}\\[1pt]\rl{حق وتوی تعلیقی}};
+  \node[block, below=0.8cm of king] (assembly)
+    {\rl{مجلس قانون‌گذاری (قوه‌ی مقننه)}\\[1pt]\rl{۷۴۵ نماینده}};
+  \node[block, below=0.8cm of assembly] (citizens)
+    {\rl{شهروندان «فعال»}\\[1pt]\rl{~۴٫۳ میلیون مرد بالای ۲۵ سال}};
+  \draw[arr] (king) -- (assembly);
+  \draw[arr] (assembly) -- (citizens);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{نیروهای سیاسی}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrr}
+\toprule
+\rowcolor{PrimaryDeep}
+\color{white}\bfseries گروه & \color{white}\bfseries موضع
+  & \color{white}\bfseries رهبران \\
+\midrule
+\rowcolor{BgCool} فویان‌ها & سلطنت مشروطه، میانه‌رو & لافایت، بایی \\
+\rowcolor{BgWarm} ژیروندن‌ها & جمهوری، جنگ & بریسو، رولان \\
+\rowcolor{PhaseRadical!10} ژاکوبن‌ها & جمهوری رادیکال & روبسپیر، مارا \\
+\rowcolor{BgCool} کوردلیه‌ها & دموکراسی مستقیم & دانتون، مارا \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+% ─── فاز دوم ─────────────────────────────────────────────────
+\newpage
+\needspace{6\baselineskip}%
+\subsection{فاز دوم: انقلاب رادیکال و ترور (۱۷۹۲–۱۷۹۴)}
+\label{sec:phase2}
+
+\subsubsection{از سلطنت به جمهوری}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrr}
+\toprule
+\rowcolor{PhaseRadical}
+\color{white}\bfseries تاریخ & \color{white}\bfseries رویداد
+  & \color{white}\bfseries اهمیت \\
+\midrule
+\rowcolor{BgWarm} ۲۰ آوریل ۱۷۹۲ & اعلان جنگ به اتریش & آغاز جنگ‌های انقلابی \\
+\rowcolor{AccentRed!10} \bfseries ۱۰ اوت ۱۷۹۲ & \bfseries حمله به تویلری
+  & \bfseries سقوط سلطنت \\
+\rowcolor{BgWarm} ۲–۶ سپتامبر ۱۷۹۲ & کشتارهای سپتامبر
+  & ترور خودجوش (~۱٬۴۰۰ کشته) \\
+\rowcolor{BgCool} ۲۱ سپتامبر ۱۷۹۲ & اعلام جمهوری & جمهوری اول \\
+\rowcolor{AccentRed!15} \bfseries ۲۱ ژانویه ۱۷۹۳ & \bfseries اعدام لویی شانزدهم
+  & \bfseries نقطه‌ی بازگشت‌ناپذیر \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsubsection{ساختار کنوانسیون ملی}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=5pt, draw=#1, fill=#1!10,
+    minimum width=2.5cm, minimum height=1cm, line width=1pt},
+  arr/.style={-{Stealth[length=4pt]}, thick, NeutralDark},
+]
+  \node[block=PrimaryDeep] (conv)
+    {\rl{کنوانسیون ملی}\\[1pt]\rl{۷۴۹ نماینده}};
+  \node[block=PhaseRadical, below right=1.5cm and -0.5cm of conv] (mont)
+    {\rl{کوه (مونتانیار)}\\[1pt]\rl{~۳۰۰ رادیکال}};
+  \node[block=NeutralMid, below=1.5cm of conv] (plain)
+    {\rl{دشت (مرداب)}\\[1pt]\rl{~۳۵۰ میانه}};
+  \node[block=PhaseLiberal, below left=1.5cm and -0.5cm of conv] (gir)
+    {\rl{ژیروند}\\[1pt]\rl{~۱۶۰ میانه‌رو}};
+  \draw[arr] (conv) -- (mont);
+  \draw[arr] (conv) -- (plain);
+  \draw[arr] (conv) -- (gir);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{دوران ترور}
+
+\begin{tcolorbox}[enemybox, title={\rl{دوران ترور: ژوئن ۱۷۹۳ – ژوئیه ۱۷۹۴}}]
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{AccentRed!15}
+\color{AccentRed}\bfseries تاریخ & \color{AccentRed}\bfseries رویداد \\
+\midrule
+\rowcolor{BgWarm} ۲ ژوئن ۱۷۹۳ & سقوط ژیروندن‌ها \\
+\rowcolor{BgCool} ۱۳ ژوئیه ۱۷۹۳ & ترور مارا (توسط شارلوت کوردی) \\
+\rowcolor{BgWarm} ۵ سپتامبر ۱۷۹۳ & «ترور در دستور کار» \\
+\rowcolor{BgCool} ۱۶ اکتبر ۱۷۹۳ & اعدام ماری آنتوانت \\
+\rowcolor{BgWarm} ۳۱ اکتبر ۱۷۹۳ & اعدام ژیروندن‌ها \\
+\rowcolor{BgCool} ۵ آوریل ۱۷۹۴ & اعدام دانتون و میانه‌روها \\
+\rowcolor{BgWarm} ۱۰ ژوئن ۱۷۹۴ & قانون ۲۲ پریریال (تسریع ترور) \\
+\rowcolor{AccentRed!20} \bfseries ۲۷ ژوئیه ۱۷۹۴
+  & \bfseries ۹ ترمیدور: سقوط روبسپیر \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\vspace{0.5\baselineskip}
+
+\textbf{آمار ترور:}
+\begin{center}
+\begin{adjustbox}{max width=0.7\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\bfseries شاخص & \bfseries تعداد \\
+\midrule
+اعدام با گیوتین & ${\sim}$۱۷٬۰۰۰ \\
+مرگ در زندان & ${\sim}$۱۰٬۰۰۰ \\
+کشته در سرکوب واندی & ${\sim}$۱۵۰٬۰۰۰–۲۵۰٬۰۰۰ \\
+\midrule
+\bfseries مجموع & \bfseries ${\sim}$۲۰۰٬۰۰۰–۳۰۰٬۰۰۰ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\end{tcolorbox}
+
+\begin{tcolorbox}[quotebox]
+«ترور چیزی نیست جز عدالت سریع، شدید و انعطاف‌ناپذیر؛
+پس جلوه‌ای از فضیلت است.»
+
+\hfill — روبسپیر، ۵ فوریه ۱۷۹۴
+\end{tcolorbox}
+
+\subsubsection{نهادهای ترور}
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{AccentRed!15}
+\bfseries نهاد & \bfseries نقش \\
+\midrule
+\rowcolor{BgWarm} کمیته‌ی نجات عمومی & قوه‌ی مجریه، هدایت جنگ \\
+\rowcolor{BgCool} کمیته‌ی امنیت عمومی & پلیس سیاسی \\
+\rowcolor{BgWarm} دادگاه انقلابی & محاکمه‌ی سریع \\
+\rowcolor{BgCool} نمایندگان مأمور & اجرای ترور در ولایات \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+% ─── فاز سوم ─────────────────────────────────────────────────
+\newpage
+\needspace{6\baselineskip}%
+\subsection{فاز سوم: ترمیدور و دیرکتوار (۱۷۹۴–۱۷۹۹)}
+\label{sec:phase3}
+
+\subsubsection{واکنش ترمیدوری}
+
+پس از سقوط روبسپیر، موجی از واکنش علیه رادیکالیسم آغاز شد.
+«ترور سفید» جای ترور سرخ را گرفت و نهایتاً قانون اساسی جدیدی
+نوشته شد که سعی داشت میان آزادی و نظم تعادل برقرار کند.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rr}
+\toprule
+\rowcolor{PhaseThermidor}
+\color{white}\bfseries تاریخ & \color{white}\bfseries رویداد \\
+\midrule
+\rowcolor{BgWarm} ۲۷ ژوئیه ۱۷۹۴ & کودتای ۹ ترمیدور \\
+\rowcolor{BgCool} ۲۸ ژوئیه ۱۷۹۴ & اعدام روبسپیر و یارانش \\
+\rowcolor{BgWarm} ۱۷۹۴–۹۵ & «ترور سفید» علیه ژاکوبن‌ها \\
+\rowcolor{BgCool} ۲۲ اوت ۱۷۹۵ & قانون اساسی سال سوم \\
+\rowcolor{BgWarm} ۲۶ اکتبر ۱۷۹۵ & آغاز دیرکتوار \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsubsection{ساختار دیرکتوار}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=5pt, draw=PhaseThermidor,
+    fill=PhaseThermidor!10, minimum width=4.5cm, minimum height=0.8cm},
+  arr/.style={-{Stealth[length=5pt]}, thick, PhaseThermidor},
+]
+  \node[block] (dir) {\rl{۵ دیرکتور (قوه‌ی مجریه)}};
+  \node[block, below=0.7cm of dir] (coun)
+    {\rl{شورای ۵۰۰ + شورای ریش‌سفیدان}};
+  \node[block, below=0.7cm of coun] (elec)
+    {\rl{انتخابات محدود (مالکین)}};
+  \draw[arr] (dir) -- (coun);
+  \draw[arr] (coun) -- (elec);
+\end{tikzpicture}
+\end{center}
+
+\begin{tcolorbox}[defbox, title={\rl{مشکلات دیرکتوار}}]
+\begin{itemize}[nosep, rightmargin=1em]
+  \item بی‌ثباتی سیاسی (کودتاهای مکرر)
+  \item فساد اقتصادی گسترده
+  \item وابستگی فزاینده به ارتش
+  \item تهدید همزمان سلطنت‌طلبان و ژاکوبن‌ها
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection{کودتای ۱۸ برومر (۹ نوامبر ۱۷۹۹)}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small, align=center},
+  block/.style={rectangle, rounded corners=5pt, draw=PhaseNapoleon,
+    fill=PhaseNapoleon!10, minimum width=4cm, minimum height=0.8cm},
+  arr/.style={-{Stealth[length=5pt]}, thick, PhaseNapoleon},
+]
+  \node[block] (coup) {\rl{ناپلئون + سیئس + دوکو}};
+  \node[block, below=0.6cm of coup] (diss) {\rl{انحلال دیرکتوار}};
+  \node[block, below=0.6cm of diss] (cons) {\rl{کنسولا (سه کنسول)}};
+  \node[block, below=0.6cm of cons] (nap) {\rl{ناپلئون: کنسول اول}};
+  \draw[arr] (coup) -- (diss);
+  \draw[arr] (diss) -- (cons);
+  \draw[arr] (cons) -- (nap);
+\end{tikzpicture}
+\end{center}
+
+% ═══════════════════════════════════════════════════════════════════
+%   بخش سوم: دوران ناپلئون
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\needspace{6\baselineskip}%
+\section{دوران ناپلئون (۱۷۹۹–۱۸۱۵)}
+\label{sec:napoleon}
+
+\subsection{کنسولا (۱۷۹۹–۱۸۰۴)}
+\label{sec:consulate}
+
+\subsubsection{اصلاحات ناپلئونی}
+
+ناپلئون با ترکیبی از اقتدارگرایی و مدرن‌سازی، بسیاری از دستاوردهای
+انقلاب را نهادینه کرد و ساختارهایی ایجاد کرد که تا امروز پابرجاست.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}%
+\begin{tabular}{rrrr}
+\toprule
+\rowcolor{PhaseNapoleon}
+\color{white}\bfseries حوزه & \color{white}\bfseries اصلاح
+  & \color{white}\bfseries سال & \color{white}\bfseries اهمیت \\
+\midrule
+\rowcolor{BgWarm} حقوقی & کد ناپلئون & ۱۸۰۴ & بنیاد حقوق مدرن \\
+\rowcolor{BgCool} اداری & پرفه‌ها (استانداران) & ۱۸۰۰ & تمرکز اداری \\
+\rowcolor{BgWarm} مالی & بانک فرانسه & ۱۸۰۰ & ثبات مالی \\
+\rowcolor{BgCool} آموزشی & لیسه‌ها & ۱۸۰۲ & آموزش متمرکز \\
+\rowcolor{BgWarm} مذهبی & کنکوردا با پاپ & ۱۸۰۱ & آشتی با کلیسا \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsubsection{کد ناپلئون (۱۸۰۴)}
+
+\begin{tcolorbox}[wavebox, title={\rl{کد ناپلئون: اصول و محدودیت‌ها}}]
+\textbf{اصول کلیدی:}
+\begin{itemize}[nosep, rightmargin=1em]
+  \item برابری در برابر قانون
+  \item حق مالکیت مقدس
+  \item سکولاریسم
+  \item آزادی قرارداد
+\end{itemize}
+
+\vspace{0.3\baselineskip}
+\textbf{محدودیت‌ها:}
+\begin{itemize}[nosep, rightmargin=1em]
+  \item زنان تحت قیمومیت شوهر
+  \item حقوق کارگران محدود
+  \item برده‌داری در مستعمرات بازگردانده شد
+\end{itemize}
+\end{tcolorbox}
+
+% ─── ۳.۲ امپراتوری ────────────────────────────────────────────
+\needspace{6\baselineskip}%
+\subsection{امپراتوری اول (۱۸۰۴–۱۸۱۵)}
+\label{sec:empire1
+
+ادامه‌ی فایل لاتکس:

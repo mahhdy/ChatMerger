@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D1442"/>
+      <stop offset="50%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg9)"/>
+  <circle cx="540" cy="540" r="400" fill="#F9A825" opacity="0.03"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۹</text>
+
+  <text x="540" y="90" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="38" font-weight="bold" fill="white">
+    هشت درس برای انقلاب ما
+  </text>
+  <rect x="250" y="110" width="580" height="3" rx="2" fill="#F9A825" opacity="0.5"/>
+
+  <!-- درس‌ها -->
+  <g font-family="Vazirmatn, Tahoma, sans-serif">
+    <!-- ۱ -->
+    <rect x="80" y="155" width="920" height="70" rx="12" fill="#1565C0" opacity="0.12"/>
+    <circle cx="960" cy="190" r="20" fill="#1565C0" opacity="0.3"/>
+    <text x="960" y="197" text-anchor="middle" font-size="18" font-weight="bold" fill="#90CAF9">۱</text>
+    <text x="920" y="197" text-anchor="end" font-size="22" fill="white">
+      وحدت ملی پیش‌شرط موفقیت هر انقلابی است
+    </text>
+
+    <!-- ۲ -->
+    <rect x="80" y="240" width="920" height="70" rx="12" fill="#2E7D32" opacity="0.12"/>
+    <circle cx="960" cy="275" r="20" fill="#2E7D32" opacity="0.3"/>
+    <text x="960" y="282" text-anchor="middle" font-size="18" font-weight="bold" fill="#A5D6A7">۲</text>
+    <text x="920" y="282" text-anchor="end" font-size="22" fill="white">
+      نهادسازی از همان روز اول ضروری است
+    </text>
+
+    <!-- ۳ -->
+    <rect x="80" y="325" width="920" height="70" rx="12" fill="#F9A825" opacity="0.1"/>
+    <circle cx="960" cy="360" r="20" fill="#F9A825" opacity="0.3"/>
+    <text x="960" y="367" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFD54F">۳</text>
+    <text x="920" y="367" text-anchor="end" font-size="22" fill="white">
+      عدالت بخواهید، نه انتقام
+    </text>
+
+    <!-- ۴ -->
+    <rect x="80" y="410" width="920" height="70" rx="12" fill="#B71C1C" opacity="0.1"/>
+    <circle cx="960" cy="445" r="20" fill="#B71C1C" opacity="0.3"/>
+    <text x="960" y="452" text-anchor="middle" font-size="18" font-weight="bold" fill="#FF8A80">۴</text>
+    <text x="920" y="452" text-anchor="end" font-size="22" fill="white">
+      ارتش باید تحت کنترل غیرنظامی باشد
+    </text>
+
+    <!-- ۵ -->
+    <rect x="80" y="495" width="920" height="70" rx="12" fill="#6A1B9A" opacity="0.1"/>
+    <circle cx="960" cy="530" r="20" fill="#6A1B9A" opacity="0.3"/>
+    <text x="960" y="537" text-anchor="middle" font-size="18" font-weight="bold" fill="#CE93D8">۵</text>
+    <text x="920" y="537" text-anchor="end" font-size="22" fill="white">
+      جدایی دین از دولت تضمین آزادی همه است
+    </text>
+
+    <!-- ۶ -->
+    <rect x="80" y="580" width="920" height="70" rx="12" fill="#00695C" opacity="0.12"/>
+    <circle cx="960" cy="615" r="20" fill="#00695C" opacity="0.3"/>
+    <text x="960" y="622" text-anchor="middle" font-size="18" font-weight="bold" fill="#80CBC4">۶</text>
+    <text x="920" y="622" text-anchor="end" font-size="22" fill="white">
+      حقوق بشر خط قرمز انقلاب باشد، نه ابزار
+    </text>
+
+    <!-- ۷ -->
+    <rect x="80" y="665" width="920" height="70" rx="12" fill="#1565C0" opacity="0.1"/>
+    <circle cx="960" cy="700" r="20" fill="#1565C0" opacity="0.3"/>
+    <text x="960" y="707" text-anchor="middle" font-size="18" font-weight="bold" fill="#90CAF9">۷</text>
+    <text x="920" y="707" text-anchor="end" font-size="22" fill="white">
+      صبر داشته باشید: دموکراسی یک شبه ساخته نمی‌شود
+    </text>
+
+    <!-- ۸ -->
+    <rect x="80" y="750" width="920" height="70" rx="12" fill="#F9A825" opacity="0.12"/>
+    <circle cx="960" cy="785" r="20" fill="#F9A825" opacity="0.3"/>
+    <text x="960" y="792" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFD54F">۸</text>
+    <text x="920" y="792" text-anchor="end" font-size="22" fill="white">
+      تاریخ را بخوانید — تکرارش نکنید
+    </text>
+  </g>
+
+  <!-- پیام پایانی -->
+  <rect x="140" y="860" width="800" height="80" rx="15" fill="#F9A825" opacity="0.12"/>
+  <text x="540" y="905" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FFD54F">
+    ما از تاریخ درس می‌گیریم، نه تقلید
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۹ از ۱۰</text>
+</svg>

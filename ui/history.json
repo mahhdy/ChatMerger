@@ -1,5 +1,60 @@
 [
   {
+    "id": "4e60c536",
+    "type": "pipeline",
+    "description": "ethics_test",
+    "files": [
+      "Ethics.json"
+    ],
+    "output_dir": "ethics_test_20260225_133235",
+    "timestamp": "2026-02-25T13:32:36.716341",
+    "results": [
+      {
+        "size_kb": 173.0,
+        "conversations": 1,
+        "words": 14013,
+        "segments": 5,
+        "source": "Ethics.json",
+        "status": "ok",
+        "output_file": "ethics_test_20260225_133235/Ethics_02_merged.md"
+      }
+    ]
+  },
+  {
+    "id": "7bc16522",
+    "type": "pipeline",
+    "description": "batch_mm2ddu9e",
+    "files": [
+      "Ethics.json"
+    ],
+    "output_dir": "batch_mm2ddu9e_20260225_133034",
+    "timestamp": "2026-02-25T13:30:35.542041",
+    "results": [
+      {
+        "source": "Ethics.json",
+        "status": "failed",
+        "error": "13:30:35 [ChatParser] INFO: Parsed 10 messages from c:\\Users\\b0583931\\GitHub\\ChatMerger\\output\\batch_mm2ddu9e_20260225_133034\\Ethics_01_converted.json\n13:30:35 [ChatMerger] INFO: Overlap between seg 2 and 3: 78 chars, sim 85%\n13:30:35 [ChatMerger] INFO: Created 1 merged blocks\nTraceback (most recent"
+      }
+    ]
+  },
+  {
+    "id": "bfc04b12",
+    "type": "pipeline",
+    "description": "French",
+    "files": [
+      "French-Revolution.json"
+    ],
+    "output_dir": "French_20260225_132227",
+    "timestamp": "2026-02-25T13:22:28.288427",
+    "results": [
+      {
+        "source": "French-Revolution.json",
+        "status": "failed",
+        "error": "13:22:28 [ChatParser] INFO: Parsed 10 messages from c:\\Users\\b0583931\\GitHub\\ChatMerger\\output\\French_20260225_132227\\French-Revolution_01_converted.json\n13:22:28 [ChatMerger] INFO: Overlap between seg 0 and 1: 62 chars, sim 85%\n13:22:28 [ChatMerger] INFO: Overlap between seg 2 and 3: 57 chars, sim "
+      }
+    ]
+  },
+  {
     "id": "d6f8d8d2",
     "type": "pipeline",
     "description": "batch_mm2br8wy",

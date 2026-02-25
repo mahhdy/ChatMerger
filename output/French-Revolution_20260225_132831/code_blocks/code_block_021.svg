@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg3)"/>
+  <circle cx="900" cy="200" r="250" fill="#fff" opacity="0.02"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۳</text>
+
+  <text x="540" y="100" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="40" font-weight="bold" fill="white">
+    چرا مردم فرانسه شوریدند؟
+  </text>
+  <rect x="200" y="120" width="680" height="3" rx="2" fill="#F9A825" opacity="0.5"/>
+
+  <!-- چهار کادر علل -->
+  <!-- کادر ۱: بحران مالی -->
+  <rect x="560" y="180" width="460" height="180" rx="15" fill="#B71C1C" opacity="0.15"/>
+  <rect x="560" y="180" width="5" height="180" rx="2" fill="#B71C1C"/>
+  <text x="990" y="220" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="26" font-weight="bold" fill="#FF8A80">بحران مالی</text>
+  <text x="990" y="260" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">بدهی ۴ میلیارد لیور</text>
+  <text x="990" y="295" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">۵۰٪ بودجه صرف بهره‌ی بدهی</text>
+  <text x="990" y="330" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">دربار ورسای: اسراف بی‌حد</text>
+
+  <!-- کادر ۲: نابرابری طبقاتی -->
+  <rect x="60" y="180" width="460" height="180" rx="15" fill="#FF8F00" opacity="0.15"/>
+  <rect x="515" y="180" width="5" height="180" rx="2" fill="#FF8F00"/>
+  <text x="490" y="220" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="26" font-weight="bold" fill="#FFD54F">نابرابری طبقاتی</text>
+  <text x="490" y="260" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">۲٪ جمعیت: ۳۵٪ زمین‌ها</text>
+  <text x="490" y="295" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">۹۸٪ مردم: تمام مالیات‌ها</text>
+  <text x="490" y="330" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">اشراف و روحانیت: معاف از مالیات</text>
+
+  <!-- کادر ۳: بحران فکری -->
+  <rect x="560" y="400" width="460" height="180" rx="15" fill="#1565C0" opacity="0.15"/>
+  <rect x="560" y="400" width="5" height="180" rx="2" fill="#1565C0"/>
+  <text x="990" y="440" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="26" font-weight="bold" fill="#90CAF9">بحران فکری: روشنگری</text>
+  <text x="990" y="480" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">ولتر: نقد کلیسا و استبداد</text>
+  <text x="990" y="515" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">روسو: حاکمیت متعلق به مردم است</text>
+  <text x="990" y="550" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">مونتسکیو: تفکیک قوا</text>
+
+  <!-- کادر ۴: قحطی -->
+  <rect x="60" y="400" width="460" height="180" rx="15" fill="#1B5E20" opacity="0.15"/>
+  <rect x="515" y="400" width="5" height="180" rx="2" fill="#1B5E20"/>
+  <text x="490" y="440" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="26" font-weight="bold" fill="#A5D6A7">قحطی و گرانی</text>
+  <text x="490" y="480" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">قیمت نان: +۸۸٪</text>
+  <text x="490" y="515" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">۸۰–۹۰٪ درآمد کارگر صرف نان</text>
+  <text x="490" y="550" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">بیکاری ۵۰٪ در پاریس</text>
+
+  <!-- نتیجه‌گیری -->
+  <rect x="140" y="640" width="800" height="100" rx="20" fill="#F9A825" opacity="0.12"/>
+  <text x="540" y="690" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="28" font-weight="bold" fill="#FFD54F">
+    وقتی حکومت ناشنوا باشد، ملت سخن می‌گوید
+  </text>
+  <text x="540" y="725" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#B0BEC5">
+    — و زبان ملت، انقلاب است —
+  </text>
+
+  <!-- مقایسه -->
+  <rect x="140" y="790" width="800" height="160" rx="15" fill="white" opacity="0.05"/>
+  <text x="540" y="840" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FF8A80">آیا این صحنه آشنا نیست؟</text>
+  <text x="540" y="880" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">
+    حکومتی ثروتمند، ملتی گرسنه
+  </text>
+  <text x="540" y="915" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" fill="#E0E0E0">
+    اقلیتی ممتاز، اکثریتی محروم
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۳ از ۱۰</text>
+</svg>

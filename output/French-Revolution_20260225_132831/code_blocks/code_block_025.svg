@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#0D1442"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg7)"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۷</text>
+
+  <text x="540" y="90" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="38" font-weight="bold" fill="white">
+    ۱۷۰ سال تا رسیدن به ثبات
+  </text>
+  <text x="540" y="130" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#F9A825">
+    پنج جمهوری، پنج تلاش
+  </text>
+  <rect x="200" y="145" width="680" height="2" fill="#F9A825" opacity="0.4"/>
+
+  <!-- جمهوری اول -->
+  <rect x="100" y="180" width="880" height="100" rx="15" fill="#B71C1C" opacity="0.12"/>
+  <rect x="100" y="180" width="8" height="100" rx="3" fill="#B71C1C"/>
+  <text x="960" y="215" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FF8A80">جمهوری اول</text>
+  <text x="960" y="248" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#BDBDBD">۱۷۹۲–۱۸۰۴ | ۱۲ سال | کودتای ناپلئون</text>
+  <!-- نوار مدت زمانی -->
+  <rect x="130" y="265" width="120" height="6" rx="3" fill="#FF8A80" opacity="0.5"/>
+
+  <!-- جمهوری دوم -->
+  <rect x="100" y="300" width="880" height="100" rx="15" fill="#FF8F00" opacity="0.12"/>
+  <rect x="100" y="300" width="8" height="100" rx="3" fill="#FF8F00"/>
+  <text x="960" y="335" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FFD54F">جمهوری دوم</text>
+  <text x="960" y="368" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#BDBDBD">۱۸۴۸–۱۸۵۲ | ۴ سال | کودتای لویی ناپلئون</text>
+  <rect x="130" y="385" width="40" height="6" rx="3" fill="#FFD54F" opacity="0.5"/>
+
+  <!-- جمهوری سوم -->
+  <rect x="100" y="420" width="880" height="100" rx="15" fill="#2E7D32" opacity="0.12"/>
+  <rect x="100" y="420" width="8" height="100" rx="3" fill="#2E7D32"/>
+  <text x="960" y="455" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#A5D6A7">جمهوری سوم</text>
+  <text x="960" y="488" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#BDBDBD">۱۸۷۰–۱۹۴۰ | ۷۰ سال | شکست از آلمان</text>
+  <rect x="130" y="505" width="700" height="6" rx="3" fill="#A5D6A7" opacity="0.5"/>
+
+  <!-- جمهوری چهارم -->
+  <rect x="100" y="540" width="880" height="100" rx="15" fill="#6A1B9A" opacity="0.12"/>
+  <rect x="100" y="540" width="8" height="100" rx="3" fill="#6A1B9A"/>
+  <text x="960" y="575" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#CE93D8">جمهوری چهارم</text>
+  <text x="960" y="608" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#BDBDBD">۱۹۴۶–۱۹۵۸ | ۱۲ سال | بحران الجزایر</text>
+  <rect x="130" y="625" width="120" height="6" rx="3" fill="#CE93D8" opacity="0.5"/>
+
+  <!-- جمهوری پنجم -->
+  <rect x="100" y="660" width="880" height="100" rx="15" fill="#1565C0" opacity="0.15"/>
+  <rect x="100" y="660" width="8" height="100" rx="3" fill="#F9A825"/>
+  <text x="960" y="695" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FFD54F">جمهوری پنجم ✓</text>
+  <text x="960" y="728" text-anchor="end" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#BDBDBD">۱۹۵۸–اکنون | ۶۶+ سال | پایدار</text>
+  <rect x="130" y="745" width="660" height="6" rx="3" fill="#F9A825" opacity="0.5"/>
+
+  <!-- پیام -->
+  <rect x="140" y="800" width="800" height="100" rx="20" fill="#F9A825" opacity="0.1"/>
+  <text x="540" y="845" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="24" font-weight="bold" fill="#FFD54F">
+    دموکراسی یک شبه ساخته نمی‌شود
+  </text>
+  <text x="540" y="880" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="18" fill="#B0BEC5">
+    اما هر تلاشی ارزشمند است
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۷ از ۱۰</text>
+</svg>

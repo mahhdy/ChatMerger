@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0000"/>
+      <stop offset="100%" stop-color="#4A0000"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg6)"/>
+
+  <circle cx="60" cy="60" r="30" fill="#F9A825" opacity="0.2"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="20" font-weight="bold" fill="#F9A825">۶</text>
+
+  <text x="540" y="100" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif"
+    font-size="40" font-weight="bold" fill="#FF8A80">
+    دوران ترور: هشدار تاریخ
+  </text>
+  <rect x="250" y="120" width="580" height="3" rx="2" fill="#B71C1C" opacity="0.5"/>
+  <text x="540" y="165" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#BDBDBD">
+    ژوئن ۱۷۹۳ — ژوئیه ۱۷۹۴
+  </text>
+
+  <!-- آمار -->
+  <g transform="translate(0,200)">
+    <!-- ردیف ۱ -->
+    <rect x="80" y="0" width="280" height="120" rx="15" fill="#B71C1C" opacity="0.2"/>
+    <text x="220" y="50" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="40" font-weight="bold" fill="#FF8A80">~۱۷٬۰۰۰</text>
+    <text x="220" y="85" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="18" fill="#BDBDBD">اعدام با گیوتین</text>
+
+    <rect x="400" y="0" width="280" height="120" rx="15" fill="#B71C1C" opacity="0.2"/>
+    <text x="540" y="50" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="40" font-weight="bold" fill="#FF8A80">~۱۰٬۰۰۰</text>
+    <text x="540" y="85" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="18" fill="#BDBDBD">مرگ در زندان</text>
+
+    <rect x="720" y="0" width="280" height="120" rx="15" fill="#B71C1C" opacity="0.25"/>
+    <text x="860" y="50" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="36" font-weight="bold" fill="#FF8A80">~۲۵۰٬۰۰۰</text>
+    <text x="860" y="85" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+      font-size="18" fill="#BDBDBD">سرکوب واندی</text>
+  </g>
+
+  <!-- نقل قول -->
+  <rect x="100" y="370" width="880" height="110" rx="15" fill="white" opacity="0.05"/>
+  <text x="540" y="415" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" font-style="italic" fill="#E0E0E0">
+    «ترور چیزی نیست جز عدالت سریع، شدید و انعطاف‌ناپذیر؛
+  </text>
+  <text x="540" y="450" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" font-style="italic" fill="#E0E0E0">
+    پس جلوه‌ای از فضیلت است.»
+  </text>
+  <text x="540" y="475" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#FF8A80">— روبسپیر، ۵ فوریه ۱۷۹۴</text>
+
+  <!-- درس‌ها -->
+  <text x="540" y="540" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="28" font-weight="bold" fill="#FFD54F">
+    درس‌هایی برای آینده‌سازان:
+  </text>
+
+  <rect x="100" y="570" width="880" height="60" rx="10" fill="#1B5E20" opacity="0.15"/>
+  <text x="540" y="608" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#A5D6A7">
+    ✓ انقلاب بدون نهادسازی، خودش را می‌خورد
+  </text>
+
+  <rect x="100" y="650" width="880" height="60" rx="10" fill="#1B5E20" opacity="0.15"/>
+  <text x="540" y="688" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#A5D6A7">
+    ✓ عدالت‌خواهی نباید به انتقام‌جویی تبدیل شود
+  </text>
+
+  <rect x="100" y="730" width="880" height="60" rx="10" fill="#1B5E20" opacity="0.15"/>
+  <text x="540" y="768" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#A5D6A7">
+    ✓ آزادی بدون قانون، به استبداد جدید می‌انجامد
+  </text>
+
+  <rect x="100" y="810" width="880" height="60" rx="10" fill="#1B5E20" opacity="0.15"/>
+  <text x="540" y="848" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="22" fill="#A5D6A7">
+    ✓ هوشیاری مداوم، بهای آزادی است
+  </text>
+
+  <text x="540" y="1020" text-anchor="middle" font-family="Vazirmatn, sans-serif"
+    font-size="16" fill="#78909C">← بکشید | ۶ از ۱۰</text>
+</svg>
