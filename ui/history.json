@@ -1,5 +1,36 @@
 [
   {
+    "id": "2c12b60d",
+    "type": "pipeline",
+    "description": "From Left to Right in this middle",
+    "files": [
+      "Left-Right-The-Middle-01.json",
+      "Left-Right-The-Middle-02.json"
+    ],
+    "output_dir": "From Left to Right in this middle_20260225_140150",
+    "timestamp": "2026-02-25T14:01:52.231900",
+    "results": [
+      {
+        "size_kb": 590.7,
+        "conversations": 3,
+        "words": 42607,
+        "segments": 14,
+        "source": "Left-Right-The-Middle-01.json",
+        "status": "ok",
+        "output_file": "From Left to Right in this middle_20260225_140150/Left-Right-The-Middle-01_02_merged.mdx"
+      },
+      {
+        "size_kb": 590.7,
+        "conversations": 3,
+        "words": 42607,
+        "segments": 14,
+        "source": "Left-Right-The-Middle-02.json",
+        "status": "ok",
+        "output_file": "From Left to Right in this middle_20260225_140150/Left-Right-The-Middle-02_02_merged.mdx"
+      }
+    ]
+  },
+  {
     "id": "4e60c536",
     "type": "pipeline",
     "description": "ethics_test",
