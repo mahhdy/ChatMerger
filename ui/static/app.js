@@ -13,9 +13,23 @@ let activeJobs = new Map();       // jid → EventSource
 let allOutputFolders = [];
 let selectedZipFile = null;
 let finishedJobs = new Set();
+let sourceItemsCache = [];
+let browserItemsCache = [];
+
+// ── Theme ──────────────────────────────────────────────────
+let currentTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+function toggleTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    document.getElementById('themeToggle').textContent = currentTheme === 'dark' ? '🌞' : '🌙';
+}
 
 // ── Bootstrap ──────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('themeToggle').textContent = currentTheme === 'dark' ? '🌞' : '🌙';
     refreshSourceList();
     loadSidebarStats();
     loadHistory();
@@ -62,12 +76,19 @@ async function refreshSourceList(path) {
     list.innerHTML = '<div class="loading-pulse">Loading…</div>';
     try {
         const items = await apiFetch(`/api/browse/source?path=${encodeURIComponent(sourceCurrentPath)}`);
-        renderSourceList(items);
+        sourceItemsCache = items;
+        filterSourceList();
         const crumb = document.getElementById('sourceBreadcrumb');
         crumb.textContent = 'source / ' + sourceCurrentPath;
     } catch (e) {
         list.innerHTML = `<div class="empty-state">Error: ${e.message}</div>`;
     }
+}
+
+function filterSourceList() {
+    const q = (document.getElementById('sourceSearch')?.value || '').toLowerCase();
+    const filtered = sourceItemsCache.filter(i => i.is_dir || i.name.toLowerCase().includes(q));
+    renderSourceList(filtered);
 }
 
 function navBreadcrumb() {
@@ -112,6 +133,7 @@ function renderSourceList(items) {
       </div>
       <div class="file-actions" onclick="event.stopPropagation()">
         ${!item.is_dir ? `<button class="file-action-btn" title="Preview" onclick="previewSourceFile('${escJs(item.path)}')">👁</button>` : ''}
+        <button class="file-action-btn" title="Rename/Move" onclick="moveFile('source','${escJs(item.path)}')">✏️</button>
         <button class="file-action-btn" title="Delete" onclick="deleteFile('source','${escJs(item.path)}')">🗑</button>
       </div>
     </div>`;
@@ -237,7 +259,27 @@ async function deleteFile(base, path) {
         toast('Deleted', 'success');
         if (base === 'source') { selectedFiles.delete(path); refreshSourceList(); }
         else loadOutputStats();
+        if (browserBase === base) loadBrowserDir(base, browserCurrentPath);
     } catch (e) { toast(`Delete failed: ${e.message}`, 'error'); }
+}
+
+async function moveFile(base, oldPath) {
+    const newPath = prompt('Enter new name or relative path:', oldPath);
+    if (!newPath || newPath === oldPath) return;
+    try {
+        await apiFetch(`/api/file/${base}/move?path=${encodeURIComponent(oldPath)}`, {
+            method: 'POST',
+            body: JSON.stringify({ new_path: newPath })
+        });
+        toast('Moved successfully', 'success');
+        if (base === 'source') {
+            if (selectedFiles.has(oldPath)) { selectedFiles.delete(oldPath); selectedFiles.add(newPath); }
+            refreshSourceList();
+        } else {
+            loadOutputStats();
+        }
+        if (browserBase === base) loadBrowserDir(base, browserCurrentPath);
+    } catch (e) { toast(`Rename/Move failed: ${e.message}`, 'error'); }
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -488,6 +530,20 @@ async function loadBrowserDir(base, path) {
     list.innerHTML = '<div class="loading-pulse">Loading…</div>';
     document.getElementById('browserBreadcrumb').textContent = base + ' / ' + path;
     const items = await apiFetch(`/api/browse/${base}?path=${encodeURIComponent(path)}`);
+    browserItemsCache = items;
+    filterBrowserList();
+}
+
+function filterBrowserList() {
+    const q = (document.getElementById('browserSearch')?.value || '').toLowerCase();
+    const filtered = browserItemsCache.filter(i => i.is_dir || i.name.toLowerCase().includes(q));
+    renderBrowserList(filtered);
+}
+
+function renderBrowserList(items) {
+    const list = document.getElementById('browserFileList');
+    const base = browserBase;
+    const path = browserCurrentPath;
     let html = '';
     if (path) {
         const parent = path.includes('/') ? path.split('/').slice(0, -1).join('/') : '';
@@ -506,11 +562,12 @@ async function loadBrowserDir(base, path) {
         </div>
       </div>
       <div class="file-actions" onclick="event.stopPropagation()">
-        ${!item.is_dir ? `<button class="file-action-btn" onclick="loadBrowserPreview('${base}','${escJs(item.path)}')">👁</button>` : ''}
-        <button class="file-action-btn" onclick="deleteFile('${base}','${escJs(item.path)}')">🗑</button>
+        ${!item.is_dir ? `<button class="file-action-btn" title="Preview" onclick="loadBrowserPreview('${base}','${escJs(item.path)}')">👁</button>` : ''}
+        <button class="file-action-btn" title="Rename/Move" onclick="moveFile('${base}','${escJs(item.path)}')">✏️</button>
+        <button class="file-action-btn" title="Delete" onclick="deleteFile('${base}','${escJs(item.path)}')">🗑</button>
       </div>
     </div>`).join('');
-    list.innerHTML = html || '<div class="empty-state">Empty folder</div>';
+    list.innerHTML = html || '<div class="empty-state">Empty result</div>';
 }
 
 function handleBrowserClick(base, path, isDir) {

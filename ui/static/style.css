@@ -35,6 +35,30 @@
   --transition: 180ms var(--ease);
 }
 
+[data-theme="light"] {
+  --bg-base: #f4f6fb;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #edf1f8;
+  --bg-selected: #e9efff;
+  --bg-input: #ffffff;
+
+  --accent: #2c6eea;
+  --accent-glow: rgba(44, 110, 234, 0.2);
+  --accent-2: #654bb0;
+  
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+
+  --text-1: #1e293b;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-active: rgba(44, 110, 234, 0.5);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 13px; }

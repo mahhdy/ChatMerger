@@ -16,9 +16,13 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <span class="logo-icon">🔀</span>
-      <span class="logo-text">ChatMerger</span>
-      <span class="logo-version">v2.1</span>
+      <div style="display:flex;align-items:center;gap:8px;flex:1">
+        <span class="logo-icon">🔀</span>
+        <span class="logo-text">ChatMerger</span>
+        <span class="logo-version">v2.1</span>
+      </div>
+      <button class="btn btn-ghost btn-xs" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme"
+        style="padding:4px">🌞</button>
     </div>
     <nav class="sidebar-nav">
       <button class="nav-btn active" data-tab="process" onclick="switchTab('process')">
@@ -84,6 +88,10 @@
               <label class="btn btn-ghost btn-xs">⬆ Upload<input type="file" accept=".json,.zip" multiple hidden
                   onchange="uploadFiles(this)" /></label>
             </div>
+          </div>
+          <div style="margin-bottom:6px">
+            <input type="text" id="sourceSearch" placeholder="Search sources..." class="input input-compact"
+              autocomplete="off" oninput="filterSourceList()">
           </div>
           <div class="breadcrumb" id="sourceBreadcrumb" onclick="navBreadcrumb()">source /</div>
           <div class="file-list" id="sourceFileList">
@@ -178,6 +186,8 @@
       <div class="browser-layout">
         <div class="card browser-pane">
           <div class="breadcrumb" id="browserBreadcrumb">source /</div>
+          <input type="text" id="browserSearch" placeholder="Search files..." class="input input-compact"
+            autocomplete="off" style="margin-bottom:6px" oninput="filterBrowserList()">
           <div class="file-list tall" id="browserFileList"></div>
         </div>
         <div class="card preview-pane">

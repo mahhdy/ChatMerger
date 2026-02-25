@@ -586,6 +586,27 @@ async def delete_file_route(base: str, path: str):
         target.unlink()
     return {"deleted": path}
 
+class MoveRequest(BaseModel):
+    new_path: str
+
+@app.post("/api/file/{base}/move")
+async def move_file_route(base: str, path: str, req: MoveRequest):
+    base_dir = SOURCE_DIR if base == "source" else OUTPUT_DIR if base == "output" else None
+    if not base_dir:
+        raise HTTPException(400)
+    
+    src = safe_path(base_dir, path)
+    if not src.exists():
+        raise HTTPException(404, "Source not found")
+        
+    dst = safe_path(base_dir, req.new_path)
+    if dst.exists():
+        raise HTTPException(400, "Destination already exists")
+        
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(src), str(dst))
+    return {"status": "moved", "from": path, "to": req.new_path}
+
 # ---------------------------------------------------------------------------
 #  Routes — Processing
 # ---------------------------------------------------------------------------
