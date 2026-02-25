@@ -1,0 +1,13 @@
+[
+  {
+    "id": "d6f8d8d2",
+    "type": "pipeline",
+    "description": "batch_mm2br8wy",
+    "files": [
+      "French-Revolution.json"
+    ],
+    "output_dir": "batch_mm2br8wy_20260225_124500",
+    "timestamp": "2026-02-25T12:45:01.874159",
+    "results": []
+  }
+]

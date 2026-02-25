@@ -1,219 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>ChatMerger — Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"/>
-<link rel="stylesheet" href="/static/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatMerger — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="/static/style.css" />
 </head>
+
 <body>
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-logo">
-    <span class="logo-icon">🔀</span>
-    <span class="logo-text">ChatMerger</span>
-    <span class="logo-version">v2.0</span>
-  </div>
-  <nav class="sidebar-nav">
-    <button class="nav-btn active" data-tab="process" onclick="switchTab('process')">
-      <span class="nav-icon">⚡</span><span>Process</span>
-    </button>
-    <button class="nav-btn" data-tab="browser" onclick="switchTab('browser')">
-      <span class="nav-icon">📂</span><span>File Browser</span>
-    </button>
-    <button class="nav-btn" data-tab="output" onclick="switchTab('output')">
-      <span class="nav-icon">📄</span><span>Outputs</span>
-    </button>
-    <button class="nav-btn" data-tab="history" onclick="switchTab('history')">
-      <span class="nav-icon">🕒</span><span>History</span>
-    </button>
-    <button class="nav-btn" data-tab="config" onclick="switchTab('config')">
-      <span class="nav-icon">⚙️</span><span>Config</span>
-    </button>
-  </nav>
-  <div class="sidebar-stats" id="sidebarStats">
-    <div class="stat-row"><span class="stat-lbl">Sources</span><span class="stat-val" id="statSources">—</span></div>
-    <div class="stat-row"><span class="stat-lbl">Outputs</span><span class="stat-val" id="statOutputs">—</span></div>
-    <div class="stat-row"><span class="stat-lbl">Conversations</span><span class="stat-val" id="statConvs">—</span></div>
-  </div>
-</aside>
 
-<!-- MAIN CONTENT -->
-<main class="main-content">
-
-  <!-- ═══════════════ PROCESS TAB ═══════════════ -->
-  <section class="tab-panel active" id="tab-process">
-    <div class="tab-header">
-      <h1>⚡ Process Chat Exports</h1>
-      <p class="tab-desc">Select source files, choose a mode, and run the full pipeline.</p>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-icon">🔀</span>
+      <span class="logo-text">ChatMerger</span>
+      <span class="logo-version">v2.1</span>
     </div>
+    <nav class="sidebar-nav">
+      <button class="nav-btn active" data-tab="process" onclick="switchTab('process')">
+        <span class="nav-icon">⚡</span><span>Process</span>
+      </button>
+      <button class="nav-btn" data-tab="browser" onclick="switchTab('browser')">
+        <span class="nav-icon">📂</span><span>File Browser</span>
+      </button>
+      <button class="nav-btn" data-tab="output" onclick="switchTab('output')">
+        <span class="nav-icon">📄</span><span>Outputs</span>
+      </button>
+      <button class="nav-btn" data-tab="history" onclick="switchTab('history')">
+        <span class="nav-icon">🕒</span><span>History</span>
+      </button>
+      <button class="nav-btn" data-tab="config" onclick="switchTab('config')">
+        <span class="nav-icon">⚙️</span><span>Config</span>
+      </button>
+      <button class="nav-btn" data-tab="help" onclick="switchTab('help')">
+        <span class="nav-icon">📖</span><span>Help / Guide</span>
+      </button>
+    </nav>
+    <div class="sidebar-stats">
+      <div class="stat-row"><span class="stat-lbl">Sources</span><span class="stat-val" id="statSources">—</span></div>
+      <div class="stat-row"><span class="stat-lbl">Outputs</span><span class="stat-val" id="statOutputs">—</span></div>
+      <div class="stat-row"><span class="stat-lbl">Conversations</span><span class="stat-val" id="statConvs">—</span>
+      </div>
+    </div>
+  </aside>
 
-    <div class="process-layout">
-      <!-- Left column: file selector -->
-      <div class="card file-picker-card">
-        <div class="card-header">
-          <h2>📁 Source Files</h2>
-          <div class="card-actions">
-            <button class="btn btn-ghost btn-sm" onclick="refreshSourceList()">↻ Refresh</button>
-            <label class="btn btn-ghost btn-sm" title="Upload file">
-              ⬆ Upload <input type="file" accept=".json,.zip" multiple hidden onchange="uploadFiles(this)"/>
-            </label>
-          </div>
-        </div>
-        <div class="breadcrumb" id="sourceBreadcrumb">source /</div>
-        <div class="file-list" id="sourceFileList">
-          <div class="loading-pulse">Loading…</div>
-        </div>
-        <div class="selection-bar">
-          <span id="selectionCount">0 files selected</span>
-          <button class="btn btn-ghost btn-xs" onclick="clearSelection()">Clear</button>
-          <button class="btn btn-ghost btn-xs" onclick="selectAll()">All</button>
-        </div>
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- ═══════════════ PROCESS TAB ═══════════════ -->
+    <section class="tab-panel active" id="tab-process">
+      <div class="tab-header">
+        <h1>⚡ Process Chat Exports</h1>
+        <p class="tab-desc">Select files → configure options → run the full pipeline.</p>
       </div>
 
-      <!-- Right column: options + run -->
-      <div class="options-column">
-        <div class="card">
-          <div class="card-header"><h2>🔧 Options</h2></div>
-          <div class="form-group">
-            <label>Output Name</label>
-            <input type="text" id="outputName" placeholder="e.g. khomeini_ch1" class="input"/>
-          </div>
-          <div class="form-group">
-            <label>Processing Mode</label>
-            <div class="mode-cards">
-              <label class="mode-card selected" data-mode="pipeline">
-                <input type="radio" name="mode" value="pipeline" checked hidden/>
-                <div class="mode-icon">📋</div>
-                <div class="mode-title">Batch Pipeline</div>
-                <div class="mode-desc">Process each file independently through the full pipeline</div>
-              </label>
-              <label class="mode-card" data-mode="merged">
-                <input type="radio" name="mode" value="merged" hidden/>
-                <div class="mode-icon">🔗</div>
-                <div class="mode-title">Merge Into One</div>
-                <div class="mode-desc">Combine all files as one continuous conversation</div>
+      <div class="process-layout">
+
+        <!-- LEFT: File selector -->
+        <div class="card file-picker-card">
+          <div class="card-header">
+            <h2>📁 Source Files</h2>
+            <div class="card-actions">
+              <button class="btn btn-ghost btn-sm" onclick="refreshSourceList()">↻ Refresh</button>
+              <label class="btn btn-ghost btn-sm">
+                ⬆ Upload
+                <input type="file" accept=".json,.zip" multiple hidden onchange="uploadFiles(this)" />
               </label>
             </div>
           </div>
-          <div class="form-group">
-            <label>Extra Flags (optional)</label>
-            <input type="text" id="extraArgs" placeholder="e.g. --verbose" class="input"/>
+          <div class="breadcrumb" id="sourceBreadcrumb" onclick="navBreadcrumb()">source /</div>
+          <div class="file-list" id="sourceFileList">
+            <div class="loading-pulse">Loading…</div>
+          </div>
+          <div class="selection-bar">
+            <span id="selectionCount">0 files selected</span>
+            <button class="btn btn-ghost btn-xs" onclick="clearSelection()">Clear</button>
+            <button class="btn btn-ghost btn-xs" onclick="selectAll()">All JSON</button>
           </div>
         </div>
 
-        <!-- ZIP upload -->
-        <div class="card">
-          <div class="card-header"><h2>📦 Process ZIP File</h2></div>
-          <p class="card-desc">Upload a ZIP containing JSON exports — auto-extracted and processed.</p>
-          <div class="zip-drop-zone" id="zipDropZone" onclick="document.getElementById('zipInput').click()"
-               ondragover="event.preventDefault();this.classList.add('drag-over')"
-               ondragleave="this.classList.remove('drag-over')"
-               ondrop="handleZipDrop(event)">
-            <div class="zip-icon">📦</div>
-            <div class="zip-label">Drop ZIP here or click to browse</div>
-            <input type="file" id="zipInput" accept=".zip" hidden onchange="handleZipSelect(this)"/>
+        <!-- RIGHT: Options + Run -->
+        <div class="options-column">
+
+          <!-- Output naming -->
+          <div class="card">
+            <div class="card-header">
+              <h2>📂 Output Settings</h2>
+            </div>
+            <div class="form-group">
+              <label>Collection Name <span class="hint">(folder inside output/)</span></label>
+              <input type="text" id="outputName" placeholder="e.g. khomeini_ch1" class="input" />
+              <div class="field-hint">Output will be saved to: <code
+                  id="outputPreview">output/khomeini_ch1_YYYYMMDD_HHMMSS/</code></div>
+            </div>
+            <div class="form-group">
+              <label>Output Format</label>
+              <div class="inline-group">
+                <label class="radio-chip">
+                  <input type="radio" name="format" value="md" checked onchange="updateOutputPreview()" />
+                  <span>.md</span>
+                </label>
+                <label class="radio-chip">
+                  <input type="radio" name="format" value="mdx" onchange="updateOutputPreview()" />
+                  <span>.mdx</span>
+                </label>
+              </div>
+            </div>
           </div>
-          <div id="zipPreview" class="zip-preview hidden"></div>
+
+          <!-- Processing Mode -->
+          <div class="card">
+            <div class="card-header">
+              <h2>🔧 Processing Mode</h2>
+            </div>
+            <div class="mode-cards">
+              <label class="mode-card selected" data-mode="pipeline" onclick="selectMode(this)">
+                <input type="radio" name="mode" value="pipeline" checked hidden />
+                <div class="mode-icon">📋</div>
+                <div class="mode-title">Batch Pipeline</div>
+                <div class="mode-desc">Each file is processed independently through all 3 steps: Convert → Merge →
+                  Post-process</div>
+              </label>
+              <label class="mode-card" data-mode="merged" onclick="selectMode(this)">
+                <input type="radio" name="mode" value="merged" hidden />
+                <div class="mode-icon">🔗</div>
+                <div class="mode-title">Merge Into One</div>
+                <div class="mode-desc">All files are combined into a single conversation before being merged as one
+                  document</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pipeline Options -->
+          <div class="card">
+            <div class="card-header">
+              <h2>🛠 Pipeline Options</h2>
+            </div>
+
+            <div class="options-grid">
+              <label class="toggle-option">
+                <input type="checkbox" id="optFlagOverlaps" checked />
+                <div class="toggle-body">
+                  <div class="toggle-name">Flag Overlaps</div>
+                  <div class="toggle-desc">Mark detected repeated content with ⚠️ WARNING blocks in the output</div>
+                </div>
+              </label>
+              <label class="toggle-option">
+                <input type="checkbox" id="optVerbose" />
+                <div class="toggle-body">
+                  <div class="toggle-name">Verbose Logging</div>
+                  <div class="toggle-desc">Pass --verbose to the merger for detailed segment-level logs</div>
+                </div>
+              </label>
+              <label class="toggle-option">
+                <input type="checkbox" id="optSkipConvert" />
+                <div class="toggle-body">
+                  <div class="toggle-name">Skip Convert Step</div>
+                  <div class="toggle-desc">Input files are already in the standard format — skip convert_export.py</div>
+                </div>
+              </label>
+              <label class="toggle-option">
+                <input type="checkbox" id="optSkipPostprocess" />
+                <div class="toggle-body">
+                  <div class="toggle-name">Skip Post-Process</div>
+                  <div class="toggle-desc">Skip cleanup, TOC generation and validation after merge</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="form-group" style="margin-top:12px">
+              <label>Extra CLI Arguments <span class="hint">(appended to chat_merger.py)</span></label>
+              <input type="text" id="extraArgs" placeholder="e.g. --min-overlap 0.3" class="input input-mono" />
+            </div>
+          </div>
+
+          <!-- ZIP upload -->
+          <div class="card">
+            <div class="card-header">
+              <h2>📦 Process ZIP Archive</h2>
+              <span class="badge badge-blue">or drop here</span>
+            </div>
+            <p class="card-desc">Upload a ZIP containing JSON exports — auto-extracted then processed with settings
+              above.</p>
+            <div class="zip-drop-zone" id="zipDropZone" onclick="document.getElementById('zipInput').click()"
+              ondragover="event.preventDefault();this.classList.add('drag-over')"
+              ondragleave="this.classList.remove('drag-over')" ondrop="handleZipDrop(event)">
+              <div class="zip-icon">📦</div>
+              <div class="zip-label">Drop .zip here or click to browse</div>
+              <input type="file" id="zipInput" accept=".zip" hidden onchange="handleZipSelect(this)" />
+            </div>
+            <div id="zipPreview" class="zip-preview hidden"></div>
+          </div>
+
+          <!-- RUN -->
+          <button class="btn btn-primary btn-xl" id="runBtn" onclick="startProcess()" disabled>
+            <span class="btn-icon">▶</span> Run Pipeline
+          </button>
         </div>
-
-        <!-- Run button -->
-        <button class="btn btn-primary btn-xl" id="runBtn" onclick="startProcess()">
-          <span class="btn-icon">▶</span> Run Pipeline
-        </button>
       </div>
-    </div>
 
-    <!-- Active Jobs -->
-    <div class="card job-monitor-card" id="jobMonitorCard">
-      <div class="card-header"><h2>📊 Active Jobs</h2></div>
-      <div id="jobList"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ FILE BROWSER TAB ═══════════════ -->
-  <section class="tab-panel" id="tab-browser">
-    <div class="tab-header">
-      <h1>📂 File Browser</h1>
-      <div class="tab-actions">
-        <div class="base-toggle">
-          <button class="toggle-btn active" id="toggleSource" onclick="setBrowserBase('source')">Source</button>
-          <button class="toggle-btn" id="toggleOutput" onclick="setBrowserBase('output')">Output</button>
-        </div>
-      </div>
-    </div>
-    <div class="browser-layout">
-      <div class="card browser-pane">
-        <div class="breadcrumb" id="browserBreadcrumb">source /</div>
-        <div class="file-list tall" id="browserFileList"></div>
-      </div>
-      <div class="card preview-pane">
+      <!-- Active Jobs -->
+      <div class="card" id="jobMonitorCard" style="margin-top:4px">
         <div class="card-header">
-          <h2>👁 Preview</h2>
-          <div id="previewFileName" class="preview-filename"></div>
+          <h2>📊 Jobs</h2>
+          <span class="hint" id="jobCountHint"></span>
+          <button class="btn btn-ghost btn-xs" onclick="clearFinishedJobs()">Clear finished</button>
         </div>
-        <div id="previewContent" class="preview-content">
-          <div class="preview-placeholder">Select a file to preview</div>
+        <div id="jobList">
+          <div class="empty-state" style="padding:20px">
+            <div class="empty-icon">🚀</div>Select files and click <b>Run Pipeline</b> to start.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ OUTPUT TAB ═══════════════ -->
-  <section class="tab-panel" id="tab-output">
-    <div class="tab-header">
-      <h1>📄 Output Library</h1>
-      <button class="btn btn-ghost" onclick="loadOutputStats()">↻ Refresh</button>
-    </div>
-    <div id="outputStatsRow" class="stats-row"></div>
-    <div class="card">
-      <div class="card-header">
-        <h2>Processed Collections</h2>
-        <input type="text" id="outputSearch" placeholder="Search…" class="input input-sm" oninput="filterOutputFolders()"/>
+    <!-- ═══════════════ FILE BROWSER ═══════════════ -->
+    <section class="tab-panel" id="tab-browser">
+      <div class="tab-header">
+        <h1>📂 File Browser</h1>
+        <div class="tab-actions">
+          <div class="base-toggle">
+            <button class="toggle-btn active" id="toggleSource" onclick="setBrowserBase('source')">Source</button>
+            <button class="toggle-btn" id="toggleOutput" onclick="setBrowserBase('output')">Output</button>
+          </div>
+        </div>
       </div>
-      <div id="outputFolderList" class="output-grid"></div>
-    </div>
-  </section>
+      <div class="browser-layout">
+        <div class="card browser-pane">
+          <div class="breadcrumb" id="browserBreadcrumb">source /</div>
+          <div class="file-list tall" id="browserFileList"></div>
+        </div>
+        <div class="card preview-pane">
+          <div class="card-header">
+            <h2>👁 Preview</h2>
+            <div id="previewFileName" class="preview-filename"></div>
+          </div>
+          <div id="previewContent" class="preview-content">
+            <div class="preview-placeholder">Select a file to preview</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ═══════════════ HISTORY TAB ═══════════════ -->
-  <section class="tab-panel" id="tab-history">
-    <div class="tab-header">
-      <h1>🕒 Processing History</h1>
-      <button class="btn btn-danger btn-sm" onclick="clearHistory()">🗑 Clear All</button>
-    </div>
-    <div id="historyList" class="history-list"></div>
-  </section>
+    <!-- ═══════════════ OUTPUTS ═══════════════ -->
+    <section class="tab-panel" id="tab-output">
+      <div class="tab-header">
+        <h1>📄 Output Library</h1>
+        <button class="btn btn-ghost" onclick="loadOutputStats()">↻ Refresh</button>
+      </div>
+      <div id="outputStatsRow" class="stats-row"></div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Processed Collections</h2>
+          <input type="text" id="outputSearch" placeholder="Search…" class="input input-sm"
+            oninput="filterOutputFolders()" />
+        </div>
+        <div id="outputFolderList" class="output-grid"></div>
+      </div>
+    </section>
 
-  <!-- ═══════════════ CONFIG TAB ═══════════════ -->
-  <section class="tab-panel" id="tab-config">
-    <div class="tab-header">
-      <h1>⚙️ Configuration</h1>
-      <button class="btn btn-primary" onclick="saveConfig()">💾 Save Config</button>
-    </div>
-    <div class="card">
-      <div class="card-header"><h2>config.yaml</h2></div>
-      <textarea class="config-editor" id="configEditor" spellcheck="false"></textarea>
-    </div>
-  </section>
+    <!-- ═══════════════ HISTORY ═══════════════ -->
+    <section class="tab-panel" id="tab-history">
+      <div class="tab-header">
+        <h1>🕒 Processing History</h1>
+        <button class="btn btn-danger btn-sm" onclick="clearHistory()">🗑 Clear All</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
 
-</main>
+    <!-- ═══════════════ CONFIG ═══════════════ -->
+    <section class="tab-panel" id="tab-config">
+      <div class="tab-header">
+        <h1>⚙️ Configuration</h1>
+        <button class="btn btn-primary" onclick="saveConfig()">💾 Save Config</button>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>config.yaml</h2>
+          <span class="hint">Changes take effect on next pipeline run</span>
+        </div>
+        <textarea class="config-editor" id="configEditor" spellcheck="false"></textarea>
+      </div>
+    </section>
 
-<!-- MODAL for job log / file preview -->
-<div class="modal-overlay hidden" id="modalOverlay" onclick="closeModal()">
-  <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <h2 id="modalTitle">Details</h2>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+    <!-- ═══════════════ HELP / README ═══════════════ -->
+    <section class="tab-panel" id="tab-help">
+      <div class="tab-header">
+        <h1>📖 Help &amp; Guide</h1>
+      </div>
+
+      <!-- Quick-start guide -->
+      <div class="help-cards">
+        <div class="help-step-card">
+          <div class="help-step-num">1</div>
+          <div class="help-step-body">
+            <div class="help-step-title">Export your chats</div>
+            <div class="help-step-desc">From ChatGPT: Settings → Data controls → Export data. From Claude: Settings →
+              Account → Export data. You'll get a <code>.json</code> or <code>.zip</code> file.</div>
+          </div>
+        </div>
+        <div class="help-step-card">
+          <div class="help-step-num">2</div>
+          <div class="help-step-body">
+            <div class="help-step-title">Upload to Source folder</div>
+            <div class="help-step-desc">In the <b>Process</b> tab, click <b>⬆ Upload</b> or drop a <code>.zip</code>
+              archive into the ZIP zone. JSON files appear in the source list.</div>
+          </div>
+        </div>
+        <div class="help-step-card">
+          <div class="help-step-num">3</div>
+          <div class="help-step-body">
+            <div class="help-step-title">Select files &amp; set options</div>
+            <div class="help-step-desc">Click files to select them (highlighted blue). Set the <b>Collection Name</b>,
+              choose <b>Batch Pipeline</b> or <b>Merge Into One</b>, and toggle advanced options.</div>
+          </div>
+        </div>
+        <div class="help-step-card">
+          <div class="help-step-num">4</div>
+          <div class="help-step-body">
+            <div class="help-step-title">Run &amp; watch the log</div>
+            <div class="help-step-desc">Click <b>▶ Run Pipeline</b>. A live job card appears below showing each step's
+              output in real-time. Click <b>📋 Log</b> at any time to see full detail.</div>
+          </div>
+        </div>
+        <div class="help-step-card">
+          <div class="help-step-num">5</div>
+          <div class="help-step-body">
+            <div class="help-step-title">Find your output</div>
+            <div class="help-step-desc">When complete, click <b>📊 Results</b> on the job card to see stats, or visit
+              <b>Outputs</b> tab. Each collection has its <code>.md</code> files ready to use.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode explanation -->
+      <div class="card">
+        <div class="card-header">
+          <h2>🔧 Processing Modes Explained</h2>
+        </div>
+        <div class="help-modes">
+          <div class="help-mode-item">
+            <div class="help-mode-icon">📋</div>
+            <div>
+              <div class="help-mode-title">Batch Pipeline</div>
+              <div class="help-mode-desc">Each selected file goes through the full 3-step pipeline independently:
+                <ol>
+                  <li><b>convert_export.py</b> — normalises ChatGPT/Claude JSON into a unified format</li>
+                  <li><b>chat_merger.py</b> — identifies continuation messages, removes overlapping segments, merges
+                    assistant turns</li>
+                  <li><b>post_process.py</b> — cleans blank lines, fixes code blocks, generates Table of Contents,
+                    validates structure</li>
+                </ol>
+                Output: one <code>.md</code> file per input JSON.
+              </div>
+            </div>
+          </div>
+          <div class="help-mode-item">
+            <div class="help-mode-icon">🔗</div>
+            <div>
+              <div class="help-mode-title">Merge Into One</div>
+              <div class="help-mode-desc">All selected files are concatenated into a single message stream before
+                merging. Use this when you have exported the same conversation in multiple chunks (e.g.,
+                khomeini_ch1.json + khomeini_ch2.json). Output: one combined <code>.md</code> file.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options reference -->
+      <div class="card">
+        <div class="card-header">
+          <h2>⚙️ Options Reference</h2>
+        </div>
+        <table class="help-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Collection Name</code></td>
+              <td><i>batch_…</i></td>
+              <td>The folder created inside <code>output/</code>. A timestamp is appended automatically to avoid
+                collisions.</td>
+            </tr>
+            <tr>
+              <td><code>Output Format</code></td>
+              <td><code>.md</code></td>
+              <td>Whether to write standard Markdown (<code>.md</code>) or MDX (<code>.mdx</code> for Next.js /
+                Docusaurus).</td>
+            </tr>
+            <tr>
+              <td><code>Flag Overlaps</code></td>
+              <td>ON</td>
+              <td>When the merger detects repeated content between segments, it inserts a <code>⚠️ WARNING</code> block
+                for manual review rather than silently discarding.</td>
+            </tr>
+            <tr>
+              <td><code>Verbose Logging</code></td>
+              <td>OFF</td>
+              <td>Passes <code>--verbose</code> to <code>chat_merger.py</code> for per-segment debug output in the job
+                log.</td>
+            </tr>
+            <tr>
+              <td><code>Skip Convert Step</code></td>
+              <td>OFF</td>
+              <td>Skips <code>convert_export.py</code>. Use if your JSON is already in the standard
+                <code>{"messages":[...]}</code> format.</td>
+            </tr>
+            <tr>
+              <td><code>Skip Post-Process</code></td>
+              <td>OFF</td>
+              <td>Skips <code>post_process.py</code>. Raw merged output only — useful for debugging or if you handle
+                formatting yourself.</td>
+            </tr>
+            <tr>
+              <td><code>Extra CLI Args</code></td>
+              <td>—</td>
+              <td>Any additional arguments appended directly to <code>chat_merger.py</code>, e.g.
+                <code>--min-overlap 0.4 --max-gap 5</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- README.md embedded -->
+      <div class="card">
+        <div class="card-header">
+          <h2>📄 README.md</h2>
+          <span class="hint">Full project documentation</span>
+        </div>
+        <div id="readmeContent" class="readme-content">
+          <div class="loading-pulse">Loading README…</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JOB DETAIL MODAL -->
+  <div class="modal-overlay hidden" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2 id="modalTitle">Details</h2>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
     </div>
-    <div class="modal-body" id="modalBody"></div>
   </div>
-</div>
 
-<!-- TOAST -->
-<div id="toastContainer"></div>
+  <!-- TOAST -->
+  <div id="toastContainer"></div>
 
-<script src="/static/app.js"></script>
+  <script src="/static/app.js"></script>
 </body>
+
 </html>
