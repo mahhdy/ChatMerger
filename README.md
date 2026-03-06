@@ -27,22 +27,38 @@ this tool stitches them back together.*
 
 ## 📋 Table of Contents
 
-- [Problem](#-the-problem)
-- [Solution](#-the-solution)
-- [Features](#-features)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Pipeline](#-pipeline)
-- [How It Works](#-how-it-works)
-- [Input Formats](#-input-formats)
-- [Tools Reference](#-tools-reference)
-- [Configuration](#-configuration)
-- [Examples](#-examples)
-- [Testing](#-testing)
-- [Project Structure](#-project-structure)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [🔀 Chat Merger Tool](#-chat-merger-tool)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🧩 The Problem](#-the-problem)
+  - [💡 The Solution](#-the-solution)
+  - [✨ Features](#-features)
+    - [Core](#core)
+    - [Advanced](#advanced)
+  - [📦 Installation](#-installation)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+  - [🚀 Quick Start](#-quick-start)
+  - [🔧 Pipeline](#-pipeline)
+  - [⚙️ How It Works](#️-how-it-works)
+    - [High-Level Architecture](#high-level-architecture)
+    - [Data Flow Example](#data-flow-example)
+  - [📥 Input Formats](#-input-formats)
+    - [Format Detection Flow](#format-detection-flow)
+  - [🛠️ Tools Reference](#️-tools-reference)
+    - [`chat_merger.py` — Main Merger](#chat_mergerpy--main-merger)
+    - [`convert_export.py` — Format Converter](#convert_exportpy--format-converter)
+    - [`post_process.py` — Post-Processor](#post_processpy--post-processor)
+  - [⚙️ Configuration](#️-configuration)
+  - [📝 Examples](#-examples)
+    - [Example 1: Simple Merge](#example-1-simple-merge)
+    - [Example 2: Persian Content with Follow-ups](#example-2-persian-content-with-follow-ups)
+    - [Example 3: Full Pipeline](#example-3-full-pipeline)
+    - [Example 4: Convert ChatGPT Export](#example-4-convert-chatgpt-export)
+  - [🧪 Testing](#-testing)
+  - [📁 Project Structure](#-project-structure)
+  - [🔧 Troubleshooting](#-troubleshooting)
+  - [🤝 Contributing](#-contributing)
+  - [📜 License](#-license)
 
 ---
 
@@ -263,6 +279,8 @@ The full pipeline converts, merges, and post-processes in one command:
 ```powershell
 .\pipeline.ps1 your_chat_export.json my_document
 ```
+
+.\pipeline.ps1 \source\Saviourity\saviour_1.json saviour
 
 ```mermaid
 graph LR
