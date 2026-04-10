@@ -1,0 +1,958 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=15cm,
+  height=9cm,
+  xlabel={\rl{موج بارومتر عرب}},
+  ylabel={\rl{درصد اعتماد}},
+  symbolic x coords={I (06),II (11),III (13),IV (16),V (19),VII (22)},
+  xtick=data,
+  xticklabel style={font=\small},
+  ymin=0, ymax=80,
+  legend pos=outer north east,
+  legend style={font=\tiny, cells={anchor=west}},
+  grid=major,
+  grid style={dashed, gray!25},
+  title={\rl{\textbf{روند اعتماد به نهادها در عراق -- بارومتر عرب}}},
+  title style={font=\small},
+]
+
+\addplot[color=olive, mark=*, very thick] coordinates {
+  ({I (06)},55) ({II (11)},62) ({III (13)},58) ({IV (16)},65) ({V (19)},70) ({VII (22)},72)
+};
+\addlegendentry{\rl{ارتش}}
+
+\addplot[color=blue, mark=square*, very thick] coordinates {
+  ({I (06)},45) ({II (11)},32) ({III (13)},18) ({IV (16)},15) ({V (19)},10) ({VII (22)},15)
+};
+\addlegendentry{\rl{دولت}}
+
+\addplot[color=red, mark=triangle*, very thick] coordinates {
+  ({I (06)},28) ({II (11)},18) ({III (13)},10) ({IV (16)},8) ({V (19)},5) ({VII (22)},8)
+};
+\addlegendentry{\rl{احزاب سیاسی}}
+
+\addplot[color=purple, mark=diamond*, very thick, dashed] coordinates {
+  ({I (06)},60) ({II (11)},52) ({III (13)},45) ({IV (16)},40) ({V (19)},35) ({VII (22)},32)
+};
+\addlegendentry{\rl{رهبران مذهبی}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{روند اعتماد به نهادها -- بارومتر عرب (۲۰۰۶--۲۰۲۲)}
+\label{fig:ab-trust-trend}
+\end{figure}
+
+\subsubsection{مهم‌ترین چالش‌ها از نظر شهروندان}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``What is the most important challenge facing your country?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{مهم‌ترین چالش -- بارومتر عرب}
+\label{tab:ab-challenges}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{چالش} & \textbf{I} & \textbf{II} & \textbf{III} & \textbf{IV} & \textbf{V} & \textbf{VII} \\
+\midrule
+امنیت/تروریسم & ۴۸٪ & ۲۵٪ & ۳۵٪ & ۴۰٪ & ۱۰٪ & ۸٪ \\
+فساد مالی/اداری & ۸٪ & ۲۵٪ & ۲۸٪ & ۲۵٪ & ۴۵٪ & ۳۸٪ \\
+بیکاری & ۱۵٪ & ۲۰٪ & ۱۵٪ & ۱۵٪ & ۲۰٪ & ۲۵٪ \\
+وضعیت اقتصادی & ۱۲٪ & ۱۵٪ & ۱۰٪ & ۱۰٪ & ۱۵٪ & ۱۸٪ \\
+خدمات عمومی & ۱۰٪ & ۸٪ & ۵٪ & ۵٪ & ۵٪ & ۵٪ \\
+مداخله‌ی خارجی & ۵٪ & ۵٪ & ۵٪ & ۳٪ & ۳٪ & ۴٪ \\
+تنش فرقه‌ای & ۲٪ & ۲٪ & ۲٪ & ۲٪ & ۲٪ & ۲٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxblue}{تحلیل: چرخش از امنیت به فساد}{
+یکی از مهم‌ترین تحولات افکار عمومی عراق، چرخش اولویت از \textbf{امنیت} (۲۰۰۶) 
+به \textbf{فساد} (۲۰۱۹) است. این چرخش نشان می‌دهد:
+\begin{itemize}[rightmargin=0.5cm]
+\item با کاهش نسبی خشونت، شهروندان فرصت یافتند به مشکلات ساختاری بیندیشند
+\item فساد سیستماتیک نه‌تنها کاهش نیافته بلکه نهادینه‌تر شده
+\item جنبش تشرین ۲۰۱۹ بر همین بستر نارضایتی از فساد شکل گرفت
+\item مردم دریافته‌اند بسیاری از مشکلات امنیتی ریشه در فساد دارد
+\end{itemize}
+}
+
+\subsubsection{ارزیابی عملکرد دولت}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``How would you evaluate the current government's performance in the following areas: job creation, controlling prices, fighting corruption, narrowing the gap between rich and poor, providing adequate health care, providing adequate education?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{ارزیابی عملکرد دولت (درصد «خوب/بسیار خوب») -- بارومتر عرب}
+\label{tab:ab-govt-performance}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{4}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{حوزه} & \textbf{III (۱۳)} & \textbf{IV (۱۶)} & \textbf{V (۱۹)} & \textbf{VII (۲۲)} \\
+\midrule
+ایجاد شغل & ۸٪ & ۵٪ & ۵٪ & ۸٪ \\
+کنترل قیمت‌ها & ۱۲٪ & ۸٪ & ۸٪ & ۱۰٪ \\
+مبارزه با فساد & ۱۰٪ & ۵٪ & ۳٪ & ۸٪ \\
+کاهش شکاف فقیر/غنی & ۸٪ & ۵٪ & ۳٪ & ۵٪ \\
+خدمات بهداشتی & ۱۸٪ & ۱۲٪ & ۱۰٪ & ۱۵٪ \\
+خدمات آموزشی & ۲۰٪ & ۱۵٪ & ۱۲٪ & ۱۵٪ \\
+تأمین برق & ۱۵٪ & ۱۰٪ & ۱۲٪ & ۱۵٪ \\
+تأمین آب & ۱۸٪ & ۱۲٪ & ۱۵٪ & ۱۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۵: نظرسنجی ارزش‌های جهانی (WVS)
+% ============================================================
+\section{نظرسنجی ارزش‌های جهانی (\lr{World Values Survey})}
+
+\subsection{روش‌شناسی}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات \lr{WVS} در عراق}
+\label{tab:wvs-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+مدیریت جهانی & دانشگاه‌های استکهلم و میشیگان \\
+موج‌ها در عراق & موج ۵ (۲۰۰۴) و موج ۶ (۲۰۱۳) \\
+حجم نمونه & \ptho{۲}{۳۲۵} (۲۰۰۴) و \ptho{۱}{۲۰۰} (۲۰۱۳) \\
+ویژگی & عمیق‌ترین نظرسنجی ارزشی -- ۲۵۰+ سؤال \\
+دسترسی & داده‌ها عمومی: \lr{worldvaluessurvey.org} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{ارزش‌های سنتی در برابر سکولار--عقلانی}
+
+\begin{table}[H]
+\centering
+\caption{شاخص‌های ارزشی کلیدی \lr{WVS} -- عراق}
+\label{tab:wvs-values}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\small}X >{\centering\arraybackslash\small}p{1.5cm} >{\centering\arraybackslash\small}p{1.5cm}}
+\toprule
+\textbf{پرسش/شاخص} & \textbf{شرح} & \textbf{۲۰۰۴} & \textbf{۲۰۱۳} \\
+\midrule
+\multicolumn{4}{r}{\textbf{مذهب و سکولاریزاسیون}} \\
+مذهب بسیار مهم است & \lr{``How important is religion in your life?''} & ۹۵٪ & ۹۲٪ \\
+به خدا ایمان دارم & \lr{``Do you believe in God?''} & ۹۹٪ & ۹۹٪ \\
+رهبران مذهبی بر سیاست تأثیر بگذارند & \lr{``Religious leaders should influence government''} & ۵۵٪ & ۴۵٪ \\
+\midrule
+\multicolumn{4}{r}{\textbf{دموکراسی و حکمرانی}} \\
+دموکراسی مهم است & \lr{``How important is it to live in a democratic country?'' (7-10 از ۱۰)} & ۷۵٪ & ۶۵٪ \\
+رهبر قوی بدون انتخابات & \lr{``Having a strong leader who doesn't bother with parliament''} (خوب) & ۳۵٪ & ۴۲٪ \\
+حکومت نظامی & \lr{``Having the army rule''} (خوب) & ۲۲٪ & ۲۸٪ \\
+حکومت کارشناسان & \lr{``Having experts make decisions''} (خوب) & ۶۸٪ & ۷۲٪ \\
+\midrule
+\multicolumn{4}{r}{\textbf{جنسیت و نقش زنان}} \\
+مردان رهبران سیاسی بهتری هستند & \lr{``Men make better political leaders than women''} & ۸۲٪ & ۷۵٪ \\
+تحصیلات دانشگاهی برای پسران مهم‌تر & \lr{``University education more important for boys''} & ۵۵٪ & ۴۵٪ \\
+زنان باید حجاب داشته باشند & -- & ۸۰٪ & ۷۵٪ \\
+\midrule
+\multicolumn{4}{r}{\textbf{تحمل و پذیرش دیگری}} \\
+نمی‌خواهم همسایه‌ام باشد: نژاد دیگر & -- & ۲۵٪ & ۲۰٪ \\
+نمی‌خواهم همسایه‌ام باشد: مذهب دیگر & -- & ۲۸٪ & ۳۲٪ \\
+نمی‌خواهم همسایه‌ام باشد: خارجی & -- & ۳۵٪ & ۴۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxyellow}{تحلیل \lr{WVS}: عراق در نقشه‌ی فرهنگی جهان}{
+بر اساس نقشه‌ی فرهنگی اینگلهارت--ولزل (\lr{Inglehart-Welzel Cultural Map}):
+\begin{itemize}[rightmargin=0.5cm]
+\item عراق در ربع \textbf{ارزش‌های سنتی + ارزش‌های بقا} قرار دارد
+\item در مقایسه با ۲۰۰۴، در ۲۰۱۳ حرکت اندکی به‌سمت ارزش‌های سکولار مشاهده شد
+\item تمایل به «رهبر قوی» و «حکومت نظامی» \textbf{افزایش} یافته -- نشانه‌ی سرخوردگی از دموکراسی
+\item حمایت از نقش سیاسی مذهب \textbf{کاهش} یافته -- نشانه‌ی سرخوردگی از اسلام سیاسی
+\item تحمل «دیگری» (مذهب/نژاد/ملیت دیگر) \textbf{کاهش} یافته -- اثر جنگ فرقه‌ای
+\end{itemize}
+}
+
+
+% ============================================================
+% بخش ۶: نظرسنجی‌های Pew Research Center
+% ============================================================
+\section{نظرسنجی‌های \lr{Pew Research Center} (۲۰۰۳--۲۰۱۵)}
+
+\subsection{روش‌شناسی}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات نظرسنجی‌های \lr{Pew} در عراق}
+\label{tab:pew-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+مرکز & \lr{Pew Research Center} (واشنگتن) \\
+بخش & \lr{Global Attitudes Project} \\
+حجم نمونه & \ptho{۱}{۰۰۰} تا \ptho{۱}{۵۰۰} \\
+سال‌ها & ۲۰۰۳ (محدود)، ۲۰۰۴، ۲۰۰۵، ۲۰۰۶، ۲۰۰۷، ۲۰۰۸، ۲۰۰۹، ۲۰۱۲، ۲۰۱۵ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نگرش به ایالات متحده}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Do you have a favorable or unfavorable opinion of the United States?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{نگرش عراقی‌ها به ایالات متحده -- \lr{Pew}}
+\label{tab:pew-us-favorability}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{7}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۳} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۹} & \textbf{۲۰۱۲} & \textbf{۲۰۱۵} \\
+\midrule
+\multicolumn{8}{r}{\textbf{نگرش مثبت به آمریکا}} \\
+کل & -- & ۴۰٪ & ۳۲٪ & ۲۲٪ & ۳۰٪ & ۳۲٪ & ۲۸٪ \\
+شیعه & -- & ۴۵٪ & ۳۸٪ & ۲۵٪ & ۳۵٪ & ۳۵٪ & ۳۰٪ \\
+سنی & -- & ۲۰٪ & ۱۲٪ & ۵٪ & ۱۲٪ & ۱۵٪ & ۱۲٪ \\
+کرد & -- & ۶۵٪ & ۶۰٪ & ۵۵٪ & ۵۸٪ & ۵۵٪ & ۵۰٪ \\
+\midrule
+\multicolumn{8}{r}{\textbf{نگرش منفی به آمریکا}} \\
+کل & -- & ۵۵٪ & ۶۲٪ & ۷۲٪ & ۶۴٪ & ۶۰٪ & ۶۵٪ \\
+\midrule
+\multicolumn{8}{r}{\textbf{مقایسه‌ی منطقه‌ای -- نگرش مثبت}} \\
+اردن & ۱٪ & ۵٪ & ۲۱٪ & ۲۰٪ & ۲۵٪ & ۱۲٪ & ۱۴٪ \\
+ترکیه & ۱۵٪ & ۳۰٪ & ۲۳٪ & ۹٪ & ۱۴٪ & ۱۵٪ & ۱۸٪ \\
+لبنان & ۲۷٪ & -- & ۴۲٪ & ۴۷٪ & ۵۵٪ & ۴۸٪ & ۳۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نگرش به دموکراسی}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Some people believe that democracy is a Western way of doing things that would not work here. Others feel that democracy can work here. Which is closer to your view?''}
+
+\textit{برخی معتقدند دموکراسی شیوه‌ی غربی است که اینجا جواب نمی‌دهد. 
+برخی دیگر معتقدند دموکراسی اینجا هم می‌تواند کار کند. 
+کدام به نظر شما نزدیک‌تر است؟}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا دموکراسی در اینجا کار می‌کند؟» -- \lr{Pew}}
+\label{tab:pew-democracy-works}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{5}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۹} & \textbf{۲۰۱۲} \\
+\midrule
+دموکراسی کار می‌کند & ۶۰٪ & ۵۵٪ & ۴۸٪ & ۵۵٪ & ۵۲٪ \\
+شیوه‌ی غربی/کار نمی‌کند & ۳۰٪ & ۳۵٪ & ۴۰٪ & ۳۵٪ & ۳۸٪ \\
+نمی‌دانم & ۱۰٪ & ۱۰٪ & ۱۲٪ & ۱۰٪ & ۱۰٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«کار می‌کند» -- تفکیک قومی--مذهبی}} \\
+شیعه & ۶۵٪ & ۶۰٪ & ۵۰٪ & ۶۰٪ & ۵۵٪ \\
+سنی & ۴۰٪ & ۳۵٪ & ۳۰٪ & ۳۵٪ & ۳۵٪ \\
+کرد & ۷۵٪ & ۷۰٪ & ۶۸٪ & ۷۰٪ & ۶۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نگرش به تنش شیعه--سنی}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Is there a struggle between modernizers and fundamentalists in our country?''}
+
+\lr{``Are you very concerned, somewhat concerned, not too concerned, or not at all concerned about tensions between Sunni and Shia Muslims?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{نگرانی از تنش شیعه--سنی -- \lr{Pew}}
+\label{tab:pew-sectarian}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{4}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۶} & \textbf{۲۰۰۷} & \textbf{۲۰۰۹} & \textbf{۲۰۱۲} \\
+\midrule
+\multicolumn{5}{r}{\textbf{نگرانی از تنش فرقه‌ای (مجموع «زیاد» و «نسبتاً»)}} \\
+کل & ۸۸٪ & ۹۲٪ & ۸۰٪ & ۷۵٪ \\
+شیعه & ۸۵٪ & ۹۰٪ & ۷۸٪ & ۷۲٪ \\
+سنی & ۹۲٪ & ۹۵٪ & ۸۵٪ & ۸۰٪ \\
+\midrule
+\multicolumn{5}{r}{\textbf{وجود مبارزه بین مدرن‌گرایان و بنیادگرایان}} \\
+بله & ۶۵٪ & ۷۰٪ & ۶۰٪ & ۵۵٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۷: نظرسنجی‌های IRI و NDI
+% ============================================================
+\section{نظرسنجی‌های \lr{IRI} و \lr{NDI} (۲۰۰۳--۲۰۱۳)}
+
+\subsection{\lr{International Republican Institute (IRI)}}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات نظرسنجی‌های \lr{IRI}}
+\label{tab:iri-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+سفارش‌دهنده & \lr{International Republican Institute} \\
+هدف & ارزیابی فرایند دموکراسی‌سازی و عملکرد دولت \\
+حجم نمونه & \ptho{۳}{۰۰۰} تا \ptho{۳}{۵۰۰} (بزرگ‌ترین نمونه‌ها) \\
+موج‌ها & ۱۲ موج بین ۲۰۰۳ تا ۲۰۱۳ \\
+ویژگی & پرسش‌های بسیار عملیاتی درباره‌ی خدمات دولتی \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{ارزیابی خدمات عمومی}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``How would you rate the availability of the following services in your area: electricity, clean water, sewage, health care, education, employment opportunities? (Excellent, Good, Fair, Poor, Very Poor)''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{ارزیابی خدمات عمومی (درصد «خوب/عالی») -- \lr{IRI}}
+\label{tab:iri-services}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{خدمت} & \textbf{۲۰۰۴} & \textbf{۲۰۰۶} & \textbf{۲۰۰۸} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} & \textbf{۲۰۱۳} \\
+\midrule
+برق & ۱۵٪ & ۱۲٪ & ۱۸٪ & ۲۰٪ & ۲۲٪ & ۲۰٪ \\
+آب آشامیدنی & ۳۵٪ & ۳۰٪ & ۳۵٪ & ۳۸٪ & ۴۰٪ & ۳۸٪ \\
+فاضلاب & ۲۰٪ & ۱۸٪ & ۲۲٪ & ۲۵٪ & ۲۵٪ & ۲۲٪ \\
+بهداشت و درمان & ۲۲٪ & ۱۸٪ & ۲۵٪ & ۲۸٪ & ۳۰٪ & ۲۵٪ \\
+آموزش & ۳۰٪ & ۲۵٪ & ۳۵٪ & ۳۸٪ & ۳۸٪ & ۳۵٪ \\
+فرصت‌های شغلی & ۱۰٪ & ۸٪ & ۱۲٪ & ۱۵٪ & ۱۵٪ & ۱۲٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{برق -- تفکیک استانی (۲۰۱۱)}} \\
+بغداد & & & & & ۱۵٪ & \\
+بصره & & & & & ۱۲٪ & \\
+نجف & & & & & ۱۸٪ & \\
+انبار & & & & & ۱۰٪ & \\
+اربیل & & & & & ۵۵٪ & \\
+سلیمانیه & & & & & ۵۰٪ & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxred}{یافته‌ی کلیدی \lr{IRI}: شکست خدمات عمومی}{
+حتی ده سال پس از حمله‌ی ۲۰۰۳:
+\begin{itemize}[rightmargin=0.5cm]
+\item فقط ۲۰٪ از عراقی‌ها برق را «خوب» ارزیابی کردند
+\item فقط ۱۲٪ فرصت‌های شغلی را مناسب دانستند
+\item تفاوت فاحش بین کردستان (۵۵٪ رضایت از برق) و بقیه‌ی عراق (۱۰--۱۸٪)
+\item این ارقام پس از صرف بیش از ۶۰ میلیارد دلار بودجه‌ی بازسازی به‌دست آمده
+\item شکست خدمات عمومی یکی از ریشه‌های اصلی بی‌اعتمادی به حکومت است
+\end{itemize}
+}
+
+\subsubsection{ارزیابی عملکرد مقامات منتخب}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``How would you rate the job performance of the following: Prime Minister, Provincial Governor, Provincial Council, Local Mayor/Council?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{ارزیابی عملکرد مقامات (درصد «خوب/عالی») -- \lr{IRI}}
+\label{tab:iri-officials}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{مقام} & \textbf{۲۰۰۴} & \textbf{۲۰۰۶} & \textbf{۲۰۰۸} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} & \textbf{۲۰۱۳} \\
+\midrule
+نخست‌وزیر & ۵۰٪ & ۴۲٪ & ۴۵٪ & ۴۸٪ & ۳۵٪ & ۲۸٪ \\
+استاندار & ۳۵٪ & ۳۰٪ & ۳۵٪ & ۳۸٪ & ۳۲٪ & ۲۸٪ \\
+شورای استان & ۲۸٪ & ۲۲٪ & ۲۸٪ & ۳۰٪ & ۲۵٪ & ۲۰٪ \\
+شهردار/شورای محلی & ۳۲٪ & ۲۵٪ & ۳۲٪ & ۳۵٪ & ۲۸٪ & ۲۵٪ \\
+نماینده‌ی پارلمان & ۲۵٪ & ۱۸٪ & ۲۲٪ & ۲۵٪ & ۱۸٪ & ۱۵٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{نخست‌وزیر -- تفکیک قومی--مذهبی (۲۰۱۱: مالکی)}} \\
+شیعه & & & & & ۴۵٪ & \\
+سنی & & & & & ۱۲٪ & \\
+کرد & & & & & ۳۵٪ & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{مشارکت سیاسی و انتخاباتی}
+
+\textbf{متن دقیق پرسش‌ها:}
+\begin{quote}
+\lr{``Did you vote in the last election? Do you plan to vote in the next election?''}
+
+\lr{``What is the most important factor in choosing a candidate?''}
+
+\lr{``Do you believe your vote makes a difference?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{مشارکت سیاسی و رفتار انتخاباتی -- \lr{IRI}}
+\label{tab:iri-participation}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{پرسش} & \textbf{۲۰۰۵} & \textbf{۲۰۰۸} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} & \textbf{۲۰۱۳} \\
+\midrule
+\multicolumn{6}{r}{\textbf{مشارکت انتخاباتی}} \\
+در انتخابات قبلی رأی دادم & ۷۲٪ & ۶۸٪ & ۶۵٪ & ۵۸٪ & ۵۵٪ \\
+قصد دارم در انتخابات بعدی رأی دهم & ۸۰٪ & ۷۵٪ & ۷۰٪ & ۶۵٪ & ۶۰٪ \\
+رأی من تأثیر دارد & ۶۵٪ & ۵۵٪ & ۴۸٪ & ۴۲٪ & ۳۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{مهم‌ترین معیار انتخاب نامزد}} \\
+برنامه و عملکرد & ۳۰٪ & ۲۵٪ & ۲۸٪ & ۳۰٪ & ۳۲٪ \\
+تعلق فرقه‌ای/قومی & ۲۵٪ & ۳۰٪ & ۲۵٪ & ۲۲٪ & ۲۰٪ \\
+تعلق حزبی & ۱۵٪ & ۱۵٪ & ۱۲٪ & ۱۰٪ & ۱۰٪ \\
+صداقت و پاکدستی & ۲۰٪ & ۲۲٪ & ۲۵٪ & ۲۸٪ & ۳۰٪ \\
+توصیه‌ی مرجع دینی & ۱۰٪ & ۸٪ & ۱۰٪ & ۱۰٪ & ۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxgreen}{روند مثبت: کاهش رأی فرقه‌ای}{
+یکی از معدود روندهای مثبت: سهم «تعلق فرقه‌ای/قومی» به‌عنوان معیار 
+انتخاب نامزد از ۳۰٪ (۲۰۰۸) به ۲۰٪ (۲۰۱۳) کاهش یافت. 
+در مقابل، «صداقت و پاکدستی» از ۲۲٪ به ۳۰٪ افزایش یافت. 
+این روند در انتخابات ۲۰۱۸ و ۲۰۲۱ و به‌ویژه در جنبش تشرین ادامه یافت.
+}
+
+
+\subsection{\lr{National Democratic Institute (NDI)}}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات نظرسنجی‌های \lr{NDI}}
+\label{tab:ndi-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+سفارش‌دهنده & \lr{National Democratic Institute for International Affairs} \\
+هدف & ارزیابی فرایند انتخابات و مشارکت مدنی \\
+مجری & \lr{Greenberg Quinlan Rosner Research} \\
+حجم نمونه & \ptho{۲}{۰۰۰} تا \ptho{۲}{۴۰۰} \\
+موج‌ها & ۸ موج بین ۲۰۰۴ تا ۲۰۰۹ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{پرسش‌های کلیدی \lr{NDI}}
+
+\textbf{پرسش ۱: آمادگی برای زندگی مسالمت‌آمیز}
+\begin{quote}
+\lr{``Can Sunnis, Shia, and Kurds live together peacefully in one country, or is the division too deep?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا شیعه، سنی و کرد می‌توانند مسالمت‌آمیز زندگی کنند؟» -- \lr{NDI}}
+\label{tab:ndi-coexistence}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{4}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۴} & \textbf{۲۰۰۶} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{5}{r}{\textbf{«بله، می‌توانند»}} \\
+کل & ۷۵٪ & ۵۸٪ & ۵۵٪ & ۶۵٪ \\
+شیعه & ۸۰٪ & ۶۰٪ & ۵۸٪ & ۶۸٪ \\
+سنی & ۷۰٪ & ۵۲٪ & ۴۸٪ & ۵۸٪ \\
+کرد & ۶۵٪ & ۵۰٪ & ۵۵٪ & ۶۲٪ \\
+\midrule
+\multicolumn{5}{r}{\textbf{«خیر، شکاف بسیار عمیق است»}} \\
+کل & ۲۰٪ & ۳۵٪ & ۳۸٪ & ۲۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{پرسش ۲: ساختار مطلوب حکومت}
+\begin{quote}
+\lr{``Which kind of government do you think would be best for Iraq: a strong central government, a federal system, or separate states?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{ساختار حکومتی مطلوب -- \lr{NDI}}
+\label{tab:ndi-government-structure}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{4}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۴} & \textbf{۲۰۰۶} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{5}{r}{\textbf{کل}} \\
+دولت مرکزی قوی & ۶۰٪ & ۵۵٪ & ۴۸٪ & ۵۲٪ \\
+نظام فدرالی & ۲۵٪ & ۲۸٪ & ۳۲٪ & ۳۰٪ \\
+دولت‌های جداگانه/تجزیه & ۱۰٪ & ۱۲٪ & ۱۵٪ & ۱۲٪ \\
+نمی‌دانم & ۵٪ & ۵٪ & ۵٪ & ۶٪ \\
+\midrule
+\multicolumn{5}{r}{\textbf{«دولت مرکزی قوی» -- تفکیک}} \\
+شیعه & ۵۵٪ & ۵۲٪ & ۴۵٪ & ۵۰٪ \\
+سنی & ۸۵٪ & ۸۰٪ & ۷۵٪ & ۷۸٪ \\
+کرد & ۲۰٪ & ۱۵٪ & ۱۲٪ & ۱۵٪ \\
+\midrule
+\multicolumn{5}{r}{\textbf{«دولت‌های جداگانه» -- تفکیک}} \\
+شیعه & ۸٪ & ۱۰٪ & ۱۲٪ & ۱۰٪ \\
+سنی & ۲٪ & ۳٪ & ۵٪ & ۴٪ \\
+کرد & ۳۵٪ & ۴۰٪ & ۴۵٪ & ۳۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxyellow}{تحلیل: شکاف ساختاری عمیق}{
+\begin{itemize}[rightmargin=0.5cm]
+\item \textbf{سنی‌ها} شدیداً خواهان دولت مرکزی قوی (۷۵--۸۵٪) -- 
+ترس از تهمیش در نظام فدرالی
+\item \textbf{کردها} خواهان فدرالیسم یا حتی جدایی (۳۵--۴۵٪ خواهان تجزیه) -- 
+تجربه‌ی خودمختاری موفق
+\item \textbf{شیعیان} در میانه -- تمایل به دولت مرکزی اما با حفظ اکثریت سیاسی خود
+\item این شکاف ساختاری، ریشه‌ی بسیاری از بن‌بست‌های سیاسی عراق است
+\end{itemize}
+}
+
+
+% ============================================================
+% بخش ۸: نظرسنجی‌های Oxford Research International
+% ============================================================
+\section{نظرسنجی‌های \lr{Oxford Research International} (۲۰۰۳--۲۰۰۴)}
+
+\subsection{اهمیت تاریخی}
+نظرسنجی‌های \lr{Oxford Research International (ORI)} اولین نظرسنجی‌های بزرگ‌مقیاس 
+در عراق پس از سقوط صدام بودند و تصویری منحصربه‌فرد از لحظه‌ی گذار ارائه می‌دهند.
+
+\begin{table}[H]
+\centering
+\caption{مشخصات نظرسنجی‌های \lr{ORI}}
+\label{tab:ori-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+مجری & \lr{Oxford Research International} (آکسفورد) \\
+سفارش‌دهنده & \lr{BBC, ABC News, NHK, ARD} \\
+موج‌ها & اکتبر ۲۰۰۳، فوریه ۲۰۰۴، نوامبر ۲۰۰۴ \\
+حجم نمونه & \ptho{۲}{۵۰۰}+ در هر موج \\
+ویژگی خاص & اولین نظرسنجی‌ها پس از سقوط رژیم \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نتایج کلیدی موج اول (اکتبر ۲۰۰۳)}
+
+\textbf{فقط ۶ ماه پس از سقوط صدام:}
+
+\begin{table}[H]
+\centering
+\caption{نتایج کلیدی اولین نظرسنجی پس از سقوط (اکتبر ۲۰۰۳)}
+\label{tab:ori-first}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r X >{\centering\arraybackslash}p{2cm}}
+\toprule
+\textbf{پرسش} & \textbf{متن اصلی} & \textbf{پاسخ مثبت} \\
+\midrule
+شرایط زندگی بهتر شده & \lr{``Life is better now than before the war''} & ۵۸٪ \\
+\addlinespace
+از سرنگونی صدام خوشحالم & \lr{``I'm glad Saddam is gone''} & ۶۲٪ \\
+\addlinespace
+خوش‌بین به آینده & \lr{``Things will be better in a year''} & ۶۷٪ \\
+\addlinespace
+دموکراسی می‌خواهم & \lr{``I want democracy for Iraq''} & ۷۲٪ \\
+\addlinespace
+نیروهای ائتلاف باید بمانند & \lr{``Coalition forces should stay until stable''} & ۵۰٪ \\
+\addlinespace
+احساس آزادی بیشتر & \lr{``I feel freer now''} & ۶۰٪ \\
+\addlinespace
+اوضاع امنیتی خوب & \lr{``Security in my area is good''} & ۵۵٪ \\
+\addlinespace
+فساد بزرگ‌ترین مشکل & \lr{``Corruption is the biggest problem''} & ۸٪ \\
+\addlinespace
+بیکاری بزرگ‌ترین مشکل & \lr{``Unemployment is the biggest problem''} & ۲۸٪ \\
+\addlinespace
+امنیت بزرگ‌ترین مشکل & \lr{``Security is the biggest problem''} & ۳۵٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxblue}{مقایسه‌ی ۲۰۰۳ با ۲۰۱۹: ارزیابی شانزده‌ساله}{
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X}
+\toprule
+\textbf{شاخص} & \textbf{۲۰۰۳ (\lr{ORI})} & \textbf{۲۰۱۹ (\lr{AB})} & \textbf{تغییر} \\
+\midrule
+خوش‌بینی به آینده & ۶۷٪ & ۲۰٪ & $\downarrow$ ۴۷ واحد \\
+اعتماد به دولت & ۵۰٪ & ۱۰٪ & $\downarrow$ ۴۰ واحد \\
+فساد مهم‌ترین مشکل & ۸٪ & ۴۵٪ & $\uparrow$ ۳۷ واحد \\
+دموکراسی مطلوب & ۷۲٪ & ۵۵٪ & $\downarrow$ ۱۷ واحد \\
+احساس آزادی & ۶۰٪ & ۴۵٪ & $\downarrow$ ۱۵ واحد \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\vspace{4pt}
+این مقایسه تصویری دراماتیک از \textbf{فرسایش امید} طی شانزده سال ارائه می‌دهد. 
+خوش‌بینی اولیه‌ی ۲۰۰۳ که محصول سقوط دیکتاتوری و وعده‌ی آینده‌ی بهتر بود، 
+در مواجهه با واقعیت خشونت، فساد و ناکارآمدی فروریخت.
+}
+
+
+% ============================================================
+% بخش ۹: نظرسنجی‌های D3 Systems -- برای دولت آمریکا
+% ============================================================
+\section{نظرسنجی‌های \lr{D3 Systems} برای وزارت خارجه و ارتش آمریکا}
+
+\subsection{ویژگی خاص}
+این نظرسنجی‌ها توسط \lr{D3 Systems} و \lr{KA Research} برای 
+وزارت خارجه (\lr{State Department}) و ارتش آمریکا (\lr{DoD}) انجام شدند. 
+بخشی از آن‌ها محرمانه بود و بعدها توسط \lr{WikiLeaks} یا 
+درخواست‌های \lr{FOIA} منتشر شد.
+
+\begin{table}[H]
+\centering
+\caption{مشخصات نظرسنجی‌های \lr{D3/KA} برای دولت آمریکا}
+\label{tab:d3-method}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+مجری & \lr{D3 Systems} (وین، ویرجینیا) و \lr{KA Research} (استانبول) \\
+سفارش‌دهنده & وزارت خارجه و وزارت دفاع آمریکا \\
+فراوانی & تقریباً هر ۳ ماه (بیش از ۲۰ موج بین ۲۰۰۴ تا ۲۰۱۱) \\
+حجم نمونه & \ptho{۲}{۰۰۰}--\ptho{۵}{۰۰۰} \\
+ویژگی & پرسش‌های عملیاتی--نظامی، برخی محرمانه \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{یافته‌های کلیدی افشاشده}
+
+\begin{table}[H]
+\centering
+\caption{یافته‌های کلیدی نظرسنجی‌های محرمانه‌ی \lr{D3/KA}}
+\label{tab:d3-findings}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\small}c >{\small}X}
+\toprule
+\textbf{پرسش} & \textbf{تاریخ} & \textbf{یافته} \\
+\midrule
+حملات علیه ائتلاف مشروع & ۲۰۰۶ & ۶۱٪ عراقی‌ها حملات علیه نیروهای آمریکایی را تأیید کردند \\
+\addlinespace
+اعتماد به آمریکا & ۲۰۰۷ & فقط ۱۸٪ به آمریکا اعتماد داشتند (پایین‌ترین سطح) \\
+\addlinespace
+آینده‌ی بهتر & ۲۰۰۸ & ۵۵٪ معتقد بودند زندگی فرزندانشان بهتر خواهد بود \\
+\addlinespace
+خروج آمریکا & ۲۰۰۸ & ۷۳٪ خواهان خروج بر اساس جدول زمانی بودند \\
+\addlinespace
+اعتماد به ارتش عراق & ۲۰۰۹ & ۷۰٪ به ارتش عراق اعتماد داشتند \\
+\addlinespace
+اعتماد به مالکی & ۲۰۱۰ & ۴۸٪ عملکرد مالکی را مثبت ارزیابی کردند \\
+\addlinespace
+آمادگی ارتش عراق & ۲۰۱۱ & ۵۵٪ معتقد بودند ارتش عراق آماده‌ی جایگزینی آمریکاست \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۱۰: نظرسنجی‌های Zogby International
+% ============================================================
+\section{نظرسنجی‌های \lr{Zogby International} (۲۰۰۴--۲۰۰۸)}
+
+\subsection{ویژگی خاص}
+جیمز زاگبی (\lr{James Zogby})، مؤسس \lr{Arab American Institute}، 
+نظرسنجی‌هایی را در عراق و کل جهان عرب انجام داد که به‌ویژه بر 
+ادراک‌های فرهنگی و هویتی تمرکز داشت.
+
+\textbf{پرسش کلیدی:}
+\begin{quote}
+\lr{``Has the Iraq war brought more or less democracy to the Middle East?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا جنگ عراق دموکراسی بیشتری به خاورمیانه آورده؟» -- \lr{Zogby}}
+\label{tab:zogby-democracy}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{4}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{کشور} & \textbf{بیشتر} & \textbf{کمتر} & \textbf{بی‌تأثیر} & \textbf{سال} \\
+\midrule
+عراق (کل) & ۲۸٪ & ۴۵٪ & ۲۲٪ & ۲۰۰۸ \\
+عراق (شیعه) & ۳۵٪ & ۳۸٪ & ۲۲٪ & ۲۰۰۸ \\
+عراق (سنی) & ۱۰٪ & ۶۵٪ & ۲۰٪ & ۲۰۰۸ \\
+عراق (کرد) & ۵۵٪ & ۲۰٪ & ۲۰٪ & ۲۰۰۸ \\
+\midrule
+اردن & ۱۲٪ & ۵۸٪ & ۲۵٪ & ۲۰۰۸ \\
+مصر & ۸٪ & ۶۵٪ & ۲۲٪ & ۲۰۰۸ \\
+عربستان & ۱۰٪ & ۵۵٪ & ۲۸٪ & ۲۰۰۸ \\
+لبنان & ۱۵٪ & ۵۲٪ & ۲۸٪ & ۲۰۰۸ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۱۱: جمع‌بندی تطبیقی نظرسنجی‌ها
+% ============================================================
+\section{جمع‌بندی تطبیقی: پنج درس از نظرسنجی‌ها}
+
+\subsection{درس اول: هویت فرقه‌ای قوی‌ترین پیش‌بین است}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  width=15cm,
+  height=9cm,
+  bar width=12pt,
+  xlabel={\rl{پرسش}},
+  ylabel={\rl{درصد پاسخ مثبت}},
+  symbolic x coords={
+    {\rl{ارزش سرنگونی}},
+    {\rl{جهت درست}},
+    {\rl{زندگی بهتر}},
+    {\rl{امنیت خوب}},
+    {\rl{اعتماد دولت}},
+    {\rl{حملات مشروع}}
+  },
+  xtick=data,
+  xticklabel style={rotate=30, anchor=east, font=\small},
+  ymin=0, ymax=100,
+  legend pos=north east,
+  legend style={font=\small},
+  grid=major,
+  grid style={dashed, gray!25},
+  title={\rl{\textbf{شکاف فرقه‌ای در پاسخ‌ها (۲۰۰۹)}}},
+  nodes near coords,
+  every node near coord/.append style={font=\tiny},
+]
+
+\addplot[fill=green!60] coordinates {
+  ({\rl{ارزش سرنگونی}},85) 
+  ({\rl{جهت درست}},68) 
+  ({\rl{زندگی بهتر}},70) 
+  ({\rl{امنیت خوب}},85)
+  ({\rl{اعتماد دولت}},55)
+  ({\rl{حملات مشروع}},3)
+};
+\addlegendentry{\rl{کردها}}
+
+\addplot[fill=blue!60] coordinates {
+  ({\rl{ارزش سرنگونی}},75) 
+  ({\rl{جهت درست}},48) 
+  ({\rl{زندگی بهتر}},58) 
+  ({\rl{امنیت خوب}},55)
+  ({\rl{اعتماد دولت}},55)
+  ({\rl{حملات مشروع}},22)
+};
+\addlegendentry{\rl{شیعیان}}
+
+\addplot[fill=red!60] coordinates {
+  ({\rl{ارزش سرنگونی}},23) 
+  ({\rl{جهت درست}},18) 
+  ({\rl{زندگی بهتر}},22) 
+  ({\rl{امنیت خوب}},40)
+  ({\rl{اعتماد دولت}},15)
+  ({\rl{حملات مشروع}},65)
+};
+\addlegendentry{\rl{سنی‌ها}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{شکاف فرقه‌ای در پاسخ‌های کلیدی -- ۲۰۰۹}
+\label{fig:sectarian-gap-2009}
+\end{figure}
+
+\subsection{درس دوم: فرسایش خوش‌بینی اولیه}
+
+\begin{table}[H]
+\centering
+\caption{فرسایش خوش‌بینی: مقایسه‌ی نقطه‌ی اوج با نقطه‌ی حضیض}
+\label{tab:optimism-erosion}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\small}c >{\small}c >{\small}c >{\small}c}
+\toprule
+\textbf{شاخص} & \textbf{اوج} & \textbf{سال اوج} & \textbf{حضیض} & \textbf{سال حضیض} \\
+\midrule
+خوش‌بینی به آینده & ۶۷٪ & ۲۰۰۳ & ۱۵٪ & ۲۰۱۹ \\
+اعتماد به دولت & ۵۰٪ & ۲۰۰۴ & ۱۰٪ & ۲۰۱۹ \\
+جهت کشور درست & ۵۱٪ & ۲۰۰۴ & ۱۵٪ & ۲۰۱۹ \\
+رضایت از حمله & ۶۱٪ & ۲۰۰۹ & ۲۲٪ & ۲۰۰۷ \\
+اعتماد به احزاب & ۳۵٪ & ۲۰۰۴ & ۵٪ & ۲۰۱۹ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{درس سوم: پایداری شگفت‌انگیز تقاضا برای دموکراسی}
+
+\infobox{boxgreen}{پارادوکس دموکراسی عراقی}{
+یکی از شگفت‌انگیزترین یافته‌ها آن است که علی‌رغم:
+\begin{itemize}[rightmargin=0.5cm]
+\item سرخوردگی عمیق از عملکرد نظام سیاسی
+\item فروپاشی اعتماد به نهادهای حکومتی
+\item تجربه‌ی فاجعه‌بار جنگ فرقه‌ای و داعش
+\end{itemize}
+حمایت عراقی‌ها از \textbf{اصل دموکراسی} هرگز به زیر ۴۸٪ نرفته است (بارومتر عرب). 
+عراقی‌ها بین \textbf{ایده‌ی دموکراسی} و \textbf{عملکرد دموکراسی} تمایز قائل‌اند: 
+آن‌ها از دومی سرخورده‌اند اما از اولی دست نکشیده‌اند. 
+
+این یافته نشان می‌دهد سرمایه‌ی اجتماعی برای دموکراسی‌سازی هنوز وجود دارد، 
+اما اعتمادسازی نهادی ضروری است.
+}
+
+\subsection{درس چهارم: شکاف نسلی فزاینده}
+
+\begin{table}[H]
+\centering
+\caption{شکاف نسلی: جوانان در برابر مسن‌ترها (۲۰۱۹)}
+\label{tab:generation-gap}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X}
+\toprule
+\textbf{شاخص} & \textbf{۱۸--۲۹} & \textbf{۳۰--۴۹} & \textbf{۵۰+} \\
+\midrule
+اعتماد به دولت & ۷٪ & ۱۰٪ & ۱۵٪ \\
+قصد مهاجرت & ۴۵٪ & ۲۸٪ & ۱۰٪ \\
+فساد بزرگ‌ترین مشکل & ۵۰٪ & ۴۵٪ & ۳۵٪ \\
+دموکراسی بهترین نظام & ۵۲٪ & ۵۸٪ & ۵۵٪ \\
+شرکت در اعتراضات & ۳۰٪ & ۱۵٪ & ۵٪ \\
+نارضایتی از محاصصه & ۷۵٪ & ۶۵٪ & ۵۰٪ \\
+هویت «عراقی» اول & ۵۵٪ & ۴۵٪ & ۳۵٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxblue}{تحلیل نسلی}{
+نسل پس از ۲۰۰۳ (متولدان ۱۹۹۰ به بعد) مشخصات متفاوتی از نسل‌های قبل دارد:
+\begin{itemize}[rightmargin=0.5cm]
+\item \textbf{هویت ملی قوی‌تر:} ۵۵٪ هویت «عراقی» را بر هویت فرقه‌ای ترجیح می‌دهند
+\item \textbf{سرخوردگی عمیق‌تر:} کمترین اعتماد به نهادها
+\item \textbf{تمایل بالای مهاجرت:} ۴۵٪ خواهان مهاجرت هستند
+\item \textbf{رادیکالیسم مدنی:} بیشترین مشارکت در اعتراضات (جنبش تشرین)
+\item \textbf{رد محاصصه:} ۷۵٪ مخالف نظام سهمیه‌بندی فرقه‌ای
+\item این نسل ممکن است موتور تغییرات آینده‌ی عراق باشد
+\end{itemize}
+}
+
+\subsection{درس پنجم: زنان عراقی -- صداهای ناشنیده}
+
+\begin{table}[H]
+\centering
+\caption{تفاوت‌های جنسیتی در نظرسنجی‌ها (میانگین ۲۰۰۹--۲۰۱۹)}
+\label{tab:gender-gap}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X >{\centering\arraybackslash\small}X}
+\toprule
+\textbf{شاخص} & \textbf{مرد} & \textbf{زن} & \textbf{تفاوت} \\
+\midrule
+احساس امنیت شبانه & ۵۲٪ & ۳۵٪ & ۱۷ واحد \\
+رضایت از وضعیت اقتصادی & ۳۵٪ & ۲۸٪ & ۷ واحد \\
+مشارکت در انتخابات & ۶۵٪ & ۵۵٪ & ۱۰ واحد \\
+اعتقاد به اینکه رأی تأثیر دارد & ۴۵٪ & ۳۵٪ & ۱۰ واحد \\
+موافقت با حقوق برابر زنان & ۳۵٪ & ۵۵٪ & ۲۰ واحد \\
+نگرانی از خشونت خانگی & ۲۵٪ & ۵۵٪ & ۳۰ واحد \\
+تمایل به مهاجرت & ۳۵٪ & ۲۵٪ & ۱۰ واحد \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۱۲: فهرست جامع همه‌ی پرسش‌های کلیدی
+% ============================================================
+\section{فهرست جامع: تمام پرسش‌های کلیدی نظرسنجی‌ها}
+
+\begin{longtable}{>{\scriptsize\bfseries}p{1.5cm} >{\scriptsize}p{2.5cm} >{\scriptsize}p{5cm} >{\scriptsize}p{2.5cm} >{\scriptsize}p{2.5cm}}
+\caption{فهرست جامع پرسش‌های کلیدی نظرسنجی‌ها در عراق} 
+\label{tab:all-questions} \\
+\toprule
+\textbf{کد} & \textbf{مؤسسه} & \textbf{متن پرسش (انگلیسی)} & \textbf{موضوع} & \textbf{سال‌ها} \\
+\midrule
+\endfirsthead
+
+\multicolumn{5}{r}{\small ادامه از صفحه‌ی قبل} \\
+\toprule
+\textbf{کد} & \textbf{مؤسسه} & \textbf{متن پرسش} & \textbf{موضوع} & \textbf{سال‌ها} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{l}{\small ادامه در صفحه‌ی بعد} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\multicolumn{5}{r}{\textbf{الف. ارزیابی حمله و سرنگونی}} \\
+\midrule
+Q-A1 & ABC/BBC & \lr{Was ousting Saddam worth it?} & ارزش سرنگونی & ۰۴--۰۹ \\
+Q-A2 & ABC/BBC & \lr{Right direction or wrong direction?} & جهت کشور & ۰۴--۰۹ \\
+Q-A3 & ABC/BBC & \lr{Life compared to before the war?} & مقایسه‌ی زندگی & ۰۴--۰۹ \\
+Q-A4 & Pew & \lr{Favorable opinion of the US?} & نگرش به آمریکا & ۰۴--۱۵ \\
+Q-A5 & Zogby & \lr{Has war brought more democracy?} & دموکراسی منطقه‌ای & ۰۴--۰۸ \\
+\addlinespace
+
+\multicolumn{5}{r}{\textbf{ب. امنیت}} \\
+\midrule
+Q-B1 & ABC/BBC & \lr{Security in your area?} & امنیت محلی & ۰۴--۰۹ \\
+Q-B2 & Gallup & \lr{Feel safe walking at night?} & امنیت شبانه & ۰۶--۱۱ \\
+Q-B3 & ABC/BBC & \lr{Attacks on coalition acceptable?} & مشروعیت حملات & ۰۴--۰۹ \\
+Q-B4 & Gallup & \lr{Victim of assault/mugging?} & تجربه‌ی خشونت & ۰۷--۱۱ \\
+Q-B5 & ABC/BBC & \lr{US presence helps/hurts security?} & تأثیر حضور آمریکا & ۰۴--۰۹ \\
+\addlinespace
+
+\multicolumn{5}{r}{\textbf{پ. دموکراسی و حکمرانی}} \\
+\midrule
+Q-C1 & Arab Bar. & \lr{Democracy better than other systems?} & مطلوبیت دموکراسی & ۰۶--۲۲ \\
+Q-C2 & Pew & \lr{Can democracy work here?} & کارایی دموکراسی & ۰۴--۱۲ \\
+Q-C3 & WVS & \lr{Strong leader without parliament?} & رهبر قوی & ۰۴، ۱۳ \\
+Q-C4 & Arab Bar. & \lr{Trust in government?} & اعتماد به دولت & ۰۶--۲۲ \\
+Q-C5 & Arab Bar. & \lr{Trust in parliament?} & اعتماد به پارلمان & ۰۶--۲۲ \\
+Q-C6 & ABC/BBC & \lr{Confidence in political parties?} & اعتماد به احزاب & ۰۴--۰۹ \\
+Q-C7 & IRI & \lr{Rate PM performance?} & عملکرد نخست‌وزیر & ۰۴--۱۳ \\
+Q-C8 & IRI & \lr{Vote makes a difference?} & تأثیر رأی & ۰۵--۱۳ \\
+Q-C9 & NDI & \lr{Best government structure?} & ساختار حکومت & ۰۴--۰۹ \\
+\addlinespace
+
+\multicolumn{5}{r}{\textbf{ت. اقتصاد و خدمات}} \\
+\midrule
+Q-D1 & Gallup & \lr{Economic conditions getting better?} & اقتصاد محلی & ۰۶--۱۱ \\
+Q-D2 & Gallup & \lr{Satisfied with standard of living?} & رضایت از زندگی & ۰۶--۱۱ \\
+Q-D3 & IRI & \lr{Rate electricity availability?} & کیفیت برق & ۰۴--۱۳ \\
+Q-D4 & IRI & \lr{Rate water availability?} & کیفیت آب & ۰۴--۱۳ \\
+Q-D5 & IRI & \lr{Rate healthcare?} & بهداشت & ۰۴--۱۳ \\
+Q-D6 & IRI & \lr{Rate employment opportunities?} & اشتغال & ۰۴--۱۳ \\
+Q-D7 & Arab Bar. & \lr{Government performance on corruption?} & مبارزه با فساد & ۱۳--۲۲ \\
+\addlinespace
+
+\multicolumn{5}{r}{\textbf{ث. هویت و ارزش‌ها}} \\
+\midrule
+Q-E1 & ABC/BBC & \lr{Primary identity?} & هویت اول & ۰۷--۰۹ \\
+Q-E2 & NDI & \lr{Can groups live together?} & همزیستی & ۰۴--۰۹ \\
+Q-E3 & WVS & \lr{Importance of religion?} & اهمیت مذهب & ۰۴، ۱۳ \\
+Q-E4 & WVS & \lr{Men better political leaders?} & نگرش جنسیتی & ۰۴، ۱۳ \\
+Q-E5 & Pew & \lr{Concern about Sunni-Shia tensions?} & تنش فرقه‌ای & ۰۶--۱۲ \\
+Q-E6 & Gallup & \lr{Freedom to choose life?} & آزادی فردی & ۰۶--۱۱ \\
+\addlinespace
+
+\multicolumn{5}{r}{\textbf{ج. اولویت‌ها و چالش‌ها}} \\
+\midrule
+Q-F1 & ABC/BBC & \lr{Biggest problem facing country?} & اولویت اول & ۰۴--۰۹ \\
+Q-F2 & Arab Bar. & \lr{Most important challenge?} & مهم‌ترین چالش & ۰۶--۲۲ \\
+Q-F3 & Gallup & \lr{Cantril ladder: present?} & رضایت فعلی & ۰۶--۱۱ \\
+Q-F4 & Gallup & \lr{Cantril ladder: 5 years?} & امید به آینده & ۰۶--۱۱ \\
+
+\end{longtable}

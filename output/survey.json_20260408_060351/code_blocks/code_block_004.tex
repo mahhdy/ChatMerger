@@ -1,0 +1,54 @@
+% ============================================================
+%  ADD THESE TO YOUR MAIN PREAMBLE
+% ============================================================
+
+%% --- Survey methodology card ---
+\newtcolorbox{surveycard}[1]{%
+  enhanced, breakable,
+  colback=gray!4, colframe=gray!55,
+  fonttitle=\bfseries\small,
+  title={#1},
+  left=5pt, right=5pt, top=4pt, bottom=4pt,
+  boxrule=0.6pt, arc=1.5mm,
+  before upper={\small},
+}
+
+%% --- "Did you know?" box ---
+\newtcolorbox{didyouknow}[1][]{%
+  enhanced,
+  colback=cyan!4, colframe=cyan!55,
+  fonttitle=\bfseries,
+  title={\emoji{light-bulb}\; آیا می‌دانستید؟},
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  boxrule=0.8pt, arc=2mm,
+  #1
+}
+% if \emoji is unavailable, replace with a simple symbol or remove it
+
+%% --- Figure container box ---
+\newtcolorbox{figurebox}[1][]{%
+  enhanced,
+  colback=white, colframe=gray!35,
+  boxrule=0.4pt, arc=1mm,
+  left=2pt, right=2pt, top=2pt, bottom=2pt,
+  #1
+}
+
+%% --- Dashboard side-by-side comparison ---
+\newtcolorbox{comparecard}[1][]{%
+  enhanced,
+  sidebyside, sidebyside align=top seam,
+  colback=white, colframe=gray!45,
+  boxrule=0.5pt, arc=1.5mm,
+  lefthand width=0.47\textwidth,
+  left=5pt, right=5pt, top=5pt, bottom=5pt,
+  #1
+}
+
+%% --- Key-number callout (inline) ---
+\newcommand{\keynumber}[2]{%
+  \tikz[baseline=(X.base)]{
+    \node[fill=#1!12, draw=#1!50, rounded corners=2pt,
+          inner sep=3pt, font=\bfseries\large] (X) {#2};
+  }%
+}

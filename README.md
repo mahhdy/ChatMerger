@@ -280,7 +280,7 @@ The full pipeline converts, merges, and post-processes in one command:
 .\pipeline.ps1 your_chat_export.json my_document
 ```
 
-.\pipeline.ps1 'c:/Users/b0583931/GitHub/ChatMerger/source/Slides Salvation.json'
+.\pipeline.ps1 'c:/Users/b0583931/GitHub/ChatMerger/source/Iraq Survey.json' survey.json
 
 ```mermaid
 graph LR

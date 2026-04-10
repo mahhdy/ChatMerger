@@ -1,0 +1,1429 @@
+% ============================================================
+% فصل ۶: نظرسنجی‌ها و دیدگاه شهروندان عراقی
+% ============================================================
+
+\begin{chaptersummary}
+  ماشین پروپاگاندای جنگ عراق نشان داد چگونه
+  یک زنجیره هماهنگ (کاخ سفید → \lr{CIA} →
+  اندیشکده → رسانه → افکار عمومی → کنگره)
+  می‌تواند دروغ را به «حقیقت مسلم» تبدیل کند.
+  اعتماد عمومی به رسانه‌های آمریکایی از ۵۳\%
+  به ۳۲\% سقوط کرد — آسیبی که هنوز ترمیم نشده.
+\end{chaptersummary}
+\begin{chapterbridge}
+  وقتی پروپاگاندا مجوز جنگ را صادر کرد،
+  جنگ جنایاتی به بار آورد که حتی حامیانش
+  توان دفاع از آن را ندارند.
+  فصل بعد به \textbf{ابوغریب، فلوجه، بلک‌واتر}
+  و پرسش حقوق بین‌الملل می‌پردازد.
+\end{chapterbridge}
+
+\chapter{نظرسنجی‌ها و دیدگاه شهروندان عراقی: تحلیل تفصیلی}
+
+\begin{epigraphbox}
+\textit{«وقتی از یک عراقی بپرسید
+\textup{«}زندگی‌ات بهتر شده؟\textup{»}
+پاسخ بستگی دارد کی و کجا بپرسید.
+اما یک چیز ثابت است:
+\textbf{هیچ‌کس} از وضع فعلی راضی نیست.»}\\[4pt]
+\hfill --- \keyword{گزارش \lr{Gallup} عراق}، ۲۰۲۱
+\end{epigraphbox}
+
+
+% ============================================================
+% ب) نمودارهای دایره‌ای و میله‌ای نظرسنجی‌ها
+% ============================================================
+\section{بازنمایی بصری نظرسنجی‌ها: نمودارهای دایره‌ای و میله‌ای}
+
+% --- ۱: نظرسنجی «آیا حمله درست بود؟» (نمودار دایره‌ای) ---
+\subsection{آیا حمله‌ی ۲۰۰۳ درست بود؟}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\pie[
+  text=legend,
+  radius=2.5,
+  color={green!60, red!60, gray!40},
+  explode={0.1, 0, 0},
+  font=\small,
+  % % % before number=\rl,
+  after number={\%},
+]{
+  39/\rl{درست بود},
+  56/\rl{اشتباه بود},
+  5/\rl{نمی‌دانم}
+}
+\end{tikzpicture}
+\caption{آمریکایی‌ها (\lr{Gallup} ۲۰۱۸)}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\pie[
+  text=legend,
+  radius=2.5,
+  color={green!60, red!60, yellow!50, gray!40},
+  font=\small,
+  % % % before number=\rl,
+  after number={\%},
+]{
+  48/\rl{بله (عمدتاً شیعه/کرد)},
+  39/\rl{خیر (عمدتاً سنی)},
+  8/\rl{بستگی دارد},
+  5/\rl{نمی‌دانم}
+}
+\end{tikzpicture}
+\caption{عراقی‌ها (\lr{Zogby/ABC} ۲۰۰۷)}
+\end{subfigure}
+\caption{مقایسه‌ی دیدگاه آمریکایی‌ها و عراقی‌ها درباره‌ی «درست بودن» حمله}
+\label{fig:pie-was-it-right}
+\end{figure}
+
+
+% --- ۲: روند نظرسنجی آمریکایی (نمودار میله‌ای) ---
+\subsection{روند افکار عمومی آمریکا: «آیا جنگ عراق ارزشش را داشت؟»}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=15cm,
+  height=8cm,
+  ybar,
+  bar width=10pt,
+  xlabel={\rl{سال}},
+  ylabel={\rl{درصد}},
+  ymin=0, ymax=85,
+  symbolic x coords={
+    ۲۰۰۳,۲۰۰۴,۲۰۰۵,۲۰۰۶,۲۰۰۷,۲۰۰۸,
+    ۲۰۱۰,۲۰۱۳,۲۰۱۵,۲۰۱۸,۲۰۲۳
+  },
+  xtick=data,
+  xticklabel style={rotate=45, anchor=east, font=\small},
+  legend pos=north east,
+  legend style={font=\small, cells={anchor=west}},
+  title={\rl{\textbf{آیا جنگ عراق ارزش هزینه‌هایش را داشت؟ (آمریکایی‌ها)}}},
+  title style={font=\small},
+  nodes near coords,
+  nodes near coords style={font=\tiny, anchor=south},
+  every node near coord/.append style={yshift=1pt},
+]
+
+% ارزش داشت
+\addplot[fill=green!50] coordinates {
+  (۲۰۰۳,72) (۲۰۰۴,55) (۲۰۰۵,44) (۲۰۰۶,40)
+  (۲۰۰۷,36) (۲۰۰۸,35) (۲۰۱۰,38)
+  (۲۰۱۳,38) (۲۰۱۵,38) (۲۰۱۸,39) (۲۰۲۳,32)
+};
+\addlegendentry{\rl{ارزش داشت}}
+
+% ارزش نداشت
+\addplot[fill=red!50] coordinates {
+  (۲۰۰۳,23) (۲۰۰۴,40) (۲۰۰۵,52) (۲۰۰۶,55)
+  (۲۰۰۷,59) (۲۰۰۸,60) (۲۰۱۰,55)
+  (۲۰۱۳,56) (۲۰۱۵,58) (۲۰۱۸,56) (۲۰۲۳,61)
+};
+\addlegendentry{\rl{ارزش نداشت}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{روند افکار عمومی آمریکا: از حمایت ۷۲\% (۲۰۰۳) به مخالفت ۶۱\% (۲۰۲۳)}
+\label{fig:bar-us-opinion}
+\end{figure}
+
+
+% --- ۳: نظرسنجی عراقی -- «بزرگ‌ترین مشکل» (دایره‌ای) ---
+\subsection{بزرگ‌ترین مشکل عراق از دید مردم}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\pie[
+  text=legend,
+  radius=2.5,
+  color={red!60, orange!50, blue!40, purple!40, gray!30, yellow!40},
+  font=\small,
+  % % % before number=\rl,
+  after number={\%},
+]{
+  48/\rl{امنیت/خشونت},
+  20/\rl{بیکاری},
+  12/\rl{خدمات (برق/آب)},
+  10/\rl{فساد},
+  6/\rl{اشغال خارجی},
+  4/\rl{سایر}
+}
+\end{tikzpicture}
+\caption{سال ۲۰۰۷ (اوج جنگ فرقه‌ای)}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\pie[
+  text=legend,
+  radius=2.5,
+  color={purple!50, orange!50, blue!40, red!40, teal!40, gray!30},
+  font=\small,
+  % % % before number=\rl,
+  after number={\%},
+]{
+  35/\rl{فساد},
+  28/\rl{بیکاری},
+  15/\rl{خدمات ضعیف},
+  10/\rl{امنیت},
+  8/\rl{نفوذ خارجی},
+  4/\rl{سایر}
+}
+\end{tikzpicture}
+\caption{سال ۲۰۲۲ (ثبات نسبی)}
+\end{subfigure}
+\caption{تغییر اولویت‌های مردم عراق: از «امنیت» (۲۰۰۷) به «فساد» (۲۰۲۲)}
+\label{fig:pie-priorities}
+\end{figure}
+
+
+% --- ۴: اعتماد به نهادها (نمودار میله‌ای افقی) ---
+\subsection{اعتماد مردم عراق به نهادها}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=14cm,
+  height=10cm,
+  xbar,
+  bar width=8pt,
+  xlabel={\rl{درصد اعتماد}},
+  xmin=0, xmax=85,
+  symbolic y coords={
+    {\rl{احزاب سیاسی}},
+    {\rl{پارلمان}},
+    {\rl{دولت مرکزی}},
+    {\rl{قوه‌ی قضاییه}},
+    {\rl{رسانه‌ها}},
+    {\rl{نیروهای امنیتی}},
+    {\rl{مراجع دینی}},
+    {\rl{ارتش}},
+    {\rl{حشد الشعبی}}
+  },
+  ytick=data,
+  yticklabel style={font=\small},
+  legend pos=south east,
+  legend style={font=\small, cells={anchor=west}},
+  title={\rl{\textbf{اعتماد مردم عراق به نهادها (\lr{Arab Barometer} ۲۰۲۲)}}},
+  title style={font=\small},
+  nodes near coords,
+  nodes near coords style={font=\tiny, anchor=west},
+  enlarge y limits=0.1,
+]
+
+\addplot[fill=blue!50] coordinates {
+  (8,{\rl{احزاب سیاسی}})
+  (18,{\rl{پارلمان}})
+  (22,{\rl{دولت مرکزی}})
+  (25,{\rl{قوه‌ی قضاییه}})
+  (35,{\rl{رسانه‌ها}})
+  (48,{\rl{نیروهای امنیتی}})
+  (55,{\rl{مراجع دینی}})
+  (72,{\rl{ارتش}})
+  (58,{\rl{حشد الشعبی}})
+};
+
+\end{axis}
+\end{tikzpicture}
+\caption{ارتش و مراجع دینی بالاترین اعتماد؛ احزاب سیاسی و پارلمان پایین‌ترین}
+\label{fig:bar-trust}
+\end{figure}
+
+
+% --- ۵: هویت ملی در برابر فرقه‌ای (نمودار میله‌ای انباشته) ---
+\subsection{هویت‌یابی: ملی در برابر فرقه‌ای}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=14cm,
+  height=7cm,
+  ybar stacked,
+  bar width=18pt,
+  xlabel={\rl{گروه}},
+  ylabel={\rl{درصد}},
+  ymin=0, ymax=105,
+  symbolic x coords={
+    {\rl{شیعه‌ی عرب}},
+    {\rl{سنی عرب}},
+    {\rl{کردها}},
+    {\rl{میانگین کل}}
+  },
+  xtick=data,
+  xticklabel style={font=\small},
+  legend pos=outer north east,
+  legend style={font=\small, cells={anchor=west}},
+  title={\rl{\textbf{«ابتدا خود را چه می‌دانید؟» (\lr{Zogby} ۲۰۰۸)}}},
+  title style={font=\small},
+  nodes near coords,
+  nodes near coords style={font=\tiny},
+]
+
+% عراقی
+\addplot[fill=green!50] coordinates {
+  ({\rl{شیعه‌ی عرب}},40)
+  ({\rl{سنی عرب}},30)
+  ({\rl{کردها}},15)
+  ({\rl{میانگین کل}},32)
+};
+\addlegendentry{\rl{ابتدا عراقی}}
+
+% فرقه‌ای/قومی
+\addplot[fill=red!50] coordinates {
+  ({\rl{شیعه‌ی عرب}},35)
+  ({\rl{سنی عرب}},45)
+  ({\rl{کردها}},70)
+  ({\rl{میانگین کل}},45)
+};
+\addlegendentry{\rl{ابتدا شیعه/سنی/کرد}}
+
+% مسلمان
+\addplot[fill=blue!40] coordinates {
+  ({\rl{شیعه‌ی عرب}},20)
+  ({\rl{سنی عرب}},20)
+  ({\rl{کردها}},10)
+  ({\rl{میانگین کل}},18)
+};
+\addlegendentry{\rl{ابتدا مسلمان}}
+
+% سایر
+\addplot[fill=gray!30] coordinates {
+  ({\rl{شیعه‌ی عرب}},5)
+  ({\rl{سنی عرب}},5)
+  ({\rl{کردها}},5)
+  ({\rl{میانگین کل}},5)
+};
+\addlegendentry{\rl{سایر}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{هویت فرقه‌ای/قومی بر هویت ملی غالب است -- به‌ویژه در میان کردها (۷۰\%)}
+\label{fig:stacked-identity}
+\end{figure}
+
+
+% --- ۶: نمودار دایره‌ای -- دیدگاه بریتانیایی‌ها ---
+\subsection{بازنگری بریتانیایی‌ها}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+\pie[
+  text=legend,
+  radius=3,
+  color={red!60, green!50, yellow!40, gray!30},
+  explode={0.1, 0, 0, 0},
+  font=\small,
+  % % % before number=\rl,
+  after number={\%},
+]{
+  53/\rl{اشتباه بزرگی بود},
+  24/\rl{اشتباه بود اما نه بزرگ},
+  15/\rl{تصمیم درستی بود},
+  8/\rl{نمی‌دانم}
+}
+\end{tikzpicture}
+\caption{دیدگاه بریتانیایی‌ها (\lr{YouGov} ۲۰۱۶ -- پس از گزارش چیلکات): 
+۷۷\% آن را اشتباه می‌دانند}
+\label{fig:pie-uk}
+\end{figure}
+
+
+% --- ۷: نمودار «مسئول اصلی خشونت» ---
+\subsection{مسئول اصلی خشونت در عراق از دید مردم عراق}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=14cm,
+  height=7cm,
+  xbar,
+  bar width=10pt,
+  xlabel={\rl{درصد (پاسخ‌های چندگزینه‌ای)}},
+  xmin=0, xmax=75,
+  symbolic y coords={
+    {\rl{دولت عراق}},
+    {\rl{شبه‌نظامیان}},
+    {\rl{القاعده/داعش}},
+    {\rl{ایران}},
+    {\rl{عربستان}},
+    {\rl{ترکیه}},
+    {\rl{آمریکا}},
+    {\rl{بعثی‌های سابق}}
+  },
+  ytick=data,
+  yticklabel style={font=\small},
+  title={\rl{\textbf{مسئول اصلی خشونت در عراق (\lr{IIACSS} ۲۰۱۵)}}},
+  title style={font=\small},
+  nodes near coords,
+  nodes near coords style={font=\tiny, anchor=west},
+  enlarge y limits=0.1,
+]
+
+\addplot[fill=red!50] coordinates {
+  (15,{\rl{دولت عراق}})
+  (25,{\rl{شبه‌نظامیان}})
+  (45,{\rl{القاعده/داعش}})
+  (30,{\rl{ایران}})
+  (22,{\rl{عربستان}})
+  (18,{\rl{ترکیه}})
+  (65,{\rl{آمریکا}})
+  (35,{\rl{بعثی‌های سابق}})
+};
+
+\end{axis}
+\end{tikzpicture}
+\caption{آمریکا (۶۵\%) و القاعده/داعش (۴۵\%) بیشترین سرزنش را دریافت می‌کنند}
+\label{fig:bar-blame}
+\end{figure}
+
+
+% --- ۸: روند رضایت از دموکراسی (خطی) ---
+\subsection{رضایت از دموکراسی در عراق}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=14cm,
+  height=7cm,
+  xlabel={\rl{سال}},
+  ylabel={\rl{درصد}},
+  xmin=2004, xmax=2023,
+  ymin=0, ymax=70,
+  xtick={2005,2007,2009,2011,2013,2015,2017,2019,2021,2023},
+  xticklabel style={rotate=45, anchor=east, font=\small},
+  legend pos=north east,
+  legend style={font=\small, cells={anchor=west}},
+  grid=major,
+  grid style={dashed, gray!20},
+  title={\rl{\textbf{رضایت از عملکرد دموکراسی در عراق (منابع مختلف)}}},
+  title style={font=\small},
+]
+
+% راضی
+\addplot[color=green!60!black, mark=*, thick, mark size=2pt] coordinates {
+  (2005,55) (2007,30) (2009,35) (2011,38)
+  (2013,28) (2015,15) (2017,20) (2019,12)
+  (2021,18) (2022,22)
+};
+\addlegendentry{\rl{راضی/نسبتاً راضی}}
+
+% ناراضی
+\addplot[color=red!70, mark=square*, thick, mark size=2pt] coordinates {
+  (2005,30) (2007,55) (2009,50) (2011,48)
+  (2013,60) (2015,72) (2017,65) (2019,78)
+  (2021,70) (2022,65)
+};
+\addlegendentry{\rl{ناراضی/بسیار ناراضی}}
+
+% رویدادها
+\draw[dashed, gray] (axis cs:2014,0) -- (axis cs:2014,70)
+  node[above, font=\tiny] {\rl{داعش}};
+\draw[dashed, orange] (axis cs:2019,0) -- (axis cs:2019,70)
+  node[above, font=\tiny] {\rl{تشرین}};
+
+\end{axis}
+\end{tikzpicture}
+\caption{روند نزولی رضایت از دموکراسی: از ۵۵\% (۲۰۰۵) به ۲۲\% (۲۰۲۲). 
+نارضایتی در ۲۰۱۹ (جنبش تشرین) به اوج رسید (۷۸\%).}
+\label{fig:line-democracy-satisfaction}
+\end{figure}
+
+
+% ============================================================
+% بخش ۱: تصویر یکپارچه و کلان
+% ============================================================
+\section{تصویر یکپارچه: خلاصه‌ی کلان یافته‌های نظرسنجی‌ها}
+
+\subsection{مقدمه}
+بین سال‌های ۲۰۰۳ تا ۲۰۲۳، بیش از ۴۰ نظرسنجی بزرگ‌مقیاس و معتبر در عراق 
+انجام شده است. این نظرسنجی‌ها مجموعاً با بیش از \ptho{۲۰۰}{۰۰۰} نفر مصاحبه 
+کرده‌اند و یکی از غنی‌ترین مجموعه‌داده‌های افکار عمومی در یک کشور پسا-جنگی 
+را تشکیل می‌دهند. تحلیل یکپارچه‌ی این داده‌ها تصویری چندلایه از تجربه‌ی 
+زیسته‌ی عراقی‌ها ارائه می‌دهد.
+
+\subsection{هشت یافته‌ی کلان}
+
+\begin{enumerate}[rightmargin=1cm, itemsep=8pt]
+
+\item \textbf{شکاف فرقه‌ای--قومی عمیق و پایدار:}
+در تمام نظرسنجی‌ها، بزرگ‌ترین متغیر تعیین‌کننده‌ی نگرش‌ها، هویت 
+فرقه‌ای--قومی (شیعه/سنی/کرد) است. این شکاف در همه‌ی موضوعات -- از 
+ارزیابی حمله‌ی ۲۰۰۳ تا رضایت از دولت -- حاضر و مسلط است. 
+تفاوت پاسخ‌ها بین سنی‌ها و کردها گاهی تا ۷۰ درصد است.
+
+\item \textbf{سیر نزولی خوش‌بینی:}
+خوش‌بینی اولیه (۲۰۰۴--۲۰۰۵) به سرخوردگی عمیق (۲۰۰۶--۲۰۰۸) تبدیل شد. 
+بهبود جزئی (۲۰۰۹--۲۰۱۲) پس از ظهور داعش دوباره فروپاشید. 
+جنبش تشرین ۲۰۱۹ اوج سرخوردگی نسل جدید بود.
+
+\item \textbf{بی‌اعتمادی فزاینده به نهادها:}
+اعتماد به دولت، پارلمان و احزاب سیاسی به‌طور مداوم کاهش یافته، 
+از حدود ۴۰--۵۰٪ (۲۰۰۴) به کمتر از ۱۵٪ (۲۰۱۹).
+
+\item \textbf{تقاضای پایدار برای دموکراسی:}
+علی‌رغم سرخوردگی از عملکرد نظام سیاسی، اکثریت عراقی‌ها (۵۰--۶۵٪) 
+همچنان دموکراسی را بهترین نظام حکومتی می‌دانند.
+
+\item \textbf{فساد به‌مثابه دغدغه‌ی اول:}
+از ۲۰۱۰ به بعد، فساد جای امنیت را به‌عنوان اولین نگرانی عراقی‌ها گرفت.
+
+\item \textbf{مخالفت فزاینده با حضور خارجی:}
+تقاضا برای خروج نیروهای خارجی از ۴۰٪ (۲۰۰۴) به بیش از ۷۰٪ (۲۰۰۸) افزایش یافت.
+
+\item \textbf{نارضایتی اقتصادی مزمن:}
+در تمام نظرسنجی‌ها، بیش از ۶۰٪ عراقی‌ها وضعیت اقتصادی را «بد» یا «بسیار بد» ارزیابی کرده‌اند.
+
+\item \textbf{شکاف نسلی فزاینده:}
+جوانان (۱۸--۳۰ ساله) نسبت به نسل مسن‌تر بسیار ناامیدتر، انتقادی‌تر و 
+خواستار تغییرات بنیادین‌تر هستند.
+
+\end{enumerate}
+
+\subsection{جدول فراگیر: خلاصه‌ی نتایج کلیدی همه‌ی نظرسنجی‌ها}
+
+\begin{table}[H]
+\centering
+\caption{خلاصه‌ی فراگیر: پرسش‌های کلیدی و روند پاسخ‌ها (۲۰۰۴--۲۰۲۲)}
+\label{tab:mega-summary}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\scriptsize}p{2.8cm} *{7}{>{\centering\arraybackslash\scriptsize}X}}
+\toprule
+\textbf{پرسش} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۹} & \textbf{۲۰۱۳} & \textbf{۲۰۱۹} & \textbf{۲۰۲۲} \\
+\midrule
+حمله درست بود & ۳۹٪ & ۳۳٪ & ۲۲٪ & ۴۲٪ & -- & -- & -- \\
+\addlinespace
+جهت کشور درست & ۵۱٪ & ۴۴٪ & ۲۲٪ & ۴۱٪ & ۳۰٪ & ۱۵٪ & ۲۲٪ \\
+\addlinespace
+زندگی بهتر از قبل & ۵۶٪ & ۴۸٪ & ۲۶٪ & ۴۵٪ & ۳۲٪ & ۲۰٪ & ۲۸٪ \\
+\addlinespace
+وضع اقتصادی خوب & ۴۲٪ & ۳۵٪ & ۲۰٪ & ۳۵٪ & ۲۵٪ & ۱۵٪ & ۲۰٪ \\
+\addlinespace
+امنیت محل خوب & ۶۳٪ & ۵۵٪ & ۲۶٪ & ۵۸٪ & ۴۵٪ & ۵۵٪ & ۶۰٪ \\
+\addlinespace
+اعتماد به دولت & ۵۰٪ & ۴۵٪ & ۲۲٪ & ۳۵٪ & ۱۸٪ & ۱۰٪ & ۱۵٪ \\
+\addlinespace
+خواهان خروج ائتلاف & ۴۱٪ & ۶۵٪ & ۴۷٪ & ۶۵٪ & -- & ۷۵٪ & -- \\
+\addlinespace
+دموکراسی بهترین نظام & -- & ۵۵٪ & ۵۰٪ & -- & ۵۳٪ & ۵۵٪ & ۵۰٪ \\
+\addlinespace
+فساد بزرگ‌ترین مشکل & ۱۵٪ & ۲۵٪ & ۳۰٪ & ۴۵٪ & ۶۵٪ & ۸۵٪ & ۸۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نمودار روند کلان}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=16cm,
+  height=10cm,
+  xlabel={\rl{سال}},
+  ylabel={\rl{درصد}},
+  xmin=2003.5, xmax=2022.5,
+  ymin=0, ymax=90,
+  xtick={2004,2005,2006,2007,2008,2009,2011,2013,2016,2019,2022},
+  xticklabel style={rotate=45, anchor=east, font=\tiny},
+  legend pos=outer north east,
+  legend style={font=\tiny, cells={anchor=west}},
+  grid=major,
+  grid style={dashed, gray!25},
+  title={\rl{\textbf{روندهای کلان افکار عمومی عراق (۲۰۰۴--۲۰۲۲)}}},
+  title style={font=\small},
+  cycle list name=color list,
+]
+
+% جهت درست
+\addplot[color=blue, mark=*, thick, mark size=2.5pt] coordinates {
+  (2004,51) (2005,44) (2007,22) (2008,31) (2009,41) 
+  (2011,35) (2013,30) (2016,22) (2019,15) (2022,22)
+};
+\addlegendentry{\rl{جهت کشور درست}}
+
+% زندگی بهتر از قبل جنگ
+\addplot[color=red, mark=square*, thick, mark size=2.5pt] coordinates {
+  (2004,56) (2005,48) (2007,26) (2008,35) (2009,45) 
+  (2011,38) (2013,32) (2016,25) (2019,20) (2022,28)
+};
+\addlegendentry{\rl{زندگی بهتر از قبل جنگ}}
+
+% اعتماد به دولت
+\addplot[color=green!60!black, mark=triangle*, thick, mark size=2.5pt] coordinates {
+  (2004,50) (2005,45) (2007,22) (2008,28) (2009,35)
+  (2011,28) (2013,18) (2016,14) (2019,10) (2022,15)
+};
+\addlegendentry{\rl{اعتماد به دولت}}
+
+% امنیت محل خوب
+\addplot[color=orange, mark=diamond*, thick, mark size=2.5pt] coordinates {
+  (2004,63) (2005,55) (2007,26) (2008,40) (2009,58)
+  (2011,62) (2013,45) (2016,38) (2019,55) (2022,60)
+};
+\addlegendentry{\rl{امنیت محل خوب}}
+
+% فساد مهم‌ترین مشکل
+\addplot[color=purple, mark=pentagon*, thick, mark size=2.5pt, dashed] coordinates {
+  (2004,15) (2005,25) (2007,30) (2008,35) (2009,45)
+  (2011,55) (2013,65) (2016,75) (2019,85) (2022,80)
+};
+\addlegendentry{\rl{فساد مهم‌ترین مشکل}}
+
+% خطوط عمودی رویدادهای مهم
+\draw[dashed, red!60, thick] (axis cs:2006.15,0) -- (axis cs:2006.15,90)
+  node[above, font=\tiny, red!60] {\rl{بمباران سامرا}};
+\draw[dashed, orange!80, thick] (axis cs:2014.5,0) -- (axis cs:2014.5,90)
+  node[above, font=\tiny, orange!80] {\rl{داعش}};
+\draw[dashed, green!60!black, thick] (axis cs:2019.8,0) -- (axis cs:2019.8,90)
+  node[above, font=\tiny, green!60!black] {\rl{تشرین}};
+
+\end{axis}
+\end{tikzpicture}
+\caption{روندهای کلان افکار عمومی عراق -- ترکیب داده‌های نظرسنجی‌های متعدد}
+\label{fig:mega-trends}
+\end{figure}
+
+\subsection{نقشه‌ی جامع نظرسنجی‌ها}
+
+\begin{table}[H]
+\centering
+\caption{فهرست کامل نظرسنجی‌های اصلی انجام‌شده در عراق (۲۰۰۳--۲۰۲۲)}
+\label{tab:all-surveys-map}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\scriptsize}p{2.5cm} >{\scriptsize}c >{\scriptsize}c >{\scriptsize}p{2cm} >{\scriptsize}p{2.5cm} >{\scriptsize}X}
+\toprule
+\textbf{مؤسسه} & \textbf{سال‌ها} & \textbf{تعداد موج} & \textbf{نمونه هر موج} & \textbf{پوشش جغرافیایی} & \textbf{محورهای اصلی} \\
+\midrule
+\lr{ABC/BBC/NHK/ARD} & ۲۰۰۴--۲۰۰۹ & ۵ & \ptho{۲}{۰۰۰}--\ptho{۲}{۵۰۰} & ۱۸ استان & حمله، امنیت، اقتصاد، ائتلاف، دموکراسی \\
+\addlinespace
+\lr{Gallup World Poll} & ۲۰۰۳--۲۰۱۲ & ۱۰+ & \ptho{۱}{۰۰۰}+ & ملی & رضایت زندگی، امنیت، اشتغال \\
+\addlinespace
+\lr{Pew Global Attitudes} & ۲۰۰۳--۲۰۱۵ & ۸ & \ptho{۱}{۰۰۰}+ & ملی & نگرش به آمریکا، دموکراسی، اسلام \\
+\addlinespace
+\lr{IRI} & ۲۰۰۳--۲۰۱۳ & ۱۲+ & \ptho{۳}{۰۰۰}+ & ملی + استانی & عملکرد دولت، خدمات، سیاست \\
+\addlinespace
+\lr{NDI} & ۲۰۰۴--۲۰۰۹ & ۸ & \ptho{۲}{۰۰۰}+ & ملی & رفتار انتخاباتی، احزاب \\
+\addlinespace
+\lr{Arab Barometer} & ۲۰۰۶--۲۰۲۲ & ۷ & \ptho{۱}{۲۰۰}+ & ملی & دموکراسی، اعتماد، ارزش‌ها \\
+\addlinespace
+\lr{WVS} & ۲۰۰۴، ۲۰۱۳ & ۲ & \ptho{۲}{۳۰۰}+ & ملی & ارزش‌ها، هویت، مذهب \\
+\addlinespace
+\lr{Oxford Research Intl.} & ۲۰۰۳--۲۰۰۴ & ۳ & \ptho{۲}{۵۰۰}+ & ملی & اولین نظرسنجی‌ها پس از سقوط \\
+\addlinespace
+\lr{D3 Systems/KA} & ۲۰۰۴--۲۰۱۱ & ۲۰+ & \ptho{۲}{۰۰۰}+ & ملی & برای \lr{State Dept.} و ارتش آمریکا \\
+\addlinespace
+\lr{ICRSS Baghdad} & ۲۰۰۸--۲۰۲۲ & ۱۰+ & \ptho{۱}{۵۰۰}+ & عمدتاً بغداد & مسائل شهری، حکمرانی \\
+\addlinespace
+\lr{Zogby International} & ۲۰۰۴--۲۰۰۸ & ۴ & \ptho{۱}{۰۰۰}+ & ملی & نگرش عراقی‌ها و آمریکایی‌ها \\
+\addlinespace
+\lr{UNDP Iraq Survey} & ۲۰۰۴، ۲۰۱۱ & ۲ & \ptho{۲۰}{۰۰۰}+ & ملی & فقر، اشتغال، خدمات \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۲: نظرسنجی‌های ABC/BBC/NHK -- تفصیلی‌ترین سری
+% ============================================================
+\section{نظرسنجی‌های \lr{ABC News/BBC/NHK/ARD} (۲۰۰۴--۲۰۰۹)}
+
+\subsection{روش‌شناسی}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات روش‌شناختی نظرسنجی‌های \lr{ABC/BBC}}
+\label{tab:abc-methodology}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+سفارش‌دهنده & \lr{ABC News} (آمریکا)، \lr{BBC} (بریتانیا)، \lr{NHK} (ژاپن)، \lr{ARD} (آلمان) \\
+مجری میدانی & \lr{D3 Systems} (آمریکا) و \lr{KA Research Ltd.} (ترکیه) \\
+روش نمونه‌گیری & خوشه‌ای چندمرحله‌ای تصادفی (\lr{Multi-stage Cluster Sampling}) \\
+حجم نمونه & \ptho{۲}{۰۰۰} تا \ptho{۲}{۵۰۰} در هر موج \\
+پوشش جغرافیایی & هر ۱۸ استان (محدودیت‌هایی در مناطق ناامن) \\
+شیوه‌ی مصاحبه & حضوری خانه‌به‌خانه (\lr{Face-to-face}) \\
+زبان & عربی و کردی \\
+حاشیه‌ی خطا & $\pm$ ۲.۵٪ (در سطح اطمینان ۹۵٪) \\
+موج‌ها & فوریه ۲۰۰۴، نوامبر ۲۰۰۵، مارس ۲۰۰۷، مارس ۲۰۰۸، مارس ۲۰۰۹ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{ترکیب جمعیت‌شناختی نمونه‌ها}
+
+\begin{table}[H]
+\centering
+\caption{ترکیب جمعیت‌شناختی نمونه‌ی نظرسنجی \lr{ABC/BBC} ۲۰۰۹}
+\label{tab:abc-demographics}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X c}
+\toprule
+\textbf{متغیر} & \textbf{دسته‌بندی} & \textbf{درصد نمونه} \\
+\midrule
+\multirow{3}{*}{قومیت--مذهب} & عرب شیعه & ۵۱٪ \\
+ & عرب سنی & ۲۵٪ \\
+ & کرد & ۲۱٪ \\
+ & سایر (ترکمن، مسیحی، ...) & ۳٪ \\
+\midrule
+\multirow{4}{*}{سن} & ۱۸--۲۹ & ۳۵٪ \\
+ & ۳۰--۴۴ & ۳۳٪ \\
+ & ۴۵--۵۹ & ۲۱٪ \\
+ & ۶۰+ & ۱۱٪ \\
+\midrule
+\multirow{2}{*}{جنسیت} & مرد & ۵۲٪ \\
+ & زن & ۴۸٪ \\
+\midrule
+\multirow{4}{*}{تحصیلات} & بی‌سواد/ابتدایی & ۳۰٪ \\
+ & راهنمایی/دبیرستان & ۳۸٪ \\
+ & دیپلم & ۱۸٪ \\
+ & دانشگاهی & ۱۴٪ \\
+\midrule
+\multirow{3}{*}{منطقه} & شهری & ۶۸٪ \\
+ & نیمه‌شهری & ۱۵٪ \\
+ & روستایی & ۱۷٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش ۱: آیا حمله‌ی ۲۰۰۳ درست بود؟}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Thinking about any hardships you might have suffered since the US/British invasion, do you personally think that ousting Saddam Hussein was worth it or not?''}
+
+\textit{با در نظر گرفتن سختی‌هایی که ممکن است از زمان حمله‌ی آمریکا/بریتانیا تحمل کرده باشید، آیا شخصاً فکر می‌کنید سرنگونی صدام حسین ارزشش را داشت یا نه؟}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا سرنگونی صدام ارزشش را داشت؟» -- نتایج تفصیلی}
+\label{tab:abc-q1-detail}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{گروه} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{کل}} \\
+بله، ارزش داشت & ۴۸٪ & ۴۱٪ & ۳۴٪ & ۴۲٪ & ۶۱٪ \\
+خیر، ارزش نداشت & ۳۹٪ & ۴۷٪ & ۵۷٪ & ۵۰٪ & ۳۱٪ \\
+نمی‌دانم & ۱۳٪ & ۱۲٪ & ۹٪ & ۸٪ & ۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{تفکیک قومی--مذهبی: «بله، ارزش داشت»}} \\
+عرب شیعه & ۵۷٪ & ۵۲٪ & ۴۲٪ & ۵۵٪ & ۷۵٪ \\
+عرب سنی & ۱۶٪ & ۱۲٪ & ۷٪ & ۹٪ & ۲۳٪ \\
+کرد & ۸۰٪ & ۷۵٪ & ۷۰٪ & ۷۲٪ & ۸۵٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{تفکیک سنی: «بله، ارزش داشت»}} \\
+۱۸--۲۹ & ۴۵٪ & ۳۸٪ & ۳۰٪ & ۳۸٪ & ۵۷٪ \\
+۳۰--۴۴ & ۵۰٪ & ۴۲٪ & ۳۵٪ & ۴۳٪ & ۶۲٪ \\
+۴۵--۵۹ & ۵۲٪ & ۴۵٪ & ۳۸٪ & ۴۵٪ & ۶۵٪ \\
+۶۰+ & ۴۸٪ & ۴۰٪ & ۳۲٪ & ۴۲٪ & ۶۰٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{تفکیک جنسیتی: «بله، ارزش داشت»}} \\
+مرد & ۵۰٪ & ۴۲٪ & ۳۵٪ & ۴۳٪ & ۶۲٪ \\
+زن & ۴۶٪ & ۴۰٪ & ۳۳٪ & ۴۱٪ & ۵۹٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=15cm,
+  height=9cm,
+  xlabel={\rl{سال}},
+  ylabel={\rl{درصد «بله، ارزش داشت»}},
+  xmin=2003.5, xmax=2009.5,
+  ymin=0, ymax=95,
+  xtick={2004,2005,2007,2008,2009},
+  legend pos=outer north east,
+  legend style={font=\small, cells={anchor=west}},
+  grid=major,
+  grid style={dashed, gray!25},
+  title={\rl{\textbf{«آیا سرنگونی صدام ارزشش را داشت؟» -- تفکیک قومی--مذهبی}}},
+  title style={font=\normalsize},
+]
+
+\addplot[color=green!60!black, mark=*, very thick, mark size=3pt] coordinates {
+  (2004,80) (2005,75) (2007,70) (2008,72) (2009,85)
+};
+\addlegendentry{\rl{کردها}}
+
+\addplot[color=blue, mark=square*, very thick, mark size=3pt] coordinates {
+  (2004,57) (2005,52) (2007,42) (2008,55) (2009,75)
+};
+\addlegendentry{\rl{شیعیان}}
+
+\addplot[color=black, mark=diamond*, very thick, mark size=3pt] coordinates {
+  (2004,48) (2005,41) (2007,34) (2008,42) (2009,61)
+};
+\addlegendentry{\rl{کل}}
+
+\addplot[color=red, mark=triangle*, very thick, mark size=3pt] coordinates {
+  (2004,16) (2005,12) (2007,7) (2008,9) (2009,23)
+};
+\addlegendentry{\rl{سنی‌ها}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{«آیا سرنگونی صدام ارزشش را داشت؟» -- روند پنج‌ساله}
+\label{fig:abc-q1-trend}
+\end{figure}
+
+\infobox{boxblue}{تحلیل پرسش ۱}{
+\begin{itemize}[rightmargin=0.5cm]
+\item \textbf{نقطه‌ی عطف ۲۰۰۷:} پایین‌ترین میزان رضایت، مصادف با اوج جنگ فرقه‌ای
+\item \textbf{بازگشت ۲۰۰۹:} بهبود امنیت پس از \lr{Surge} و کاهش خشونت
+\item \textbf{شکاف سنی--کرد:} اختلاف ۶۲ درصدی بین کردها (۸۵٪) و سنی‌ها (۲۳٪) در ۲۰۰۹
+\item \textbf{جنسیت:} تفاوت ناچیز (۲--۳٪)
+\item \textbf{سن:} نسل میانسال (۳۰--۵۹) کمی مثبت‌تر از جوانان
+\end{itemize}
+}
+
+
+\subsection{پرسش ۲: جهت کلی کشور}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Do you think things in Iraq today are going in the right direction or the wrong direction?''}
+
+\textit{آیا فکر می‌کنید امور در عراق امروز در جهت درست پیش می‌رود یا جهت نادرست؟}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«جهت کشور درست یا نادرست؟» -- نتایج تفصیلی}
+\label{tab:abc-q2-detail}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{گروه} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{کل}} \\
+جهت درست & ۵۱٪ & ۴۴٪ & ۲۲٪ & ۳۱٪ & ۴۱٪ \\
+جهت نادرست & ۳۶٪ & ۴۵٪ & ۶۷٪ & ۵۹٪ & ۵۱٪ \\
+نمی‌دانم & ۱۳٪ & ۱۱٪ & ۱۱٪ & ۱۰٪ & ۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«جهت درست» -- تفکیک قومی--مذهبی}} \\
+عرب شیعه & ۵۵٪ & ۵۰٪ & ۲۲٪ & ۳۹٪ & ۴۸٪ \\
+عرب سنی & ۲۵٪ & ۱۵٪ & ۵٪ & ۹٪ & ۱۸٪ \\
+کرد & ۷۵٪ & ۷۳٪ & ۶۵٪ & ۵۸٪ & ۶۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«جهت درست» -- تفکیک استانی (نمونه)}} \\
+بغداد & ۴۸٪ & ۳۸٪ & ۱۵٪ & ۲۵٪ & ۳۵٪ \\
+بصره & ۵۲٪ & ۴۵٪ & ۲۵٪ & ۳۸٪ & ۴۸٪ \\
+نجف & ۶۰٪ & ۵۵٪ & ۳۰٪ & ۴۵٪ & ۵۵٪ \\
+انبار & ۱۸٪ & ۸٪ & ۳٪ & ۶٪ & ۱۵٪ \\
+صلاح‌الدین & ۲۰٪ & ۱۲٪ & ۴٪ & ۸٪ & ۱۲٪ \\
+اربیل & ۸۰٪ & ۷۸٪ & ۷۰٪ & ۶۵٪ & ۷۵٪ \\
+سلیمانیه & ۷۲٪ & ۶۸٪ & ۶۰٪ & ۵۲٪ & ۶۵٪ \\
+دیالی & ۳۵٪ & ۲۵٪ & ۸٪ & ۱۲٪ & ۲۲٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\subsection{پرسش ۳: مقایسه‌ی زندگی با قبل از جنگ}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Compared to the time before the war in spring 2003, how would you say things overall in your life are going -- much better, somewhat better, about the same, somewhat worse, or much worse?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«مقایسه‌ی زندگی با قبل از جنگ» -- نتایج تفصیلی پنج‌گزینه‌ای}
+\label{tab:abc-q3-fivescale}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{پاسخ} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{کل}} \\
+بسیار بهتر & ۲۲٪ & ۱۸٪ & ۸٪ & ۱۲٪ & ۱۹٪ \\
+تاحدی بهتر & ۳۴٪ & ۳۰٪ & ۱۸٪ & ۲۳٪ & ۲۸٪ \\
+بدون تغییر & ۱۵٪ & ۱۶٪ & ۱۸٪ & ۲۰٪ & ۲۰٪ \\
+تاحدی بدتر & ۱۵٪ & ۱۸٪ & ۲۵٪ & ۲۲٪ & ۱۸٪ \\
+بسیار بدتر & ۱۴٪ & ۱۸٪ & ۳۱٪ & ۲۳٪ & ۱۵٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«بهتر» (مجموع) -- تفکیک قومی--مذهبی}} \\
+عرب شیعه & ۶۵٪ & ۵۸٪ & ۳۲٪ & ۴۵٪ & ۵۸٪ \\
+عرب سنی & ۲۵٪ & ۱۸٪ & ۵٪ & ۱۰٪ & ۲۲٪ \\
+کرد & ۷۵٪ & ۷۲٪ & ۶۰٪ & ۵۵٪ & ۷۰٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«بهتر» (مجموع) -- تفکیک تحصیلاتی}} \\
+بی‌سواد/ابتدایی & ۵۵٪ & ۴۵٪ & ۲۲٪ & ۳۲٪ & ۴۵٪ \\
+راهنمایی/دبیرستان & ۵۸٪ & ۵۰٪ & ۲۵٪ & ۳۵٪ & ۴۸٪ \\
+دیپلم & ۵۵٪ & ۴۸٪ & ۲۸٪ & ۳۸٪ & ۵۰٪ \\
+دانشگاهی & ۵۲٪ & ۴۵٪ & ۳۰٪ & ۴۰٪ & ۵۲٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش ۴: ارزیابی امنیت}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``How would you rate the security situation in your area today -- very good, quite good, quite bad, or very bad?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«ارزیابی امنیت محل زندگی» -- نتایج تفصیلی}
+\label{tab:abc-q4-security}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{پاسخ} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{کل}} \\
+بسیار خوب & ۲۵٪ & ۲۰٪ & ۸٪ & ۱۲٪ & ۲۲٪ \\
+نسبتاً خوب & ۳۸٪ & ۳۵٪ & ۱۸٪ & ۲۸٪ & ۳۶٪ \\
+نسبتاً بد & ۲۲٪ & ۲۵٪ & ۳۵٪ & ۳۰٪ & ۲۵٪ \\
+بسیار بد & ۱۵٪ & ۲۰٪ & ۳۹٪ & ۳۰٪ & ۱۷٪ \\
+\midrule
+مجموع «خوب» & ۶۳٪ & ۵۵٪ & ۲۶٪ & ۴۰٪ & ۵۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{مجموع «خوب» -- تفکیک قومی--مذهبی}} \\
+عرب شیعه & ۶۰٪ & ۵۰٪ & ۲۰٪ & ۳۸٪ & ۵۵٪ \\
+عرب سنی & ۴۵٪ & ۳۵٪ & ۱۲٪ & ۲۵٪ & ۴۰٪ \\
+کرد & ۸۸٪ & ۸۵٪ & ۷۸٪ & ۷۵٪ & ۸۵٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{مجموع «خوب» -- تفکیک شهری/روستایی}} \\
+شهری & ۵۸٪ & ۴۸٪ & ۲۲٪ & ۳۵٪ & ۵۳٪ \\
+روستایی & ۷۲٪ & ۶۸٪ & ۳۵٪ & ۵۰٪ & ۶۸٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{«آیا در خیابان احساس امنیت می‌کنید؟» -- بله}} \\
+کل & ۶۷٪ & ۵۸٪ & ۲۶٪ & ۴۳٪ & ۶۲٪ \\
+بغداد & ۵۵٪ & ۴۰٪ & ۱۲٪ & ۳۰٪ & ۵۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\subsection{پرسش ۵: نگرش به نیروهای ائتلاف}
+
+\textbf{متن دقیق پرسش‌ها (سه سؤال مرتبط):}
+\begin{quote}
+\lr{Q5a: ``Do you think the presence of US forces in Iraq is making the security situation better, having no effect, or making it worse?''}
+
+\lr{Q5b: ``How much confidence do you have in US/UK forces -- a great deal, quite a lot, not very much, or none at all?''}
+
+\lr{Q5c: ``Do you support or oppose the presence of coalition forces in Iraq?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{نگرش به نیروهای ائتلاف -- نتایج تفصیلی}
+\label{tab:abc-q5-forces}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{پاسخ} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{\lr{Q5a}: تأثیر حضور آمریکا بر امنیت}} \\
+بهتر می‌کند & ۳۲٪ & ۲۵٪ & ۱۸٪ & ۲۲٪ & ۲۶٪ \\
+بی‌تأثیر & ۲۳٪ & ۲۰٪ & ۱۵٪ & ۱۸٪ & ۲۰٪ \\
+بدتر می‌کند & ۴۵٪ & ۵۵٪ & ۶۷٪ & ۶۰٪ & ۵۴٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{\lr{Q5b}: اعتماد به نیروهای آمریکا/بریتانیا (مجموع «اعتماد»)}} \\
+کل & ۲۵٪ & ۱۸٪ & ۱۲٪ & ۱۵٪ & ۱۸٪ \\
+شیعه & ۲۸٪ & ۲۰٪ & ۱۲٪ & ۱۶٪ & ۲۰٪ \\
+سنی & ۸٪ & ۵٪ & ۲٪ & ۴٪ & ۶٪ \\
+کرد & ۴۵٪ & ۳۸٪ & ۳۵٪ & ۳۲٪ & ۳۵٪ \\
+\midrule
+\multicolumn{6}{r}{\textbf{\lr{Q5c}: مخالفت با حضور ائتلاف}} \\
+مخالف & ۵۱٪ & ۶۵٪ & ۷۸٪ & ۷۲٪ & ۶۵٪ \\
+موافق & ۳۹٪ & ۲۵٪ & ۱۲٪ & ۲۰٪ & ۲۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش ۶: مشروعیت حملات علیه نیروهای ائتلاف}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Do you think attacks on coalition forces are acceptable or unacceptable?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا حملات علیه نیروهای ائتلاف قابل‌قبول است؟»}
+\label{tab:abc-q6-attacks}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{گروه} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{6}{r}{\textbf{«قابل‌قبول»}} \\
+کل & ۱۷٪ & ۴۷٪ & ۵۷٪ & ۴۲٪ & ۳۱٪ \\
+عرب شیعه & ۱۰٪ & ۴۰٪ & ۵۰٪ & ۳۵٪ & ۲۲٪ \\
+عرب سنی & ۴۵٪ & ۸۵٪ & ۹۳٪ & ۸۰٪ & ۶۵٪ \\
+کرد & ۲٪ & ۵٪ & ۸٪ & ۵٪ & ۳٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxred}{یافته‌ی مهم: رادیکالیزاسیون سنی‌ها}{
+حمایت سنی‌ها از حملات علیه نیروهای ائتلاف از ۴۵٪ (۲۰۰۴) به ۹۳٪ (۲۰۰۷) 
+رسید. این رقم نشان‌دهنده‌ی عمق احساس تهمیش و اشغال در جامعه‌ی سنی عراق است 
+و زمینه‌ساز پیوستن بسیاری از سنی‌ها به القاعده و بعدها داعش شد.
+}
+
+\subsection{پرسش ۷: اعتماد به نهادها}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``How much confidence do you have in each of the following institutions?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{اعتماد به نهادها (مجموع «زیاد» و «تاحدی»)}
+\label{tab:abc-q7-institutions}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{نهاد} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+ارتش عراق & ۵۰٪ & ۵۵٪ & ۵۲٪ & ۶۵٪ & ۷۳٪ \\
+پلیس عراق & ۴۵٪ & ۴۸٪ & ۴۰٪ & ۵۵٪ & ۶۸٪ \\
+دولت مرکزی & ۵۰٪ & ۴۵٪ & ۲۲٪ & ۳۸٪ & ۵۲٪ \\
+پارلمان & -- & ۳۸٪ & ۱۸٪ & ۲۸٪ & ۳۸٪ \\
+احزاب سیاسی & ۳۵٪ & ۲۸٪ & ۱۲٪ & ۲۰٪ & ۲۵٪ \\
+مراجع دینی & ۷۰٪ & ۶۵٪ & ۵۸٪ & ۶۰٪ & ۶۲٪ \\
+نیروهای آمریکایی & ۲۵٪ & ۱۸٪ & ۱۲٪ & ۱۵٪ & ۱۸٪ \\
+سازمان ملل & ۴۵٪ & ۴۰٪ & ۳۰٪ & ۳۵٪ & ۳۸٪ \\
+رسانه‌ها & ۵۵٪ & ۵۰٪ & ۴۵٪ & ۴۸٪ & ۵۲٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش ۸: اولویت‌های مردم}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``What do you think is the single biggest problem facing your country?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{مهم‌ترین مشکل کشور از نظر مردم}
+\label{tab:abc-q8-priorities}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{مشکل} & \textbf{۲۰۰۴} & \textbf{۲۰۰۵} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+امنیت/خشونت & ۴۵٪ & ۵۰٪ & ۵۵٪ & ۴۵٪ & ۲۵٪ \\
+بیکاری & ۲۰٪ & ۱۸٪ & ۱۲٪ & ۱۵٪ & ۲۲٪ \\
+خدمات عمومی (برق، آب) & ۱۵٪ & ۱۲٪ & ۸٪ & ۱۲٪ & ۱۸٪ \\
+حضور خارجی/اشغال & ۸٪ & ۱۰٪ & ۱۵٪ & ۱۰٪ & ۵٪ \\
+فساد & ۵٪ & ۵٪ & ۵٪ & ۱۰٪ & ۲۰٪ \\
+تروریسم & ۵٪ & ۳٪ & ۳٪ & ۵٪ & ۵٪ \\
+تنش فرقه‌ای & ۲٪ & ۲٪ & ۲٪ & ۳٪ & ۵٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش ۹: هویت ملی در برابر هویت فرقه‌ای}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Which of the following do you identify with most -- being Iraqi, being Muslim, being [Shia/Sunni/Kurd], or being Arab/Kurdish?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{اولویت هویتی عراقی‌ها}
+\label{tab:abc-q9-identity}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{3}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{هویت اول} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} \\
+\midrule
+\multicolumn{4}{r}{\textbf{کل}} \\
+عراقی & ۲۸٪ & ۳۳٪ & ۴۱٪ \\
+مسلمان & ۳۵٪ & ۳۰٪ & ۲۸٪ \\
+مذهب (شیعه/سنی) & ۲۲٪ & ۲۰٪ & ۱۵٪ \\
+قومیت (عرب/کرد) & ۱۵٪ & ۱۷٪ & ۱۶٪ \\
+\midrule
+\multicolumn{4}{r}{\textbf{هویت «عراقی» -- تفکیک قومی--مذهبی}} \\
+شیعه & ۳۰٪ & ۳۵٪ & ۴۵٪ \\
+سنی & ۳۵٪ & ۴۲٪ & ۵۰٪ \\
+کرد & ۸٪ & ۱۰٪ & ۱۲٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\infobox{boxgreen}{نکته‌ی مثبت}{
+روند افزایشی هویت «عراقی» (از ۲۸٪ در ۲۰۰۷ به ۴۱٪ در ۲۰۰۹) نشان‌دهنده‌ی 
+تقویت تدریجی ناسیونالیسم عراقی پس از فروکش کردن خشونت فرقه‌ای است. 
+این روند بعدها در جنبش تشرین ۲۰۱۹ با شعار «نرید وطن» به اوج خود رسید.
+}
+
+
+% ============================================================
+% بخش ۳: نظرسنجی‌های گالوپ
+% ============================================================
+\section{نظرسنجی‌های \lr{Gallup World Poll} (۲۰۰۳--۲۰۱۲)}
+
+\subsection{روش‌شناسی}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات روش‌شناختی نظرسنجی‌های گالوپ در عراق}
+\label{tab:gallup-methodology}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+سفارش‌دهنده/مجری & \lr{Gallup Organization} (واشنگتن) \\
+روش نمونه‌گیری & خوشه‌ای چندمرحله‌ای تصادفی \\
+حجم نمونه & \ptho{۱}{۰۰۰} تا \ptho{۳}{۰۰۰} در هر موج \\
+پوشش & ملی (با محدودیت‌هایی در مناطق ناامن) \\
+شیوه‌ی مصاحبه & حضوری خانه‌به‌خانه \\
+حاشیه‌ی خطا & $\pm$ ۳--۴٪ \\
+ویژگی خاص & بخشی از \lr{Gallup World Poll} -- امکان مقایسه با ۱۴۰+ کشور \\
+سال‌های اجرا & ۲۰۰۳ (محدود)، ۲۰۰۴، ۲۰۰۵، ۲۰۰۶، ۲۰۰۷، ۲۰۰۸، ۲۰۰۹، ۲۰۱۰، ۲۰۱۱، ۲۰۱۲ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{نردبان زندگی کنتریل (\lr{Cantril Self-Anchoring Scale})}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Please imagine a ladder with steps numbered from zero at the bottom to ten at the top. The top of the ladder represents the best possible life for you and the bottom represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time?''}
+
+\textit{لطفاً نردبانی را تصور کنید با پله‌هایی از صفر (پایین) تا ده (بالا). 
+بالای نردبان بهترین زندگی ممکن و پایین آن بدترین زندگی ممکن شماست. 
+در حال حاضر روی کدام پله ایستاده‌اید؟}
+
+\lr{``On which step do you think you will stand about five years from now?''}
+
+\textit{فکر می‌کنید پنج سال دیگر روی کدام پله خواهید بود؟}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{نردبان زندگی کنتریل -- عراق در مقایسه‌ی جهانی}
+\label{tab:gallup-cantril}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{6}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۶} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} \\
+\midrule
+\multicolumn{7}{r}{\textbf{زندگی فعلی (میانگین از ۱۰)}} \\
+عراق & \pdec{۴}{۱} & \pdec{۳}{۸} & \pdec{۴}{۲} & \pdec{۴}{۵} & \pdec{۴}{۷} & \pdec{۴}{۶} \\
+میانگین جهانی & \pdec{۵}{۳} & \pdec{۵}{۳} & \pdec{۵}{۴} & \pdec{۵}{۳} & \pdec{۵}{۴} & \pdec{۵}{۴} \\
+اردن (مقایسه) & \pdec{۵}{۵} & \pdec{۵}{۴} & \pdec{۵}{۱} & \pdec{۵}{۳} & \pdec{۵}{۴} & \pdec{۵}{۰} \\
+افغانستان (مقایسه) & \pdec{۳}{۸} & \pdec{۳}{۹} & \pdec{۴}{۰} & \pdec{۴}{۲} & \pdec{۴}{۳} & \pdec{۴}{۴} \\
+\midrule
+\multicolumn{7}{r}{\textbf{زندگی ۵ سال آینده (میانگین از ۱۰)}} \\
+عراق & \pdec{۵}{۵} & \pdec{۵}{۲} & \pdec{۵}{۸} & \pdec{۶}{۰} & \pdec{۶}{۱} & \pdec{۵}{۸} \\
+میانگین جهانی & \pdec{۶}{۶} & \pdec{۶}{۵} & \pdec{۶}{۶} & \pdec{۶}{۶} & \pdec{۶}{۶} & \pdec{۶}{۶} \\
+\midrule
+\multicolumn{7}{r}{\textbf{طبقه‌بندی گالوپ}} \\
+عراق: شکوفا (\lr{Thriving}) & ۱۷٪ & ۱۲٪ & ۱۶٪ & ۲۲٪ & ۲۳٪ & ۲۲٪ \\
+عراق: دست‌وپنجه (\lr{Struggling}) & ۶۲٪ & ۶۰٪ & ۶۰٪ & ۵۸٪ & ۵۸٪ & ۵۹٪ \\
+عراق: رنج‌کشیده (\lr{Suffering}) & ۲۱٪ & ۲۸٪ & ۲۴٪ & ۲۰٪ & ۱۹٪ & ۱۹٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=15cm,
+  height=8cm,
+  xlabel={\rl{سال}},
+  ylabel={\rl{میانگین (از ۱۰)}},
+  xmin=2005.5, xmax=2011.5,
+  ymin=3, ymax=7.5,
+  xtick={2006,2007,2008,2009,2010,2011},
+  legend pos=north east,
+  legend style={font=\small},
+  grid=major,
+  grid style={dashed, gray!25},
+  title={\rl{\textbf{نردبان زندگی کنتریل: عراق در مقایسه}}},
+]
+
+% عراق - فعلی
+\addplot[color=red, mark=*, very thick, mark size=3pt] coordinates {
+  (2006,4.1) (2007,3.8) (2008,4.2) (2009,4.5) (2010,4.7) (2011,4.6)
+};
+\addlegendentry{\rl{عراق -- فعلی}}
+
+% عراق - آینده
+\addplot[color=red, mark=*, very thick, mark size=3pt, dashed] coordinates {
+  (2006,5.5) (2007,5.2) (2008,5.8) (2009,6.0) (2010,6.1) (2011,5.8)
+};
+\addlegendentry{\rl{عراق -- ۵ سال آینده}}
+
+% میانگین جهانی
+\addplot[color=gray, mark=square*, thick, mark size=2pt] coordinates {
+  (2006,5.3) (2007,5.3) (2008,5.4) (2009,5.3) (2010,5.4) (2011,5.4)
+};
+\addlegendentry{\rl{میانگین جهانی -- فعلی}}
+
+% افغانستان
+\addplot[color=orange, mark=triangle*, thick, mark size=2pt, dotted] coordinates {
+  (2006,3.8) (2007,3.9) (2008,4.0) (2009,4.2) (2010,4.3) (2011,4.4)
+};
+\addlegendentry{\rl{افغانستان -- فعلی}}
+
+\end{axis}
+\end{tikzpicture}
+\caption{نردبان زندگی کنتریل: مقایسه‌ی عراق با میانگین جهانی و افغانستان}
+\label{fig:gallup-cantril}
+\end{figure}
+
+\subsection{شاخص‌های کلیدی گالوپ -- عراق}
+
+\subsubsection{احساس امنیت شخصی}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``Do you feel safe walking alone at night in the city or area where you live?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«آیا شب‌ها احساس امنیت می‌کنید؟» -- گالوپ}
+\label{tab:gallup-safety}
+\begin{tabularx}{\textwidth}{>{\bfseries}r *{6}{>{\centering\arraybackslash}X}}
+\toprule
+ & \textbf{۲۰۰۶} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} \\
+\midrule
+بله & ۲۵٪ & ۱۸٪ & ۲۶٪ & ۴۲٪ & ۴۷٪ & ۴۸٪ \\
+خیر & ۷۵٪ & ۸۲٪ & ۷۴٪ & ۵۸٪ & ۵۳٪ & ۵۲٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{«بله» -- تفکیک جنسیتی}} \\
+مرد & ۳۲٪ & ۲۲٪ & ۳۲٪ & ۵۰٪ & ۵۵٪ & ۵۵٪ \\
+زن & ۱۸٪ & ۱۴٪ & ۲۰٪ & ۳۴٪ & ۳۹٪ & ۴۱٪ \\
+\midrule
+مقایسه: میانگین جهانی & ۶۰٪ & ۶۰٪ & ۶۱٪ & ۶۲٪ & ۶۳٪ & ۶۳٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{تجربه‌ی شخصی خشونت}
+
+\textbf{متن دقیق پرسش‌ها:}
+\begin{quote}
+\lr{``Within the last 12 months, have you or a family member been a victim of assault or mugging?''}
+
+\lr{``Have you or a family member had money or property stolen?''}
+
+\lr{``Was there a time in the last 12 months when you did not have enough money to buy food that you or your family needed?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{تجربه‌ی خشونت و محرومیت -- گالوپ}
+\label{tab:gallup-violence}
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{5}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{تجربه} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} \\
+\midrule
+قربانی حمله/سرقت بوده‌ام & ۳۲٪ & ۲۵٪ & ۱۸٪ & ۱۵٪ & ۱۳٪ \\
+سرقت اموال & ۲۸٪ & ۲۲٪ & ۱۸٪ & ۱۵٪ & ۱۲٪ \\
+پول کافی برای غذا نداشته‌ام & ۳۵٪ & ۲۸٪ & ۲۵٪ & ۲۲٪ & ۲۰٪ \\
+عضو خانواده در جنگ کشته شده & -- & ۲۲٪ & ۲۰٪ & ۱۸٪ & ۱۸٪ \\
+مجبور به ترک خانه شده‌ام & -- & ۱۸٪ & ۱۵٪ & ۱۲٪ & ۱۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{ارزیابی اقتصادی}
+
+\textbf{متن دقیق پرسش‌ها:}
+\begin{quote}
+\lr{``Right now, do you think that economic conditions in the city or area where you live, as a whole, are getting better or getting worse?''}
+
+\lr{``How would you rate economic conditions in this country today -- excellent, good, only fair, or poor?''}
+
+\lr{``Are you satisfied or dissatisfied with your standard of living?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{ارزیابی اقتصادی -- نتایج تفصیلی گالوپ}
+\label{tab:gallup-economy}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+ & \textbf{۲۰۰۶} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} \\
+\midrule
+\multicolumn{7}{r}{\textbf{اقتصاد محلی بهتر می‌شود}} \\
+کل & ۲۲٪ & ۱۸٪ & ۲۸٪ & ۳۵٪ & ۳۸٪ & ۳۲٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{وضعیت اقتصادی کشور «عالی/خوب»}} \\
+کل & ۱۲٪ & ۱۰٪ & ۱۵٪ & ۲۰٪ & ۲۲٪ & ۱۸٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{رضایت از سطح زندگی}} \\
+کل & ۵۵٪ & ۴۸٪ & ۵۲٪ & ۵۸٪ & ۶۰٪ & ۵۸٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{بازار کار محلی خوب}} \\
+کل & ۱۲٪ & ۱۰٪ & ۱۵٪ & ۱۸٪ & ۲۰٪ & ۱۸٪ \\
+مقایسه: اردن & ۲۵٪ & ۲۲٪ & ۲۰٪ & ۱۸٪ & ۲۰٪ & ۲۲٪ \\
+مقایسه: جهانی & ۳۵٪ & ۳۲٪ & ۳۰٪ & ۲۸٪ & ۲۸٪ & ۳۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{اعتماد به حکومت و آزادی}
+
+\textbf{متن دقیق پرسش‌ها:}
+\begin{quote}
+\lr{``Do you have confidence in the national government?''}
+
+\lr{``Do you have confidence in the honesty of elections?''}
+
+\lr{``Are you satisfied with your freedom to choose what you do with your life?''}
+
+\lr{``In this country, are you satisfied or dissatisfied with efforts to deal with the poor?''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{اعتماد و آزادی -- گالوپ}
+\label{tab:gallup-trust-freedom}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+ & \textbf{۲۰۰۶} & \textbf{۲۰۰۷} & \textbf{۲۰۰۸} & \textbf{۲۰۰۹} & \textbf{۲۰۱۰} & \textbf{۲۰۱۱} \\
+\midrule
+اعتماد به دولت ملی & ۴۰٪ & ۲۵٪ & ۳۲٪ & ۴۰٪ & ۴۲٪ & ۳۵٪ \\
+اعتماد به صداقت انتخابات & -- & ۲۸٪ & ۳۰٪ & ۳۵٪ & ۳۲٪ & ۳۰٪ \\
+رضایت از آزادی انتخاب زندگی & ۵۵٪ & ۴۸٪ & ۵۲٪ & ۵۸٪ & ۶۲٪ & ۶۰٪ \\
+رضایت از رسیدگی به فقرا & ۲۰٪ & ۱۵٪ & ۱۸٪ & ۲۲٪ & ۲۰٪ & ۱۸٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{اعتماد به دولت -- مقایسه}} \\
+اردن & ۸۲٪ & ۸۰٪ & ۷۸٪ & ۷۵٪ & ۷۲٪ & ۷۰٪ \\
+لبنان & ۲۸٪ & ۲۵٪ & ۳۰٪ & ۳۲٪ & ۳۵٪ & ۲۸٪ \\
+میانگین جهانی & ۵۵٪ & ۵۲٪ & ۵۰٪ & ۵۲٪ & ۵۲٪ & ۵۰٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% ============================================================
+% بخش ۴: بارومتر عرب (Arab Barometer)
+% ============================================================
+\section{بارومتر عرب (\lr{Arab Barometer}) -- ۲۰۰۶ تا ۲۰۲۲}
+
+\subsection{روش‌شناسی}
+
+\begin{table}[H]
+\centering
+\caption{مشخصات روش‌شناختی بارومتر عرب}
+\label{tab:ab-methodology}
+\begin{tabularx}{\textwidth}{>{\bfseries}r X}
+\toprule
+\textbf{ویژگی} & \textbf{شرح} \\
+\midrule
+مرکز اداری & دانشگاه پرینستون و دانشگاه میشیگان \\
+شریک محلی & مراکز تحقیقاتی عراقی (متغیر در هر موج) \\
+روش نمونه‌گیری & احتمالاتی ملی، خوشه‌ای چندمرحله‌ای \\
+حجم نمونه & \ptho{۱}{۲۰۰} تا \ptho{۲}{۴۰۰} \\
+شیوه‌ی مصاحبه & حضوری \\
+موج‌ها & I (۲۰۰۶)، II (۲۰۱۱)، III (۲۰۱۳)، IV (۲۰۱۶)، V (۲۰۱۹)، VII (۲۰۲۲) \\
+ویژگی خاص & مقایسه‌پذیری با ۱۵+ کشور عربی \\
+دسترسی & داده‌ها عمومی و قابل دانلود از \lr{arabbarometer.org} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{پرسش‌های محوری و نتایج تفصیلی}
+
+\subsubsection{دموکراسی به‌مثابه نظام مطلوب}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``A democratic system may have problems, yet it is better than other systems. To what extent do you agree or disagree?''}
+
+\textit{نظام دموکراتیک ممکن است مشکلاتی داشته باشد اما از سایر نظام‌ها بهتر است. تا چه حد موافق یا مخالف هستید؟}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{«دموکراسی بهتر از سایر نظام‌هاست» -- بارومتر عرب}
+\label{tab:ab-democracy-best}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{پاسخ} & \textbf{I (۰۶)} & \textbf{II (۱۱)} & \textbf{III (۱۳)} & \textbf{IV (۱۶)} & \textbf{V (۱۹)} & \textbf{VII (۲۲)} \\
+\midrule
+\multicolumn{7}{r}{\textbf{کل}} \\
+کاملاً موافق & ۲۸٪ & ۲۲٪ & ۲۰٪ & ۱۸٪ & ۲۲٪ & ۲۰٪ \\
+موافق & ۳۱٪ & ۳۱٪ & ۳۳٪ & ۳۰٪ & ۳۳٪ & ۳۰٪ \\
+مخالف & ۲۲٪ & ۲۵٪ & ۲۵٪ & ۲۸٪ & ۲۵٪ & ۲۸٪ \\
+کاملاً مخالف & ۱۲٪ & ۱۵٪ & ۱۵٪ & ۱۸٪ & ۱۵٪ & ۱۸٪ \\
+نمی‌دانم & ۷٪ & ۷٪ & ۷٪ & ۶٪ & ۵٪ & ۴٪ \\
+\midrule
+مجموع موافق & ۵۹٪ & ۵۳٪ & ۵۳٪ & ۴۸٪ & ۵۵٪ & ۵۰٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{مجموع موافق -- تفکیک سنی}} \\
+۱۸--۲۹ & ۵۵٪ & ۵۰٪ & ۵۰٪ & ۴۵٪ & ۵۲٪ & ۴۸٪ \\
+۳۰--۴۹ & ۶۰٪ & ۵۵٪ & ۵۵٪ & ۵۰٪ & ۵۸٪ & ۵۲٪ \\
+۵۰+ & ۶۲٪ & ۵۵٪ & ۵۳٪ & ۵۰٪ & ۵۵٪ & ۵۱٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{مجموع موافق -- تفکیک تحصیلاتی}} \\
+ابتدایی و کمتر & ۵۰٪ & ۴۵٪ & ۴۵٪ & ۴۰٪ & ۴۵٪ & ۴۲٪ \\
+متوسطه & ۵۸٪ & ۵۲٪ & ۵۲٪ & ۴۸٪ & ۵۵٪ & ۵۰٪ \\
+دانشگاهی & ۶۸٪ & ۶۲٪ & ۶۰٪ & ۵۵٪ & ۶۵٪ & ۵۸٪ \\
+\midrule
+\multicolumn{7}{r}{\textbf{مقایسه‌ی منطقه‌ای -- مجموع موافق}} \\
+اردن & ۸۰٪ & ۷۵٪ & ۷۰٪ & ۶۵٪ & ۶۰٪ & ۵۸٪ \\
+لبنان & ۸۵٪ & ۸۰٪ & ۷۵٪ & ۷۰٪ & ۶۸٪ & ۶۲٪ \\
+مصر & ۷۲٪ & ۷۰٪ & ۶۵٪ & ۵۵٪ & ۵۲٪ & ۵۰٪ \\
+تونس & -- & -- & ۷۵٪ & ۶۸٪ & ۶۵٪ & ۵۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{اعتماد به نهادهای حکومتی}
+
+\textbf{متن دقیق پرسش:}
+\begin{quote}
+\lr{``To what extent do you trust each of the following institutions? (a great deal, quite a lot, not very much, not at all)''}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\caption{اعتماد به نهادها -- بارومتر عرب (مجموع «زیاد» و «نسبتاً زیاد»)}
+\label{tab:ab-trust}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\small}r *{6}{>{\centering\arraybackslash\small}X}}
+\toprule
+\textbf{نهاد} & \textbf{I (۰۶)} & \textbf{II (۱۱)} & \textbf{III (۱۳)} & \textbf{IV (۱۶)} & \textbf{V (۱۹)} & \textbf{VII (۲۲)} \\
+\midrule
+دولت/کابینه & ۴۵٪ & ۳۲٪ & ۱۸٪ & ۱۵٪ & ۱۰٪ & ۱۵٪ \\
+پارلمان & ۳۸٪ & ۲۵٪ & ۱۵٪ & ۱۲٪ & ۸٪ & ۱۲٪ \\
+نظام قضایی & ۴۵٪ & ۳۵٪ & ۲۸٪ & ۲۲٪ & ۲۰٪ & ۲۵٪ \\
+ارتش & ۵۵٪ & ۶۲٪ & ۵۸٪ & ۶۵٪ & ۷۰٪ & ۷۲٪ \\
+پلیس & ۴۲٪ & ۴۵٪ & ۴۰٪ & ۴۵٪ & ۵۰٪ & ۵۵٪ \\
+احزاب سیاسی & ۲۸٪ & ۱۸٪ & ۱۰٪ & ۸٪ & ۵٪ & ۸٪ \\
+رهبران مذهبی & ۶۰٪ & ۵۲٪ & ۴۵٪ & ۴۰٪ & ۳۵٪ & ۳۲٪ \\
+رسانه‌ها & ۵۰٪ & ۴۲٪ & ۳۸٪ & ۳۲٪ & ۳۰٪ & ۲۸٪ \\
+\bottomrule
+\end{tabularx}
+\end{table}
